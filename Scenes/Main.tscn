@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://d3v1cila7q8u7"]
+
+[ext_resource type="PackedScene" uid="uid://b1f37ebgxsquf" path="res://Scenes/Player.tscn" id="1_r150o"]
+
+[sub_resource type="Gradient" id="Gradient_idj7w"]
+offsets = PackedFloat32Array(0.33939394, 0.54545456, 0.6181818)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0.54509807, 0.54509807, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kln2b"]
+gradient = SubResource("Gradient_idj7w")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rgh2o"]
+albedo_texture = SubResource("GradientTexture2D_kln2b")
+
+[sub_resource type="BoxMesh" id="BoxMesh_pbw6q"]
+material = SubResource("StandardMaterial3D_rgh2o")
+size = Vector3(50, 1, 50)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v1gob"]
+size = Vector3(50, 1, 50)
+
+[sub_resource type="BoxMesh" id="BoxMesh_r150o"]
+size = Vector3(7, 7, 7)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_idj7w"]
+size = Vector3(7, 7, 7)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r150o"]
+
+[sub_resource type="Sky" id="Sky_idj7w"]
+sky_material = SubResource("ProceduralSkyMaterial_r150o")
+
+[sub_resource type="Environment" id="Environment_kln2b"]
+background_mode = 2
+sky = SubResource("Sky_idj7w")
+
+[node name="Main" type="Node" unique_id=1339399215]
+
+[node name="Level" type="Node3D" parent="." unique_id=83128354]
+
+[node name="Player" parent="Level" unique_id=623680313 instance=ExtResource("1_r150o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7332695, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Level" unique_id=646765679]
+mesh = SubResource("BoxMesh_pbw6q")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Level/MeshInstance3D" unique_id=1790066073]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/MeshInstance3D/StaticBody3D" unique_id=1141583290]
+shape = SubResource("BoxShape3D_v1gob")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Level" unique_id=1807238823]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.959123, 3.8694565, 0)
+mesh = SubResource("BoxMesh_r150o")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Level/MeshInstance3D2" unique_id=1561889992]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/MeshInstance3D2/StaticBody3D" unique_id=178332316]
+shape = SubResource("BoxShape3D_idj7w")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Level" unique_id=988451585]
+transform = Transform3D(0.2681055, 0.90833306, 0.32101473, -0.5822606, 0.41824755, -0.6971668, -0.7675233, 0, 0.6410211, -17.191507, 10.298861, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Level" unique_id=1757588943]
+environment = SubResource("Environment_kln2b")
