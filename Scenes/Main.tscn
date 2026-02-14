@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://d3v1cila7q8u7"]
 
 [ext_resource type="PackedScene" uid="uid://b1f37ebgxsquf" path="res://Scenes/Player.tscn" id="1_r150o"]
+[ext_resource type="Script" uid="uid://dk0hts3twf6t" path="res://Scripts/Bits/MouseCapture.gd" id="2_kln2b"]
+[ext_resource type="Script" uid="uid://dw7w6pry2g435" path="res://Scripts/Bits/PlayerAnimator.gd" id="3_rgh2o"]
+[ext_resource type="Script" uid="uid://dekpk8relyucb" path="res://Scripts/Bits/Input.gd" id="4_rgh2o"]
+[ext_resource type="Script" uid="uid://cox1ysk6bulx2" path="res://Scripts/Values/Bool/Manual.gd" id="5_pbw6q"]
 
 [sub_resource type="Gradient" id="Gradient_idj7w"]
 offsets = PackedFloat32Array(0.33939394, 0.54545456, 0.6181818)
@@ -20,10 +24,10 @@ size = Vector3(50, 1, 50)
 size = Vector3(50, 1, 50)
 
 [sub_resource type="BoxMesh" id="BoxMesh_r150o"]
-size = Vector3(7, 7, 7)
+size = Vector3(2, 7, 7)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_idj7w"]
-size = Vector3(7, 7, 7)
+size = Vector3(2, 7, 7)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r150o"]
 
@@ -33,6 +37,166 @@ sky_material = SubResource("ProceduralSkyMaterial_r150o")
 [sub_resource type="Environment" id="Environment_kln2b"]
 background_mode = 2
 sky = SubResource("Sky_idj7w")
+
+[sub_resource type="Animation" id="Animation_v1gob"]
+resource_name = "Pause"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/PauseInput/ManualBool:response")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/MouseCapturerBit:update_mouse_mode")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/MouseCapturerBit:update")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Panel:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1152, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jw32o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/PauseInput/ManualBool:response")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/MouseCapturerBit:update_mouse_mode")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/MouseCapturerBit:update")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Panel:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_50glp"]
+resource_name = "Unpause"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/PauseInput/ManualBool:response")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/MouseCapturerBit:update_mouse_mode")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/MouseCapturerBit:update")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Panel:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-1152, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vy5pj"]
+_data = {
+&"Pause": SubResource("Animation_v1gob"),
+&"RESET": SubResource("Animation_jw32o"),
+&"Unpause": SubResource("Animation_50glp")
+}
 
 [node name="Main" type="Node" unique_id=1339399215]
 
@@ -58,8 +222,107 @@ mesh = SubResource("BoxMesh_r150o")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Level/MeshInstance3D2/StaticBody3D" unique_id=178332316]
 shape = SubResource("BoxShape3D_idj7w")
 
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Level" unique_id=324480258]
+transform = Transform3D(-0.998894, 0, 0.047019217, 0, 1, 0, -0.047019217, 0, -0.998894, 3.6947775, 6.8749943, -4.799254)
+mesh = SubResource("BoxMesh_r150o")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Level/MeshInstance3D3" unique_id=1901952296]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/MeshInstance3D3/StaticBody3D" unique_id=830971432]
+shape = SubResource("BoxShape3D_idj7w")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Level" unique_id=1250985342]
+transform = Transform3D(-0.998894, 0, 0.047019217, 0, 1, 0, -0.047019217, 0, -0.998894, 3.6947775, 13.710688, -4.799254)
+mesh = SubResource("BoxMesh_r150o")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Level/MeshInstance3D5" unique_id=687373488]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/MeshInstance3D5/StaticBody3D" unique_id=1493423642]
+shape = SubResource("BoxShape3D_idj7w")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Level" unique_id=2097825050]
+transform = Transform3D(-0.998894, 0, 0.047019217, 0, 1, 0, -0.047019217, 0, -0.998894, 3.6947775, 19.596708, -4.799254)
+mesh = SubResource("BoxMesh_r150o")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Level/MeshInstance3D6" unique_id=1239324260]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/MeshInstance3D6/StaticBody3D" unique_id=1126704945]
+shape = SubResource("BoxShape3D_idj7w")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Level" unique_id=863596341]
+transform = Transform3D(-4.3711385e-08, -1, 0, 0.99999994, -4.371139e-08, 0, 0, 0, 1, 0.9301224, 22.04392, -4.799253)
+mesh = SubResource("BoxMesh_r150o")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Level/MeshInstance3D7" unique_id=700576644]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/MeshInstance3D7/StaticBody3D" unique_id=627117741]
+shape = SubResource("BoxShape3D_idj7w")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Level" unique_id=401063907]
+transform = Transform3D(0.07593888, -0.997106, -0.0035745401, -0.9960032, -0.07602303, 0.04688315, -0.047019213, 8.836807e-10, -0.998894, 12.167727, 8.366091, -4.799254)
+mesh = SubResource("BoxMesh_r150o")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Level/MeshInstance3D4" unique_id=100569019]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/MeshInstance3D4/StaticBody3D" unique_id=1858930415]
+shape = SubResource("BoxShape3D_idj7w")
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Level" unique_id=988451585]
 transform = Transform3D(0.2681055, 0.90833306, 0.32101473, -0.5822606, 0.41824755, -0.6971668, -0.7675233, 0, 0.6410211, -17.191507, 10.298861, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Level" unique_id=1757588943]
 environment = SubResource("Environment_kln2b")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1886343051]
+
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=364248766]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel" unique_id=1210370796]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "PRESS P TO TOGGLE MOUSE CAPTURE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer" unique_id=1848380471]
+libraries/ = SubResource("AnimationLibrary_vy5pj")
+
+[node name="Pause" type="Node" parent="CanvasLayer/AnimationPlayer" unique_id=1113217911]
+script = ExtResource("3_rgh2o")
+animation = "Pause"
+metadata/_custom_type_script = "uid://dw7w6pry2g435"
+
+[node name="Unpause" type="Node" parent="CanvasLayer/AnimationPlayer" unique_id=41698313]
+script = ExtResource("3_rgh2o")
+animation = "Unpause"
+metadata/_custom_type_script = "uid://dw7w6pry2g435"
+
+[node name="MouseCapturerBit" type="Node" parent="CanvasLayer/AnimationPlayer" unique_id=327824671]
+script = ExtResource("2_kln2b")
+update_mouse_mode = 0
+update = true
+metadata/_custom_type_script = "uid://dk0hts3twf6t"
+
+[node name="PauseInput" type="Node" parent="CanvasLayer/AnimationPlayer" unique_id=1687202455 node_paths=PackedStringArray("condition")]
+script = ExtResource("4_rgh2o")
+input = "Pause"
+condition = NodePath("ManualBool")
+metadata/_custom_type_script = "uid://dekpk8relyucb"
+
+[node name="ManualBool" type="Node" parent="CanvasLayer/AnimationPlayer/PauseInput" unique_id=1293933303]
+script = ExtResource("5_pbw6q")
+response = false
+metadata/_custom_type_script = "uid://cox1ysk6bulx2"
+
+[connection signal="just_false" from="CanvasLayer/AnimationPlayer/PauseInput" to="CanvasLayer/AnimationPlayer/Unpause" method="animate"]
+[connection signal="just_true" from="CanvasLayer/AnimationPlayer/PauseInput" to="CanvasLayer/AnimationPlayer/Pause" method="animate"]

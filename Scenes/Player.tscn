@@ -161,7 +161,7 @@ metadata/_custom_type_script = "uid://d7n7ctdl2nsg"
 [node name="WallSwitch" type="Node" parent="CharacterBody3D" unique_id=457288488 node_paths=PackedStringArray("condition", "true_bit", "false_bit")]
 script = ExtResource("5_megsn")
 condition = NodePath("../Player_Character/AnimationControl/Wall_Grab")
-true_bit = NodePath("WallSwitch")
+true_bit = NodePath("WallClimb")
 false_bit = NodePath("SprintSwitch")
 exclusive = false
 metadata/_custom_type_script = "uid://nsahhp627l3l"
@@ -195,31 +195,9 @@ script = ExtResource("7_yoq75")
 input_name = &"Sprint"
 metadata/_custom_type_script = "uid://ijkm2f1r0gk7"
 
-[node name="WallSwitch" type="Node" parent="CharacterBody3D/WallSwitch" unique_id=1956612551 node_paths=PackedStringArray("condition", "true_bit", "false_bit")]
-script = ExtResource("5_megsn")
-condition = NodePath("WallClimbInput")
-true_bit = NodePath("WallClimb")
-false_bit = NodePath("WallRun")
-isolated = true
-metadata/_custom_type_script = "uid://nsahhp627l3l"
-
-[node name="WallClimb" type="Node" parent="CharacterBody3D/WallSwitch/WallSwitch" unique_id=1846302790]
+[node name="WallClimb" type="Node" parent="CharacterBody3D/WallSwitch" unique_id=1846302790]
 script = ExtResource("21_70hv0")
 metadata/_custom_type_script = "uid://bcg6hjtowf1lj"
-
-[node name="WallRun" type="Node" parent="CharacterBody3D/WallSwitch/WallSwitch" unique_id=1866063430]
-script = ExtResource("3_megsn")
-horizontal_acceleration = 70.0
-horizontal_air_acceleration = 50.0
-horizontal_max_speed = 7.0
-horizontal_friction = 110.0
-horizontal_air_friction = 70.0
-metadata/_custom_type_script = "uid://cw1ibpybypc2"
-
-[node name="WallClimbInput" type="Node" parent="CharacterBody3D/WallSwitch/WallSwitch" unique_id=1347053669]
-script = ExtResource("7_yoq75")
-input_name = &"Climb"
-metadata/_custom_type_script = "uid://ijkm2f1r0gk7"
 
 [node name="WallJump" type="Node" parent="CharacterBody3D" unique_id=609956102]
 script = ExtResource("4_yoq75")
@@ -243,7 +221,6 @@ script = ExtResource("6_glx4g")
 y_target = NodePath("../Pivot")
 x_target = NodePath("../Pivot")
 x_clamp = Vector2(-50, 90)
-must_be_captured = false
 isolated = true
 
 [node name="Pivot" type="Node" parent="CameraPivot" unique_id=1551523772 node_paths=PackedStringArray("response")]

@@ -24,5 +24,10 @@ func _on_input_pressed(delta:float) -> void: if master.mover.is_on_wall_only():
 	master.mover.velocity.y = max(master.mover.velocity.y, climb_speed * delta)
 	
 	## Stick to the wall while climbing.
-	master.mover.velocity.x = -master.mover.get_wall_normal().x
+	var vel = -master.mover.get_wall_normal() * 10
+
+	master.mover.velocity.x = vel.x
+	master.mover.velocity.z = vel.z
+	
+	#master.mover.velocity.x = -master.mover.get_wall_normal().x
 	
