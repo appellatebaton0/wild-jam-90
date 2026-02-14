@@ -50,7 +50,6 @@ func phys_active(_delta:float) -> void:
 		holding = null
 		
 		ray.target_position.z = -0.3
-	print("P: ", pushing_forwards())
 
 func can_hold() -> bool:
 	
