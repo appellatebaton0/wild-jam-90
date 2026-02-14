@@ -68,7 +68,7 @@ void fragment() {
 	vec4 emission = texture(emission_texture, UV);
 	vec3 fire = vec3(noise_a * noise_b * clamp(smoothstep(fire_height, 0.0, model_pos.y - fire_center), 0.0, 1.0));
 	float fresnel = (1.0 - max(0, dot(NORMAL, VIEW)));
-	fresnel = pow(fresnel, 2.5) * 0.5;
+	fresnel = (pow(fresnel, 1.5) * 0.5) + pow(fresnel, 10);
 	
 	ALBEDO = albedo;
 	EMISSION = mix(emission.rgb * emission_strength, fire_color * fire_strength, max(fire.r, fresnel)) * emission.a;

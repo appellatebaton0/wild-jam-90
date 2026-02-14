@@ -5,7 +5,15 @@ extends Node3D
 
 @export var character_material: ShaderMaterial
 @onready var AnimTree = $AnimationTree as AnimationTree
-@export_enum("Idle", "Walk", "Sprint") var movement_state := "Idle":
+@export_enum(
+	"Idle",
+	"Walk",
+	"Sprint",
+	"Fall",
+	"Push",
+	"Pull",
+	"Wall_Grab",
+	) var movement_state := "Idle":
 	set(to):
 		if to != movement_state:
 			AnimTree.set("parameters/Movement/transition_request", to)
@@ -28,3 +36,7 @@ func _process(delta: float):
 	if character_material:
 		character_material.set_shader_parameter("vertex_fire_direction", fire_direction)
 		character_material.set_shader_parameter("vertex_fire_strength", fire_strength)
+
+func play_animation(anim_name: String):
+	if AnimTree.has_animation(anim_name):
+		AnimTree.set(str("parameters/Play_", anim_name, "request"), AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
