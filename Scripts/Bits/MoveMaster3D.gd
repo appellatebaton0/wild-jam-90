@@ -84,3 +84,5 @@ func _physics_process(delta: float) -> void:
 		if bot.is_class("Node3D"):
 			bot.global_position = mover.global_position
 			mover.position = Vector3.ZERO
+
+func real_dir() -> Vector3: return direction if direction else mover.velocity.normalized()

@@ -15,7 +15,7 @@ extends Node3D
 	"Wall_Grab",
 	) var movement_state := "Idle":
 	set(to):
-		if to != movement_state:
+		if to != movement_state and AnimTree:
 			AnimTree.set("parameters/Movement/transition_request", to)
 		movement_state = to
 
