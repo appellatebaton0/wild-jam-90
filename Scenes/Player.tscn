@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cvqf1hrebc04p" path="res://Scripts/Bot.gd" id="1_52ee3"]
 [ext_resource type="Script" uid="uid://b6iakww8271ns" path="res://Scripts/Bits/MoveMaster3D.gd" id="2_bhhdu"]
 [ext_resource type="Script" uid="uid://cw1ibpybypc2" path="res://Scripts/Bits/MoveBits/3D/ControlBits/Platformer.gd" id="3_megsn"]
+[ext_resource type="PackedScene" uid="uid://cj3ygyynwwo0q" path="res://Assests/3D/Player Character/player_character.tscn" id="3_o3h8g"]
 [ext_resource type="Script" uid="uid://4otg5dsd8uso" path="res://Scripts/Bits/MoveBits/3D/ControlBits/WallJump.gd" id="4_yoq75"]
 [ext_resource type="Script" uid="uid://ctf2a2d7waikj" path="res://Scripts/Bits/MoveBits/3D/ControlBits/WallSlide.gd" id="5_ksbbd"]
 [ext_resource type="Script" uid="uid://nsahhp627l3l" path="res://Scripts/Bits/MoveBits/Switch.gd" id="5_megsn"]
@@ -31,7 +32,11 @@ rotator = NodePath("../CameraPivot/Pivot")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1371614169]
 shape = SubResource("CapsuleShape3D_r150o")
 
+[node name="Player_Character" parent="CharacterBody3D" unique_id=1831994608 instance=ExtResource("3_o3h8g")]
+transform = Transform3D(-0.5941662, 0, -5.1943662e-08, 0, 0.5941662, 0, 5.1943662e-08, 0, -0.5941662, 0, -0.9654732, 0)
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D" unique_id=1061541379]
+visible = false
 mesh = SubResource("CapsuleMesh_r150o")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D/MeshInstance3D" unique_id=354130139]
