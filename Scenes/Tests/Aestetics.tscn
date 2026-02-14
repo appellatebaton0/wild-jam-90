@@ -27,6 +27,12 @@ fog_density = 0.0075
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.002
 
+[sub_resource type="BoxMesh" id="BoxMesh_jqpxa"]
+size = Vector3(7, 7, 7)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x3lnf"]
+size = Vector3(7, 7, 7)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x3lnf"]
 albedo_color = Color(0.25908774, 0.2494131, 0.20777938, 1)
 
@@ -41,6 +47,33 @@ data = PackedVector3Array(33.035, 0, 29.99, -33.035, 0, 29.99, 33.035, 0, -29.99
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1959530383]
 environment = SubResource("Environment_jqpxa")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="WorldEnvironment" unique_id=1833576762]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.174212, 3.8694565, 0)
+mesh = SubResource("BoxMesh_jqpxa")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldEnvironment/MeshInstance3D2" unique_id=976845789]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/MeshInstance3D2/StaticBody3D" unique_id=773979525]
+shape = SubResource("BoxShape3D_x3lnf")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="WorldEnvironment/MeshInstance3D2" unique_id=719084079]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.098484, 7.3450785, 0)
+mesh = SubResource("BoxMesh_jqpxa")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldEnvironment/MeshInstance3D2/MeshInstance3D2" unique_id=1278029015]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/MeshInstance3D2/MeshInstance3D2/StaticBody3D" unique_id=1914404467]
+shape = SubResource("BoxShape3D_x3lnf")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="WorldEnvironment/MeshInstance3D2/MeshInstance3D2" unique_id=1035815438]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0793047, -1.8580637, -13.249275)
+mesh = SubResource("BoxMesh_jqpxa")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldEnvironment/MeshInstance3D2/MeshInstance3D2/MeshInstance3D2" unique_id=1847885971]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/MeshInstance3D2/MeshInstance3D2/MeshInstance3D2/StaticBody3D" unique_id=2006562326]
+shape = SubResource("BoxShape3D_x3lnf")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=420998825]
 
