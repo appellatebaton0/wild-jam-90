@@ -11,6 +11,8 @@
 [ext_resource type="Script" uid="uid://nsahhp627l3l" path="res://Scripts/Bits/MoveBits/Switch.gd" id="5_megsn"]
 [ext_resource type="Script" uid="uid://djhmxrvyb8qik" path="res://Scripts/Bits/Camera3D.gd" id="6_glx4g"]
 [ext_resource type="Script" uid="uid://cbcstrsy2txwl" path="res://Scripts/Values/Bool/Inequality.gd" id="6_m0x7a"]
+[ext_resource type="Script" uid="uid://ycifmydtbo1g" path="res://Scripts/Values/Bool/Not.gd" id="6_ulo2v"]
+[ext_resource type="Script" uid="uid://w0g2u1stumau" path="res://Scripts/Values/Bool/Cast.gd" id="6_x63xi"]
 [ext_resource type="Script" uid="uid://ctol2bsqyal5x" path="res://Scripts/Values/Float/MagnitudeFloat.gd" id="7_5v66d"]
 [ext_resource type="Script" uid="uid://vjcrkxkgf2f2" path="res://Scripts/Bits/CameraFloat.gd" id="7_bhhdu"]
 [ext_resource type="Script" uid="uid://b1o48vkwquyxs" path="res://Scripts/Values/Node/ManualNode.gd" id="7_miouo"]
@@ -20,14 +22,10 @@
 [ext_resource type="Script" uid="uid://dc8sod06feafh" path="res://Scripts/Values/Float/ManualFloat.gd" id="10_i2e8t"]
 [ext_resource type="Script" uid="uid://nege5nk1sa8u" path="res://Scripts/Values/Bool/And.gd" id="12_x63xi"]
 [ext_resource type="Script" uid="uid://dpx1s1lrqrp1w" path="res://Scripts/Bits/VelocityLook.gd" id="18_5v66d"]
+[ext_resource type="Script" uid="uid://bcg6hjtowf1lj" path="res://Scripts/Bits/MoveBits/3D/ControlBits/WallClimb.gd" id="21_70hv0"]
 [ext_resource type="Shader" uid="uid://7x40gwinm2ws" path="res://Scripts/Shaders/Outline.gdshader" id="23_qidb7"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r150o"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_r150o"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_yoq75"]
-size = Vector3(0.2, 0.2, 0.2)
 
 [sub_resource type="Curve" id="Curve_i2e8t"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.04494381), 0.0, 0.0, 0, 0]
@@ -90,13 +88,29 @@ target = NodePath("..")
 condition_switches = {
 0: NodePath("Idle"),
 1: NodePath("Walk"),
-2: NodePath("Sprint")
+2: NodePath("Sprint"),
+3: NodePath("Fall"),
+4: NodePath("Wall_Grab")
 }
 metadata/_custom_type_script = "uid://m2g8fsn261kv"
 
 [node name="Idle" type="Node" parent="CharacterBody3D/Player_Character/AnimationControl" unique_id=1793585481]
 script = ExtResource("5_lslt6")
 metadata/_custom_type_script = "uid://cox1ysk6bulx2"
+
+[node name="Fall" type="Node" parent="CharacterBody3D/Player_Character/AnimationControl" unique_id=600985652]
+script = ExtResource("6_ulo2v")
+metadata/_custom_type_script = "uid://ycifmydtbo1g"
+
+[node name="OnFloor" type="Node" parent="CharacterBody3D/Player_Character/AnimationControl/Fall" unique_id=478560106]
+script = ExtResource("6_x63xi")
+metadata/_custom_type_script = "uid://w0g2u1stumau"
+
+[node name="Property" type="Node" parent="CharacterBody3D/Player_Character/AnimationControl/Fall/OnFloor" unique_id=213168773 node_paths=PackedStringArray("from")]
+script = ExtResource("8_x63xi")
+property = "is_on_floor()"
+from = NodePath("../../../Walk/MagnitudeFloat/Velocity/Property/CharacterBody")
+metadata/_custom_type_script = "uid://d7n7ctdl2nsg"
 
 [node name="Walk" type="Node" parent="CharacterBody3D/Player_Character/AnimationControl" unique_id=1967764397 node_paths=PackedStringArray("value_a", "value_b")]
 script = ExtResource("6_m0x7a")
@@ -131,16 +145,81 @@ metadata/_custom_type_script = "uid://dc8sod06feafh"
 
 [node name="Sprint" type="Node" parent="CharacterBody3D/Player_Character/AnimationControl" unique_id=317526860 node_paths=PackedStringArray("inputs")]
 script = ExtResource("12_x63xi")
-inputs = [NodePath("../../../SprintSwitch/InputValue"), NodePath("../Walk")]
+inputs = [NodePath("../../../WallSwitch/SprintSwitch/InputValue"), NodePath("../Walk")]
 metadata/_custom_type_script = "uid://nege5nk1sa8u"
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D" unique_id=1061541379]
-visible = false
-mesh = SubResource("CapsuleMesh_r150o")
+[node name="Wall_Grab" type="Node" parent="CharacterBody3D/Player_Character/AnimationControl" unique_id=2101135034]
+script = ExtResource("6_x63xi")
+metadata/_custom_type_script = "uid://w0g2u1stumau"
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D/MeshInstance3D" unique_id=354130139]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9155288)
-mesh = SubResource("BoxMesh_yoq75")
+[node name="Property" type="Node" parent="CharacterBody3D/Player_Character/AnimationControl/Wall_Grab" unique_id=1057961523 node_paths=PackedStringArray("from")]
+script = ExtResource("8_x63xi")
+property = "is_on_wall_only()"
+from = NodePath("../../Walk/MagnitudeFloat/Velocity/Property/CharacterBody")
+metadata/_custom_type_script = "uid://d7n7ctdl2nsg"
+
+[node name="WallSwitch" type="Node" parent="CharacterBody3D" unique_id=457288488 node_paths=PackedStringArray("condition", "true_bit", "false_bit")]
+script = ExtResource("5_megsn")
+condition = NodePath("../Player_Character/AnimationControl/Wall_Grab")
+true_bit = NodePath("WallSwitch")
+false_bit = NodePath("SprintSwitch")
+exclusive = false
+metadata/_custom_type_script = "uid://nsahhp627l3l"
+
+[node name="SprintSwitch" type="Node" parent="CharacterBody3D/WallSwitch" unique_id=737779812 node_paths=PackedStringArray("condition", "true_bit", "false_bit")]
+script = ExtResource("5_megsn")
+condition = NodePath("InputValue")
+true_bit = NodePath("Sprint")
+false_bit = NodePath("Walk")
+isolated = true
+
+[node name="Walk" type="Node" parent="CharacterBody3D/WallSwitch/SprintSwitch" unique_id=409108400]
+script = ExtResource("3_megsn")
+horizontal_acceleration = 70.0
+horizontal_air_acceleration = 50.0
+horizontal_max_speed = 7.0
+horizontal_air_friction = 10.0
+metadata/_custom_type_script = "uid://cw1ibpybypc2"
+
+[node name="Sprint" type="Node" parent="CharacterBody3D/WallSwitch/SprintSwitch" unique_id=2138443987]
+script = ExtResource("3_megsn")
+horizontal_acceleration = 80.0
+horizontal_air_acceleration = 60.0
+horizontal_max_speed = 20.0
+horizontal_friction = 75.0
+horizontal_air_friction = 40.0
+metadata/_custom_type_script = "uid://cw1ibpybypc2"
+
+[node name="InputValue" type="Node" parent="CharacterBody3D/WallSwitch/SprintSwitch" unique_id=1443714533]
+script = ExtResource("7_yoq75")
+input_name = &"Sprint"
+metadata/_custom_type_script = "uid://ijkm2f1r0gk7"
+
+[node name="WallSwitch" type="Node" parent="CharacterBody3D/WallSwitch" unique_id=1956612551 node_paths=PackedStringArray("condition", "true_bit", "false_bit")]
+script = ExtResource("5_megsn")
+condition = NodePath("WallClimbInput")
+true_bit = NodePath("WallClimb")
+false_bit = NodePath("WallRun")
+isolated = true
+metadata/_custom_type_script = "uid://nsahhp627l3l"
+
+[node name="WallClimb" type="Node" parent="CharacterBody3D/WallSwitch/WallSwitch" unique_id=1846302790]
+script = ExtResource("21_70hv0")
+metadata/_custom_type_script = "uid://bcg6hjtowf1lj"
+
+[node name="WallRun" type="Node" parent="CharacterBody3D/WallSwitch/WallSwitch" unique_id=1866063430]
+script = ExtResource("3_megsn")
+horizontal_acceleration = 70.0
+horizontal_air_acceleration = 50.0
+horizontal_max_speed = 7.0
+horizontal_friction = 110.0
+horizontal_air_friction = 70.0
+metadata/_custom_type_script = "uid://cw1ibpybypc2"
+
+[node name="WallClimbInput" type="Node" parent="CharacterBody3D/WallSwitch/WallSwitch" unique_id=1347053669]
+script = ExtResource("7_yoq75")
+input_name = &"Climb"
+metadata/_custom_type_script = "uid://ijkm2f1r0gk7"
 
 [node name="WallJump" type="Node" parent="CharacterBody3D" unique_id=609956102]
 script = ExtResource("4_yoq75")
@@ -152,38 +231,9 @@ script = ExtResource("5_ksbbd")
 exclusive = false
 metadata/_custom_type_script = "uid://ctf2a2d7waikj"
 
-[node name="SprintSwitch" type="Node" parent="CharacterBody3D" unique_id=737779812 node_paths=PackedStringArray("condition", "true_bit", "false_bit")]
-script = ExtResource("5_megsn")
-condition = NodePath("InputValue")
-true_bit = NodePath("Sprint")
-false_bit = NodePath("Walk")
-exclusive = false
-
-[node name="Walk" type="Node" parent="CharacterBody3D/SprintSwitch" unique_id=409108400]
-script = ExtResource("3_megsn")
-horizontal_acceleration = 70.0
-horizontal_air_acceleration = 50.0
-horizontal_max_speed = 7.0
-horizontal_friction = 110.0
-horizontal_air_friction = 70.0
-metadata/_custom_type_script = "uid://cw1ibpybypc2"
-
-[node name="Sprint" type="Node" parent="CharacterBody3D/SprintSwitch" unique_id=2138443987]
-script = ExtResource("3_megsn")
-horizontal_acceleration = 80.0
-horizontal_air_acceleration = 60.0
-horizontal_max_speed = 20.0
-horizontal_friction = 75.0
-horizontal_air_friction = 40.0
-metadata/_custom_type_script = "uid://cw1ibpybypc2"
-
-[node name="InputValue" type="Node" parent="CharacterBody3D/SprintSwitch" unique_id=1443714533]
-script = ExtResource("7_yoq75")
-input_name = &"Sprint"
-metadata/_custom_type_script = "uid://ijkm2f1r0gk7"
-
-[node name="FaceVelocity" type="Node" parent="CharacterBody3D" unique_id=287165018]
+[node name="FaceVelocity" type="Node" parent="CharacterBody3D" unique_id=1442225657]
 script = ExtResource("18_5v66d")
+metadata/_custom_type_script = "uid://dpx1s1lrqrp1w"
 
 [node name="CameraPivot" type="Node3D" parent="." unique_id=330284818]
 
