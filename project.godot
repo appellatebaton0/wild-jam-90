@@ -53,6 +53,11 @@ Sprint={
 ]
 }
 
+[layer_names]
+
+3d_render/layer_1="Environment"
+3d_render/layer_2="Character"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

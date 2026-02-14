@@ -59,6 +59,7 @@ shader_parameter/_DepthNormalThreshold = 0.1
 shader_parameter/_DepthNormalThresholdScale = 3.0
 shader_parameter/_DepthThreshold = 1.5
 shader_parameter/_NormalThreshold = 2.0
+shader_parameter/invert_mask = false
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qidb7"]
 next_pass = SubResource("ShaderMaterial_i2e8t")
@@ -179,6 +180,8 @@ script = ExtResource("8_ksbbd")
 from = NodePath("../Player_Character/AnimatedObject/Walk/MagnitudeFloat/Velocity/Property/CharacterBody")
 to = NodePath("To")
 look_x = false
+look_y = false
+look_z = false
 metadata/_custom_type_script = "uid://cg7bjyxfxe0nm"
 
 [node name="To" type="Node" parent="CharacterBody3D/Look" unique_id=751295854 node_paths=PackedStringArray("value_a", "value_b")]

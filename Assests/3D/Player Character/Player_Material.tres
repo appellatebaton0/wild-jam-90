@@ -7,12 +7,12 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o8rlf"]
 render_priority = 0
 shader = ExtResource("1_87dnx")
-shader_parameter/scale = 3.825
+shader_parameter/scale = 5.0
 shader_parameter/outline_spread = 1.0
 shader_parameter/_Color = Color(0.15778324, 0, 0.010870922, 1)
 shader_parameter/_DepthNormalThreshold = 0.1
-shader_parameter/_DepthNormalThresholdScale = 3.0
-shader_parameter/_DepthThreshold = 1.5
+shader_parameter/_DepthNormalThresholdScale = 8.605
+shader_parameter/_DepthThreshold = 2.75
 shader_parameter/_NormalThreshold = 2.0
 
 [resource]

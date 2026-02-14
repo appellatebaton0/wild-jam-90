@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://c4l0u2qbiot15"]
+
+[ext_resource type="Shader" uid="uid://7x40gwinm2ws" path="res://Scripts/Shaders/Outline.gdshader" id="1_awkq4"]
+[ext_resource type="Texture2D" uid="uid://dh73yovkqmnsi" path="res://Assests/3D/Player Character/VertexFireMask.png" id="2_l8jji"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_awkq4")
+shader_parameter/scale = 5.0
+shader_parameter/outline_spread = 2.0
+shader_parameter/_Color = Color(0.15778324, 0, 0.010870922, 1)
+shader_parameter/_DepthNormalThreshold = 0.1
+shader_parameter/_DepthNormalThresholdScale = 8.605
+shader_parameter/_DepthThreshold = 2.75
+shader_parameter/_NormalThreshold = 2.0
+shader_parameter/invert_mask = true
+shader_parameter/mask_texture = ExtResource("2_l8jji")

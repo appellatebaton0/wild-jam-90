@@ -75,7 +75,9 @@ void fragment() {
 }
 
 void light() {
-    float surface = max(0.0, dot(NORMAL, LIGHT));
+	float surface = max(0.0, dot(NORMAL, LIGHT));
 	
-    DIFFUSE_LIGHT += LIGHT_COLOR * ATTENUATION * surface * (1.0 / PI);
+	surface = posterize(surface, 3.0);
+	float attenuation = posterize(ATTENUATION, 3.0);
+	DIFFUSE_LIGHT += LIGHT_COLOR * attenuation * surface * (1.0 / PI);
 }

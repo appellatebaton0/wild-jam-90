@@ -18,6 +18,9 @@ uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap, re
 uniform sampler2D DEPTH_TEXTURE : hint_depth_texture, filter_linear_mipmap, repeat_disable;
 uniform sampler2D normal_roughness_texture : hint_normal_roughness_texture, repeat_disable;
 
+uniform bool invert_mask = false;
+uniform sampler2D mask_texture : hint_default_white;
+
 void fragment() {
     float half_scale_floor = floor(scale * 0.5);
     float half_scale_ceil = ceil(scale * 0.5);
@@ -94,8 +97,16 @@ void fragment() {
 	}
 
 	vec4 edgeColor = vec4(_Color.rgb, _Color.a * dilated_edge);
-
-	ALBEDO = mix(texture(SCREEN_TEXTURE,SCREEN_UV).rgb, edgeColor.rgb, edgeColor.a);
+	
+	float output = edgeColor.a;
+	float mask_r = texture(mask_texture, UV).r;
+	if(invert_mask){
+		mask_r = 1.0 - mask_r;
+	}
+	
+	output *= mask_r;
+	
+	ALBEDO = mix(texture(SCREEN_TEXTURE,SCREEN_UV).rgb, edgeColor.rgb, output);
 	//ALBEDO = mix(vec3(0.0), edgeColor.rgb, edgeColor.a);
 
 }
