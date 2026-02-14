@@ -12,9 +12,5 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	var targ:Node3D = target.value()
 	
-	if ray.is_colliding():
-		print(ray.is_colliding())
-		
-		targ.position = ray.to_local(ray.get_collision_point())
-	else:
-		targ.position = ray.target_position
+	# Set the target position to the point the ray hits if there is one, otherwise as far out as it goes.
+	targ.position = ray.to_local(ray.get_collision_point()) if ray.is_colliding() else lerp(targ.position, ray.target_position, 0.1)
