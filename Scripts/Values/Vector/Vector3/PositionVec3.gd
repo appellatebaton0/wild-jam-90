@@ -9,7 +9,7 @@ var real_node:Node
 
 func _ready() -> void:
 	var me = self
-	if me is Node3D:
+	if me is Node2D:
 		real_node = me
 	
 	if node == null:

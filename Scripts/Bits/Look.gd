@@ -5,7 +5,7 @@ class_name LookBit extends Bit
 @export var from:NodeValue
 
 ## The node to make it look at.
-@export var to:NodeValue
+@export var to:Vector3Value
 
 ## The speed with which to turn to look at the player, in degrees per second.
 @export var turn_speed := 0.0
@@ -26,41 +26,22 @@ func vec3_move_towards(a:Vector3, b:Vector3, delta:float):
 
 func _ready() -> void:
 	for child in get_children():
-		if child is NodeValue:
-			if from == null:
-				from = child
-			elif to == null:
-				to = child
+		if child is NodeValue and from == null: from = child
+		if child is Vector3Value and to == null: to = child
 
 func _process(delta: float) -> void:
 	if from != null and to != null:
 		var f_node = from.value()
-		var t_node = to.value()
+		var t_pos = to.value()
 		
-		if f_node is Node2D:
-			if t_node is Node2D:
-				var regular_rotation = f_node.rotation
-				
-				f_node.look_at(t_node.global_position)
-				
-				var look_rotation = f_node.rotation
-				
-				## Apply the necessary rotations
-				var real_rotation = regular_rotation
-				if look_x:
-					real_rotation.x = look_rotation.x
-				if look_y:
-					real_rotation.y = look_rotation.y
-				
-				f_node.rotation = real_rotation
-		elif f_node is Node3D:
-			if t_node is Node3D:
+		if f_node is Node3D:
+			if t_pos is Vector3:
 				# Get the starting rotation
 				var regular_rotation = f_node.rotation
 				
 				# Get the desired ending rotation
-				if not f_node.global_position.cross(t_node.global_position).is_zero_approx():
-					f_node.look_at(t_node.global_position)
+				if not f_node.global_position.cross(t_pos).is_zero_approx():
+					f_node.look_at(t_pos)
 				var look_rotation = f_node.rotation
 				f_node.rotation = regular_rotation
 				

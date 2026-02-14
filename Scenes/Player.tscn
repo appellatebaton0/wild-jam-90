@@ -3,17 +3,32 @@
 [ext_resource type="Script" uid="uid://cvqf1hrebc04p" path="res://Scripts/Bot.gd" id="1_52ee3"]
 [ext_resource type="Script" uid="uid://b6iakww8271ns" path="res://Scripts/Bits/MoveMaster3D.gd" id="2_bhhdu"]
 [ext_resource type="Script" uid="uid://cw1ibpybypc2" path="res://Scripts/Bits/MoveBits/3D/ControlBits/Platformer.gd" id="3_megsn"]
+[ext_resource type="PackedScene" uid="uid://cj3ygyynwwo0q" path="res://Assests/3D/Player Character/player_character.tscn" id="3_o3h8g"]
+[ext_resource type="Script" uid="uid://m2g8fsn261kv" path="res://Scripts/Bits/AnimatedObject.gd" id="4_1e7my"]
 [ext_resource type="Script" uid="uid://4otg5dsd8uso" path="res://Scripts/Bits/MoveBits/3D/ControlBits/WallJump.gd" id="4_yoq75"]
 [ext_resource type="Script" uid="uid://ctf2a2d7waikj" path="res://Scripts/Bits/MoveBits/3D/ControlBits/WallSlide.gd" id="5_ksbbd"]
+[ext_resource type="Script" uid="uid://cox1ysk6bulx2" path="res://Scripts/Values/Bool/Manual.gd" id="5_lslt6"]
 [ext_resource type="Script" uid="uid://nsahhp627l3l" path="res://Scripts/Bits/MoveBits/Switch.gd" id="5_megsn"]
 [ext_resource type="Script" uid="uid://djhmxrvyb8qik" path="res://Scripts/Bits/Camera3D.gd" id="6_glx4g"]
+[ext_resource type="Script" uid="uid://cbcstrsy2txwl" path="res://Scripts/Values/Bool/Inequality.gd" id="6_m0x7a"]
+[ext_resource type="Script" uid="uid://ctol2bsqyal5x" path="res://Scripts/Values/Float/MagnitudeFloat.gd" id="7_5v66d"]
 [ext_resource type="Script" uid="uid://vjcrkxkgf2f2" path="res://Scripts/Bits/CameraFloat.gd" id="7_bhhdu"]
 [ext_resource type="Script" uid="uid://b1o48vkwquyxs" path="res://Scripts/Values/Node/ManualNode.gd" id="7_miouo"]
 [ext_resource type="Script" uid="uid://ijkm2f1r0gk7" path="res://Scripts/Values/Bool/Input.gd" id="7_yoq75"]
+[ext_resource type="Script" uid="uid://crs0ppnbatoph" path="res://Scripts/Values/Vector/Vector3/CastVec3.gd" id="8_5v66d"]
+[ext_resource type="Script" uid="uid://cg7bjyxfxe0nm" path="res://Scripts/Bits/Look.gd" id="8_ksbbd"]
+[ext_resource type="Script" uid="uid://d7n7ctdl2nsg" path="res://Scripts/Values/Property.gd" id="8_x63xi"]
+[ext_resource type="Script" uid="uid://dc8sod06feafh" path="res://Scripts/Values/Float/ManualFloat.gd" id="10_i2e8t"]
+[ext_resource type="Script" uid="uid://csvui0hqxjew2" path="res://Scripts/Values/Vector/Vector3/OperationVec3.gd" id="10_miouo"]
+[ext_resource type="Script" uid="uid://du30q5xpyllbv" path="res://Scripts/Values/Vector/Vector3/PositionVec3.gd" id="11_o3h8g"]
+[ext_resource type="Script" uid="uid://nege5nk1sa8u" path="res://Scripts/Values/Bool/And.gd" id="12_x63xi"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r150o"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_r150o"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_yoq75"]
+size = Vector3(0.2, 0.2, 0.2)
 
 [node name="Player" type="Node3D" unique_id=623680313]
 script = ExtResource("1_52ee3")
@@ -25,8 +40,66 @@ rotator = NodePath("../CameraPivot/Pivot")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1371614169]
 shape = SubResource("CapsuleShape3D_r150o")
 
+[node name="Player_Character" parent="CharacterBody3D" unique_id=1831994608 instance=ExtResource("3_o3h8g")]
+transform = Transform3D(-0.5941662, 0, -5.1943662e-08, 0, 0.5941662, 0, 5.1943662e-08, 0, -0.5941662, 0, -0.9654732, 0)
+
+[node name="AnimatedObject" type="Node" parent="CharacterBody3D/Player_Character" unique_id=247797212 node_paths=PackedStringArray("target", "condition_switches")]
+script = ExtResource("4_1e7my")
+target = NodePath("..")
+condition_switches = {
+0: NodePath("Idle"),
+1: NodePath("Walk"),
+2: NodePath("Sprint")
+}
+metadata/_custom_type_script = "uid://m2g8fsn261kv"
+
+[node name="Idle" type="Node" parent="CharacterBody3D/Player_Character/AnimatedObject" unique_id=1793585481]
+script = ExtResource("5_lslt6")
+metadata/_custom_type_script = "uid://cox1ysk6bulx2"
+
+[node name="Walk" type="Node" parent="CharacterBody3D/Player_Character/AnimatedObject" unique_id=1967764397 node_paths=PackedStringArray("value_a", "value_b")]
+script = ExtResource("6_m0x7a")
+value_a = NodePath("MagnitudeFloat")
+inequality = 2
+value_b = NodePath("ManualFloat")
+metadata/_custom_type_script = "uid://cbcstrsy2txwl"
+
+[node name="MagnitudeFloat" type="Node" parent="CharacterBody3D/Player_Character/AnimatedObject/Walk" unique_id=1041114183 node_paths=PackedStringArray("vec3")]
+script = ExtResource("7_5v66d")
+vec3 = NodePath("Velocity")
+metadata/_custom_type_script = "uid://ctol2bsqyal5x"
+
+[node name="Velocity" type="Node" parent="CharacterBody3D/Player_Character/AnimatedObject/Walk/MagnitudeFloat" unique_id=1729265745]
+script = ExtResource("8_5v66d")
+metadata/_custom_type_script = "uid://crs0ppnbatoph"
+
+[node name="Property" type="Node" parent="CharacterBody3D/Player_Character/AnimatedObject/Walk/MagnitudeFloat/Velocity" unique_id=2046172825]
+script = ExtResource("8_x63xi")
+property = "velocity"
+metadata/_custom_type_script = "uid://d7n7ctdl2nsg"
+
+[node name="CharacterBody" type="Node" parent="CharacterBody3D/Player_Character/AnimatedObject/Walk/MagnitudeFloat/Velocity/Property" unique_id=1593262706 node_paths=PackedStringArray("response")]
+script = ExtResource("7_miouo")
+response = NodePath("../../../../../../..")
+metadata/_custom_type_script = "uid://b1o48vkwquyxs"
+
+[node name="ManualFloat" type="Node" parent="CharacterBody3D/Player_Character/AnimatedObject/Walk" unique_id=1891625907]
+script = ExtResource("10_i2e8t")
+response = 1.0
+metadata/_custom_type_script = "uid://dc8sod06feafh"
+
+[node name="Sprint" type="Node" parent="CharacterBody3D/Player_Character/AnimatedObject" unique_id=317526860 node_paths=PackedStringArray("inputs")]
+script = ExtResource("12_x63xi")
+inputs = [NodePath("../../../SprintSwitch/InputValue"), NodePath("../Walk")]
+metadata/_custom_type_script = "uid://nege5nk1sa8u"
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D" unique_id=1061541379]
+visible = false
 mesh = SubResource("CapsuleMesh_r150o")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D/MeshInstance3D" unique_id=354130139]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9155288)
+mesh = SubResource("BoxMesh_yoq75")
 
 [node name="WallJump" type="Node" parent="CharacterBody3D" unique_id=609956102]
 script = ExtResource("4_yoq75")
@@ -38,8 +111,9 @@ script = ExtResource("5_ksbbd")
 exclusive = false
 metadata/_custom_type_script = "uid://ctf2a2d7waikj"
 
-[node name="SprintSwitch" type="Node" parent="CharacterBody3D" unique_id=737779812 node_paths=PackedStringArray("true_bit", "false_bit")]
+[node name="SprintSwitch" type="Node" parent="CharacterBody3D" unique_id=737779812 node_paths=PackedStringArray("condition", "true_bit", "false_bit")]
 script = ExtResource("5_megsn")
+condition = NodePath("InputValue")
 true_bit = NodePath("Run")
 false_bit = NodePath("Walk")
 exclusive = false
@@ -57,6 +131,24 @@ metadata/_custom_type_script = "uid://cw1ibpybypc2"
 script = ExtResource("7_yoq75")
 input_name = &"Sprint"
 metadata/_custom_type_script = "uid://ijkm2f1r0gk7"
+
+[node name="Look" type="Node" parent="CharacterBody3D" unique_id=1387901994 node_paths=PackedStringArray("from", "to")]
+script = ExtResource("8_ksbbd")
+from = NodePath("../Player_Character/AnimatedObject/Walk/MagnitudeFloat/Velocity/Property/CharacterBody")
+to = NodePath("To")
+look_x = false
+metadata/_custom_type_script = "uid://cg7bjyxfxe0nm"
+
+[node name="To" type="Node" parent="CharacterBody3D/Look" unique_id=751295854 node_paths=PackedStringArray("value_a", "value_b")]
+script = ExtResource("10_miouo")
+value_a = NodePath("PositionVector3")
+value_b = NodePath("../../Player_Character/AnimatedObject/Walk/MagnitudeFloat/Velocity")
+metadata/_custom_type_script = "uid://csvui0hqxjew2"
+
+[node name="PositionVector3" type="Node" parent="CharacterBody3D/Look/To" unique_id=818008279 node_paths=PackedStringArray("node")]
+script = ExtResource("11_o3h8g")
+node = NodePath("../../../Player_Character/AnimatedObject/Walk/MagnitudeFloat/Velocity/Property/CharacterBody")
+metadata/_custom_type_script = "uid://du30q5xpyllbv"
 
 [node name="CameraPivot" type="Node3D" parent="." unique_id=330284818]
 
