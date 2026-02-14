@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://83d86tf2bp3e"]
+
+[ext_resource type="Environment" uid="uid://cw2dt67q388wa" path="res://Assests/3D/World_Env.tres" id="1_md4b5"]
+[ext_resource type="PackedScene" uid="uid://b1f37ebgxsquf" path="res://Scenes/Player.tscn" id="2_mxu4h"]
+
+[sub_resource type="Gradient" id="Gradient_5h4s1"]
+offsets = PackedFloat32Array(0.2, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_cggds"]
+noise_type = 2
+frequency = 0.03
+cellular_jitter = 3.0
+cellular_return_type = 0
+domain_warp_enabled = true
+domain_warp_type = 1
+domain_warp_amplitude = 50.0
+domain_warp_fractal_type = 2
+domain_warp_fractal_lacunarity = 1.5
+domain_warp_fractal_gain = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_5eogo"]
+noise = SubResource("FastNoiseLite_cggds")
+color_ramp = SubResource("Gradient_5h4s1")
+seamless = true
+
+[sub_resource type="Terrain3DMaterial" id="Terrain3DMaterial_wo5al"]
+_shader_parameters = {
+&"bias_distance": 512.0,
+&"blend_sharpness": 0.5,
+&"depth_blur": 0.0,
+&"enable_macro_variation": true,
+&"enable_projection": true,
+&"flat_terrain_normals": false,
+&"macro_variation1": Color(1, 1, 1, 1),
+&"macro_variation2": Color(1, 1, 1, 1),
+&"macro_variation_slope": 0.333,
+&"mipmap_bias": 1.0,
+&"noise1_angle": 0.0,
+&"noise1_offset": Vector2(0.5, 0.5),
+&"noise1_scale": 0.04,
+&"noise2_scale": 0.076,
+&"noise_texture": SubResource("NoiseTexture2D_5eogo"),
+&"projection_threshold": 0.8
+}
+show_checkered = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vj03a"]
+transparency = 4
+cull_mode = 2
+vertex_color_use_as_albedo = true
+backlight_enabled = true
+backlight = Color(0.5, 0.5, 0.5, 1)
+distance_fade_mode = 1
+distance_fade_min_distance = 128.0
+distance_fade_max_distance = 96.0
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_pmfsj"]
+generated_type = 1
+height_offset = 0.5
+material_override = SubResource("StandardMaterial3D_vj03a")
+last_lod = 0
+last_shadow_lod = 0
+lod0_range = 128.0
+
+[sub_resource type="Terrain3DAssets" id="Terrain3DAssets_iqkbw"]
+mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_pmfsj")])
+
+[node name="Terrain" type="Node3D" unique_id=690942651]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1297846429]
+environment = ExtResource("1_md4b5")
+
+[node name="Terrain3D" type="Terrain3D" parent="." unique_id=839828304]
+data_directory = "res://Terrain/Data"
+material = SubResource("Terrain3DMaterial_wo5al")
+assets = SubResource("Terrain3DAssets_iqkbw")
+show_checkered = true
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Player" parent="." unique_id=623680313 instance=ExtResource("2_mxu4h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9899688, 0)
