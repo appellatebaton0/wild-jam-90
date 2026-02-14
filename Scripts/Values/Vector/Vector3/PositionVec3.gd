@@ -1,4 +1,4 @@
-class_name PositionVector2 extends Vector2Value
+class_name PositionVector3 extends Vector3Value
 ## Returns the position of a Node2D
 
 ## The node to use.
@@ -9,7 +9,7 @@ var real_node:Node
 
 func _ready() -> void:
 	var me = self
-	if me is Node3D:
+	if me is Node2D:
 		real_node = me
 	
 	if node == null:
@@ -18,10 +18,10 @@ func _ready() -> void:
 				node = child
 				break
 	
-func value() -> Vector2:
+func value() -> Vector3:
 	if node != null:
 		real_node = node.value()
 	if real_node is Node2D:
 		return real_node.global_position if not local else real_node.position
 	
-	return Vector2.ZERO
+	return Vector3.ZERO

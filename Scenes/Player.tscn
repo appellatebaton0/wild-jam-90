@@ -10,10 +10,16 @@
 [ext_resource type="Script" uid="uid://vjcrkxkgf2f2" path="res://Scripts/Bits/CameraFloat.gd" id="7_bhhdu"]
 [ext_resource type="Script" uid="uid://b1o48vkwquyxs" path="res://Scripts/Values/Node/ManualNode.gd" id="7_miouo"]
 [ext_resource type="Script" uid="uid://ijkm2f1r0gk7" path="res://Scripts/Values/Bool/Input.gd" id="7_yoq75"]
+[ext_resource type="Script" uid="uid://cg7bjyxfxe0nm" path="res://Scripts/Bits/Look.gd" id="8_ksbbd"]
+[ext_resource type="Script" uid="uid://csvui0hqxjew2" path="res://Scripts/Values/Vector/Vector3/OperationVec3.gd" id="10_miouo"]
+[ext_resource type="Script" uid="uid://du30q5xpyllbv" path="res://Scripts/Values/Vector/Vector3/PositionVec3.gd" id="11_o3h8g"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r150o"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_r150o"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_yoq75"]
+size = Vector3(0.2, 0.2, 0.2)
 
 [node name="Player" type="Node3D" unique_id=623680313]
 script = ExtResource("1_52ee3")
@@ -28,6 +34,10 @@ shape = SubResource("CapsuleShape3D_r150o")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D" unique_id=1061541379]
 mesh = SubResource("CapsuleMesh_r150o")
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D/MeshInstance3D" unique_id=354130139]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9155288)
+mesh = SubResource("BoxMesh_yoq75")
+
 [node name="WallJump" type="Node" parent="CharacterBody3D" unique_id=609956102]
 script = ExtResource("4_yoq75")
 exclusive = false
@@ -38,8 +48,9 @@ script = ExtResource("5_ksbbd")
 exclusive = false
 metadata/_custom_type_script = "uid://ctf2a2d7waikj"
 
-[node name="SprintSwitch" type="Node" parent="CharacterBody3D" unique_id=737779812 node_paths=PackedStringArray("true_bit", "false_bit")]
+[node name="SprintSwitch" type="Node" parent="CharacterBody3D" unique_id=737779812 node_paths=PackedStringArray("condition", "true_bit", "false_bit")]
 script = ExtResource("5_megsn")
+condition = NodePath("InputValue")
 true_bit = NodePath("Run")
 false_bit = NodePath("Walk")
 exclusive = false
@@ -57,6 +68,28 @@ metadata/_custom_type_script = "uid://cw1ibpybypc2"
 script = ExtResource("7_yoq75")
 input_name = &"Sprint"
 metadata/_custom_type_script = "uid://ijkm2f1r0gk7"
+
+[node name="Look" type="Node" parent="CharacterBody3D" unique_id=1387901994]
+script = ExtResource("8_ksbbd")
+metadata/_custom_type_script = "uid://cg7bjyxfxe0nm"
+
+[node name="From" type="Node" parent="CharacterBody3D/Look" unique_id=1901837766 node_paths=PackedStringArray("response")]
+script = ExtResource("7_miouo")
+response = NodePath("../..")
+metadata/_custom_type_script = "uid://b1o48vkwquyxs"
+
+[node name="OperationVector3" type="Node" parent="CharacterBody3D/Look" unique_id=751295854]
+script = ExtResource("10_miouo")
+metadata/_custom_type_script = "uid://csvui0hqxjew2"
+
+[node name="PositionVector3" type="Node" parent="CharacterBody3D/Look/OperationVector3" unique_id=1448033165]
+script = ExtResource("11_o3h8g")
+metadata/_custom_type_script = "uid://du30q5xpyllbv"
+
+[node name="ManualNode" type="Node" parent="CharacterBody3D/Look/OperationVector3/PositionVector3" unique_id=27052525 node_paths=PackedStringArray("response")]
+script = ExtResource("7_miouo")
+response = NodePath("../../../..")
+metadata/_custom_type_script = "uid://b1o48vkwquyxs"
 
 [node name="CameraPivot" type="Node3D" parent="." unique_id=330284818]
 
