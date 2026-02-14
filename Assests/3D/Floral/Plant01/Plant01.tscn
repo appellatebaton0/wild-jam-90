@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://ckp2afucdueft"]
+
+[ext_resource type="PackedScene" uid="uid://bck1t1cgq6f44" path="res://Assests/3D/Floral/Plant002.glb" id="1_k33bg"]
+
+[node name="Node3D" type="Node3D" unique_id=1192245602]
+
+[node name="Plant002" parent="." unique_id=617542142 instance=ExtResource("1_k33bg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.047465444, -1.1920929e-07, 0.018429756)
