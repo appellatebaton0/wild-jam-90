@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://c204flwd66u5m"]
+
+[ext_resource type="PackedScene" uid="uid://b45gct4pd6t4r" path="res://Assests/3D/Floral/Grass01.glb" id="1_2qyn6"]
+
+[node name="Node3D" type="Node3D" unique_id=853582654]
+transform = Transform3D(0.036417015, 0.99933666, 0, -0.99933666, 0.036417015, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Grass01" parent="." unique_id=1575125641 instance=ExtResource("1_2qyn6")]
+transform = Transform3D(0.65966254, 0.0033043877, 5.8250794e-06, -0.0033043919, 0.65966153, 0.0011628569, -3.2034618e-13, -0.0011628715, 0.65966976, 0.011324048, 0, -0.004503373)
