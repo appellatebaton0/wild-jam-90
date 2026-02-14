@@ -22,6 +22,7 @@
 [ext_resource type="Script" uid="uid://csvui0hqxjew2" path="res://Scripts/Values/Vector/Vector3/OperationVec3.gd" id="10_miouo"]
 [ext_resource type="Script" uid="uid://du30q5xpyllbv" path="res://Scripts/Values/Vector/Vector3/PositionVec3.gd" id="11_o3h8g"]
 [ext_resource type="Script" uid="uid://nege5nk1sa8u" path="res://Scripts/Values/Bool/And.gd" id="12_x63xi"]
+[ext_resource type="Shader" uid="uid://7x40gwinm2ws" path="res://Scripts/Shaders/Outline.gdshader" id="23_qidb7"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r150o"]
 
@@ -29,6 +30,47 @@
 
 [sub_resource type="BoxMesh" id="BoxMesh_yoq75"]
 size = Vector3(0.2, 0.2, 0.2)
+
+[sub_resource type="Curve" id="Curve_i2e8t"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.04494381), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_qidb7"]
+curve = SubResource("Curve_i2e8t")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8flut"]
+emission_shape = 1
+emission_sphere_radius = 0.45
+direction = Vector3(0, -1, 0)
+spread = 52.75
+gravity = Vector3(0.845, 3.995, 0)
+scale_min = 0.01
+scale_max = 0.38
+scale_curve = SubResource("CurveTexture_qidb7")
+turbulence_enabled = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i2e8t"]
+render_priority = 0
+shader = ExtResource("23_qidb7")
+shader_parameter/scale = 3.8
+shader_parameter/outline_spread = 1.0
+shader_parameter/_Color = Color(0.1882353, 0, 0.011764706, 1)
+shader_parameter/_DepthNormalThreshold = 0.1
+shader_parameter/_DepthNormalThresholdScale = 3.0
+shader_parameter/_DepthThreshold = 1.5
+shader_parameter/_NormalThreshold = 2.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qidb7"]
+next_pass = SubResource("ShaderMaterial_i2e8t")
+albedo_color = Color(0.76862746, 0.3529412, 0.12941177, 1)
+emission_enabled = true
+emission = Color(0.7990546, 0.27529004, 0.024579797, 1)
+emission_energy_multiplier = 13.69
+
+[sub_resource type="SphereMesh" id="SphereMesh_utwlt"]
+material = SubResource("StandardMaterial3D_qidb7")
+radius = 0.16
+height = 0.275
 
 [node name="Player" type="Node3D" unique_id=623680313]
 script = ExtResource("1_52ee3")
@@ -176,3 +218,12 @@ target = NodePath("ManualNode")
 script = ExtResource("7_miouo")
 response = NodePath("../../Camera3D")
 metadata/_custom_type_script = "uid://b1o48vkwquyxs"
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1754372885]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4566363, 0.0218575)
+amount = 16
+preprocess = 1.07
+speed_scale = 0.2
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_8flut")
+draw_pass_1 = SubResource("SphereMesh_utwlt")

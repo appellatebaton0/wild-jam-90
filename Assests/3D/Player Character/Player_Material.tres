@@ -1,0 +1,42 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://d2pn05mwsycy2"]
+
+[ext_resource type="Shader" uid="uid://7x40gwinm2ws" path="res://Scripts/Shaders/Outline.gdshader" id="1_87dnx"]
+[ext_resource type="Shader" uid="uid://bnwypo8hvb848" path="res://Scripts/Shaders/new_shader.gdshader" id="2_clyyt"]
+[ext_resource type="Texture2D" uid="uid://eh18bhmb7u4j" path="res://Assests/3D/Player Character/PC_Main_DefaultMaterial_BaseColor.png" id="3_prj4w"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o8rlf"]
+render_priority = 0
+shader = ExtResource("1_87dnx")
+shader_parameter/scale = 3.825
+shader_parameter/outline_spread = 1.0
+shader_parameter/_Color = Color(0.15778324, 0, 0.010870922, 1)
+shader_parameter/_DepthNormalThreshold = 0.1
+shader_parameter/_DepthNormalThresholdScale = 3.0
+shader_parameter/_DepthThreshold = 1.5
+shader_parameter/_NormalThreshold = 2.0
+
+[resource]
+render_priority = 0
+next_pass = SubResource("ShaderMaterial_o8rlf")
+shader = ExtResource("2_clyyt")
+shader_parameter/albedo_color = Color(1, 1, 1, 1)
+shader_parameter/albedo_texture = ExtResource("3_prj4w")
+shader_parameter/use_stepped = true
+shader_parameter/steps = 3.0
+shader_parameter/step_smoothness = 1.0
+shader_parameter/shadow_tint = Color(0.5105192, 0.059563078, 0.16409326, 1)
+shader_parameter/shadow_tint_amount = 1.0
+shader_parameter/specular = 0.0
+shader_parameter/normal_strength = 0.0
+shader_parameter/use_rim = true
+shader_parameter/rim_color = Color(1, 1, 1, 1)
+shader_parameter/rim_amount = 2.0
+shader_parameter/rim_smoothness = 0.2
+shader_parameter/rim_mask_shadow = 1.0
+shader_parameter/rim_blend = 1.0
+shader_parameter/use_pattern = false
+shader_parameter/pattern_uv_mode = 2
+shader_parameter/pattern_tiling = 32.0
+shader_parameter/pattern_amount = 0.5
+shader_parameter/pattern_smoothness = 0.5
+shader_parameter/pattern_blend = 0.2

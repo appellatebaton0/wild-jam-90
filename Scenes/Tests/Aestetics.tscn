@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://q0igvpn6gdl4"]
+
+[ext_resource type="PackedScene" uid="uid://b1f37ebgxsquf" path="res://Scenes/Player.tscn" id="1_jqpxa"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_jqpxa"]
+rayleigh_coefficient = 13.49
+turbidity = 0.0
+
+[sub_resource type="Sky" id="Sky_x3lnf"]
+sky_material = SubResource("PhysicalSkyMaterial_jqpxa")
+
+[sub_resource type="Environment" id="Environment_jqpxa"]
+sky = SubResource("Sky_x3lnf")
+ambient_light_source = 2
+ambient_light_color = Color(0.6665633, 0.255311, 0.34264275, 1)
+ambient_light_energy = 1.16
+reflected_light_source = 2
+tonemap_mode = 3
+tonemap_exposure = 1.52
+tonemap_white = 4.05
+glow_enabled = true
+glow_intensity = 0.5
+glow_bloom = 0.2
+fog_enabled = true
+fog_light_energy = 0.05
+fog_density = 0.0075
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.002
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x3lnf"]
+albedo_color = Color(0.25908774, 0.2494131, 0.20777938, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_acy8v"]
+material = SubResource("StandardMaterial3D_x3lnf")
+size = Vector2(66.07, 59.98)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_tepox"]
+data = PackedVector3Array(33.035, 0, 29.99, -33.035, 0, 29.99, 33.035, 0, -29.99, -33.035, 0, 29.99, -33.035, 0, -29.99, 33.035, 0, -29.99)
+
+[node name="Node3D" type="Node3D" unique_id=949972137]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1959530383]
+environment = SubResource("Environment_jqpxa")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=420998825]
+
+[node name="Player" parent="." unique_id=623680313 instance=ExtResource("1_jqpxa")]
+transform = Transform3D(-0.99994606, 0, -0.010384524, 0, 1, 0, 0.010384524, 0, -0.99994606, 0, 0.9805958, 0)
+
+[node name="World Plane" type="MeshInstance3D" parent="." unique_id=351323967]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.028514385, 0)
+mesh = SubResource("PlaneMesh_acy8v")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World Plane" unique_id=286953544]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World Plane/StaticBody3D" unique_id=1730733579]
+shape = SubResource("ConcavePolygonShape3D_tepox")
