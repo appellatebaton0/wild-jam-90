@@ -1,0 +1,39 @@
+class_name OperationVector3 extends Vector3Value
+## Returns the result of an operation between two Vector3Values
+
+## The first value in the operation.
+@export var value_a:Vector3Value
+## The second value in the operation
+@export var value_b:Vector3Value
+
+enum operations{
+	ADD, ## Adds the values together.
+	SUBTRACT, ## Subtracts b from a.
+	DIVIDE, ## Divides a by b.
+	MULTIPLY, ## Multiplies the values by each other.
+}
+@export var operation := operations.ADD
+
+func _ready() -> void:
+	for child in get_children():
+		if child is Vector3Value:
+			if value_a == null:
+				value_a = child
+			elif value_b == null:
+				value_b = child
+
+func value() -> Vector3:
+	if value_a != null and value_b != null:
+		var a := value_a.value()
+		var b := value_b.value()
+		
+		match operation:
+			operations.ADD:
+				return a + b
+			operations.SUBTRACT:
+				return a - b
+			operations.DIVIDE:
+				return a / b
+			operations.MULTIPLY:
+				return a * b
+	return Vector3.ZERO
