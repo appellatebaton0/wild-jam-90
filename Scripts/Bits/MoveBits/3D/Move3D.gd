@@ -3,8 +3,10 @@
 
 ## The state machine this belongs to.
 @onready var master:MoveMasterBit3D = get_master()
-func get_master() -> MoveMasterBit3D:
-	var parent = get_parent()
+func get_master(with:Node = self, depth := 3) -> MoveMasterBit3D:
+	if depth == 0: return null
+	
+	var parent = with.get_parent()
 	
 	if parent is MoveMasterBit3D:
 		return parent
@@ -13,7 +15,7 @@ func get_master() -> MoveMasterBit3D:
 		if child is MoveMasterBit3D:
 			return child
 	
-	return null
+	return get_master(parent, depth - 1)
 
 func vec3_move_towards(from:Vector3, to:Vector3, delta:float):
 	return Vector3(move_toward(from.x, to.x, delta), move_toward(from.y, to.y, delta), move_toward(from.z, to.z, delta))

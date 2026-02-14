@@ -78,6 +78,3 @@ func phys_active(delta:float) -> void:
 		
 		master.mover.velocity.x = move_toward(master.mover.velocity.x, 0, current_friction * delta)
 		master.mover.velocity.z = move_toward(master.mover.velocity.z, 0, current_friction * delta)
-		
-func phys_inactive(_delta:float) -> void:
-	pass
