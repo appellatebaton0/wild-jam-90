@@ -19,12 +19,12 @@ func get_move_bits() -> Array[MoveBit]:
 	
 	# Append any children that are MoveBits.
 	for child in get_children():
-		if child is MoveBit:
+		if child is MoveBit: if not child.isolated:
 			response_bits.append(child)
 	
 	# Append any siblings that are MoveBits.
 	for child in get_parent().get_children():
-		if child is MoveBit:
+		if child is MoveBit: if not child.isolated:
 			response_bits.append(child)
 	
 	return response_bits
