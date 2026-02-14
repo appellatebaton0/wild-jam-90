@@ -28,12 +28,8 @@ func value() -> Vector3:
 		var b := value_b.value()
 		
 		match operation:
-			operations.ADD:
-				return a + b
-			operations.SUBTRACT:
-				return a - b
-			operations.DIVIDE:
-				return a / b
-			operations.MULTIPLY:
-				return a * b
+			operations.ADD:      return a + b
+			operations.SUBTRACT: return a - b
+			operations.DIVIDE:   return a / b
+			operations.MULTIPLY: return a * b
 	return Vector3.ZERO
