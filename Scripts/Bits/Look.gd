@@ -18,6 +18,8 @@ class_name LookBit extends Bit
 @export var look_y := true
 @export var look_z := true
 
+@export var to_is_local := true
+
 func vec3_rad_to_deg(a:Vector3) -> Vector3:
 	return Vector3(rad_to_deg(a.x),rad_to_deg(a.y),rad_to_deg(a.z))
 
@@ -33,6 +35,7 @@ func _process(delta: float) -> void:
 	if from != null and to != null:
 		var f_node = from.value()
 		var t_pos = to.value()
+		if to_is_local: t_pos = f_node.to_local(t_pos)
 		
 		if f_node is Node3D:
 			if t_pos is Vector3:

@@ -16,12 +16,10 @@
 [ext_resource type="Script" uid="uid://b1o48vkwquyxs" path="res://Scripts/Values/Node/ManualNode.gd" id="7_miouo"]
 [ext_resource type="Script" uid="uid://ijkm2f1r0gk7" path="res://Scripts/Values/Bool/Input.gd" id="7_yoq75"]
 [ext_resource type="Script" uid="uid://crs0ppnbatoph" path="res://Scripts/Values/Vector/Vector3/CastVec3.gd" id="8_5v66d"]
-[ext_resource type="Script" uid="uid://cg7bjyxfxe0nm" path="res://Scripts/Bits/Look.gd" id="8_ksbbd"]
 [ext_resource type="Script" uid="uid://d7n7ctdl2nsg" path="res://Scripts/Values/Property.gd" id="8_x63xi"]
 [ext_resource type="Script" uid="uid://dc8sod06feafh" path="res://Scripts/Values/Float/ManualFloat.gd" id="10_i2e8t"]
-[ext_resource type="Script" uid="uid://csvui0hqxjew2" path="res://Scripts/Values/Vector/Vector3/OperationVec3.gd" id="10_miouo"]
-[ext_resource type="Script" uid="uid://du30q5xpyllbv" path="res://Scripts/Values/Vector/Vector3/PositionVec3.gd" id="11_o3h8g"]
 [ext_resource type="Script" uid="uid://nege5nk1sa8u" path="res://Scripts/Values/Bool/And.gd" id="12_x63xi"]
+[ext_resource type="Script" uid="uid://dpx1s1lrqrp1w" path="res://Scripts/Bits/VelocityLook.gd" id="18_5v66d"]
 [ext_resource type="Shader" uid="uid://7x40gwinm2ws" path="res://Scripts/Shaders/Outline.gdshader" id="23_qidb7"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r150o"]
@@ -86,7 +84,7 @@ shape = SubResource("CapsuleShape3D_r150o")
 [node name="Player_Character" parent="CharacterBody3D" unique_id=1831994608 instance=ExtResource("3_o3h8g")]
 transform = Transform3D(-0.5941662, 0, -5.1943662e-08, 0, 0.5941662, 0, 5.1943662e-08, 0, -0.5941662, 0, -0.9654732, 0)
 
-[node name="AnimatedObject" type="Node" parent="CharacterBody3D/Player_Character" unique_id=247797212 node_paths=PackedStringArray("target", "condition_switches")]
+[node name="AnimationControl" type="Node" parent="CharacterBody3D/Player_Character" unique_id=247797212 node_paths=PackedStringArray("target", "condition_switches")]
 script = ExtResource("4_1e7my")
 target = NodePath("..")
 condition_switches = {
@@ -96,42 +94,42 @@ condition_switches = {
 }
 metadata/_custom_type_script = "uid://m2g8fsn261kv"
 
-[node name="Idle" type="Node" parent="CharacterBody3D/Player_Character/AnimatedObject" unique_id=1793585481]
+[node name="Idle" type="Node" parent="CharacterBody3D/Player_Character/AnimationControl" unique_id=1793585481]
 script = ExtResource("5_lslt6")
 metadata/_custom_type_script = "uid://cox1ysk6bulx2"
 
-[node name="Walk" type="Node" parent="CharacterBody3D/Player_Character/AnimatedObject" unique_id=1967764397 node_paths=PackedStringArray("value_a", "value_b")]
+[node name="Walk" type="Node" parent="CharacterBody3D/Player_Character/AnimationControl" unique_id=1967764397 node_paths=PackedStringArray("value_a", "value_b")]
 script = ExtResource("6_m0x7a")
 value_a = NodePath("MagnitudeFloat")
 inequality = 2
 value_b = NodePath("ManualFloat")
 metadata/_custom_type_script = "uid://cbcstrsy2txwl"
 
-[node name="MagnitudeFloat" type="Node" parent="CharacterBody3D/Player_Character/AnimatedObject/Walk" unique_id=1041114183 node_paths=PackedStringArray("vec3")]
+[node name="MagnitudeFloat" type="Node" parent="CharacterBody3D/Player_Character/AnimationControl/Walk" unique_id=1041114183 node_paths=PackedStringArray("vec3")]
 script = ExtResource("7_5v66d")
 vec3 = NodePath("Velocity")
 metadata/_custom_type_script = "uid://ctol2bsqyal5x"
 
-[node name="Velocity" type="Node" parent="CharacterBody3D/Player_Character/AnimatedObject/Walk/MagnitudeFloat" unique_id=1729265745]
+[node name="Velocity" type="Node" parent="CharacterBody3D/Player_Character/AnimationControl/Walk/MagnitudeFloat" unique_id=1729265745]
 script = ExtResource("8_5v66d")
 metadata/_custom_type_script = "uid://crs0ppnbatoph"
 
-[node name="Property" type="Node" parent="CharacterBody3D/Player_Character/AnimatedObject/Walk/MagnitudeFloat/Velocity" unique_id=2046172825]
+[node name="Property" type="Node" parent="CharacterBody3D/Player_Character/AnimationControl/Walk/MagnitudeFloat/Velocity" unique_id=2046172825]
 script = ExtResource("8_x63xi")
 property = "velocity"
 metadata/_custom_type_script = "uid://d7n7ctdl2nsg"
 
-[node name="CharacterBody" type="Node" parent="CharacterBody3D/Player_Character/AnimatedObject/Walk/MagnitudeFloat/Velocity/Property" unique_id=1593262706 node_paths=PackedStringArray("response")]
+[node name="CharacterBody" type="Node" parent="CharacterBody3D/Player_Character/AnimationControl/Walk/MagnitudeFloat/Velocity/Property" unique_id=1593262706 node_paths=PackedStringArray("response")]
 script = ExtResource("7_miouo")
 response = NodePath("../../../../../../..")
 metadata/_custom_type_script = "uid://b1o48vkwquyxs"
 
-[node name="ManualFloat" type="Node" parent="CharacterBody3D/Player_Character/AnimatedObject/Walk" unique_id=1891625907]
+[node name="ManualFloat" type="Node" parent="CharacterBody3D/Player_Character/AnimationControl/Walk" unique_id=1891625907]
 script = ExtResource("10_i2e8t")
 response = 1.0
 metadata/_custom_type_script = "uid://dc8sod06feafh"
 
-[node name="Sprint" type="Node" parent="CharacterBody3D/Player_Character/AnimatedObject" unique_id=317526860 node_paths=PackedStringArray("inputs")]
+[node name="Sprint" type="Node" parent="CharacterBody3D/Player_Character/AnimationControl" unique_id=317526860 node_paths=PackedStringArray("inputs")]
 script = ExtResource("12_x63xi")
 inputs = [NodePath("../../../SprintSwitch/InputValue"), NodePath("../Walk")]
 metadata/_custom_type_script = "uid://nege5nk1sa8u"
@@ -157,17 +155,26 @@ metadata/_custom_type_script = "uid://ctf2a2d7waikj"
 [node name="SprintSwitch" type="Node" parent="CharacterBody3D" unique_id=737779812 node_paths=PackedStringArray("condition", "true_bit", "false_bit")]
 script = ExtResource("5_megsn")
 condition = NodePath("InputValue")
-true_bit = NodePath("Run")
+true_bit = NodePath("Sprint")
 false_bit = NodePath("Walk")
 exclusive = false
 
 [node name="Walk" type="Node" parent="CharacterBody3D/SprintSwitch" unique_id=409108400]
 script = ExtResource("3_megsn")
+horizontal_acceleration = 70.0
+horizontal_air_acceleration = 50.0
+horizontal_max_speed = 7.0
+horizontal_friction = 110.0
+horizontal_air_friction = 70.0
 metadata/_custom_type_script = "uid://cw1ibpybypc2"
 
-[node name="Run" type="Node" parent="CharacterBody3D/SprintSwitch" unique_id=2138443987]
+[node name="Sprint" type="Node" parent="CharacterBody3D/SprintSwitch" unique_id=2138443987]
 script = ExtResource("3_megsn")
+horizontal_acceleration = 80.0
+horizontal_air_acceleration = 60.0
 horizontal_max_speed = 20.0
+horizontal_friction = 75.0
+horizontal_air_friction = 40.0
 metadata/_custom_type_script = "uid://cw1ibpybypc2"
 
 [node name="InputValue" type="Node" parent="CharacterBody3D/SprintSwitch" unique_id=1443714533]
@@ -175,25 +182,8 @@ script = ExtResource("7_yoq75")
 input_name = &"Sprint"
 metadata/_custom_type_script = "uid://ijkm2f1r0gk7"
 
-[node name="Look" type="Node" parent="CharacterBody3D" unique_id=1387901994 node_paths=PackedStringArray("from", "to")]
-script = ExtResource("8_ksbbd")
-from = NodePath("../Player_Character/AnimatedObject/Walk/MagnitudeFloat/Velocity/Property/CharacterBody")
-to = NodePath("To")
-look_x = false
-look_y = false
-look_z = false
-metadata/_custom_type_script = "uid://cg7bjyxfxe0nm"
-
-[node name="To" type="Node" parent="CharacterBody3D/Look" unique_id=751295854 node_paths=PackedStringArray("value_a", "value_b")]
-script = ExtResource("10_miouo")
-value_a = NodePath("PositionVector3")
-value_b = NodePath("../../Player_Character/AnimatedObject/Walk/MagnitudeFloat/Velocity")
-metadata/_custom_type_script = "uid://csvui0hqxjew2"
-
-[node name="PositionVector3" type="Node" parent="CharacterBody3D/Look/To" unique_id=818008279 node_paths=PackedStringArray("node")]
-script = ExtResource("11_o3h8g")
-node = NodePath("../../../Player_Character/AnimatedObject/Walk/MagnitudeFloat/Velocity/Property/CharacterBody")
-metadata/_custom_type_script = "uid://du30q5xpyllbv"
+[node name="FaceVelocity" type="Node" parent="CharacterBody3D" unique_id=287165018]
+script = ExtResource("18_5v66d")
 
 [node name="CameraPivot" type="Node3D" parent="." unique_id=330284818]
 
@@ -202,7 +192,7 @@ transform = Transform3D(1, 0, 0, 0, 0.93664163, 0.3502891, 0, -0.3502891, 0.9366
 script = ExtResource("6_glx4g")
 y_target = NodePath("../Pivot")
 x_target = NodePath("../Pivot")
-x_clamp = Vector2(0, 0)
+x_clamp = Vector2(-50, 90)
 must_be_captured = false
 isolated = true
 

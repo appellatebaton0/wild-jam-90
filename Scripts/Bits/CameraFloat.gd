@@ -9,7 +9,7 @@ func _ready() -> void:
 		var me = self
 		if me is RayCast3D: ray = me
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var targ:Node3D = target.value()
 	
 	# Set the target position to the point the ray hits if there is one, otherwise as far out as it goes.

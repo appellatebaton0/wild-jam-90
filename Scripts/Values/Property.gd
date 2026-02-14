@@ -14,7 +14,7 @@ func _ready() -> void:
 func value() -> Variant:
 	if property != null and from != null:
 		
-		# If it's a call return the call.
+		# If it's a call, call that and return it instead of returning the callable itself.
 		if "()" in property:
 			return from.value().call(property.replace("()", ""))
 		
