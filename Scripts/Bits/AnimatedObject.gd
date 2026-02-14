@@ -11,10 +11,7 @@ func _process(_delta: float) -> void:
 	var left = condition_switches.duplicate()
 	
 	while len(left) > 0:
-		
 		for priority in left: if priority <= check:
-			
-		
 			if left[priority].value():
 				target.movement_state = left[priority].name
 			left.erase(priority)

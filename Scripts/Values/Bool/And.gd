@@ -14,10 +14,7 @@ func value() -> bool:
 	
 	for input in inputs:
 		if not input.value():
-			print(input, false)
 			valid = false
-	
-	print(valid)
 	
 	return valid
 	

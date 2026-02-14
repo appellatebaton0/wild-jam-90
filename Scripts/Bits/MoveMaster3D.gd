@@ -10,6 +10,8 @@ class_name MoveMasterBit3D extends Bit
 @export var initial_bit:MoveBit
 var current_bit:MoveBit
 
+var direction:Vector3
+
 ## All the childed bits.
 @onready var bits:Array[MoveBit] = get_move_bits()
 func get_move_bits() -> Array[MoveBit]:
