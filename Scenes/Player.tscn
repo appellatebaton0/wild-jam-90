@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://cj3ygyynwwo0q" path="res://Assests/3D/Player Character/player_character.tscn" id="3_o3h8g"]
 [ext_resource type="Script" uid="uid://m2g8fsn261kv" path="res://Scripts/Bits/AnimatedObject.gd" id="4_1e7my"]
 [ext_resource type="Script" uid="uid://4otg5dsd8uso" path="res://Scripts/Bits/MoveBits/3D/ControlBits/WallJump.gd" id="4_yoq75"]
-[ext_resource type="Script" uid="uid://ctf2a2d7waikj" path="res://Scripts/Bits/MoveBits/3D/ControlBits/WallSlide.gd" id="5_ksbbd"]
 [ext_resource type="Script" uid="uid://cox1ysk6bulx2" path="res://Scripts/Values/Bool/Manual.gd" id="5_lslt6"]
 [ext_resource type="Script" uid="uid://nsahhp627l3l" path="res://Scripts/Bits/MoveBits/Switch.gd" id="5_megsn"]
 [ext_resource type="Script" uid="uid://djhmxrvyb8qik" path="res://Scripts/Bits/Camera3D.gd" id="6_glx4g"]
@@ -203,11 +202,6 @@ metadata/_custom_type_script = "uid://bcg6hjtowf1lj"
 script = ExtResource("4_yoq75")
 exclusive = false
 metadata/_custom_type_script = "uid://4otg5dsd8uso"
-
-[node name="WallRun" type="Node" parent="CharacterBody3D" unique_id=731640399]
-script = ExtResource("5_ksbbd")
-exclusive = false
-metadata/_custom_type_script = "uid://ctf2a2d7waikj"
 
 [node name="FaceVelocity" type="Node" parent="CharacterBody3D" unique_id=1442225657]
 script = ExtResource("18_5v66d")

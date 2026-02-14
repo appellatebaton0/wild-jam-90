@@ -1,4 +1,4 @@
-class_name WallClimb extends MoveBit3D
+class_name WallClimb extends ControlBit3D
 ## Allows a controllable Bot to dash up a wall.
 
 @export var input:InputValue ## The input that activates the dash.
@@ -14,20 +14,25 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func phys_active(delta:float) -> void:
-	if input:
-		if input.value(): _on_input_pressed(delta)
-	else: _on_input_pressed(delta)
-
-func _on_input_pressed(delta:float) -> void: if master.mover.is_on_wall_only():
+	## Get the input direction.
+	var direction = Input.get_vector(inputs[inp.left], inputs[inp.right], inputs[inp.backwards], inputs[inp.forwards])
 	
-	## Climb.
-	master.mover.velocity.y = max(master.mover.velocity.y, climb_speed * delta)
+	## Rotate the direction to face the direction the player is facing (into the wall, because of VelocityLook).
 	
-	## Stick to the wall while climbing.
-	var vel = -master.mover.get_wall_normal() * 10
-
-	master.mover.velocity.x = vel.x
-	master.mover.velocity.z = vel.z
+	direction = Vector3(direction.x, direction.y, 0).rotated(Vector3.UP, master.mover.rotation.y)
 	
-	#master.mover.velocity.x = -master.mover.get_wall_normal().x
+	master.mover.velocity = direction * climb_speed * delta
 	
+	### Stick to the wall while climbing.
+	if not Input.is_action_pressed(inputs[inp.up]):
+		var vel = absmax(-master.mover.get_wall_normal() * 10, master.mover.velocity)
+		
+		master.mover.velocity.x = vel.x
+		master.mover.velocity.z = vel.z
+	
+func absmax(a:Vector3, b:Vector3) -> Vector3:
+	if abs(a.x) > abs(b.x): b.x = a.x
+	if abs(a.y) > abs(b.y): b.y = a.y
+	if abs(a.z) > abs(b.z): b.z = a.z
+	
+	return b
