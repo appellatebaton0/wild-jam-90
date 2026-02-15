@@ -100,6 +100,7 @@ Grab={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+anti_aliasing/quality/screen_space_aa=1
 
 [shader_globals]
 
@@ -114,4 +115,8 @@ wind_direction={
 wind_speed={
 "type": "float",
 "value": 0.15
+}
+player_position={
+"type": "vec3",
+"value": Vector3(0, 0, 0)
 }

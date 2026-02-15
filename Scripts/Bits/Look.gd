@@ -49,6 +49,8 @@ func _process(delta: float) -> void:
 				
 				# Get the desired ending rotation
 				if not f_node.global_position.cross(t_pos).is_zero_approx() and t_pos != f_node.global_position:
+					if is_equal_approx(1.0, abs(t_pos - f_node.global_position).dot(Vector3.UP)):
+						return
 					f_node.look_at(t_pos)
 				var look_rotation = f_node.rotation
 				f_node.rotation = regular_rotation

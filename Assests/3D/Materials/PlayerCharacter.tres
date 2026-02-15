@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://eh18bhmb7u4j" path="res://Assests/3D/Player Character/PC_Main_DefaultMaterial_BaseColor.png" id="2_8xx8t"]
 [ext_resource type="Texture2D" uid="uid://cmuroajp4f1bs" path="res://Assests/3D/Player Character/character_emission.png" id="3_8xx8t"]
 [ext_resource type="Texture2D" uid="uid://dh73yovkqmnsi" path="res://Assests/3D/Player Character/VertexFireMask.png" id="4_442mn"]
+[ext_resource type="Texture2D" uid="uid://bpltfdun1niuo" path="res://Assests/3D/Player Character/FireMask.png" id="5_cn4aq"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_8xx8t"]
 fractal_lacunarity = 1.5
@@ -27,9 +28,14 @@ shader_parameter/albedo_texture = ExtResource("2_8xx8t")
 shader_parameter/emission_texture = ExtResource("3_8xx8t")
 shader_parameter/emission_noise = SubResource("NoiseTexture2D_442mn")
 shader_parameter/vertex_fire_mask = ExtResource("4_442mn")
+shader_parameter/fire_mask = ExtResource("5_cn4aq")
+shader_parameter/extinguish = 0.0
 shader_parameter/emission_strength = 1.0
-shader_parameter/vertex_fire_direction = Vector3(0, 1, 0)
-shader_parameter/vertex_fire_strength = 0.872627628936915
+shader_parameter/warble_strength = 0.125
+shader_parameter/warble_speed = 1.0
+shader_parameter/vertex_fire_direction = Vector3(-1e-45, 1, -1e-45)
+shader_parameter/vertex_fire_strength = 0.75
+shader_parameter/extinguished_color = Color(0.053443767, 0.030874144, 0.1506052, 1)
 shader_parameter/fire_color = Color(0.98763436, 0.60049784, 0, 1)
 shader_parameter/fire_strength = 3.0
 shader_parameter/fire_center = 0.5

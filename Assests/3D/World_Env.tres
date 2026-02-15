@@ -9,7 +9,7 @@ gradient = SubResource("Gradient_qwnw3")
 
 [resource]
 ambient_light_source = 3
-ambient_light_color = Color(0.20500365, 0.43329167, 0.5806827, 1)
+ambient_light_color = Color(0.18599513, 0.3263498, 0.34415233, 1)
 ambient_light_sky_contribution = 0.0
 ambient_light_energy = 4.0
 reflected_light_source = 2
