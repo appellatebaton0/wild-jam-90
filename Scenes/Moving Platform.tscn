@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://s24uwpwyoxpy"]
+
+[ext_resource type="Script" uid="uid://dry7dkg7601jo" path="res://Scripts/Bits/Reactors/MovingPlatform.gd" id="1_50vvo"]
+[ext_resource type="Script" uid="uid://w0g2u1stumau" path="res://Scripts/Values/Bool/Cast.gd" id="2_6dlwl"]
+[ext_resource type="Script" uid="uid://d7n7ctdl2nsg" path="res://Scripts/Values/Property.gd" id="3_gncxb"]
+[ext_resource type="Script" uid="uid://b1o48vkwquyxs" path="res://Scripts/Values/Node/ManualNode.gd" id="4_65kke"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ojx1s"]
+size = Vector3(5, 1, 7)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pfx0k"]
+size = Vector3(5, 1, 7)
+
+[node name="Node3D" type="Node3D" unique_id=1782230950]
+
+[node name="MP" type="CharacterBody3D" parent="." unique_id=1786519496 node_paths=PackedStringArray("points", "condition")]
+script = ExtResource("1_50vvo")
+points = [NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath("")]
+condition = NodePath("CastBool")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MP" unique_id=426933729]
+mesh = SubResource("BoxMesh_ojx1s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MP" unique_id=1693442782]
+shape = SubResource("BoxShape3D_pfx0k")
+
+[node name="CastBool" type="Node" parent="MP" unique_id=929822954]
+script = ExtResource("2_6dlwl")
+metadata/_custom_type_script = "uid://w0g2u1stumau"
+
+[node name="Property" type="Node" parent="MP/CastBool" unique_id=1262863316]
+script = ExtResource("3_gncxb")
+property = "held_by"
+metadata/_custom_type_script = "uid://d7n7ctdl2nsg"
+
+[node name="ManualNode" type="Node" parent="MP/CastBool/Property" unique_id=108798314 node_paths=PackedStringArray("response")]
+script = ExtResource("4_65kke")
+response = NodePath("")
+metadata/_custom_type_script = "uid://b1o48vkwquyxs"
