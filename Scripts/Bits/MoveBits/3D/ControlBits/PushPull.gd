@@ -1,4 +1,4 @@
-class_name PushPullBit3D extends ControlBit3D
+class_name PushPullBit3D extends MoveBit3D
 ## Allows for pushing and pulling objects like crates, OOT styling.
 
 @export var input_name:StringName
@@ -32,7 +32,6 @@ func phys_active(_delta:float) -> void:
 		var obj = ray.get_collider()
 		
 		if not holding: # Pick up something.
-			
 			if obj is CrateBit:
 				holding = obj
 				
@@ -40,11 +39,7 @@ func phys_active(_delta:float) -> void:
 		
 		else: # Keep holding something.
 			ray.target_position.z = -1.5
-			
-			# Pushing forwards - if the box is too close, applies an impulse to space it out.
-			if mag(master.mover.global_position - ray.get_collision_point()) < 1.5:
-				holding.apply_central_impulse(master.mover.global_position.direction_to(holding.global_position) * 1.75)
-			
+
 	elif holding: # Put something down.
 		holding.held_by = null
 		holding = null

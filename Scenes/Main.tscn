@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://dw7w6pry2g435" path="res://Scripts/Bits/PlayerAnimator.gd" id="3_rgh2o"]
 [ext_resource type="Script" uid="uid://dekpk8relyucb" path="res://Scripts/Bits/Input.gd" id="4_rgh2o"]
 [ext_resource type="PackedScene" uid="uid://d2cwefjigkop1" path="res://Scenes/MovingPlatformPoint.tscn" id="4_vy5pj"]
+[ext_resource type="Script" uid="uid://nege5nk1sa8u" path="res://Scripts/Values/Bool/And.gd" id="5_grg3l"]
 [ext_resource type="Script" uid="uid://cox1ysk6bulx2" path="res://Scripts/Values/Bool/Manual.gd" id="5_pbw6q"]
 [ext_resource type="PackedScene" uid="uid://c3obafcdtdwal" path="res://Scenes/Door.tscn" id="8_grg3l"]
 [ext_resource type="Script" uid="uid://dd8or5oo0cmw2" path="res://Scripts/Values/Bool/Actor.gd" id="9_1p5hy"]
@@ -37,6 +38,12 @@ size = Vector3(2, 7, 7)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_pbw6q"]
 friction = 1000.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_grg3l"]
+size = Vector3(3, 3, 3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_grg3l"]
+size = Vector3(3, 3, 3)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pbw6q"]
 size = Vector3(1.5, 1.5, 1.5)
@@ -291,25 +298,23 @@ collision_mask = 5
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
-mass = 10.0
 physics_material_override = SubResource("PhysicsMaterial_pbw6q")
 can_sleep = false
 script = ExtResource("2_v1gob")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Crate" unique_id=304739248]
-shape = SubResource("BoxShape3D_pbw6q")
+shape = SubResource("BoxShape3D_grg3l")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Level/Crate" unique_id=968510403]
-mesh = SubResource("BoxMesh_v1gob")
+mesh = SubResource("BoxMesh_grg3l")
 
 [node name="Crate2" type="RigidBody3D" parent="Level" unique_id=1530386208]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1222732, 1.2832019, -9.879759)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3370624, 1.2832019, -5.7461257)
 collision_layer = 4
 collision_mask = 5
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
-mass = 10.0
 physics_material_override = SubResource("PhysicsMaterial_pbw6q")
 can_sleep = false
 script = ExtResource("2_v1gob")
@@ -327,24 +332,35 @@ transform = Transform3D(0.2681055, 0.90833306, 0.32101473, -0.5822606, 0.4182475
 environment = SubResource("Environment_kln2b")
 
 [node name="MovingPlatform" parent="Level" unique_id=1114646680 node_paths=PackedStringArray("points") instance=ExtResource("3_bmxlf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.728847, 5.662977, -8.300176)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.381077, 5.662977, -8.300176)
 points = [NodePath("../MovingPlatform\'s 1")]
 
 [node name="Door" parent="Level" unique_id=697453936 node_paths=PackedStringArray("condition") instance=ExtResource("8_grg3l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9584098, 5.3598337, 8.578161)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9584098, 5.3598337, 12.823965)
 open_extent = Vector3(0, 9, 0)
-condition = NodePath("ActorBool")
+condition = NodePath("AndBool")
 
-[node name="ActorBool" type="Node" parent="Level/Door" unique_id=1624133797 node_paths=PackedStringArray("actor")]
+[node name="AndBool" type="Node" parent="Level/Door" unique_id=2005080578]
+script = ExtResource("5_grg3l")
+metadata/_custom_type_script = "uid://nege5nk1sa8u"
+
+[node name="ActorBool" type="Node" parent="Level/Door/AndBool" unique_id=2088251196 node_paths=PackedStringArray("actor")]
 script = ExtResource("9_1p5hy")
-actor = NodePath("../../PressurePlate")
+actor = NodePath("../../../PressurePlate")
+metadata/_custom_type_script = "uid://dd8or5oo0cmw2"
+
+[node name="ActorBool2" type="Node" parent="Level/Door/AndBool" unique_id=173669457]
+script = ExtResource("9_1p5hy")
 metadata/_custom_type_script = "uid://dd8or5oo0cmw2"
 
 [node name="PressurePlate" parent="Level" unique_id=157249335 instance=ExtResource("10_1p5hy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.58775526, 4.894953)
 
+[node name="PressurePlate2" parent="Level" unique_id=805394163 instance=ExtResource("10_1p5hy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1099396, 0.58775526, 4.894953)
+
 [node name="MovingPlatform\'s 1" parent="Level" unique_id=1766241102 instance=ExtResource("4_vy5pj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.728847, 5.662977, -8.300176)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.381077, 5.662977, -8.300176)
 after_wait = 1.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1886343051]

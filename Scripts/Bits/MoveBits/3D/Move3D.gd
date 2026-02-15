@@ -3,7 +3,7 @@
 
 ## The state machine this belongs to.
 @onready var master:MoveMasterBit3D = get_master()
-func get_master(with:Node = self, depth := 3) -> MoveMasterBit3D:
+func get_master(with:Node = self, depth := 5) -> MoveMasterBit3D:
 	if depth == 0: return null
 	
 	var parent = with.get_parent()
