@@ -26,6 +26,7 @@
 [ext_resource type="Script" uid="uid://b7wu1d0ipllfp" path="res://Scripts/Bits/MoveBits/3D/ControlBits/PushPull.gd" id="21_qidb7"]
 [ext_resource type="Shader" uid="uid://7x40gwinm2ws" path="res://Scripts/Shaders/Outline.gdshader" id="23_qidb7"]
 [ext_resource type="Script" uid="uid://ctgxew4bdf2rx" path="res://Scripts/Bits/BarBit.gd" id="26_8flut"]
+[ext_resource type="Texture2D" uid="uid://cqeetefpi1co3" path="res://Assests/2D/Progress_Bar.png" id="27_u7x0b"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r150o"]
 
@@ -400,17 +401,18 @@ metadata/_custom_type_script = "uid://ctgxew4bdf2rx"
 script = ExtResource("5_lslt6")
 metadata/_custom_type_script = "uid://cox1ysk6bulx2"
 
-[node name="ProgressBar" type="ProgressBar" parent="HealthBar" unique_id=112650796]
+[node name="ProgressBar" type="TextureProgressBar" parent="HealthBar" unique_id=319243587]
 custom_minimum_size = Vector2(15, 75)
-offset_left = 637.0
-offset_top = 322.0
-offset_right = 652.0
-offset_bottom = 397.0
+offset_left = 614.0
+offset_top = 306.0
+offset_right = 870.0
+offset_bottom = 562.0
+scale = Vector2(0.19999999, 0.19999999)
 size_flags_horizontal = 0
 size_flags_vertical = 4
-value = 1.33
-fill_mode = 3
-show_percentage = false
+step = 0.2
+fill_mode = 5
+texture_progress = ExtResource("27_u7x0b")
 
 [node name="Stamina" type="Node" parent="HealthBar/ProgressBar" unique_id=203110726 node_paths=PackedStringArray("up_condition", "down_condition", "bar")]
 script = ExtResource("26_8flut")
