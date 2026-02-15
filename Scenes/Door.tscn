@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://c3obafcdtdwal"]
+
+[ext_resource type="Script" uid="uid://dspykia0ahijk" path="res://Scripts/Bits/Reactors/Door.gd" id="1_38ogf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1p5hy"]
+size = Vector3(4, 5, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_frkhe"]
+size = Vector3(4, 5, 2)
+
+[node name="Door" type="Node3D" unique_id=697453936 node_paths=PackedStringArray("condition")]
+script = ExtResource("1_38ogf")
+condition = NodePath("")
+
+[node name="PlayerChecker" type="Area3D" parent="." unique_id=1675021278]
+collision_layer = 0
+collision_mask = 6
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerChecker" unique_id=1883597614]
+shape = SubResource("BoxShape3D_1p5hy")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1579031861]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1829699815]
+shape = SubResource("BoxShape3D_1p5hy")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D" unique_id=166602792]
+mesh = SubResource("BoxMesh_frkhe")
+skeleton = NodePath("../..")
