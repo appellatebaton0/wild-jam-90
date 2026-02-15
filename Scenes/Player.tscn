@@ -388,6 +388,7 @@ draw_pass_1 = SubResource("SphereMesh_utwlt")
 [node name="RespawnBit" type="Node" parent="." unique_id=1290990383]
 script = ExtResource("27_kih0c")
 global_kill = &"Respawnable"
+delay = 1.0
 
 [node name="HealthBar" type="CanvasLayer" parent="." unique_id=1143845900]
 
