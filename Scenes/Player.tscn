@@ -26,10 +26,13 @@
 [ext_resource type="Script" uid="uid://bcg6hjtowf1lj" path="res://Scripts/Bits/MoveBits/3D/ControlBits/WallClimb.gd" id="21_70hv0"]
 [ext_resource type="Script" uid="uid://b7wu1d0ipllfp" path="res://Scripts/Bits/MoveBits/3D/ControlBits/PushPull.gd" id="21_qidb7"]
 [ext_resource type="Shader" uid="uid://7x40gwinm2ws" path="res://Scripts/Shaders/Outline.gdshader" id="23_qidb7"]
+[ext_resource type="Script" uid="uid://cl8xie6u05gcq" path="res://Scripts/camear_check.gd" id="24_kih0c"]
 [ext_resource type="Script" uid="uid://ctgxew4bdf2rx" path="res://Scripts/Bits/BarBit.gd" id="26_8flut"]
 [ext_resource type="Texture2D" uid="uid://cqeetefpi1co3" path="res://Assests/2D/Progress_Bar.png" id="27_u7x0b"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r150o"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_utwlt"]
 
 [sub_resource type="Curve" id="Curve_i2e8t"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.04494381), 0.0, 0.0, 0, 0]
@@ -345,6 +348,12 @@ input_name = &"Grab"
 bot_collision_mask = 2
 obj_collision_layer = 3
 exclusive = false
+
+[node name="CamearCheck" type="Area3D" parent="CharacterBody3D" unique_id=1523412890]
+script = ExtResource("24_kih0c")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D/CamearCheck" unique_id=1028648525]
+shape = SubResource("CapsuleShape3D_utwlt")
 
 [node name="CameraPivot" type="Node3D" parent="." unique_id=330284818]
 
