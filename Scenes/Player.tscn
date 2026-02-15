@@ -211,19 +211,20 @@ isolated = true
 
 [node name="Walk" type="Node" parent="CharacterBody3D/DragSwitch/WallSwitch/SprintSwitch" unique_id=409108400]
 script = ExtResource("3_megsn")
-horizontal_acceleration = 70.0
-horizontal_air_acceleration = 50.0
-horizontal_max_speed = 7.0
-horizontal_air_friction = 10.0
+horizontal_acceleration = 30.0
+horizontal_air_acceleration = 20.0
+horizontal_max_speed = 6.0
+horizontal_air_friction = 90.0
+vertical_jump_velocity = 7.0
 metadata/_custom_type_script = "uid://cw1ibpybypc2"
 
 [node name="Sprint" type="Node" parent="CharacterBody3D/DragSwitch/WallSwitch/SprintSwitch" unique_id=2138443987]
 script = ExtResource("3_megsn")
-horizontal_acceleration = 80.0
-horizontal_air_acceleration = 60.0
-horizontal_max_speed = 20.0
-horizontal_friction = 75.0
-horizontal_air_friction = 40.0
+horizontal_acceleration = 60.0
+horizontal_air_acceleration = 25.0
+horizontal_friction = 50.0
+horizontal_air_friction = 55.0
+vertical_jump_velocity = 8.0
 metadata/_custom_type_script = "uid://cw1ibpybypc2"
 
 [node name="InputValue" type="Node" parent="CharacterBody3D/DragSwitch/WallSwitch/SprintSwitch" unique_id=1443714533]
@@ -429,8 +430,8 @@ texture_progress = ExtResource("27_u7x0b")
 
 [node name="Stamina" type="Node" parent="HealthBar/ProgressBar" unique_id=203110726 node_paths=PackedStringArray("up_condition", "down_condition", "bar")]
 script = ExtResource("26_8flut")
-value = 30.0
-max_value = 30.0
+value = 10.0
+max_value = 10.0
 up_condition = NodePath("../../../CharacterBody3D/Player_Character/AnimationControl/Fall/OnFloor")
 up_increment = 50.0
 down_condition = NodePath("../../../CharacterBody3D/Player_Character/AnimationControl/Wall_Grab")
