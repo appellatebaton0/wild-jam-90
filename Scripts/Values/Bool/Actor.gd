@@ -3,4 +3,4 @@ class_name ActorBool extends BoolValue
 
 @export var actor:Actor
 
-func value() -> bool: return actor.value
+func value() -> bool: return actor.value if actor else false

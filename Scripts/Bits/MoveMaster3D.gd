@@ -2,6 +2,8 @@ class_name MoveMasterBit3D extends Bit
 ## Meant for a CharacterBody, provides a basis for movement
 ## This is a state machine!
 
+@export var locked := false
+
 ## The node to use for rotating controlled movement correctly; the camera. 
 @export var rotator:ManualNode
 
@@ -11,6 +13,7 @@ class_name MoveMasterBit3D extends Bit
 var current_bit:MoveBit
 
 var direction:Vector3
+var attempt_velocity:Vector3
 
 ## All the childed bits.
 @onready var bits:Array[MoveBit] = get_move_bits()
@@ -59,7 +62,7 @@ func _ready() -> void:
 	if initial_bit != null:
 		change_bit(initial_bit)
 
-func _process(delta: float) -> void:
+func _process(delta: float) -> void: if not locked:
 	# Run all bits' appropriate functions.
 	for bit in bits:
 		# If it's always running, or is the one that should be.
@@ -68,7 +71,7 @@ func _process(delta: float) -> void:
 		else:
 			bit.inactive(delta)
 
-func _physics_process(delta: float) -> void:
+func _physics_process(delta: float) -> void: if not locked:
 	# Run all bits' appropriate functions.
 	for bit in bits:
 		# If it's always running, or is the one that should be.
@@ -79,6 +82,7 @@ func _physics_process(delta: float) -> void:
 	
 	## Run on mover
 	if mover != null:
+		attempt_velocity = mover.velocity
 		mover.move_and_slide()
 		# Pass to the bot.
 		if bot.is_class("Node3D"):
