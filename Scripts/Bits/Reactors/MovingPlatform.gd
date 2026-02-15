@@ -38,6 +38,10 @@ func _ready() -> void:
 	
 
 func _process(delta: float) -> void: if len(points) > 0:
+	
+	for point in points: if not is_instance_valid(point): points.erase(point)
+	if not current_point or not next_point: return
+	
 	if pause <= 0.0:
 		if current_index > len(points) - 1: current_index = 0
 		
