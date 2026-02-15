@@ -327,7 +327,7 @@ transform = Transform3D(0.2681055, 0.90833306, 0.32101473, -0.5822606, 0.4182475
 environment = SubResource("Environment_kln2b")
 
 [node name="MovingPlatform" parent="Level" unique_id=1114646680 node_paths=PackedStringArray("points") instance=ExtResource("3_bmxlf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.728847, 5.662977, -1.1994863)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.728847, 5.662977, -4.086311)
 points = [NodePath("../MovingPlatform\'s 2"), NodePath("../MovingPlatform\'s 3")]
 
 [node name="Door" parent="Level" unique_id=697453936 node_paths=PackedStringArray("condition") instance=ExtResource("8_grg3l")]
