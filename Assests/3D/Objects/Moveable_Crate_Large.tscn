@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dyww5af6k0qoh"]
+
+[ext_resource type="Script" uid="uid://d26mxsgwyltuh" path="res://Scripts/Bits/Crate.gd" id="1_l06p0"]
+[ext_resource type="PackedScene" uid="uid://0gg8ofpfcega" path="res://Assests/3D/Objects/Moveable_Block01.glb" id="2_chw7f"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_pbw6q"]
+friction = 1000.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_knusv"]
+size = Vector3(2.6425476, 2.695053, 2.8761597)
+
+[node name="Crate" type="RigidBody3D" unique_id=946948200]
+collision_layer = 4
+collision_mask = 5
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+mass = 10.0
+physics_material_override = SubResource("PhysicsMaterial_pbw6q")
+can_sleep = false
+script = ExtResource("1_l06p0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=64569313]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.027938843, 1.3017712, 0.11697388)
+shape = SubResource("BoxShape3D_knusv")
+
+[node name="Moveable_Block01" parent="." unique_id=1679666825 instance=ExtResource("2_chw7f")]
+transform = Transform3D(5.94, 0, 0, 0, 5.94, 0, 0, 0, 5.94, 0.055352688, -0.029782355, -0.11662316)
