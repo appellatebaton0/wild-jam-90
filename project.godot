@@ -27,6 +27,10 @@ buses/default_bus_layout="uid://cfhn6jpambp6i"
 
 enabled=PackedStringArray("res://addons/terrain_3d/plugin.cfg")
 
+[global_group]
+
+Respawnable="Every node that should respawn on the player's death."
+
 [input]
 
 Jump={
@@ -86,6 +90,7 @@ Grab={
 3d_physics/layer_3="Crate"
 3d_physics/layer_4="Flint"
 3d_physics/layer_5="PressurePlate"
+3d_physics/layer_6="Checkpoint"
 
 [physics]
 

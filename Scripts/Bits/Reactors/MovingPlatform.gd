@@ -50,7 +50,7 @@ func _process(delta: float) -> void: if len(points) > 0:
 		var from:Vector3 = current_point.node.global_position
 		var to  :Vector3 = next_point.node.global_position
 		
-		node.global_position = lerp(from, to, ease((current_point.time - timer) / current_point.time, current_point.ease))
+		node.global_position = lerp(from, to, ease((current_point.time - timer) / current_point.time, current_point.easing))
 		
 		timer = move_toward(timer, 0.0, delta)
 		

@@ -18,11 +18,11 @@ func phys_active(delta:float) -> void:
 		master.mover.velocity += gravity_scale * master.mover.get_gravity() * delta
 	
 	# The directional input the player is giving as a vec2
-	var dir = Input.get_vector(inputs[inp.left], inputs[inp.right], inputs[inp.forwards], inputs[inp.backwards])
+	var dir = Input.get_axis(inputs[inp.forwards], inputs[inp.backwards])
 	# Turn that into a vec3
-	var direction := Vector3(dir.x, 0, dir.y)
+	var direction := Vector3(0.0, 0.0, dir)
 	# Rotate it by the mover's rotation
-	direction = direction.rotated(Vector3(0,1,0), master.rotator.value().global_rotation.y)
+	direction = direction.rotated(Vector3(0,1,0), master.mover.rotation.y)
 	
 	
 	# Apply it to the mover.

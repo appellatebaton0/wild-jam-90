@@ -28,6 +28,7 @@
 [ext_resource type="Shader" uid="uid://7x40gwinm2ws" path="res://Scripts/Shaders/Outline.gdshader" id="23_qidb7"]
 [ext_resource type="Script" uid="uid://cl8xie6u05gcq" path="res://Scripts/camear_check.gd" id="24_kih0c"]
 [ext_resource type="Script" uid="uid://ctgxew4bdf2rx" path="res://Scripts/Bits/BarBit.gd" id="26_8flut"]
+[ext_resource type="Script" uid="uid://cwmi2fpsn8by2" path="res://Scripts/Bits/Respawn.gd" id="27_kih0c"]
 [ext_resource type="Texture2D" uid="uid://cqeetefpi1co3" path="res://Assests/2D/Progress_Bar.png" id="27_u7x0b"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r150o"]
@@ -76,7 +77,7 @@ material = SubResource("StandardMaterial3D_qidb7")
 radius = 0.16
 height = 0.275
 
-[node name="Player" type="Node3D" unique_id=623680313]
+[node name="Player" type="Node3D" unique_id=623680313 groups=["Respawnable"]]
 script = ExtResource("1_52ee3")
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=844716186 node_paths=PackedStringArray("rotator")]
@@ -266,6 +267,8 @@ metadata/_custom_type_script = "uid://b1o48vkwquyxs"
 [node name="DragController" type="Node" parent="CharacterBody3D/DragSwitch" unique_id=41574072 node_paths=PackedStringArray("pushpull")]
 script = ExtResource("20_u7x0b")
 pushpull = NodePath("../../CratePullPush")
+acceleration = 3.0
+max_speed = 3.0
 exclusive = false
 
 [node name="LookBit" type="Node" parent="CharacterBody3D" unique_id=570069494 node_paths=PackedStringArray("from", "tos")]
@@ -391,38 +394,12 @@ randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_8flut")
 draw_pass_1 = SubResource("SphereMesh_utwlt")
 
+[node name="RespawnBit" type="Node" parent="." unique_id=1290990383]
+script = ExtResource("27_kih0c")
+global_kill = &"Respawnable"
+delay = 1.0
+
 [node name="HealthBar" type="CanvasLayer" parent="." unique_id=1143845900]
-
-[node name="MarginContainer" type="MarginContainer" parent="HealthBar" unique_id=1308884299]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="ProgressBar" type="ProgressBar" parent="HealthBar/MarginContainer" unique_id=615687344]
-custom_minimum_size = Vector2(30, 0)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 1
-value = 100.0
-fill_mode = 3
-show_percentage = false
-
-[node name="Health" type="Node" parent="HealthBar/MarginContainer/ProgressBar" unique_id=2120278850 node_paths=PackedStringArray("down_condition", "bar")]
-script = ExtResource("26_8flut")
-down_condition = NodePath("True")
-down_increment = 2.0
-bar = NodePath("..")
-metadata/_custom_type_script = "uid://ctgxew4bdf2rx"
-
-[node name="True" type="Node" parent="HealthBar/MarginContainer/ProgressBar/Health" unique_id=1573771349]
-script = ExtResource("5_lslt6")
-metadata/_custom_type_script = "uid://cox1ysk6bulx2"
 
 [node name="ProgressBar" type="TextureProgressBar" parent="HealthBar" unique_id=319243587]
 custom_minimum_size = Vector2(15, 75)
