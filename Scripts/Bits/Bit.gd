@@ -21,7 +21,7 @@ func get_bot() -> Bot:
 			return with.bot
 		elif with is Bot:
 			return with
-		else:
+		elif with != null:
 			with = with.get_parent()
 	
 	return self
