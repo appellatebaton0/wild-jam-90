@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://du4gm6127akq5"]
+
+[ext_resource type="Texture2D" uid="uid://be3cj36gttw00" path="res://Assests/2D/Packed_Wall.png" id="1_aq1nk"]
+
+[resource]
+albedo_texture = ExtResource("1_aq1nk")
+uv1_scale = Vector3(12.16, 12.16, 12.16)

@@ -8,10 +8,12 @@
 [ext_resource type="Script" uid="uid://w0g2u1stumau" path="res://Scripts/Values/Bool/Cast.gd" id="4_grg3l"]
 [ext_resource type="Script" uid="uid://dekpk8relyucb" path="res://Scripts/Bits/Input.gd" id="4_rgh2o"]
 [ext_resource type="PackedScene" uid="uid://d2cwefjigkop1" path="res://Scenes/MovingPlatformPoint.tscn" id="4_vy5pj"]
-[ext_resource type="Script" uid="uid://1n1biyfmvu7a" path="res://Scripts/Bits/Reactors/MovingPlatformPoint.gd" id="5_bmxlf"]
 [ext_resource type="Script" uid="uid://d7n7ctdl2nsg" path="res://Scripts/Values/Property.gd" id="5_frkhe"]
 [ext_resource type="Script" uid="uid://cox1ysk6bulx2" path="res://Scripts/Values/Bool/Manual.gd" id="5_pbw6q"]
 [ext_resource type="Script" uid="uid://b1o48vkwquyxs" path="res://Scripts/Values/Node/ManualNode.gd" id="6_1p5hy"]
+[ext_resource type="PackedScene" uid="uid://c3obafcdtdwal" path="res://Scenes/Door.tscn" id="8_grg3l"]
+[ext_resource type="Script" uid="uid://dd8or5oo0cmw2" path="res://Scripts/Values/Bool/Actor.gd" id="9_1p5hy"]
+[ext_resource type="PackedScene" uid="uid://b6mm1wjjwcmeh" path="res://Scenes/PressurePlate.tscn" id="10_1p5hy"]
 
 [sub_resource type="Gradient" id="Gradient_idj7w"]
 offsets = PackedFloat32Array(0.33939394, 0.54545456, 0.6181818)
@@ -59,16 +61,6 @@ size = Vector3(5, 1, 7)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4kpch"]
 size = Vector3(5, 1, 7)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jn765"]
-transparency = 1
-albedo_color = Color(0, 1.7014465, 1.7014465, 0.6)
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_i8wk6"]
-material = SubResource("StandardMaterial3D_jn765")
-top_radius = 0.15
-bottom_radius = 0.2
-height = 1.5
 
 [sub_resource type="Animation" id="Animation_v1gob"]
 resource_name = "Pause"
@@ -232,7 +224,7 @@ _data = {
 
 [node name="Main" type="Node" unique_id=1339399215]
 
-[node name="Level" type="Node3D" parent="." unique_id=83128354]
+[node name="Level" type="Node" parent="." unique_id=1361929372]
 
 [node name="Player" parent="Level" unique_id=623680313 instance=ExtResource("1_r150o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7332695, 0)
@@ -344,7 +336,7 @@ transform = Transform3D(0.2681055, 0.90833306, 0.32101473, -0.5822606, 0.4182475
 environment = SubResource("Environment_kln2b")
 
 [node name="MP" type="CharacterBody3D" parent="Level" unique_id=1882906039 node_paths=PackedStringArray("points", "condition")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.702251, 6.2323046, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.873706, 3.9930558, -4.717759)
 script = ExtResource("3_jw32o")
 points = [NodePath("../MovingPlatform\'s 2"), NodePath("../MovingPlatform\'s 3"), NodePath("../MP\'s 3"), NodePath("../MP\'s 4"), NodePath("../MP\'s 5")]
 condition = NodePath("CastBool")
@@ -382,10 +374,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.576001, 6.2323046, -3.771
 [node name="MP\'s 4" parent="Level" unique_id=774255227 instance=ExtResource("4_vy5pj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2629201, 1.0849934, 0)
 
-[node name="MP\'s 5" type="MeshInstance3D" parent="Level" unique_id=856862464 instance=ExtResource("4_vy5pj")]
+[node name="MP\'s 5" parent="Level" unique_id=856862464 instance=ExtResource("4_vy5pj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.873706, 3.9930558, -4.717759)
-mesh = SubResource("CylinderMesh_i8wk6")
-script = ExtResource("5_bmxlf")
+
+[node name="Door" parent="Level" unique_id=697453936 node_paths=PackedStringArray("condition") instance=ExtResource("8_grg3l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5000234, 3.011327, 2.6119328)
+condition = NodePath("ActorBool")
+
+[node name="ActorBool" type="Node" parent="Level/Door" unique_id=1624133797 node_paths=PackedStringArray("actor")]
+script = ExtResource("9_1p5hy")
+actor = NodePath("")
+metadata/_custom_type_script = "uid://dd8or5oo0cmw2"
+
+[node name="PressurePlate" parent="Level" unique_id=157249335 instance=ExtResource("10_1p5hy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.58775526, 4.894953)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1886343051]
 
