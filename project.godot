@@ -94,3 +94,18 @@ Grab={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+
+[shader_globals]
+
+wind_noise={
+"type": "sampler2D",
+"value": "res://Assests/2D/wind_noise_texture.res"
+}
+wind_direction={
+"type": "vec3",
+"value": Vector3(0.15, 0.1, -0.05)
+}
+wind_speed={
+"type": "float",
+"value": 0.15
+}

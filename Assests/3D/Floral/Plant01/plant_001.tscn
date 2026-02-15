@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://berw633ypgxyp"]
+
+[ext_resource type="PackedScene" uid="uid://b7xxp02h3aby8" path="res://Assests/3D/Floral/Plant001.glb" id="1_qs6f2"]
+[ext_resource type="Material" uid="uid://yk52jhq8p6i" path="res://Assests/3D/Materials/toon_fern_material.res" id="2_qs6f2"]
+
+[node name="Plant001" unique_id=293554898 instance=ExtResource("1_qs6f2")]
+
+[node name="Plane_004" parent="." index="0" unique_id=1315930641]
+surface_material_override/0 = ExtResource("2_qs6f2")
