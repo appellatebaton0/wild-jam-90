@@ -24,6 +24,7 @@ func _ready() -> void:
 		if child is CharacterBody3D and not body: body = child
 		if child is Area3D          and not area: area = child
 	
+	find_condition()
 	
 
 

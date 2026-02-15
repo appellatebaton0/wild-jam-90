@@ -22,6 +22,8 @@ var pause := 0.0
 
 func _ready() -> void:
 	
+	find_condition()
+	
 	var me = self
 	node = me
 	
