@@ -4,10 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://x12byuqfnyd7" path="res://Assests/3D/Objects/Door.glb" id="2_mw28t"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1p5hy"]
-size = Vector3(6.56604, 9.845184, 2)
-
-[sub_resource type="BoxMesh" id="BoxMesh_frkhe"]
-size = Vector3(4, 5, 2)
+size = Vector3(6.40584, 9.7, 2.61)
 
 [node name="Door" type="Node3D" unique_id=697453936]
 script = ExtResource("1_38ogf")
@@ -16,20 +13,17 @@ script = ExtResource("1_38ogf")
 collision_layer = 0
 collision_mask = 6
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerChecker" unique_id=1883597614]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21460807, 1.3795836, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerChecker" unique_id=1177008199]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21708012, 0, 0.06)
 shape = SubResource("BoxShape3D_1p5hy")
+debug_color = Color(1, 1, 1, 1)
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1579031861]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1829699815]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1741333, 2.4861264, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21708012, 0, 0.06)
 shape = SubResource("BoxShape3D_1p5hy")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D" unique_id=166602792]
-visible = false
-mesh = SubResource("BoxMesh_frkhe")
-skeleton = NodePath("../..")
+debug_color = Color(1, 1, 1, 1)
 
 [node name="Door" parent="CharacterBody3D" unique_id=460615689 instance=ExtResource("2_mw28t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.016073227, -2.388921, -0.0017604828)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.05, 0)

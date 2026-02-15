@@ -327,25 +327,25 @@ transform = Transform3D(0.2681055, 0.90833306, 0.32101473, -0.5822606, 0.4182475
 environment = SubResource("Environment_kln2b")
 
 [node name="MovingPlatform" parent="Level" unique_id=1114646680 node_paths=PackedStringArray("points") instance=ExtResource("3_bmxlf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.728847, 5.662977, -4.086311)
-points = [NodePath("../MovingPlatform\'s 2"), NodePath("../MovingPlatform\'s 3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.728847, 5.662977, -8.300176)
+points = [NodePath("../MovingPlatform\'s 1")]
 
 [node name="Door" parent="Level" unique_id=697453936 node_paths=PackedStringArray("condition") instance=ExtResource("8_grg3l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5000234, 3.011327, 2.6119328)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9584098, 5.3598337, 8.578161)
+open_extent = Vector3(0, 9, 0)
 condition = NodePath("ActorBool")
 
-[node name="ActorBool" type="Node" parent="Level/Door" unique_id=1624133797]
+[node name="ActorBool" type="Node" parent="Level/Door" unique_id=1624133797 node_paths=PackedStringArray("actor")]
 script = ExtResource("9_1p5hy")
+actor = NodePath("../../PressurePlate")
 metadata/_custom_type_script = "uid://dd8or5oo0cmw2"
 
 [node name="PressurePlate" parent="Level" unique_id=157249335 instance=ExtResource("10_1p5hy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.58775526, 4.894953)
 
-[node name="MovingPlatform\'s 2" parent="Level" unique_id=1766241102 instance=ExtResource("4_vy5pj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.728847, 5.662977, -1.1994863)
-
-[node name="MovingPlatform\'s 3" parent="Level" unique_id=1935799393 instance=ExtResource("4_vy5pj")]
+[node name="MovingPlatform\'s 1" parent="Level" unique_id=1766241102 instance=ExtResource("4_vy5pj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.728847, 5.662977, -8.300176)
+after_wait = 1.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1886343051]
 
