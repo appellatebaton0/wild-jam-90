@@ -39,5 +39,5 @@ void light() {
 	//float fresnel = (1.0 - dot(NORMAL, VIEW));
 	//DIFFUSE_LIGHT += fresnel * ATTENUATION * LIGHT_COLOR * 0.15;
 	
-	DIFFUSE_LIGHT += LIGHT_COLOR * ATTENUATION * surface * (1.0 / PI);
+	DIFFUSE_LIGHT += LIGHT_COLOR * ATTENUATION * (1.0 / PI); //* surface;
 }

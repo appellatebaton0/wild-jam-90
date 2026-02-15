@@ -97,12 +97,12 @@ void fragment() {
 }
 
 void light() {
-	float surface = max(0.0, dot(NORMAL, LIGHT));
+	float surface = 1.0;//max(0.0, abs(dot(NORMAL, LIGHT)));
 	float attenuation = pow(ATTENUATION, 2.5) * 5.0;
 	
-	vec3 caustic_highlight = mix(vec3(0.0), LIGHT_COLOR + normalize(highlight_color) * 2.0, bump * surface * attenuation);
+	vec3 caustic_highlight = mix(vec3(0.0), (LIGHT_COLOR + normalize(highlight_color) * 2.0) * smoothstep(0.0, 1.0, length(LIGHT_COLOR)), bump * surface * attenuation);
 	
-	DIFFUSE_LIGHT += caustic_highlight + LIGHT_COLOR * surface * ATTENUATION * 1.0;
+	DIFFUSE_LIGHT += caustic_highlight + LIGHT_COLOR * surface * attenuation * 0.125;
 	
 	// Called for every pixel for every light affecting the material.
 	// Uncomment to replace the default light processing function with this one.

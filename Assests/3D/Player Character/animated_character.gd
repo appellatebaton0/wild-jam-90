@@ -23,7 +23,7 @@ var total_time := 0.0
 
 var tracked_position := self.global_position
 var fire_direction := Vector3.UP
-var fire_strength := 0.5
+#var fire_strength := 0.5
 
 func _process(delta: float):
 	total_time += delta
@@ -32,12 +32,12 @@ func _process(delta: float):
 	
 	tracked_position = lerp(tracked_position, self.global_position, 6.0 * delta);
 	fire_direction = lerp(fire_direction, to_local(tracked_position) + Vector3.UP, 12.0 * delta)
-	
-	fire_strength = 0.75 + (0.125 * sin(total_time * 1.0))
-	
+	#
+	#fire_strength = 0.75 + (0.125 * sin(total_time * 1.0))
+	#
 	if character_material:
 		character_material.set_shader_parameter("vertex_fire_direction", fire_direction)
-		character_material.set_shader_parameter("vertex_fire_strength", fire_strength)
+		#character_material.set_shader_parameter("vertex_fire_strength", fire_strength)
 
 func play_animation(anim_name: String):
 	if AnimTree.has_animation(anim_name):

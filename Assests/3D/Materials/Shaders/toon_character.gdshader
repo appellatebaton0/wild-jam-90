@@ -4,12 +4,19 @@ uniform sampler2D albedo_texture: hint_default_white, source_color;
 uniform sampler2D emission_texture: hint_default_black, source_color;
 uniform sampler2D emission_noise: hint_default_black;
 uniform sampler2D vertex_fire_mask: hint_default_white;
+uniform sampler2D fire_mask: hint_default_white;
+
+uniform float extinguish : hint_range(0.0, 1.0, 0.05) = 0.0;
 
 uniform float emission_strength = 1.0;
+
+uniform float warble_strength = 0.125;
+uniform float warble_speed = 1.0;
 
 uniform vec3 vertex_fire_direction = vec3(0.0, 1.0, 0.0);
 uniform float vertex_fire_strength = 1.0;
 
+uniform vec3 extinguished_color: source_color = vec3(0.025, 0.025, 0.05);
 uniform vec3 fire_color: source_color = vec3(0.75, 0.5, 0.0);
 uniform float fire_strength = 3.0;
 uniform float fire_center = 0.5;
@@ -51,18 +58,21 @@ void vertex() {
 	
 	float pointing_up = max(0.0, dot(NORMAL, normalize(vertex_fire_direction)));
 	
-	float fire_mask = texture(vertex_fire_mask, UV).r;
-	VERTEX += normalize(vertex_fire_direction + (NORMAL * 0.25)) * noise_a * noise_b * vertex_fire_strength * fire_mask * pointing_up;
+	float v_fire_strength = vertex_fire_strength + (warble_strength * sin(TIME * warble_speed));
+	
+	float v_fire_mask = texture(vertex_fire_mask, UV).r;
+	VERTEX += (1.0 - extinguish) * normalize(vertex_fire_direction + (NORMAL * 0.25)) * noise_a * noise_b * v_fire_strength * v_fire_mask * pointing_up;
 	
 }
 
 void fragment() {
-	vec3 albedo = texture(albedo_texture, UV).rgb;
+	float f_fire_mask = texture(fire_mask, UV).r;
+	vec3 albedo = mix(texture(albedo_texture, UV).rgb, extinguished_color, extinguish * f_fire_mask);
 	
-	vec3 offset_pos = model_pos + vec3(0.0, -TIME * 2.0, 0.0);
+	vec3 offset_pos = model_pos + vec3(0.0, (1.0 - extinguish) * -TIME * 2.0, 0.0);
 	float noise_a = sample_triplanar(emission_noise, offset_pos, model_normal, 0.5).r;
 	
-	offset_pos = model_pos + vec3(0.5, 1.0 -TIME * 1.0, 0.5);
+	offset_pos = model_pos + vec3(0.5, (1.0 - extinguish) * (1.0 -TIME * 1.0), 0.5);
 	float noise_b = sample_triplanar(emission_noise, offset_pos, model_normal, 1.0).r;
 	
 	vec4 emission = texture(emission_texture, UV);
@@ -71,7 +81,11 @@ void fragment() {
 	fresnel = (pow(fresnel, 1.5) * 0.5) + pow(fresnel, 10);
 	
 	ALBEDO = albedo;
-	EMISSION = mix(emission.rgb * emission_strength, fire_color * fire_strength, max(fire.r, fresnel)) * emission.a;
+	EMISSION = mix(mix(emission.rgb * emission_strength, fire_color * fire_strength, max(fire.r, fresnel)), extinguished_color * fresnel * 5.0, extinguish) * emission.a;
+	
+	//if (f_fire_mask >= 0.2 && extinguish == 1.0) {
+		//discard;
+	//}
 }
 
 void light() {

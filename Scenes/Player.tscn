@@ -201,19 +201,20 @@ isolated = true
 
 [node name="Walk" type="Node" parent="CharacterBody3D/WallSwitch/SprintSwitch" unique_id=409108400]
 script = ExtResource("3_megsn")
-horizontal_acceleration = 70.0
-horizontal_air_acceleration = 50.0
+horizontal_acceleration = 30.0
+horizontal_air_acceleration = 20.0
 horizontal_max_speed = 7.0
 horizontal_air_friction = 10.0
 metadata/_custom_type_script = "uid://cw1ibpybypc2"
 
 [node name="Sprint" type="Node" parent="CharacterBody3D/WallSwitch/SprintSwitch" unique_id=2138443987]
 script = ExtResource("3_megsn")
-horizontal_acceleration = 80.0
-horizontal_air_acceleration = 60.0
-horizontal_max_speed = 20.0
+horizontal_acceleration = 45.0
+horizontal_air_acceleration = 30.0
+horizontal_max_speed = 12.0
 horizontal_friction = 75.0
 horizontal_air_friction = 40.0
+vertical_jump_velocity = 15.0
 metadata/_custom_type_script = "uid://cw1ibpybypc2"
 
 [node name="InputValue" type="Node" parent="CharacterBody3D/WallSwitch/SprintSwitch" unique_id=1443714533]
@@ -238,7 +239,7 @@ NodePath("../Player_Character/AnimationControl/Idle"): NodePath("GlobalDirection
 NodePath("../Player_Character/AnimationControl/Wall_Grab"): NodePath("GlobalWallNorm"),
 NodePath("MovingCrate"): null
 }
-turn_lerp = 0.2
+turn_lerp = 0.1
 look_x = false
 to_is_local = false
 metadata/_custom_type_script = "uid://cg7bjyxfxe0nm"
