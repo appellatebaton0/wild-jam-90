@@ -12,7 +12,7 @@ class_name PlayerAnimatorBit extends Bit
 var anim_player:AnimationPlayer
 
 ## Look for an AnimationPlayer in the children, siblings, piblings, etc.
-func search_player(with:Node, depth:int = 7) -> AnimationPlayer:
+func search_player(with:Node, depth:int = 10) -> AnimationPlayer:
 	# If this happens, no player was found :(
 	if depth <= 0 or with == null:
 		return null

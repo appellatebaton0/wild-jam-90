@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://5opnwc5uryxc"]
+
+[ext_resource type="Script" uid="uid://cjkjnkv43f8np" path="res://Scripts/Bits/InputMapper.gd" id="1_epmtn"]
+
+[node name="InputEntry" type="HBoxContainer" unique_id=2685080]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_epmtn")
+
+[node name="Label" type="Label" parent="." unique_id=538922341]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Jump: "
+
+[node name="InputButton" type="Button" parent="." unique_id=2059064373]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 8
