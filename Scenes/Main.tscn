@@ -8,14 +8,15 @@
 [ext_resource type="Script" uid="uid://dw7w6pry2g435" path="res://Scripts/Bits/PlayerAnimator.gd" id="3_rgh2o"]
 [ext_resource type="Script" uid="uid://dekpk8relyucb" path="res://Scripts/Bits/Input.gd" id="4_rgh2o"]
 [ext_resource type="PackedScene" uid="uid://d2cwefjigkop1" path="res://Scenes/MovingPlatformPoint.tscn" id="4_vy5pj"]
-[ext_resource type="Script" uid="uid://nege5nk1sa8u" path="res://Scripts/Values/Bool/And.gd" id="5_grg3l"]
 [ext_resource type="Script" uid="uid://cox1ysk6bulx2" path="res://Scripts/Values/Bool/Manual.gd" id="5_pbw6q"]
+[ext_resource type="Script" uid="uid://makmxo060e2" path="res://Scripts/Values/Bool/Or.gd" id="6_erwvk"]
 [ext_resource type="PackedScene" uid="uid://c3obafcdtdwal" path="res://Scenes/Door.tscn" id="8_grg3l"]
 [ext_resource type="Script" uid="uid://bekt6vd73jjuq" path="res://Scripts/Bits/Kill.gd" id="8_h1m7h"]
 [ext_resource type="Script" uid="uid://dd8or5oo0cmw2" path="res://Scripts/Values/Bool/Actor.gd" id="9_1p5hy"]
 [ext_resource type="Script" uid="uid://bmbnethi8oyh3" path="res://Scripts/Bits/AreaMaster3D.gd" id="9_h1m7h"]
 [ext_resource type="PackedScene" uid="uid://b6mm1wjjwcmeh" path="res://Scenes/PressurePlate.tscn" id="10_1p5hy"]
 [ext_resource type="Script" uid="uid://cj85aq1o3xpfw" path="res://Scripts/Bits/AreaBits/3D/Checkpoint.gd" id="10_erwvk"]
+[ext_resource type="Script" uid="uid://1n1biyfmvu7a" path="res://Scripts/Bits/Reactors/MovingPlatformPoint.gd" id="13_2w5on"]
 
 [sub_resource type="Gradient" id="Gradient_idj7w"]
 offsets = PackedFloat32Array(0.33939394, 0.54545456, 0.6181818)
@@ -79,6 +80,16 @@ albedo_texture = SubResource("GradientTexture2D_frkhe")
 material = SubResource("StandardMaterial3D_1p5hy")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_erwvk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jn765"]
+transparency = 1
+albedo_color = Color(0, 1.7014465, 1.7014465, 0.6)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_i8wk6"]
+material = SubResource("StandardMaterial3D_jn765")
+top_radius = 0.15
+bottom_radius = 0.2
+height = 1.5
 
 [sub_resource type="Animation" id="Animation_v1gob"]
 resource_name = "Pause"
@@ -359,24 +370,26 @@ environment = SubResource("Environment_kln2b")
 
 [node name="MovingPlatform" parent="Level" unique_id=1114646680 node_paths=PackedStringArray("points") instance=ExtResource("3_bmxlf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.381077, 5.662977, -8.300176)
-points = [NodePath("../MovingPlatform\'s 1")]
+points = [NodePath("../MovingPlatform\'s 2")]
 
 [node name="Door" parent="Level" unique_id=697453936 node_paths=PackedStringArray("condition") instance=ExtResource("8_grg3l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9584098, 5.3598337, 12.823965)
+easing = -2.0
 open_extent = Vector3(0, 9, 0)
-condition = NodePath("AndBool")
+condition = NodePath("")
 
-[node name="AndBool" type="Node" parent="Level/Door" unique_id=2005080578]
-script = ExtResource("5_grg3l")
-metadata/_custom_type_script = "uid://nege5nk1sa8u"
+[node name="AndBool" type="Node" parent="Level/Door" unique_id=1712568230]
+script = ExtResource("6_erwvk")
+metadata/_custom_type_script = "uid://makmxo060e2"
 
 [node name="ActorBool" type="Node" parent="Level/Door/AndBool" unique_id=2088251196 node_paths=PackedStringArray("actor")]
 script = ExtResource("9_1p5hy")
 actor = NodePath("../../../PressurePlate")
 metadata/_custom_type_script = "uid://dd8or5oo0cmw2"
 
-[node name="ActorBool2" type="Node" parent="Level/Door/AndBool" unique_id=173669457]
+[node name="ActorBool2" type="Node" parent="Level/Door/AndBool" unique_id=173669457 node_paths=PackedStringArray("actor")]
 script = ExtResource("9_1p5hy")
+actor = NodePath("../../../PressurePlate2")
 metadata/_custom_type_script = "uid://dd8or5oo0cmw2"
 
 [node name="PressurePlate" parent="Level" unique_id=157249335 instance=ExtResource("10_1p5hy")]
@@ -393,10 +406,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1099396, 0.58775526, 4.894
 script = ExtResource("8_h1m7h")
 target = NodePath("../../Crate2")
 
-[node name="MovingPlatform\'s 1" parent="Level" unique_id=1766241102 instance=ExtResource("4_vy5pj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.381077, 5.662977, -8.300176)
-after_wait = 1.0
-
 [node name="Checkpoint" type="Area3D" parent="Level" unique_id=304819821]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.676356, 1.1681473, 0)
 collision_layer = 32
@@ -412,6 +421,11 @@ shape = SubResource("BoxShape3D_erwvk")
 [node name="CheckpointBit" type="Node" parent="Level/Checkpoint" unique_id=717218931]
 script = ExtResource("10_erwvk")
 collision_mask = 2
+
+[node name="MovingPlatform\'s 2" type="MeshInstance3D" parent="Level" unique_id=1766241102 instance=ExtResource("4_vy5pj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.381077, 5.662977, -8.300176)
+mesh = SubResource("CylinderMesh_i8wk6")
+script = ExtResource("13_2w5on")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1886343051]
 

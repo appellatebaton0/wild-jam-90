@@ -1,11 +1,14 @@
 class_name DoorBit extends Reactor
 ## A simple reactor to function as a door.
 
-@export var lerp_speed := 0.06
-# @export var 
+@export var easing := 1.0 ## The ease to use when moving.
+@export var time := 1.0 ## How long moving between positions takes.
+var timer := 0.0
 
 @export var open_extent := Vector3(0, 5, 0)
 var close_extent := Vector3.ZERO
+
+var last:bool
 
 var body:CharacterBody3D
 var area:Area3D # An area to make sure the door doesn't close in the player's face.
@@ -30,8 +33,17 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	
-	var value = condition.value() if condition else true
+	var value = (condition.value() if condition else true) or area.has_overlapping_bodies()
 	
-	body.position = lerp(body.position, open_extent if value or area.has_overlapping_bodies() else close_extent, lerp_speed)
+	if value != last:
+		last = value
+		timer = time
+	
+	var to   := open_extent  if value else close_extent
+	var from := close_extent if value else open_extent
+	
+	body.position = lerp(to, from, ease(timer / time, easing))
+	
+	timer = move_toward(timer, 0.0, delta)
