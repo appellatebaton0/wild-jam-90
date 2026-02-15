@@ -1,20 +1,23 @@
 [gd_scene format=3 uid="uid://bon8bptfjfpue"]
 
 [ext_resource type="Script" uid="uid://dry7dkg7601jo" path="res://Scripts/Bits/Reactors/MovingPlatform.gd" id="1_k502f"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_50glp"]
-size = Vector3(5, 1, 7)
+[ext_resource type="PackedScene" uid="uid://bovx7k751f5ct" path="res://Assests/3D/Objects/Moveable_Block03.glb" id="2_5olv3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4kpch"]
-size = Vector3(5, 1, 7)
+size = Vector3(7.537964, 1, 7.4995117)
 
-[node name="MovingPlatform" type="CharacterBody3D" unique_id=1114646680 node_paths=PackedStringArray("points", "condition")]
+[node name="MovingPlatform" type="CharacterBody3D" unique_id=1114646680 node_paths=PackedStringArray("points")]
 script = ExtResource("1_k502f")
-points = [NodePath("")]
-condition = NodePath("")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=322470339]
-mesh = SubResource("BoxMesh_50glp")
+points = []
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1290376559]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2689819, 0, 0.09301758)
 shape = SubResource("BoxShape3D_4kpch")
+
+[node name="Moveable_Block03" parent="." unique_id=663793008 instance=ExtResource("2_5olv3")]
+transform = Transform3D(-0.14358097, 0, 11.819127, 0, 11.82, 0, -11.819127, 0, -0.14358097, -0.14113575, -0.49427462, -0.17100835)
+
+[node name="Platform" parent="Moveable_Block03" index="0" unique_id=1824382818]
+transform = Transform3D(0.99237543, 0, -5.5879354e-09, 0, 0.8908953, 0, -1.8626451e-09, 0, 1.5810497, -0.0013562897, 0, 0.11164532)
+
+[editable path="Moveable_Block03"]
