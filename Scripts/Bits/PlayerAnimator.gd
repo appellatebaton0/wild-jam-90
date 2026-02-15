@@ -4,9 +4,6 @@ class_name PlayerAnimatorBit extends Bit
 ## The animation to play.
 @export var animation := ""
 
-## Only plays if this condition is null or false.
-@export var condition:BoolValue
-
 ## Optional, the location of the AnimationPlayer to use. Otherwise, will look for one by itself.
 @export var player:NodeValue
 var anim_player:AnimationPlayer
@@ -26,12 +23,10 @@ func search_player(with:Node, depth:int = 7) -> AnimationPlayer:
 	return search_player(with.get_parent(), depth - 1)
 
 func _ready() -> void:
-	for child in get_children():
-		if child is NodeValue and not player:
-			player = child
-		if child is BoolValue and not condition:
-			condition = child
-			break
+	if player == null:
+		for child in get_children():
+			if child is NodeValue:
+				player = child
 
 	if player != null:
 		var p_node = player.value()
@@ -42,8 +37,5 @@ func _ready() -> void:
 		anim_player = search_player(self)
 
 func animate():
-	if condition: if not condition.value(): return
-	anim_player.is_playing()
-	
 	if anim_player != null:
 		anim_player.play(animation)
