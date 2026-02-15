@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bon8bptfjfpue"]
+
+[ext_resource type="Script" uid="uid://dry7dkg7601jo" path="res://Scripts/Bits/Reactors/MovingPlatform.gd" id="1_k502f"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_50glp"]
+size = Vector3(5, 1, 7)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4kpch"]
+size = Vector3(5, 1, 7)
+
+[node name="MovingPlatform" type="CharacterBody3D" unique_id=1114646680 node_paths=PackedStringArray("points", "condition")]
+script = ExtResource("1_k502f")
+points = [NodePath("")]
+condition = NodePath("")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=322470339]
+mesh = SubResource("BoxMesh_50glp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1290376559]
+shape = SubResource("BoxShape3D_4kpch")
