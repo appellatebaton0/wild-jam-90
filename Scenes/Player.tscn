@@ -28,9 +28,6 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r150o"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_i2e8t"]
-size = Vector3(0.1, 0.1, 0.1)
-
 [sub_resource type="Curve" id="Curve_i2e8t"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.04494381), 0.0, 0.0, 0, 0]
 point_count = 2
@@ -241,6 +238,7 @@ NodePath("../Player_Character/AnimationControl/Idle"): NodePath("GlobalDirection
 NodePath("../Player_Character/AnimationControl/Wall_Grab"): NodePath("GlobalWallNorm"),
 NodePath("MovingCrate"): null
 }
+turn_lerp = 0.2
 look_x = false
 to_is_local = false
 metadata/_custom_type_script = "uid://cg7bjyxfxe0nm"
@@ -312,10 +310,6 @@ input_name = &"Grab"
 bot_collision_mask = 2
 obj_collision_layer = 3
 exclusive = false
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D/CratePullPush" unique_id=616292264]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.30548137)
-mesh = SubResource("BoxMesh_i2e8t")
 
 [node name="CameraPivot" type="Node3D" parent="." unique_id=330284818]
 

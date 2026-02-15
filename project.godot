@@ -19,6 +19,10 @@ run/main_scene="uid://d3v1cila7q8u7"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://cfhn6jpambp6i"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/terrain_3d/plugin.cfg")
@@ -80,6 +84,7 @@ Grab={
 3d_physics/layer_2="Player"
 3d_physics/layer_3="Crate"
 3d_physics/layer_4="Flint"
+3d_physics/layer_5="PressurePlate"
 
 [physics]
 

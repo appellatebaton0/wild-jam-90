@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c7fp2vfj7qk2s"
+path="res://.godot/imported/Grass Step-004.wav-b140d64cea79caa2122a927a109d094f.sample"
+
+[deps]
+
+source_file="res://SFX/Grass Step-004.wav"
+dest_files=["res://.godot/imported/Grass Step-004.wav-b140d64cea79caa2122a927a109d094f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
