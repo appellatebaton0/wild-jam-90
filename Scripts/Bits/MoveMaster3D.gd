@@ -2,6 +2,8 @@ class_name MoveMasterBit3D extends Bit
 ## Meant for a CharacterBody, provides a basis for movement
 ## This is a state machine!
 
+@export var locked := false
+
 ## The node to use for rotating controlled movement correctly; the camera. 
 @export var rotator:ManualNode
 
@@ -60,7 +62,7 @@ func _ready() -> void:
 	if initial_bit != null:
 		change_bit(initial_bit)
 
-func _process(delta: float) -> void:
+func _process(delta: float) -> void: if not locked:
 	# Run all bits' appropriate functions.
 	for bit in bits:
 		# If it's always running, or is the one that should be.
@@ -69,7 +71,7 @@ func _process(delta: float) -> void:
 		else:
 			bit.inactive(delta)
 
-func _physics_process(delta: float) -> void:
+func _physics_process(delta: float) -> void: if not locked:
 	# Run all bits' appropriate functions.
 	for bit in bits:
 		# If it's always running, or is the one that should be.
