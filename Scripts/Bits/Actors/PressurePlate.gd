@@ -1,4 +1,5 @@
 class_name PressurePlateBit extends Actor
+@onready var pressureplate_anim = $Pressure_Plate/AnimationPlayer
 
 ## How long the plate will stay down for after it's no longer activated.
 @export var weight_time := 0.0
@@ -24,5 +25,10 @@ func _process(delta: float) -> void:
 	
 	if area.has_overlapping_bodies(): weight_timer = weight_time
 	else: weight_timer = move_toward(weight_timer, 0, delta)
+	
+	if area.has_overlapping_bodies(): pressureplate_anim.play("Held")
+	else: pressureplate_anim.play("IDK")
+	
+	
 	
 	value = weight_timer > 0 or area.has_overlapping_bodies()

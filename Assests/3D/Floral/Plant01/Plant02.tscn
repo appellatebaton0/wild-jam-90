@@ -1,8 +1,14 @@
 [gd_scene format=3 uid="uid://d2f3xvfhahwu4"]
 
 [ext_resource type="PackedScene" uid="uid://b7xxp02h3aby8" path="res://Assests/3D/Floral/Plant001.glb" id="1_phan8"]
+[ext_resource type="Material" uid="uid://yk52jhq8p6i" path="res://Assests/3D/Materials/toon_fern_material.res" id="2_wttxq"]
 
 [node name="Node3D" type="Node3D" unique_id=1192245602]
 
 [node name="Plant001" parent="." unique_id=2143278141 instance=ExtResource("1_phan8")]
 transform = Transform3D(0.42792755, 0, 0, 0, 0.42792755, 0, 0, 0, 0.42792755, 0.0011523962, 0, 0.021742105)
+
+[node name="Plane_004" parent="Plant001" index="0" unique_id=1718026800]
+surface_material_override/0 = ExtResource("2_wttxq")
+
+[editable path="Plant001"]

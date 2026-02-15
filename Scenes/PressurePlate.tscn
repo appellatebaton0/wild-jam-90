@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://b6mm1wjjwcmeh"]
 
 [ext_resource type="Script" uid="uid://q7a6eo8u6tsr" path="res://Scripts/Bits/Actors/PressurePlate.gd" id="1_6dsqy"]
+[ext_resource type="PackedScene" uid="uid://b0yf62l5c6jlu" path="res://Assests/3D/Objects/Pressure_Plate.glb" id="2_7auac"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_grg3l"]
-size = Vector3(1.5, 0.1, 1.5)
+size = Vector3(4.0491943, 0.31843263, 3.9958496)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_frkhe"]
 albedo_color = Color(0.07419999, 0.26411667, 0.53, 1)
@@ -14,11 +15,20 @@ size = Vector3(1.5, 0.1, 1.5)
 
 [node name="PressurePlate" type="Area3D" unique_id=157249335]
 collision_layer = 16
-collision_mask = 2
+collision_mask = 6
 script = ExtResource("1_6dsqy")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=362915780]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16778564, 0.10921631, 0.0513916)
 shape = SubResource("BoxShape3D_grg3l")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1593647564]
 mesh = SubResource("BoxMesh_grg3l")
+
+[node name="Pressure_Plate" parent="." unique_id=2140744488 instance=ExtResource("2_7auac")]
+transform = Transform3D(1.52, 0, 0, 0, 1.52, 0, 0, 0, 1.52, 0.021854162, 0, -0.045475096)
+
+[node name="Plane_001" parent="Pressure_Plate" index="0" unique_id=448218514]
+blend_shapes/Pressed = 1.0
+
+[editable path="Pressure_Plate"]
