@@ -5,6 +5,8 @@ uniform sampler2D albedo_texture : source_color, hint_default_white;
 uniform vec3 tint_color : source_color = vec3(1.0, 1.0, 1.0);
 uniform float alpha_scissor_threshold = 0.5;
 
+global uniform vec3 player_position;
+
 global uniform sampler2D wind_noise;
 global uniform vec3 wind_direction;
 global uniform float wind_speed;
@@ -14,6 +16,7 @@ float posterize(float value, float steps) {
 }
 
 void vertex() {
+	
 	float wind_force = length(wind_direction);
 	float wind_strength = texture(wind_noise, vec2(VERTEX.x + TIME * wind_speed, VERTEX.z + TIME * wind_speed)).r;
 	float offset_wind_strength = texture(wind_noise, vec2(0.15, 0.15) + vec2(VERTEX.x + TIME * wind_speed, VERTEX.z + TIME * wind_speed)).r;

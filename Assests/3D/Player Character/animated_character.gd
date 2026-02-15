@@ -28,6 +28,8 @@ var fire_strength := 0.5
 func _process(delta: float):
 	total_time += delta
 	
+	RenderingServer.global_shader_parameter_set("player_position", self.global_position)
+	
 	tracked_position = lerp(tracked_position, self.global_position, 6.0 * delta);
 	fire_direction = lerp(fire_direction, to_local(tracked_position) + Vector3.UP, 12.0 * delta)
 	

@@ -108,3 +108,7 @@ wind_speed={
 "type": "float",
 "value": 0.15
 }
+player_position={
+"type": "vec3",
+"value": Vector3(0, 0, 0)
+}
