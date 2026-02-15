@@ -4,14 +4,18 @@
 [ext_resource type="Script" uid="uid://dk0hts3twf6t" path="res://Scripts/Bits/MouseCapture.gd" id="2_kln2b"]
 [ext_resource type="Script" uid="uid://d26mxsgwyltuh" path="res://Scripts/Bits/Crate.gd" id="2_v1gob"]
 [ext_resource type="PackedScene" uid="uid://bon8bptfjfpue" path="res://Scenes/MovingPlatform.tscn" id="3_bmxlf"]
+[ext_resource type="Script" uid="uid://cwmi2fpsn8by2" path="res://Scripts/Bits/Respawn.gd" id="3_erwvk"]
 [ext_resource type="Script" uid="uid://dw7w6pry2g435" path="res://Scripts/Bits/PlayerAnimator.gd" id="3_rgh2o"]
 [ext_resource type="Script" uid="uid://dekpk8relyucb" path="res://Scripts/Bits/Input.gd" id="4_rgh2o"]
 [ext_resource type="PackedScene" uid="uid://d2cwefjigkop1" path="res://Scenes/MovingPlatformPoint.tscn" id="4_vy5pj"]
 [ext_resource type="Script" uid="uid://nege5nk1sa8u" path="res://Scripts/Values/Bool/And.gd" id="5_grg3l"]
 [ext_resource type="Script" uid="uid://cox1ysk6bulx2" path="res://Scripts/Values/Bool/Manual.gd" id="5_pbw6q"]
 [ext_resource type="PackedScene" uid="uid://c3obafcdtdwal" path="res://Scenes/Door.tscn" id="8_grg3l"]
+[ext_resource type="Script" uid="uid://bekt6vd73jjuq" path="res://Scripts/Bits/Kill.gd" id="8_h1m7h"]
 [ext_resource type="Script" uid="uid://dd8or5oo0cmw2" path="res://Scripts/Values/Bool/Actor.gd" id="9_1p5hy"]
+[ext_resource type="Script" uid="uid://bmbnethi8oyh3" path="res://Scripts/Bits/AreaMaster3D.gd" id="9_h1m7h"]
 [ext_resource type="PackedScene" uid="uid://b6mm1wjjwcmeh" path="res://Scenes/PressurePlate.tscn" id="10_1p5hy"]
+[ext_resource type="Script" uid="uid://cj85aq1o3xpfw" path="res://Scripts/Bits/AreaBits/3D/Checkpoint.gd" id="10_erwvk"]
 
 [sub_resource type="Gradient" id="Gradient_idj7w"]
 offsets = PackedFloat32Array(0.33939394, 0.54545456, 0.6181818)
@@ -59,6 +63,22 @@ sky_material = SubResource("ProceduralSkyMaterial_r150o")
 [sub_resource type="Environment" id="Environment_kln2b"]
 background_mode = 2
 sky = SubResource("Sky_idj7w")
+
+[sub_resource type="Gradient" id="Gradient_grg3l"]
+offsets = PackedFloat32Array(0, 0.4604651, 1)
+colors = PackedColorArray(1, 0, 0, 0.69803923, 1, 0, 0, 0.4, 1, 0, 0, 0.7176471)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_frkhe"]
+gradient = SubResource("Gradient_grg3l")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1p5hy"]
+transparency = 1
+albedo_texture = SubResource("GradientTexture2D_frkhe")
+
+[sub_resource type="BoxMesh" id="BoxMesh_h1m7h"]
+material = SubResource("StandardMaterial3D_1p5hy")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_erwvk"]
 
 [sub_resource type="Animation" id="Animation_v1gob"]
 resource_name = "Pause"
@@ -301,6 +321,7 @@ axis_lock_angular_z = true
 physics_material_override = SubResource("PhysicsMaterial_pbw6q")
 can_sleep = false
 script = ExtResource("2_v1gob")
+isolated = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Crate" unique_id=304739248]
 shape = SubResource("BoxShape3D_grg3l")
@@ -318,12 +339,17 @@ axis_lock_angular_z = true
 physics_material_override = SubResource("PhysicsMaterial_pbw6q")
 can_sleep = false
 script = ExtResource("2_v1gob")
+isolated = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Crate2" unique_id=170364244]
 shape = SubResource("BoxShape3D_pbw6q")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Level/Crate2" unique_id=1579089294]
 mesh = SubResource("BoxMesh_v1gob")
+
+[node name="RespawnBit3D" type="Node" parent="Level/Crate2" unique_id=980943221]
+script = ExtResource("3_erwvk")
+metadata/_custom_type_script = "uid://cwmi2fpsn8by2"
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Level" unique_id=988451585]
 transform = Transform3D(0.2681055, 0.90833306, 0.32101473, -0.5822606, 0.41824755, -0.6971668, -0.7675233, 0, 0.6410211, -17.191507, 10.298861, 0)
@@ -356,12 +382,36 @@ metadata/_custom_type_script = "uid://dd8or5oo0cmw2"
 [node name="PressurePlate" parent="Level" unique_id=157249335 instance=ExtResource("10_1p5hy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.58775526, 4.894953)
 
+[node name="KillBit" type="Node" parent="Level/PressurePlate" unique_id=1358674535 node_paths=PackedStringArray("target")]
+script = ExtResource("8_h1m7h")
+target = NodePath("../../Player")
+
 [node name="PressurePlate2" parent="Level" unique_id=805394163 instance=ExtResource("10_1p5hy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1099396, 0.58775526, 4.894953)
+
+[node name="KillBit" type="Node" parent="Level/PressurePlate2" unique_id=1774536577 node_paths=PackedStringArray("target")]
+script = ExtResource("8_h1m7h")
+target = NodePath("../../Crate2")
 
 [node name="MovingPlatform\'s 1" parent="Level" unique_id=1766241102 instance=ExtResource("4_vy5pj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.381077, 5.662977, -8.300176)
 after_wait = 1.0
+
+[node name="Checkpoint" type="Area3D" parent="Level" unique_id=304819821]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.676356, 1.1681473, 0)
+collision_layer = 32
+collision_mask = 2
+script = ExtResource("9_h1m7h")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Level/Checkpoint" unique_id=1592427423]
+mesh = SubResource("BoxMesh_h1m7h")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Checkpoint" unique_id=900732891]
+shape = SubResource("BoxShape3D_erwvk")
+
+[node name="CheckpointBit" type="Node" parent="Level/Checkpoint" unique_id=717218931]
+script = ExtResource("10_erwvk")
+collision_mask = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1886343051]
 

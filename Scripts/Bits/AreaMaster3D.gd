@@ -89,8 +89,11 @@ func _process(delta: float) -> void:
 			var o_bodies = mask_objects(objectify(overlapping_bodies), bit.collision_mask)
 			
 			# Pass them on to the relevant functions, along with delta :)
-			bit.while_overlapping_areas(o_areas, delta)
-			bit.while_overlapping_bodies(o_bodies, delta)
+			bit.while_overlapping_areas(delta)
+			bit.while_overlapping_bodies(delta)
+			
+			bit.overlapping_areas = o_areas
+			bit.overlapping_bodies = o_bodies
 
 ## When an area enters, tell any bits that are listening (have the right mask)
 func _on_area_entered(area_in:Area3D):

@@ -1,4 +1,4 @@
-class_name CrateBit extends RigidBody3D
+class_name CrateBit extends Bit
 
 var held_by:MoveMasterBit3D
 

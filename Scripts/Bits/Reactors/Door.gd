@@ -2,6 +2,7 @@ class_name DoorBit extends Reactor
 ## A simple reactor to function as a door.
 
 @export var lerp_speed := 0.06
+# @export var 
 
 @export var open_extent := Vector3(0, 5, 0)
 var close_extent := Vector3.ZERO

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d26mxsgwyltuh" path="res://Scripts/Bits/Crate.gd" id="1_0af4a"]
 [ext_resource type="PackedScene" uid="uid://0gg8ofpfcega" path="res://Assests/3D/Objects/Moveable_Block01.glb" id="2_007ip"]
+[ext_resource type="Script" uid="uid://cwmi2fpsn8by2" path="res://Scripts/Bits/Respawn.gd" id="3_007ip"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_pbw6q"]
 friction = 1000.0
@@ -9,7 +10,7 @@ friction = 1000.0
 [sub_resource type="BoxShape3D" id="BoxShape3D_pbw6q"]
 size = Vector3(1.5, 1.5, 1.5)
 
-[node name="Crate" type="RigidBody3D" unique_id=946948200]
+[node name="Crate" type="RigidBody3D" unique_id=946948200 groups=["Respawnable"]]
 collision_layer = 4
 collision_mask = 5
 axis_lock_angular_x = true
@@ -26,3 +27,7 @@ shape = SubResource("BoxShape3D_pbw6q")
 
 [node name="Moveable_Block01" parent="." unique_id=1679666825 instance=ExtResource("2_007ip")]
 transform = Transform3D(3.534619, 0, 0, 0, 3.534619, 0, 0, 0, 3.534619, 0.055352688, -0.029782355, -0.11662316)
+
+[node name="RespawnBit3D" type="Node" parent="." unique_id=443464547]
+script = ExtResource("3_007ip")
+metadata/_custom_type_script = "uid://cwmi2fpsn8by2"
