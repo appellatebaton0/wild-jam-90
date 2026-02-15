@@ -15,4 +15,3 @@ height = 1.5
 [node name="MovingPlatformPoint" type="MeshInstance3D" unique_id=1766241102]
 mesh = SubResource("CylinderMesh_i8wk6")
 script = ExtResource("1_jn765")
-after_wait = null
