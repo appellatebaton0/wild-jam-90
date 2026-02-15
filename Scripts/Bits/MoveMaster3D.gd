@@ -11,6 +11,7 @@ class_name MoveMasterBit3D extends Bit
 var current_bit:MoveBit
 
 var direction:Vector3
+var attempt_velocity:Vector3
 
 ## All the childed bits.
 @onready var bits:Array[MoveBit] = get_move_bits()
@@ -79,6 +80,7 @@ func _physics_process(delta: float) -> void:
 	
 	## Run on mover
 	if mover != null:
+		attempt_velocity = mover.velocity
 		mover.move_and_slide()
 		# Pass to the bot.
 		if bot.is_class("Node3D"):
