@@ -22,7 +22,7 @@ extends Node3D
 
 var total_time := 0.0
 
-var tracked_position := self.global_position
+@onready var tracked_position := self.global_position
 var fire_direction := Vector3.UP
 #var fire_strength := 0.5
 

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b1wqndef3gyfn"
+path="res://.godot/imported/Puddle Walk-010.wav-24a8e5aca48aab12fa6b2b903f51df87.sample"
+
+[deps]
+
+source_file="res://Assests/SFX Main Char/Puddle Walk-010.wav"
+dest_files=["res://.godot/imported/Puddle Walk-010.wav-24a8e5aca48aab12fa6b2b903f51df87.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
