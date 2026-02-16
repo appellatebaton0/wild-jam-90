@@ -25,7 +25,7 @@ func respawn(group := global_kill) -> void:
 	delay_time = delay
 	
 
-func find_target(with:Node = get_bot(), depth := 5) -> Node3D:
+func find_target(with:Node = bot, depth := 5) -> Node3D:
 	
 	if depth == 0 or with == null: return null
 	
@@ -51,6 +51,7 @@ func _process(delta: float) -> void:
 			should_kill = false
 
 func setup(): 
+	print("RES: ", self, " -> ", bot)
 	if not target: target = find_target()
 	
 	if target:

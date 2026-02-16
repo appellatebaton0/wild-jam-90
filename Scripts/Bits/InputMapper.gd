@@ -30,11 +30,7 @@ func _input(event: InputEvent) -> void:
 	if monitoring and not event is InputEventMouseMotion:
 		input_mapper.text = text_from_event(event)
 		
-		
-		
-		# Clear the existing events for an action.
-		print(InputMap.action_get_events(event_name)[0])
-		print(event)
+		## Clear the existing events for an action, and rebind.
 		InputMap.action_erase_events(event_name)
 		InputMap.action_add_event(event_name, event)
 		
