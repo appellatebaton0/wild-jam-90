@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bxavb5l4thkjn"
+path="res://.godot/imported/Grass Run-001.wav-2ad6d35b200f14e4d347f1373624191b.sample"
+
+[deps]
+
+source_file="res://SFX Steps/Grass Run-001.wav"
+dest_files=["res://.godot/imported/Grass Run-001.wav-2ad6d35b200f14e4d347f1373624191b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
