@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://w0g2u1stumau" path="res://Scripts/Values/Bool/Cast.gd" id="6_x63xi"]
 [ext_resource type="Script" uid="uid://ctol2bsqyal5x" path="res://Scripts/Values/Float/MagnitudeFloat.gd" id="7_5v66d"]
 [ext_resource type="Script" uid="uid://vjcrkxkgf2f2" path="res://Scripts/Bits/CameraFloat.gd" id="7_bhhdu"]
+[ext_resource type="Script" uid="uid://makmxo060e2" path="res://Scripts/Values/Bool/Or.gd" id="7_c43xd"]
 [ext_resource type="Script" uid="uid://b1o48vkwquyxs" path="res://Scripts/Values/Node/ManualNode.gd" id="7_miouo"]
 [ext_resource type="Script" uid="uid://ijkm2f1r0gk7" path="res://Scripts/Values/Bool/Input.gd" id="7_yoq75"]
 [ext_resource type="Script" uid="uid://crs0ppnbatoph" path="res://Scripts/Values/Vector/Vector3/CastVec3.gd" id="8_5v66d"]
@@ -96,15 +97,7 @@ movement_state = "Push"
 [node name="AnimationControl" type="Node" parent="CharacterBody3D/Player_Character" unique_id=247797212 node_paths=PackedStringArray("target", "condition_switches")]
 script = ExtResource("4_1e7my")
 target = NodePath("..")
-condition_switches = {
-0: NodePath("Idle"),
-1: NodePath("Walk"),
-2: NodePath("Sprint"),
-3: NodePath("Fall"),
-4: NodePath("Wall_Grab"),
-5: NodePath("Push"),
-6: NodePath("Pull")
-}
+condition_switches = [NodePath("Pull"), NodePath("Push"), NodePath("Fall"), NodePath("Wall_Grab"), NodePath("Sprint"), NodePath("Walk"), NodePath("Idle")]
 metadata/_custom_type_script = "uid://m2g8fsn261kv"
 
 [node name="Idle" type="Node" parent="CharacterBody3D/Player_Character/AnimationControl" unique_id=1793585481]
@@ -115,14 +108,29 @@ metadata/_custom_type_script = "uid://cox1ysk6bulx2"
 script = ExtResource("6_ulo2v")
 metadata/_custom_type_script = "uid://ycifmydtbo1g"
 
-[node name="OnFloor" type="Node" parent="CharacterBody3D/Player_Character/AnimationControl/Fall" unique_id=478560106]
+[node name="OrBool" type="Node" parent="CharacterBody3D/Player_Character/AnimationControl/Fall" unique_id=526417751 node_paths=PackedStringArray("inputs")]
+script = ExtResource("7_c43xd")
+inputs = [NodePath("OnFloor"), NodePath("CastBool")]
+metadata/_custom_type_script = "uid://makmxo060e2"
+
+[node name="OnFloor" type="Node" parent="CharacterBody3D/Player_Character/AnimationControl/Fall/OrBool" unique_id=478560106]
 script = ExtResource("6_x63xi")
 metadata/_custom_type_script = "uid://w0g2u1stumau"
 
-[node name="Property" type="Node" parent="CharacterBody3D/Player_Character/AnimationControl/Fall/OnFloor" unique_id=213168773 node_paths=PackedStringArray("from")]
+[node name="Property" type="Node" parent="CharacterBody3D/Player_Character/AnimationControl/Fall/OrBool/OnFloor" unique_id=213168773 node_paths=PackedStringArray("from")]
 script = ExtResource("8_x63xi")
 property = "is_on_floor()"
-from = NodePath("../../../Walk/MagnitudeFloat/Velocity/Property/CharacterBody")
+from = NodePath("../../../../Walk/MagnitudeFloat/Velocity/Property/CharacterBody")
+metadata/_custom_type_script = "uid://d7n7ctdl2nsg"
+
+[node name="CastBool" type="Node" parent="CharacterBody3D/Player_Character/AnimationControl/Fall/OrBool" unique_id=345439036]
+script = ExtResource("6_x63xi")
+metadata/_custom_type_script = "uid://w0g2u1stumau"
+
+[node name="Property" type="Node" parent="CharacterBody3D/Player_Character/AnimationControl/Fall/OrBool/CastBool" unique_id=1894300018 node_paths=PackedStringArray("from")]
+script = ExtResource("8_x63xi")
+property = "is_on_wall()"
+from = NodePath("../../../../Walk/MagnitudeFloat/Velocity/Property/CharacterBody")
 metadata/_custom_type_script = "uid://d7n7ctdl2nsg"
 
 [node name="Walk" type="Node" parent="CharacterBody3D/Player_Character/AnimationControl" unique_id=1967764397 node_paths=PackedStringArray("value_a", "value_b")]
@@ -417,7 +425,7 @@ texture_progress = ExtResource("27_u7x0b")
 script = ExtResource("26_8flut")
 value = 10.0
 max_value = 10.0
-up_condition = NodePath("../../../CharacterBody3D/Player_Character/AnimationControl/Fall/OnFloor")
+up_condition = NodePath("../../../CharacterBody3D/Player_Character/AnimationControl/Fall/OrBool/OnFloor")
 up_increment = 50.0
 down_condition = NodePath("../../../CharacterBody3D/Player_Character/AnimationControl/Wall_Grab")
 down_increment = 5.0
