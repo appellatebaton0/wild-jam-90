@@ -39,6 +39,7 @@ enabled=PackedStringArray("res://addons/terrain_3d/plugin.cfg")
 
 Respawnable="Every node that should respawn on the player's death."
 Terrain=""
+Player=""
 
 [input]
 
