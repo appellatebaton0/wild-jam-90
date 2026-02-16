@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cvqf1hrebc04p" path="res://Scripts/Bot.gd" id="1_52ee3"]
 [ext_resource type="Script" uid="uid://b6iakww8271ns" path="res://Scripts/Bits/MoveMaster3D.gd" id="2_bhhdu"]
+[ext_resource type="AudioStream" uid="uid://2uinfo0voykk" path="res://Assests/SFX Main Char/Flame Loop.wav" id="3_avx33"]
 [ext_resource type="Script" uid="uid://cw1ibpybypc2" path="res://Scripts/Bits/MoveBits/3D/ControlBits/Platformer.gd" id="3_megsn"]
 [ext_resource type="PackedScene" uid="uid://cj3ygyynwwo0q" path="res://Assests/3D/Player Character/player_character.tscn" id="3_o3h8g"]
 [ext_resource type="Script" uid="uid://m2g8fsn261kv" path="res://Scripts/Bits/AnimatedObject.gd" id="4_1e7my"]
@@ -86,6 +87,10 @@ collision_layer = 2
 collision_mask = 13
 script = ExtResource("2_bhhdu")
 rotator = NodePath("../CameraPivot/FloatCast/Camera")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="CharacterBody3D" unique_id=1381693877]
+stream = ExtResource("3_avx33")
+autoplay = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1371614169]
 shape = SubResource("CapsuleShape3D_r150o")

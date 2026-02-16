@@ -640,13 +640,12 @@ shadow_enabled = true
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1307250024]
 stream = ExtResource("23_cvje1")
-volume_db = 3.398
 autoplay = true
 bus = &"SFX"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1399098472]
 stream = ExtResource("22_8c2l8")
-volume_db = -18.332
+volume_db = -25.387
 autoplay = true
 bus = &"Music"
 
