@@ -847,10 +847,11 @@ cast_shadow = 0
 mesh = SubResource("QuadMesh_1hnqj")
 surface_material_override/0 = ExtResource("32_pa8kd")
 
-[node name="WaterMesh" type="MeshInstance3D" parent="Water/WaterMesh" unique_id=722871843]
-transform = Transform3D(2.805, 0, 0, 0, 2.8000162, 0.16713645, 0, -0.16713645, 2.8000162, -99.86511, -59.885483, 19.246176)
+[node name="WaterMesh2" type="MeshInstance3D" parent="Water" unique_id=722871843]
+transform = Transform3D(2.805, 0, 0, 0, -0.16713656, 2.8000162, 0, -2.8000162, -0.16713656, -99.72448, 18.993176, 59.739986)
 cast_shadow = 0
 mesh = SubResource("QuadMesh_1hnqj")
+skeleton = NodePath("../WaterMesh")
 surface_material_override/0 = ExtResource("32_pa8kd")
 
 [node name="Camera Switch2" parent="." unique_id=1571385443 instance=ExtResource("36_pa8kd")]
