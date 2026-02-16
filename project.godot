@@ -27,6 +27,10 @@ buses/default_bus_layout="uid://cfhn6jpambp6i"
 
 window/stretch/mode="canvas_items"
 
+[dotnet]
+
+project/assembly_name="wild-jam-90"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/terrain_3d/plugin.cfg")
