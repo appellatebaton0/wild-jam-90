@@ -28,7 +28,7 @@ void vertex() {
 
 void fragment() {
 	vec4 albedo = texture(albedo_texture, UV);
-	ALBEDO = albedo.rgb * tint_color;
+	ALBEDO = albedo.rgb * tint_color; // * COLOR.rgb
 	ALPHA_SCISSOR_THRESHOLD = alpha_scissor_threshold;
 	ALPHA = albedo.a;
 }
