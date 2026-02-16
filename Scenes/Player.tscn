@@ -102,7 +102,7 @@ movement_state = "Push"
 [node name="AnimationControl" type="Node" parent="CharacterBody3D/Player_Character" unique_id=247797212 node_paths=PackedStringArray("target", "condition_switches")]
 script = ExtResource("4_1e7my")
 target = NodePath("..")
-condition_switches = [NodePath("Pull"), NodePath("Push"), NodePath("Fall"), NodePath("Wall_Grab"), NodePath("Sprint"), NodePath("Walk"), NodePath("Idle")]
+condition_switches = [NodePath("Pull"), NodePath("Push"), NodePath("Wall_Grab"), NodePath("Fall"), NodePath("Sprint"), NodePath("Walk"), NodePath("Idle")]
 metadata/_custom_type_script = "uid://m2g8fsn261kv"
 
 [node name="Idle" type="Node" parent="CharacterBody3D/Player_Character/AnimationControl" unique_id=1793585481]
@@ -229,7 +229,7 @@ isolated = true
 [node name="Walk" type="Node" parent="CharacterBody3D/DragSwitch/WallSwitch/SprintSwitch" unique_id=409108400]
 script = ExtResource("3_megsn")
 horizontal_acceleration = 30.0
-horizontal_air_acceleration = 20.0
+horizontal_air_acceleration = 5.0
 horizontal_max_speed = 6.0
 horizontal_air_friction = 90.0
 vertical_jump_velocity = 7.0
@@ -238,7 +238,7 @@ metadata/_custom_type_script = "uid://cw1ibpybypc2"
 [node name="Sprint" type="Node" parent="CharacterBody3D/DragSwitch/WallSwitch/SprintSwitch" unique_id=2138443987]
 script = ExtResource("3_megsn")
 horizontal_acceleration = 60.0
-horizontal_air_acceleration = 25.0
+horizontal_air_acceleration = 7.0
 horizontal_friction = 50.0
 horizontal_air_friction = 55.0
 vertical_jump_velocity = 8.0
@@ -378,7 +378,7 @@ x_target = NodePath("Pivot")
 x_clamp = Vector2(-50, 90)
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot" unique_id=947941269]
-transform = Transform3D(1, 0, 0, 0, 0.93664163, 0.3502891, 0, -0.3502891, 0.93664163, 0, 2.6785638, 4.653676)
+transform = Transform3D(1, 0, 0, 0, 0.93664163, 0.3502891, 0, -0.3502891, 0.93664163, 0, 3.5, 6)
 
 [node name="Pivot" type="Node" parent="CameraPivot" unique_id=1551523772 node_paths=PackedStringArray("response")]
 script = ExtResource("7_miouo")
@@ -386,7 +386,7 @@ response = NodePath("..")
 metadata/_custom_type_script = "uid://b1o48vkwquyxs"
 
 [node name="FloatCast" type="RayCast3D" parent="CameraPivot" unique_id=198230359 node_paths=PackedStringArray("ray", "target")]
-target_position = Vector3(0, 2.5, 4.5)
+target_position = Vector3(0, 3.5, 6.5)
 collision_mask = 5
 script = ExtResource("7_bhhdu")
 ray = NodePath(".")
