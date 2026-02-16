@@ -173,7 +173,7 @@ tracks/5/keys = {
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_v1gob"]
+[sub_resource type="Animation" id="Animation_lmxn3"]
 resource_name = "Pause"
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -224,7 +224,7 @@ tracks/3/keys = {
 "values": [Vector2(-1152, 0), Vector2(0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_jw32o"]
+[sub_resource type="Animation" id="Animation_1hnqj"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -473,7 +473,7 @@ tracks/5/keys = {
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_50glp"]
+[sub_resource type="Animation" id="Animation_k4p64"]
 resource_name = "Unpause"
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -527,11 +527,11 @@ tracks/3/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vy5pj"]
 _data = {
 &"Options->Start": SubResource("Animation_0sclb"),
-&"Pause": SubResource("Animation_v1gob"),
-&"RESET": SubResource("Animation_jw32o"),
+&"Pause": SubResource("Animation_lmxn3"),
+&"RESET": SubResource("Animation_1hnqj"),
 &"Start->Game": SubResource("Animation_346fj"),
 &"Start->Options": SubResource("Animation_sxkr1"),
-&"Unpause": SubResource("Animation_50glp")
+&"Unpause": SubResource("Animation_k4p64")
 }
 
 [node name="Main" type="Node" unique_id=1339399215]

@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://cv5kq7i0djne4"]
+
+[ext_resource type="PackedScene" uid="uid://cibkfdf5y77sk" path="res://Assests/3D/Objects/Campfire.glb" id="1_ldbl5"]
+[ext_resource type="Texture2D" uid="uid://dsbth10rqq2uq" path="res://Assests/2D/Fire alpha.png" id="2_kc1w6"]
+
+[sub_resource type="CurveTexture" id="CurveTexture_ccjay"]
+
+[sub_resource type="Curve" id="Curve_vrk8r"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.2512195, 0.58044904), 0.0, 0.0, 0, 0, Vector2(0.44878048, 0.6108513), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_6sknr"]
+curve = SubResource("Curve_vrk8r")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_h8rlu"]
+emission_shape = 1
+emission_sphere_radius = 0.6
+gravity = Vector3(0, 8.145, 0)
+linear_accel_min = -2.2351742e-06
+linear_accel_max = 6.1199975
+damping_curve = SubResource("CurveTexture_ccjay")
+scale_curve = SubResource("CurveTexture_6sknr")
+scale_over_velocity_min = 72.5
+scale_over_velocity_max = 97.049995
+turbulence_enabled = true
+turbulence_noise_strength = 5.23
+turbulence_noise_speed = Vector3(1.02, 0.28, 0.4)
+turbulence_noise_speed_random = 0.81
+turbulence_influence_min = 0.093
+turbulence_influence_max = 0.141
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mlio4"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+diffuse_mode = 3
+disable_ambient_light = true
+albedo_color = Color(0.74533784, 0.25914472, 0.27778476, 1)
+albedo_texture = ExtResource("2_kc1w6")
+emission_enabled = true
+emission = Color(0.5568527, 0.2526823, 0.1669566, 1)
+emission_energy_multiplier = 6.16
+billboard_mode = 2
+billboard_keep_scale = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ucx6k"]
+material = SubResource("StandardMaterial3D_mlio4")
+size = Vector2(2.63, 3.54)
+orientation = 2
+
+[node name="Node3D" type="Node3D" unique_id=1733423825]
+
+[node name="Campfire" parent="." unique_id=670445628 instance=ExtResource("1_ldbl5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1110661, 0, -0.04573989)
+
+[node name="Light" type="GPUParticles3D" parent="Campfire" unique_id=1019182618]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3626785, 0)
+amount = 38
+lifetime = 0.99
+speed_scale = 0.45
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_h8rlu")
+draw_pass_1 = SubResource("PlaneMesh_ucx6k")
