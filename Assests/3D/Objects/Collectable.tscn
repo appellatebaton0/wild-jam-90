@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://bv0nkuimkjuah"]
+
+[ext_resource type="Shader" uid="uid://djhhku0jfrciy" path="res://Assests/3D/Materials/Shaders/toon_character.gdshader" id="1_jsjdp"]
+[ext_resource type="Texture2D" uid="uid://eh18bhmb7u4j" path="res://Assests/3D/Player Character/PC_Main_DefaultMaterial_BaseColor.png" id="2_8051g"]
+[ext_resource type="Texture2D" uid="uid://bpltfdun1niuo" path="res://Assests/3D/Player Character/FireMask.png" id="3_6o08o"]
+[ext_resource type="Shader" uid="uid://7x40gwinm2ws" path="res://Scripts/Shaders/Outline.gdshader" id="4_evp32"]
+[ext_resource type="Script" uid="uid://jbqvo3y8hqsy" path="res://Scripts/Collectable.gd" id="5_8051g"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_btcff"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_8xx8t"]
+fractal_lacunarity = 1.5
+fractal_gain = 0.645
+fractal_weighted_strength = 0.18
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_442mn"]
+width = 256
+height = 256
+noise = SubResource("FastNoiseLite_8xx8t")
+seamless = true
+in_3d_space = true
+seamless_blend_skirt = 0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_picub"]
+render_priority = 0
+shader = ExtResource("1_jsjdp")
+shader_parameter/albedo_texture = ExtResource("2_8051g")
+shader_parameter/emission_noise = SubResource("NoiseTexture2D_442mn")
+shader_parameter/fire_mask = ExtResource("3_6o08o")
+shader_parameter/extinguish = 0.0
+shader_parameter/emission_strength = 1.0
+shader_parameter/warble_strength = 0.125
+shader_parameter/warble_speed = 1.0
+shader_parameter/vertex_fire_direction = Vector3(0, 1, 0)
+shader_parameter/vertex_fire_strength = 0.75
+shader_parameter/extinguished_color = Color(0.053443767, 0.030874144, 0.1506052, 1)
+shader_parameter/fire_color = Color(0.98763436, 0.60049784, 0, 1)
+shader_parameter/fire_strength = 3.0
+shader_parameter/fire_center = 0.5
+shader_parameter/fire_height = 3.0
+
+[sub_resource type="Curve" id="Curve_487b6"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.04494381), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_qidb7"]
+curve = SubResource("Curve_487b6")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pvhdv"]
+emission_shape = 1
+emission_sphere_radius = 0.45
+direction = Vector3(0, -1, 0)
+spread = 52.75
+gravity = Vector3(0.845, 3.995, 0)
+scale_min = 0.01
+scale_max = 0.93
+scale_curve = SubResource("CurveTexture_qidb7")
+turbulence_enabled = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pysuv"]
+render_priority = 0
+shader = ExtResource("4_evp32")
+shader_parameter/scale = 3.8
+shader_parameter/outline_spread = 1.0
+shader_parameter/_Color = Color(0.1882353, 0, 0.011764706, 1)
+shader_parameter/_DepthNormalThreshold = 0.1
+shader_parameter/_DepthNormalThresholdScale = 3.0
+shader_parameter/_DepthThreshold = 1.5
+shader_parameter/_NormalThreshold = 2.0
+shader_parameter/invert_mask = false
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qidb7"]
+next_pass = SubResource("ShaderMaterial_pysuv")
+albedo_color = Color(0.76862746, 0.3529412, 0.12941177, 1)
+emission_enabled = true
+emission = Color(0.7990546, 0.27529004, 0.024579797, 1)
+emission_energy_multiplier = 13.69
+
+[sub_resource type="SphereMesh" id="SphereMesh_0bqg2"]
+material = SubResource("StandardMaterial3D_qidb7")
+radius = 0.16
+height = 0.275
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_jsjdp"]
+
+[node name="Node3D" type="Node3D" unique_id=1768170752]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=722350513]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.94632447, 0)
+mesh = SubResource("SphereMesh_btcff")
+surface_material_override/0 = SubResource("ShaderMaterial_picub")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=796881371]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.625307, 0.0218575)
+amount = 16
+lifetime = 0.6900000000000001
+preprocess = 1.07
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_pvhdv")
+draw_pass_1 = SubResource("SphereMesh_0bqg2")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=2046027389]
+script = ExtResource("5_8051g")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1229333748]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.91439056, 0)
+shape = SubResource("SphereShape3D_jsjdp")

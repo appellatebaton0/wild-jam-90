@@ -19,23 +19,16 @@
 [ext_resource type="Texture2D" uid="uid://0v0u1qwhyued" path="res://Assests/2D/Packed_Wall_Normal.png" id="12_8c2l8"]
 [ext_resource type="Texture2D" uid="uid://cdnp7g10fkaen" path="res://Assests/2D/Packed_grass_New.png" id="13_8c2l8"]
 [ext_resource type="PackedScene" uid="uid://dq1450yj683r4" path="res://Assests/3D/Rocks/Rock7.tscn" id="13_wgs1d"]
-[ext_resource type="PackedScene" uid="uid://b1unhe5jr1qe3" path="res://Assests/3D/Objects/Moveable_Crate.tscn" id="14_x2jjp"]
 [ext_resource type="PackedScene" uid="uid://jb833qxuovqs" path="res://Assests/3D/Objects/stag01.tscn" id="16_11yo2"]
 [ext_resource type="Script" uid="uid://dbndw8p05yam7" path="res://addons/terrain_3d/utils/terrain_3d_objects.gd" id="16_hg0jb"]
+[ext_resource type="AudioStream" uid="uid://bg4hf6wsfvf3s" path="res://Assests/Music/Fuego Rocks v2.mp3" id="22_8c2l8"]
 [ext_resource type="PackedScene" uid="uid://bin58wweuwgip" path="res://Assests/3D/Tunnels/Tunnel_Straight.tscn" id="22_trh55"]
-[ext_resource type="AudioStream" uid="uid://bynreodu0qi6" path="res://Assests/Music/FFXIV song don't keep.mp3" id="24_aro4c"]
 [ext_resource type="PackedScene" uid="uid://bx6bxd2ar331n" path="res://Assests/3D/Tunnels/Room.tscn" id="25_og4n6"]
 [ext_resource type="PackedScene" uid="uid://b5rf7frqulgd5" path="res://Assests/3D/Objects/crystal_large.tscn" id="26_56pty"]
-[ext_resource type="PackedScene" uid="uid://bon8bptfjfpue" path="res://Scenes/MovingPlatform.tscn" id="26_jg0jb"]
-[ext_resource type="PackedScene" uid="uid://d2cwefjigkop1" path="res://Scenes/MovingPlatformPoint.tscn" id="27_56pty"]
 [ext_resource type="PackedScene" uid="uid://btfxborye2xtt" path="res://Assests/3D/Objects/Single Crystal.tscn" id="27_y3gbf"]
-[ext_resource type="PackedScene" uid="uid://c3obafcdtdwal" path="res://Scenes/Door.tscn" id="31_od3q6"]
-[ext_resource type="Script" uid="uid://dd8or5oo0cmw2" path="res://Scripts/Values/Bool/Actor.gd" id="32_1nlqs"]
 [ext_resource type="Material" uid="uid://or8blx8y5xq7" path="res://Assests/3D/Materials/water.res" id="32_pa8kd"]
 [ext_resource type="PackedScene" uid="uid://b6mm1wjjwcmeh" path="res://Scenes/PressurePlate.tscn" id="33_efgxu"]
-[ext_resource type="PackedScene" uid="uid://bvv3sij1qe3xe" path="res://Assests/3D/Objects/Door_Wall.tscn" id="34_1nlqs"]
 [ext_resource type="PackedScene" uid="uid://d2ub6lwhrem6w" path="res://Assests/3D/Objects/Sokaban box.tscn" id="36_8c2l8"]
-[ext_resource type="PackedScene" uid="uid://b1f37ebgxsquf" path="res://Scenes/Player.tscn" id="36_lmxn3"]
 [ext_resource type="PackedScene" uid="uid://ckyihclsq435f" path="res://Scenes/camera_switch.tscn" id="36_pa8kd"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_trh55"]
@@ -392,7 +385,7 @@ size = Vector3(60.916992, 38.87628, 35.73346)
 [sub_resource type="BoxShape3D" id="BoxShape3D_k4p64"]
 size = Vector3(99.66979, 60.545837, 101.04912)
 
-[node name="Terrain" type="Node3D" unique_id=690942651]
+[node name="Terrain" type="Node" unique_id=1011929384]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1297846429]
 environment = ExtResource("1_md4b5")
@@ -643,9 +636,7 @@ light_volumetric_fog_energy = 1.466
 shadow_enabled = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1399098472]
-stream = ExtResource("24_aro4c")
-volume_db = -22.615
-pitch_scale = 0.38
+stream = ExtResource("22_8c2l8")
 autoplay = true
 
 [node name="Rooms" type="Node3D" parent="." unique_id=1684595207]
@@ -838,238 +829,6 @@ randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_og4n6")
 draw_pass_1 = SubResource("SphereMesh_6a4nl")
 
-[node name="PLatforms" type="Node3D" parent="." unique_id=908979727]
-
-[node name="MovingPlatform" parent="PLatforms" unique_id=1114646680 node_paths=PackedStringArray("points") instance=ExtResource("26_jg0jb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.759914, 20.197678, -5.9361444)
-floor_constant_speed = true
-points = [NodePath("../MovingPlatform\'s 2"), NodePath("../MovingPlatform\'s 3")]
-
-[node name="MovingPlatform\'s 2" parent="PLatforms" unique_id=1766241102 instance=ExtResource("27_56pty")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.232315, 20.486559, -1.1798143)
-time = 10.0
-after_wait = 3.0
-
-[node name="MovingPlatform\'s 3" parent="PLatforms" unique_id=957593211 instance=ExtResource("27_56pty")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.194685, 20.195908, -5.965273)
-time = 10.0
-after_wait = 3.0
-
-[node name="Node3D" type="Node3D" parent="PLatforms" unique_id=54011629]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 103.301636, 38.759125, 48.673454)
-
-[node name="MovingPlatform2" parent="PLatforms/Node3D" unique_id=111670905 node_paths=PackedStringArray("points") instance=ExtResource("26_jg0jb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2370987, 0)
-points = [NodePath("../MovingPlatform2\'s 1"), NodePath("../MovingPlatform2\'s 3")]
-
-[node name="MovingPlatform2\'s 2" parent="PLatforms/Node3D" unique_id=203543583 instance=ExtResource("27_56pty")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -15.657873, 0)
-
-[node name="MovingPlatform2\'s 1" parent="PLatforms/Node3D" unique_id=1058092914 instance=ExtResource("27_56pty")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -15.657873, 0)
-time = 10.0
-after_wait = 3.0
-
-[node name="MovingPlatform2\'s 3" parent="PLatforms/Node3D" unique_id=1451485486 instance=ExtResource("27_56pty")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3466911, 0)
-time = 10.0
-after_wait = 3.0
-
-[node name="Node3D5" type="Node3D" parent="PLatforms" unique_id=2103113243]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.475548, 38.759125, -25.457664)
-
-[node name="MovingPlatform2" parent="PLatforms/Node3D5" unique_id=1799996103 node_paths=PackedStringArray("points", "condition") instance=ExtResource("26_jg0jb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.411255, 0)
-points = [NodePath("../MovingPlatform2\'s 1"), NodePath("../MovingPlatform2\'s 3")]
-condition = NodePath("ActorBool")
-
-[node name="ActorBool" type="Node" parent="PLatforms/Node3D5/MovingPlatform2" unique_id=985464101 node_paths=PackedStringArray("actor")]
-script = ExtResource("32_1nlqs")
-actor = NodePath("../../../../Doors/PressurePlate3")
-metadata/_custom_type_script = "uid://dd8or5oo0cmw2"
-
-[node name="MovingPlatform2\'s 2" parent="PLatforms/Node3D5" unique_id=2130515779 instance=ExtResource("27_56pty")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -17.772943, 0)
-
-[node name="MovingPlatform2\'s 1" parent="PLatforms/Node3D5" unique_id=1814282616 instance=ExtResource("27_56pty")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -15.657873, 0)
-time = 10.0
-after_wait = 3.0
-
-[node name="MovingPlatform2\'s 3" parent="PLatforms/Node3D5" unique_id=131726484 instance=ExtResource("27_56pty")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.558659, 0)
-time = 10.0
-after_wait = 3.0
-
-[node name="Node3D2" type="Node3D" parent="PLatforms" unique_id=1931409777]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.249454, 58.880405, 63.614677)
-
-[node name="MovingPlatform2" parent="PLatforms/Node3D2" unique_id=1561321036 node_paths=PackedStringArray("points") instance=ExtResource("26_jg0jb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8467369, -17.232185, 9.964706)
-points = [NodePath("../MovingPlatform2\'s 1"), NodePath("../MovingPlatform2\'s 2")]
-
-[node name="MovingPlatform2\'s 1" parent="PLatforms/Node3D2" unique_id=1561775914 instance=ExtResource("27_56pty")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.003218, -16.19228, 10.360458)
-time = 10.0
-after_wait = 3.0
-
-[node name="MovingPlatform2\'s 2" parent="PLatforms/Node3D2" unique_id=387290687 instance=ExtResource("27_56pty")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9989243, -17.238552, 9.96228)
-time = 10.0
-after_wait = 3.0
-
-[node name="Node3D3" type="Node3D" parent="PLatforms" unique_id=630551654]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.249454, 58.880405, 73.696144)
-
-[node name="MovingPlatform2" parent="PLatforms/Node3D3" unique_id=548119660 node_paths=PackedStringArray("points") instance=ExtResource("26_jg0jb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.793608, -4.380886, 8.1334305)
-points = [NodePath("../MovingPlatform2\'s 1"), NodePath("../MovingPlatform2\'s 2")]
-
-[node name="MovingPlatform2\'s 1" parent="PLatforms/Node3D3" unique_id=37665779 instance=ExtResource("27_56pty")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.003218, -16.19228, 7.6139755)
-time = 10.0
-after_wait = 3.0
-
-[node name="MovingPlatform2\'s 2" parent="PLatforms/Node3D3" unique_id=476818215 instance=ExtResource("27_56pty")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.798449, -4.308552, 8.136612)
-time = 10.0
-after_wait = 3.0
-
-[node name="Node3D4" type="Node3D" parent="PLatforms" unique_id=638773716]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.550056, 69.19933, 73.696144)
-
-[node name="MovingPlatform2" parent="PLatforms/Node3D4" unique_id=1473171530 node_paths=PackedStringArray("points") instance=ExtResource("26_jg0jb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.793608, -4.38089, 8.1334305)
-points = [NodePath("../MovingPlatform2\'s 1"), NodePath("../MovingPlatform2\'s 2")]
-
-[node name="MovingPlatform2\'s 1" parent="PLatforms/Node3D4" unique_id=1609978905 instance=ExtResource("27_56pty")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.003218, -16.19228, 7.6139755)
-time = 10.0
-after_wait = 3.0
-
-[node name="MovingPlatform2\'s 2" parent="PLatforms/Node3D4" unique_id=831696168 instance=ExtResource("27_56pty")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.798449, -4.308552, 8.136612)
-time = 10.0
-after_wait = 3.0
-
-[node name="Node3D6" type="Node3D" parent="PLatforms" unique_id=1884387745]
-transform = Transform3D(0.9097005, 0, -0.4152649, 0, 1, 0, 0.4152649, 0, 0.9097005, 95.61943, 66.61241, -73.175186)
-
-[node name="MovingPlatform2" parent="PLatforms/Node3D6" unique_id=1041057656 node_paths=PackedStringArray("points") instance=ExtResource("26_jg0jb")]
-transform = Transform3D(1.000005, 0, 2.9802322e-07, 0, 1, 0, -2.9802322e-07, 0, 1.000005, -23.79361, -4.380886, 8.133438)
-points = [NodePath("../MovingPlatform2\'s 1"), NodePath("../MovingPlatform2\'s 2")]
-
-[node name="MovingPlatform2\'s 1" parent="PLatforms/Node3D6" unique_id=419201478 instance=ExtResource("27_56pty")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.003218, -16.19228, 7.6139755)
-time = 10.0
-after_wait = 3.0
-
-[node name="MovingPlatform2\'s 2" parent="PLatforms/Node3D6" unique_id=1171173601 instance=ExtResource("27_56pty")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.798449, -4.308552, 8.136612)
-time = 10.0
-after_wait = 3.0
-
-[node name="Node3D7" type="Node3D" parent="PLatforms" unique_id=250419387]
-transform = Transform3D(0.9097005, 0, -0.4152649, 0, 1, 0, 0.4152649, 0, 0.9097005, 104.908554, 66.61241, -68.93484)
-
-[node name="MovingPlatform2" parent="PLatforms/Node3D7" unique_id=427721968 node_paths=PackedStringArray("points") instance=ExtResource("26_jg0jb")]
-transform = Transform3D(1.000005, 0, 2.9802322e-07, 0, 1, 0, -2.9802322e-07, 0, 1.000005, -23.793621, -4.380886, 8.1334305)
-points = [NodePath("../MovingPlatform2\'s 1"), NodePath("../MovingPlatform2\'s 2")]
-
-[node name="MovingPlatform2\'s 1" parent="PLatforms/Node3D7" unique_id=578488875 instance=ExtResource("27_56pty")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.003218, -16.19228, 7.6139755)
-time = 10.0
-after_wait = 3.0
-
-[node name="MovingPlatform2\'s 2" parent="PLatforms/Node3D7" unique_id=2052561337 instance=ExtResource("27_56pty")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.798449, -4.308552, 8.136612)
-time = 10.0
-after_wait = 3.0
-
-[node name="Node3D8" type="Node3D" parent="PLatforms" unique_id=565782385]
-transform = Transform3D(0.9097005, 0, -0.4152649, 0, 1, 0, 0.4152649, 0, 0.9097005, 95.675354, 82.0514, -74.90381)
-
-[node name="MovingPlatform2" parent="PLatforms/Node3D8" unique_id=1983813082 node_paths=PackedStringArray("points") instance=ExtResource("26_jg0jb")]
-transform = Transform3D(1.000005, 0, 2.9802322e-07, 0, 1, 0, -2.9802322e-07, 0, 1.000005, -23.79361, -4.38089, 8.133438)
-points = [NodePath("../MovingPlatform2\'s 1"), NodePath("../MovingPlatform2\'s 2")]
-
-[node name="MovingPlatform2\'s 1" parent="PLatforms/Node3D8" unique_id=1302503309 instance=ExtResource("27_56pty")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.003218, -16.19228, 7.6139755)
-time = 10.0
-after_wait = 3.0
-
-[node name="MovingPlatform2\'s 2" parent="PLatforms/Node3D8" unique_id=1286580413 instance=ExtResource("27_56pty")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.798449, -4.308552, 8.136612)
-time = 10.0
-after_wait = 3.0
-
-[node name="Node3D9" type="Node3D" parent="PLatforms" unique_id=798462487]
-transform = Transform3D(0.9097005, 0, -0.4152649, 0, 1, 0, 0.4152649, 0, 0.9097005, 119.34645, 70.69578, -64.0983)
-
-[node name="MovingPlatform2" parent="PLatforms/Node3D9" unique_id=977887901 node_paths=PackedStringArray("points") instance=ExtResource("26_jg0jb")]
-transform = Transform3D(1.000005, 0, 2.9802322e-07, 0, 1, 0, -2.9802322e-07, 0, 1.000005, -23.793621, -4.38089, 8.1334305)
-points = [NodePath("../MovingPlatform2\'s 1"), NodePath("../MovingPlatform2\'s 2")]
-
-[node name="MovingPlatform2\'s 1" parent="PLatforms/Node3D9" unique_id=663866041 instance=ExtResource("27_56pty")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.003218, -16.19228, 7.6139755)
-time = 10.0
-after_wait = 3.0
-
-[node name="MovingPlatform2\'s 2" parent="PLatforms/Node3D9" unique_id=1774508164 instance=ExtResource("27_56pty")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.798449, -4.308552, 8.136612)
-time = 10.0
-after_wait = 3.0
-
-[node name="Doors" type="Node3D" parent="." unique_id=159477979]
-
-[node name="PressurePlate" parent="Doors" unique_id=157249335 instance=ExtResource("33_efgxu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.304527, 0.09738922, 11.756799)
-
-[node name="PressurePlate3" parent="Doors" unique_id=1975060879 instance=ExtResource("33_efgxu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.8871, 21.329674, 1.3861642)
-
-[node name="PressurePlate4" parent="Doors" unique_id=1116958935 instance=ExtResource("33_efgxu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.579044, 45.927956, -42.460564)
-
-[node name="PressurePlate2" parent="Doors" unique_id=1706409095 instance=ExtResource("33_efgxu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.278595, 2.4210587, 3.2196488)
-
-[node name="Door" parent="Doors" unique_id=697453936 node_paths=PackedStringArray("condition") instance=ExtResource("31_od3q6")]
-transform = Transform3D(-1.9527503, 0, -0.4321636, 0, 2, 0, 0.4321636, 0, -1.9527503, 26.100925, 9.538709, 43.24159)
-open_extent = Vector3(0, -10, 0)
-condition = NodePath("ActorBool")
-
-[node name="ActorBool" type="Node" parent="Doors/Door" unique_id=1979531512 node_paths=PackedStringArray("actor")]
-script = ExtResource("32_1nlqs")
-actor = NodePath("../../PressurePlate")
-metadata/_custom_type_script = "uid://dd8or5oo0cmw2"
-
-[node name="Door3" parent="Doors" unique_id=1104721013 node_paths=PackedStringArray("condition") instance=ExtResource("31_od3q6")]
-transform = Transform3D(0.024215922, 0, -0.9546929, 0, 0.955, 0, 0.9546929, 0, 0.024215922, -24.884872, 3.994997, 3.1885295)
-open_extent = Vector3(0, -10, 0)
-condition = NodePath("ActorBool")
-
-[node name="ActorBool" type="Node" parent="Doors/Door3" unique_id=1177067832 node_paths=PackedStringArray("actor")]
-script = ExtResource("32_1nlqs")
-actor = NodePath("../../PressurePlate2")
-metadata/_custom_type_script = "uid://dd8or5oo0cmw2"
-
-[node name="Door2" parent="Doors" unique_id=111004286 node_paths=PackedStringArray("condition") instance=ExtResource("31_od3q6")]
-transform = Transform3D(-1.9527506, -0.43127933, 0.027632535, 0, -0.12788014, -1.9959073, 0.4321636, -1.9487547, 0.12485899, -40.1039, 38.757988, -77.684715)
-open_extent = Vector3(0, -10, 0)
-condition = NodePath("ActorBool")
-
-[node name="ActorBool" type="Node" parent="Doors/Door2" unique_id=1983816972 node_paths=PackedStringArray("actor")]
-script = ExtResource("32_1nlqs")
-actor = NodePath("../../PressurePlate4")
-metadata/_custom_type_script = "uid://dd8or5oo0cmw2"
-
-[node name="Node3D" parent="Doors" unique_id=1378238659 instance=ExtResource("34_1nlqs")]
-transform = Transform3D(-1.6651676, 0, -0.521768, 0, 1.745, 0, 0.521768, 0, -1.6651676, 24.370075, 1.6749535, 43.29313)
-
-[node name="Node3D2" parent="Doors" unique_id=1504504159 instance=ExtResource("34_1nlqs")]
-transform = Transform3D(1.3831768, 0, -1.0638827, 0, 1.745, 0, 1.0638827, 0, 1.3831768, -51.66933, 19.451859, 36.396538)
-
 [node name="Water" type="Node3D" parent="." unique_id=1316085820]
 
 [node name="WaterMesh" type="MeshInstance3D" parent="Water" unique_id=1189880513]
@@ -1093,6 +852,7 @@ transform = Transform3D(-0.17261675, 0, 0.98498905, 0, 1, 0, -0.98498905, 0, -0.
 
 [node name="Camera3D" parent="Camera Switch2/Marker3D" index="0" unique_id=1285850795]
 transform = Transform3D(0.002687765, 0, 0.9999965, 0, 1.0000002, 0, -0.9999965, 0, 0.002687765, 25.94194, 7.6459074, -2.3159049)
+current = true
 
 [node name="CollisionShape3D" parent="Camera Switch2" index="1" unique_id=1313005984]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.394531, 7.1513367, 9.936127)
@@ -1335,40 +1095,9 @@ transform = Transform3D(1.5503854, 0, 0.6973563, 0, 1.7, 0, -0.6973563, 0, 1.550
 
 [node name="creates" type="Node3D" parent="Sokaban" unique_id=630637769]
 
-[node name="Player" parent="." unique_id=623680313 instance=ExtResource("36_lmxn3")]
-transform = Transform3D(0.028828874, 0, -0.9995844, 0, 1, 0, 0.9995844, 0, 0.028828874, -0.0103263855, 2.6744294, -0.03131485)
-
-[node name="AnimationControl" parent="Player/CharacterBody3D/Player_Character" parent_id_path=PackedInt32Array(623680313, 1831994608) index="4" unique_id=247797212 node_paths=PackedStringArray("condition_switches")]
-condition_switches = {
-0: NodePath("Idle"),
-1: NodePath("Walk"),
-2: NodePath("Sprint"),
-3: NodePath("Fall"),
-4: NodePath("Wall_Grab"),
-5: NodePath("Push"),
-6: NodePath("Pull")
-}
-
-[node name="LookBit" parent="Player/CharacterBody3D" parent_id_path=PackedInt32Array(623680313, 844716186) index="3" unique_id=570069494 node_paths=PackedStringArray("tos")]
-tos = {
-NodePath("../Player_Character/AnimationControl/Idle"): NodePath("GlobalDirection"),
-NodePath("../Player_Character/AnimationControl/Wall_Grab"): NodePath("GlobalWallNorm"),
-NodePath("MovingCrate"): null
-}
-
-[node name="Camera3D" parent="Player/CameraPivot" parent_id_path=PackedInt32Array(623680313, 330284818) index="0" unique_id=947941269]
-current = true
-
-[node name="Creates" type="Node3D" parent="." unique_id=1800937459]
-
-[node name="Crate" parent="Creates" unique_id=946948200 instance=ExtResource("14_x2jjp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1733184, 1.2405834, 0)
-
 [connection signal="just_false" from="CanvasLayer/AnimationPlayer/PauseInput" to="CanvasLayer/AnimationPlayer/Unpause" method="animate"]
 [connection signal="just_true" from="CanvasLayer/AnimationPlayer/PauseInput" to="CanvasLayer/AnimationPlayer/Pause" method="animate"]
 
 [editable path="Camera Switch2"]
 [editable path="Camera Switch3"]
 [editable path="Sokaban/Camera Switch"]
-[editable path="Player"]
-[editable path="Creates/Crate"]
