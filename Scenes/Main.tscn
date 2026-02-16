@@ -16,6 +16,7 @@
 [ext_resource type="Script" uid="uid://bmbnethi8oyh3" path="res://Scripts/Bits/AreaMaster3D.gd" id="9_h1m7h"]
 [ext_resource type="PackedScene" uid="uid://b6mm1wjjwcmeh" path="res://Scenes/PressurePlate.tscn" id="10_1p5hy"]
 [ext_resource type="Script" uid="uid://cj85aq1o3xpfw" path="res://Scripts/Bits/AreaBits/3D/Checkpoint.gd" id="10_erwvk"]
+[ext_resource type="Script" uid="uid://4smbdfkrimmc" path="res://Scripts/Bits/AreaBits/3D/CameraGrab.gd" id="13_0sclb"]
 [ext_resource type="PackedScene" uid="uid://5opnwc5uryxc" path="res://Scenes/InputMappingEntry.tscn" id="14_0sclb"]
 [ext_resource type="Script" uid="uid://dgpskhft1ffgp" path="res://Scripts/Bits/AudioBusBit.gd" id="14_346fj"]
 
@@ -57,15 +58,6 @@ size = Vector3(1.5, 1.5, 1.5)
 [sub_resource type="BoxMesh" id="BoxMesh_v1gob"]
 size = Vector3(1.5, 1.5, 1.5)
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r150o"]
-
-[sub_resource type="Sky" id="Sky_idj7w"]
-sky_material = SubResource("ProceduralSkyMaterial_r150o")
-
-[sub_resource type="Environment" id="Environment_kln2b"]
-background_mode = 2
-sky = SubResource("Sky_idj7w")
-
 [sub_resource type="Gradient" id="Gradient_grg3l"]
 offsets = PackedFloat32Array(0, 0.4604651, 1)
 colors = PackedColorArray(1, 0, 0, 0.69803923, 1, 0, 0, 0.4, 1, 0, 0, 0.7176471)
@@ -81,6 +73,23 @@ albedo_texture = SubResource("GradientTexture2D_frkhe")
 material = SubResource("StandardMaterial3D_1p5hy")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_erwvk"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r150o"]
+
+[sub_resource type="Sky" id="Sky_idj7w"]
+sky_material = SubResource("ProceduralSkyMaterial_r150o")
+
+[sub_resource type="Environment" id="Environment_kln2b"]
+background_mode = 2
+sky = SubResource("Sky_idj7w")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_0sclb"]
+top_radius = 0.01
+bottom_radius = 0.1
+height = 0.4
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sxkr1"]
+size = Vector3(3, 3, 3)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0sclb"]
 bg_color = Color(0.09, 0.09, 0.09, 1)
@@ -647,9 +656,6 @@ metadata/_custom_type_script = "uid://cwmi2fpsn8by2"
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Level" unique_id=988451585]
 transform = Transform3D(0.2681055, 0.90833306, 0.32101473, -0.5822606, 0.41824755, -0.6971668, -0.7675233, 0, 0.6410211, -17.191507, 10.298861, 0)
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="Level" unique_id=1757588943]
-environment = SubResource("Environment_kln2b")
-
 [node name="MovingPlatform" parent="Level" unique_id=1114646680 node_paths=PackedStringArray("points") instance=ExtResource("3_bmxlf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.381077, 5.662977, -8.300176)
 points = [NodePath("../MovingPlatform\'s 2")]
@@ -705,6 +711,29 @@ collision_mask = 2
 
 [node name="MovingPlatform\'s 2" parent="Level" unique_id=1766241102 instance=ExtResource("4_vy5pj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.381077, 5.662977, -8.300176)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Level" unique_id=1757588943]
+environment = SubResource("Environment_kln2b")
+
+[node name="CameraGrab" type="Area3D" parent="Level" unique_id=1239006890]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.214579, 1.1958895, 0)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("9_h1m7h")
+
+[node name="GrabTo" type="Node3D" parent="Level/CameraGrab" unique_id=1912468075]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9528294, 9.029277, 9.976396)
+script = ExtResource("13_0sclb")
+easing = -2.0
+time = 2.0
+collision_mask = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Level/CameraGrab/GrabTo" unique_id=1053425030]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("CylinderMesh_0sclb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/CameraGrab" unique_id=1952037285]
+shape = SubResource("BoxShape3D_sxkr1")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1886343051]
 layer = 2
@@ -890,6 +919,7 @@ offset_left = 30.0
 offset_top = 30.0
 offset_right = 200.0
 offset_bottom = 73.0
+focus_mode = 0
 theme_override_font_sizes/font_size = 25
 text = "<- BACK"
 flat = true
@@ -942,6 +972,7 @@ theme_override_constants/separation = 20
 [node name="Button" type="Button" parent="CanvasLayer/StartScreen/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=559987572]
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
+focus_mode = 0
 theme_override_font_sizes/font_size = 30
 text = "Start"
 
@@ -954,6 +985,7 @@ metadata/_custom_type_script = "uid://dw7w6pry2g435"
 custom_minimum_size = Vector2(275, 100)
 layout_mode = 2
 size_flags_horizontal = 0
+focus_mode = 0
 theme_override_font_sizes/font_size = 30
 text = "Options"
 

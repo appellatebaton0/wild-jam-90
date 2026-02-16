@@ -8,24 +8,18 @@
 
 ## The bot to pass the functionality off to.
 @onready var bot:Bot = get_bot()
-func get_bot() -> Bot:
-	
-	if isolated:
+func get_bot(with:Node = self) -> Bot:
+	if isolated or with == null:
 		return self
 	
 	# Search up through the hierarchy
-	var with = get_parent()
+	with = with.get_parent()
 	
-	for i in range(3):
-		if with is Bit:
-			return with.bot
-		elif with is Bot:
+	if with is Bot: 
+		
+		if not with is Bit:
 			return with
-		elif with != null:
-			with = with.get_parent()
+		elif with.isolated:
+			return with
 	
-	return self
-
-## Scanning for a bit returns any results from the bot this bit belongs to.
-func scan_bot(for_id:String, include_self := true) -> Array[Bit]:
-	return bot._get_sub_bit(for_id, include_self)
+	return get_bot(with)
