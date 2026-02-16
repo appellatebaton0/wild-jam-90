@@ -22,7 +22,9 @@ func phys_active(delta:float) -> void:
 	# Turn that into a vec3
 	var direction := Vector3(0.0, 0.0, dir)
 	# Rotate it by the mover's rotation
-	direction = direction.rotated(Vector3(0,1,0), master.rotator.value().rotation.y)
+	
+	print(master.rotator.value(), master.rotator.value().rotation.y)
+	direction = direction.rotated(Vector3(0,1,0), master.mover.global_rotation.y)
 	
 	print('DIR', direction * max_speed)
 	
@@ -45,8 +47,6 @@ func phys_active(delta:float) -> void:
 	else:
 		# Get the current friction
 		var current_friction = friction
-		
-		print("-")
 		
 		master.mover.velocity.x = move_toward(master.mover.velocity.x, 0, current_friction * delta)
 		master.mover.velocity.z = move_toward(master.mover.velocity.z, 0, current_friction * delta)

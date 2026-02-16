@@ -62,4 +62,4 @@ func pushing_forwards() -> bool:
 	
 	if not holding: return false
 	
-	return master.direction.rotated(Vector3.UP, -master.mover.rotation.y).z < 0
+	return master.direction.rotated(Vector3.UP, -master.mover.global_rotation.y).z < 0
