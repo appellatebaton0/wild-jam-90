@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="wild-jam-90"
-run/main_scene="uid://d3v1cila7q8u7"
+run/main_scene="uid://hgdnv1u63uc5"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -38,6 +38,7 @@ enabled=PackedStringArray("res://addons/terrain_3d/plugin.cfg")
 [global_group]
 
 Respawnable="Every node that should respawn on the player's death."
+Terrain=""
 
 [input]
 
