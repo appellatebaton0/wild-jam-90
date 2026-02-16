@@ -16,6 +16,7 @@ extends Node3D
 	) var movement_state := "Idle":
 	set(to):
 		if to != movement_state and AnimTree:
+			_on_state_transition(movement_state, to)
 			AnimTree.set("parameters/Movement/transition_request", to)
 		movement_state = to
 
@@ -41,4 +42,16 @@ func _process(delta: float):
 
 func play_animation(anim_name: String):
 	if AnimTree.has_animation(anim_name):
-		AnimTree.set(str("parameters/Play_", anim_name, "request"), AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
+		AnimTree.set(str("parameters/Play_", anim_name, "/request"), AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
+
+func stop_animation(anim_name: String):
+	if AnimTree.has_animation(anim_name):
+		AnimTree.set(str("parameters/Play_", anim_name, "/request"), AnimationNodeOneShot.ONE_SHOT_REQUEST_FADE_OUT)
+
+func _on_state_transition(state_from: String, state_to: String) -> void:
+	print(state_from, " | ", state_to)
+	if state_from == "Wall_Grab" and state_to == "Fall":
+		print("jump?")
+		play_animation("Wall_Jump")
+	if state_to != "Fall":
+		stop_animation("Wall_Jump")
