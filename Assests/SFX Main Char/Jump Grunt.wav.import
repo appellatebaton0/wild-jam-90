@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ceqj88iyrbt0l"
+path="res://.godot/imported/Jump Grunt.wav-520abf17a08c2b6bce5b72e7c2aed91a.sample"
+
+[deps]
+
+source_file="res://Assests/SFX Main Char/Jump Grunt.wav"
+dest_files=["res://.godot/imported/Jump Grunt.wav-520abf17a08c2b6bce5b72e7c2aed91a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
