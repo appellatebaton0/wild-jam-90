@@ -22,8 +22,9 @@ func phys_active(delta:float) -> void:
 	# Turn that into a vec3
 	var direction := Vector3(0.0, 0.0, dir)
 	# Rotate it by the mover's rotation
-	direction = direction.rotated(Vector3(0,1,0), master.mover.rotation.y)
+	direction = direction.rotated(Vector3(0,1,0), master.rotator.value().rotation.y)
 	
+	print('DIR', direction * max_speed)
 	
 	# Apply it to the mover.
 	if direction:
@@ -37,13 +38,19 @@ func phys_active(delta:float) -> void:
 		next_velocity.z = move_toward(next_velocity.z, direction.z * max_speed, current_acceleration * delta)
 		
 		
+		print("NXT: ", next_velocity)
+		
 		master.mover.velocity.x = next_velocity.x
 		master.mover.velocity.z = next_velocity.z
 	else:
 		# Get the current friction
 		var current_friction = friction
 		
+		print("-")
+		
 		master.mover.velocity.x = move_toward(master.mover.velocity.x, 0, current_friction * delta)
 		master.mover.velocity.z = move_toward(master.mover.velocity.z, 0, current_friction * delta)
+	
+	print("ATTEMPT VEL TO ", master.mover.velocity)
 	
 	master.direction = direction

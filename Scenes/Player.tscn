@@ -84,7 +84,7 @@ script = ExtResource("1_52ee3")
 collision_layer = 2
 collision_mask = 13
 script = ExtResource("2_bhhdu")
-rotator = NodePath("../CameraPivot/Pivot")
+rotator = NodePath("../CameraPivot/FloatCast/Camera")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1371614169]
 shape = SubResource("CapsuleShape3D_r150o")
@@ -358,15 +358,14 @@ script = ExtResource("24_kih0c")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D/CamearCheck" unique_id=1028648525]
 shape = SubResource("CapsuleShape3D_utwlt")
 
-[node name="CameraPivot" type="Node3D" parent="." unique_id=330284818]
-
-[node name="Camera3D" type="Camera3D" parent="CameraPivot" unique_id=947941269 node_paths=PackedStringArray("y_target", "x_target")]
-transform = Transform3D(1, 0, 0, 0, 0.93664163, 0.3502891, 0, -0.3502891, 0.93664163, 0, 2.6785638, 4.653676)
+[node name="CameraPivot" type="Node3D" parent="." unique_id=330284818 node_paths=PackedStringArray("y_target", "x_target")]
 script = ExtResource("6_glx4g")
-y_target = NodePath("../Pivot")
-x_target = NodePath("../Pivot")
+y_target = NodePath("Pivot")
+x_target = NodePath("Pivot")
 x_clamp = Vector2(-50, 90)
-isolated = true
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot" unique_id=947941269]
+transform = Transform3D(1, 0, 0, 0, 0.93664163, 0.3502891, 0, -0.3502891, 0.93664163, 0, 2.6785638, 4.653676)
 
 [node name="Pivot" type="Node" parent="CameraPivot" unique_id=1551523772 node_paths=PackedStringArray("response")]
 script = ExtResource("7_miouo")
@@ -378,9 +377,9 @@ target_position = Vector3(0, 2.5, 4.5)
 collision_mask = 5
 script = ExtResource("7_bhhdu")
 ray = NodePath(".")
-target = NodePath("ManualNode")
+target = NodePath("Camera")
 
-[node name="ManualNode" type="Node" parent="CameraPivot/FloatCast" unique_id=42126983 node_paths=PackedStringArray("response")]
+[node name="Camera" type="Node" parent="CameraPivot/FloatCast" unique_id=42126983 node_paths=PackedStringArray("response")]
 script = ExtResource("7_miouo")
 response = NodePath("../../Camera3D")
 metadata/_custom_type_script = "uid://b1o48vkwquyxs"
