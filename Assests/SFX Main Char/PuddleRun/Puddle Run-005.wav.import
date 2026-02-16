@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://blokf30vipo37"
+path="res://.godot/imported/Puddle Run-005.wav-c3e840ffb8532e85f0cb2b90e18bf03a.sample"
+
+[deps]
+
+source_file="res://Assests/SFX Main Char/PuddleRun/Puddle Run-005.wav"
+dest_files=["res://.godot/imported/Puddle Run-005.wav-c3e840ffb8532e85f0cb2b90e18bf03a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
