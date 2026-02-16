@@ -49,9 +49,9 @@ func stop_animation(anim_name: String):
 		AnimTree.set(str("parameters/Play_", anim_name, "/request"), AnimationNodeOneShot.ONE_SHOT_REQUEST_FADE_OUT)
 
 func _on_state_transition(state_from: String, state_to: String) -> void:
-	print(state_from, " | ", state_to)
+	#print(state_from, " | ", state_to)
 	if state_from == "Wall_Grab" and state_to == "Fall":
-		print("jump?")
+		#print("jump?")
 		play_animation("Wall_Jump")
 	if state_to != "Fall":
 		stop_animation("Wall_Jump")

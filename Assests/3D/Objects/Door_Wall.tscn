@@ -10,7 +10,7 @@ data = PackedVector3Array(-2.0119, -1, 1, -4.033, 1.9031999, 1, -2.0119, 1.90319
 [node name="Door_Wall" parent="." unique_id=1131694095 instance=ExtResource("1_fj7h1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2399777, -1.1920929e-07, 0.712517)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Door_Wall/Cube" parent_id_path=PackedInt32Array(1131694095, 1606469163) index="0" unique_id=1154630448]
+[node name="StaticBody3D" type="StaticBody3D" parent="Door_Wall/Cube" parent_id_path=PackedInt32Array(1131694095, 25969884) index="0" unique_id=1154630448]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Door_Wall/Cube/StaticBody3D" unique_id=1481108495]
 shape = SubResource("ConcavePolygonShape3D_17qto")

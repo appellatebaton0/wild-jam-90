@@ -21,10 +21,10 @@ var cooldown_timer := 0.0
 var last_wall_normal:Vector3
 
 func phys_active(delta:float) -> void:
-	
-	
 	# Run down the cooldown.
 	cooldown_timer = move_toward(cooldown_timer, 0, delta)
+	
+	
 	
 	# Coyote Time
 	coyote_timer = move_toward(coyote_timer, 0, delta)
@@ -47,3 +47,4 @@ func phys_active(delta:float) -> void:
 		coyote_timer = 0
 		jump_buffer = 0
 	
+#func _physics_process(delta: float) -> void: print(master.mover.is_on_wall_only())
