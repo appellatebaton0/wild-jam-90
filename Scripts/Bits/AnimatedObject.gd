@@ -4,15 +4,13 @@ class_name AnimatedObject extends Bit
 ## The target of the switches.
 @export var target:Node
 ## The conditions that control the currently running animation. int = priority. Name the bool the animation name.
-@export var condition_switches:Dictionary[int, BoolValue]
+@export var condition_switches:Array[BoolValue]
 
 func _process(_delta: float) -> void:
-	var check = 0
-	var left = condition_switches.duplicate()
 	
-	while len(left) > 0:
-		for priority in left: if priority <= check:
-			if left[priority].value():
-				target.movement_state = left[priority].name
-			left.erase(priority)
-		check += 1
+	for condition in condition_switches:
+		if condition.value():
+			target.movement_state = condition.name
+			break
+	
+	
