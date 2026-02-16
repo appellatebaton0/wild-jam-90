@@ -35,7 +35,8 @@ func _process(delta: float) -> void: if active:
 	
 	# Set the target position to the point the ray hits if there is one, otherwise as far out as it goes.
 	targ.position = lerp(goal_pos, or_pos, ease(timer/time, easing))
-	
+
+
 	var real_rotation = targ.global_rotation
 	targ.look_at(ray.global_position)
 	var goal_rotation = targ.global_rotation
