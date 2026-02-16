@@ -19,7 +19,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0702176, 1.4332886, 0)
 
 [node name="AnimationControl" parent="Player/CharacterBody3D/Player_Character" parent_id_path=PackedInt32Array(623680313, 1831994608) index="4" unique_id=247797212 node_paths=PackedStringArray("condition_switches")]
 condition_switches = []
-
 [node name="LookBit" parent="Player/CharacterBody3D" parent_id_path=PackedInt32Array(623680313, 844716186) index="3" unique_id=570069494 node_paths=PackedStringArray("tos")]
 tos = {
 NodePath("../Player_Character/AnimationControl/Idle"): NodePath("GlobalDirection"),
