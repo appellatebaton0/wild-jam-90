@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cw5v3k3rnk5jn"]
+
+[ext_resource type="PackedScene" uid="uid://qjg01dd0wvje" path="res://Assests/3D/Objects/SignPost.glb" id="1_slywy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kps3m"]
+size = Vector3(1.411377, 1.7890625, 0.15441895)
+
+[node name="Signpost" type="Label3D" unique_id=1718605348]
+text = "afnasdgaudbguadgfbiaudbfgiuadbfgiuadbfgiaudfgafadfadfadfa"
+font_size = 26
+autowrap_mode = 1
+width = 266.0
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=533065654]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5210799)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=2121742823]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.020629883, -0.42578125, 0.44281006)
+shape = SubResource("BoxShape3D_kps3m")
+
+[node name="SignPost" parent="." unique_id=1447617074 instance=ExtResource("1_slywy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.282, 0.075)
