@@ -14,6 +14,12 @@ func _ready() -> void:
 	if me is RigidBody3D: rigid = me
 
 func _process(delta: float) -> void:
+	
+	if player == null:
+		player = get_tree().get_first_node_in_group("Player")
+		print(get_tree().get_nodes_in_group("Player"))
+		return
+	
 	if interval <= 0.0:
 		var set_freeze = player.global_position.distance_to(rigid.global_position) > FREEZE_DISTANCE
 		

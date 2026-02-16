@@ -207,7 +207,7 @@ material = SubResource("StandardMaterial3D_qidb7")
 radius = 0.16
 height = 0.275
 
-[node name="Player" type="Node3D" unique_id=623680313 groups=["Respawnable"]]
+[node name="Player" type="Node3D" unique_id=623680313 groups=["Player", "Respawnable"]]
 script = ExtResource("1_52ee3")
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=844716186 node_paths=PackedStringArray("rotator")]
@@ -530,6 +530,10 @@ metadata/_custom_type_script = "uid://bslmamakq2ao5"
 script = ExtResource("6_glx4g")
 y_target = NodePath("Pivot")
 x_target = NodePath("Pivot")
+x_neg_input = &"CamLeft"
+y_neg_input = &"CamDown"
+x_pos_input = &"CamRight"
+y_pos_input = &"CamUp"
 x_clamp = Vector2(-50, 90)
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot" unique_id=947941269]
