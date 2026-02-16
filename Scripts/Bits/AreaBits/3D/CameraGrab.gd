@@ -30,8 +30,6 @@ func _process(delta: float) -> void: if camera:
 	camera.global_position = lerp(grab_node.global_position, start_position, ease(timer/time, easing))
 	camera.global_rotation = lerp(grab_node.global_rotation, start_rotation, ease(timer/time, easing))
 	
-	print(camera.global_position, " as ", start_position, " and ", grab_node.global_position, " and ", ease(timer/time, easing))
-	
 	timer = move_toward(timer, 0, delta)
 	
 
@@ -45,8 +43,6 @@ func on_body_entered(body:Node) -> void:
 		
 		## Find a camera pivot if one exists.
 		pivot = body.scan_bot("CameraFloat")[0]
-		
-		print("! -> ", camera)
 		
 		if camera:
 			held_by = body

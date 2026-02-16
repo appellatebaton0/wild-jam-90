@@ -20,13 +20,13 @@
 [ext_resource type="AudioStream" uid="uid://bg4hf6wsfvf3s" path="res://Assests/Music/Fuego Rocks v2.mp3" id="22_8c2l8"]
 [ext_resource type="PackedScene" uid="uid://bin58wweuwgip" path="res://Assests/3D/Tunnels/Tunnel_Straight.tscn" id="22_trh55"]
 [ext_resource type="AudioStream" uid="uid://7jvmcxks5q72" path="res://Assests/SFX Ambience/Forest Ambience loop.wav" id="23_cvje1"]
+[ext_resource type="PackedScene" uid="uid://dkhpghpfg7uab" path="res://Scenes/CameraGrab.tscn" id="25_jg0jb"]
 [ext_resource type="PackedScene" uid="uid://bx6bxd2ar331n" path="res://Assests/3D/Tunnels/Room.tscn" id="25_og4n6"]
 [ext_resource type="PackedScene" uid="uid://b5rf7frqulgd5" path="res://Assests/3D/Objects/crystal_large.tscn" id="26_56pty"]
 [ext_resource type="PackedScene" uid="uid://btfxborye2xtt" path="res://Assests/3D/Objects/Single Crystal.tscn" id="27_y3gbf"]
 [ext_resource type="Material" uid="uid://or8blx8y5xq7" path="res://Assests/3D/Materials/water.res" id="32_pa8kd"]
 [ext_resource type="PackedScene" uid="uid://b6mm1wjjwcmeh" path="res://Scenes/PressurePlate.tscn" id="33_efgxu"]
 [ext_resource type="PackedScene" uid="uid://d2ub6lwhrem6w" path="res://Assests/3D/Objects/Sokaban box.tscn" id="36_8c2l8"]
-[ext_resource type="PackedScene" uid="uid://ckyihclsq435f" path="res://Scenes/camera_switch.tscn" id="36_pa8kd"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_trh55"]
 dof_blur_far_enabled = true
@@ -133,7 +133,6 @@ lod0_range = 128.0
 [sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_x2jjp"]
 name = "Shroom001"
 id = 5
-enabled = false
 scene_file = ExtResource("6_inob1")
 last_lod = 0
 last_shadow_lod = 0
@@ -219,7 +218,7 @@ material = SubResource("StandardMaterial3D_3ddme")
 size = Vector2(50, 50)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_efgxu"]
-size = Vector3(60.916992, 38.87628, 35.73346)
+size = Vector3(60.916992, 28.004059, 21.05497)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k4p64"]
 size = Vector3(99.66979, 60.545837, 101.04912)
@@ -368,6 +367,9 @@ transform = Transform3D(18.415, 0, 0, 0, 18.415, 0, 0, 0, 18.415, 54.502365, -2.
 
 [node name="Node3D11" parent="Terrain3D/Terrain3DObjects" unique_id=341648674 instance=ExtResource("13_wgs1d")]
 transform = Transform3D(18.415, 0, 0, 0, 18.415, 0, 0, 0, 18.415, 50.722813, 6.709912, 85.905106)
+
+[node name="Node3D33" parent="Terrain3D/Terrain3DObjects" unique_id=1607373932 instance=ExtResource("13_wgs1d")]
+transform = Transform3D(7.9185944, 3.9601088, -0.15626866, -3.9338503, 7.896264, 0.7647363, 0.48135284, -0.6144439, 8.820531, 50.722813, 40.52392, 65.861374)
 
 [node name="Node3D24" parent="Terrain3D/Terrain3DObjects" unique_id=271729042 instance=ExtResource("13_wgs1d")]
 transform = Transform3D(21.95, 0, 0, 0, 21.95, 0, 0, 0, 21.95, 63.157158, 10.359251, 85.905106)
@@ -643,51 +645,36 @@ mesh = SubResource("QuadMesh_1hnqj")
 skeleton = NodePath("../WaterMesh")
 surface_material_override/0 = ExtResource("32_pa8kd")
 
-[node name="Camera Switch2" parent="." unique_id=1571385443 instance=ExtResource("36_pa8kd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.883038, 40.859676, 71.87151)
-tspeed = 4
+[node name="CameraGrab" parent="." unique_id=2053990340 instance=ExtResource("25_jg0jb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 41, 72)
 
-[node name="Marker3D" parent="Camera Switch2" index="0" unique_id=1265168194]
-transform = Transform3D(-0.17261675, 0, 0.98498905, 0, 1, 0, -0.98498905, 0, -0.17261675, 0, 1.146527, 5.2485514)
+[node name="GrabTo" parent="CameraGrab" index="0" unique_id=1105713157]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -6.8746223, 8.730118, -19.831882)
 
-[node name="Camera3D" parent="Camera Switch2/Marker3D" index="0" unique_id=1285850795]
-transform = Transform3D(0.002687765, 0, 0.9999965, 0, 1.0000002, 0, -0.9999965, 0, 0.002687765, 25.94194, 7.6459074, -2.3159049)
-current = true
-
-[node name="CollisionShape3D" parent="Camera Switch2" index="1" unique_id=1313005984]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.394531, 7.1513367, 9.936127)
+[node name="CollisionShape3D" parent="CameraGrab" index="1" unique_id=2042857866]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.397184, 11.620777, 6.3576202)
 shape = SubResource("BoxShape3D_efgxu")
 
-[node name="Camera Switch3" parent="." unique_id=1798289317 instance=ExtResource("36_pa8kd")]
-transform = Transform3D(-0.92755604, 0, 0.3736841, 0, 1, 0, -0.3736841, 0, -0.92755604, 66.88766, 50.18038, -59.4169)
-tspeed = 4
+[node name="CameraGrab2" parent="." unique_id=931131971 instance=ExtResource("25_jg0jb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.065636, 54.277092, -61.27073)
 
-[node name="Marker3D" parent="Camera Switch3" index="0" unique_id=1265168194]
-transform = Transform3D(-0.17261675, 0, 0.98498905, 0, 1, 0, -0.98498905, 0, -0.17261675, 0, 1.146527, 5.2485514)
+[node name="GrabTo" parent="CameraGrab2" index="0" unique_id=1105713157]
+transform = Transform3D(0.9528576, 0, -0.3034178, 0, 1, 0, 0.3034178, 0, 0.9528576, -8.156097, 5.5555573, 13.059498)
 
-[node name="Camera3D" parent="Camera Switch3/Marker3D" index="0" unique_id=1285850795]
-transform = Transform3D(0.110983245, 0, 0.99382234, 0, 1.0000002, 0, -0.99382234, 0, 0.110983245, 15.43755, 8.561423, -5.2509317)
-
-[node name="CollisionShape3D" parent="Camera Switch3" index="1" unique_id=1313005984]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.486816, 7.1513367, 9.936127)
+[node name="CollisionShape3D" parent="CameraGrab2" index="1" unique_id=2042857866]
+transform = Transform3D(0.9291326, 0, -0.36974674, 0, 1, 0, 0.36974674, 0, 0.9291326, 4.8024673, 2.9585152, -2.6235924)
 shape = SubResource("BoxShape3D_efgxu")
 
 [node name="Sokaban" type="Node3D" parent="." unique_id=703093912]
 transform = Transform3D(0.22048333, 0, -0.24553433, 0, 0.33, 0, 0.24553433, 0, 0.22048333, -4.9387445, 59.942444, -110.375946)
 
-[node name="Camera Switch" parent="Sokaban" unique_id=1023832619 instance=ExtResource("36_pa8kd")]
-transform = Transform3D(0.96396554, 0, 0.26602724, 0, 1, 0, -0.26602724, 0, 0.96396554, -42.45391, 78.84715, -264.7037)
-tspeed = 4
+[node name="CameraGrab" parent="Sokaban" unique_id=138386606 instance=ExtResource("25_jg0jb")]
+transform = Transform3D(0.92010176, 0, 0.3916788, 0, 1, 0, -0.3916788, 0, 0.92010176, -27.502228, 101.12323, -230.90578)
 
-[node name="Marker3D" parent="Sokaban/Camera Switch" index="0" unique_id=1265168194]
-transform = Transform3D(-0.17261675, 0, 0.98498905, 0, 1, 0, -0.98498905, 0, -0.17261675, 0, 1.146527, 5.2485514)
+[node name="GrabTo" parent="Sokaban/CameraGrab" index="0" unique_id=1105713157]
+transform = Transform3D(0.99939084, -0.034899496, -1.5255054e-09, 0, -4.371139e-08, 1, -0.034899496, -0.99939084, -4.368476e-08, 0.73358154, 56.597717, 2.194397)
 
-[node name="Camera3D" parent="Sokaban/Camera Switch/Marker3D" index="0" unique_id=1285850795]
-transform = Transform3D(2.8168378, -0.01897719, -3.5527137e-15, -8.2952134e-10, -1.2312788e-07, 2.8169017, -0.018977309, -2.8168378, -1.2313068e-07, -31.49347, 71.65462, 1.1478271)
-fov = 78.22739
-
-[node name="CollisionShape3D" parent="Sokaban/Camera Switch" index="1" unique_id=1313005984]
-transform = Transform3D(0.9885466, 0, 0.15091585, 0, 1, 0, -0.15091585, 0, 0.9885466, 6.858921, 23.08992, 36.881042)
+[node name="CollisionShape3D" parent="Sokaban/CameraGrab" index="1" unique_id=2042857866]
 shape = SubResource("BoxShape3D_k4p64")
 
 [node name="Unmovable blocks" type="Node3D" parent="Sokaban" unique_id=334919472]
@@ -910,6 +897,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.114618, 15.435742, 27.1248
 omni_range = 30.0
 omni_attenuation = 0.5
 
-[editable path="Camera Switch2"]
-[editable path="Camera Switch3"]
-[editable path="Sokaban/Camera Switch"]
+[editable path="CameraGrab"]
+[editable path="CameraGrab2"]
+[editable path="Sokaban/CameraGrab"]
