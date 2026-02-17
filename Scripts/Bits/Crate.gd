@@ -32,3 +32,5 @@ func _integrate_forces(state:PhysicsDirectBodyState3D): if held_by:
 	state.transform.origin += held_by.attempt_velocity * state.get_step()
 
 func mag(vec3:Vector3): return sqrt(pow(vec3.x, 2) + pow(vec3.y, 2) + pow(vec3.z, 2))
+
+func being_pushed() -> bool: return (mag(held_by.attempt_velocity) > 0.7) if held_by else false 

@@ -3,17 +3,23 @@ class_name RespawnBit3D extends Bit
 
 var setup_by:Node
 
+@export var animator:AnimationPlayer
 @export var global_kill:StringName = "" ## An optional group to recursively kill.
-@export var delay := 0.0
-var delay_time = 0.0
-var should_kill := false
+
+@export var out_anim_name:StringName
+@export var in_anim_name:StringName
 
 var position:Vector3
 var rotation:Vector3
 
 var target
 
-func _ready() -> void: setup()
+func _ready() -> void: 
+	
+	if animator:
+		animator.animation_finished.connect(_on_animation_finished)
+	
+	setup()
 
 func respawn(group := global_kill) -> void:
 	if group != "":
@@ -23,9 +29,10 @@ func respawn(group := global_kill) -> void:
 				
 				if len(scan) > 0: scan[0].respawn("")
 	
-	should_kill = true
-	delay_time = delay
-	
+	if animator:
+		animator.play(out_anim_name)
+	else:
+		_real_respawn()
 
 func find_target(with:Node = bot, depth := 5) -> Node3D:
 	
@@ -41,16 +48,10 @@ func find_target(with:Node = bot, depth := 5) -> Node3D:
 		if check is Node3D: return check
 	return null
 
-func _process(delta: float) -> void:
-	if not target: setup()
-	
-	if should_kill:
-		
-		delay_time = move_toward(delay_time, 0, delta)
-		
-		if delay_time <= 0:
-			_real_respawn()
-			should_kill = false
+func _on_animation_finished(anim_name:StringName):
+	if anim_name == out_anim_name:
+		_real_respawn()
+		animator.play(in_anim_name)
 
 func setup(by:Node = self):
 	setup_by = by
@@ -68,3 +69,5 @@ func _real_respawn():
 		target.global_position = position
 		target.global_rotation = rotation
 	else: push_warning("Could not respawn ", self, ": missing target.")
+
+func is_respawning() -> bool: return (animator.current_animation == out_anim_name or animator.current_animation == in_anim_name) if animator else false
