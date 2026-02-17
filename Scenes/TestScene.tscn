@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b40nrs41j5i6q"]
+
+[ext_resource type="PackedScene" uid="uid://esg4ciusc8a1" path="res://Scenes/TeleporterExit.tscn" id="1_b5ayd"]
+[ext_resource type="PackedScene" uid="uid://60r10u5tfh4y" path="res://Scenes/TeleporterEntrance.tscn" id="2_5lt6y"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5lt6y"]
+size = Vector3(50, 1, 50)
+
+[node name="StaticBody3D" type="StaticBody3D" unique_id=497465836]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1986372678]
+shape = SubResource("BoxShape3D_5lt6y")
+
+[node name="Marker3D" type="Marker3D" parent="." unique_id=762954565]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3798294, 0)
+
+[node name="TeleporterExit" parent="." unique_id=234579865 instance=ExtResource("1_b5ayd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.0567966, 0, 0)
+
+[node name="TeleporterEntrance" parent="." unique_id=1717263065 instance=ExtResource("2_5lt6y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2917117, 0.55000013, -2.4931111)
+is_return_point = false
+scene_path = "uid://b40nrs41j5i6q"
