@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bmibgprfd4w31"
-path="res://.godot/imported/Wall Jump Grunt.wav-36681fd8f893b83165d9d4de389bbb00.sample"
+path="res://.godot/imported/Wall Jump Grunt.wav-65529bc496eed1b3b4fd2233b867856e.sample"
 
 [deps]
 
-source_file="res://Assests/SFX Main Char/Wall Jump Grunt.wav"
-dest_files=["res://.godot/imported/Wall Jump Grunt.wav-36681fd8f893b83165d9d4de389bbb00.sample"]
+source_file="res://Assests/SFX Main Char/Jump/Wall Jump Grunt.wav"
+dest_files=["res://.godot/imported/Wall Jump Grunt.wav-65529bc496eed1b3b4fd2233b867856e.sample"]
 
 [params]
 
