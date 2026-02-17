@@ -1,0 +1,1324 @@
+[gd_scene format=3 uid="uid://hgdnv1u63uc5"]
+
+[ext_resource type="PackedScene" uid="uid://83d86tf2bp3e" path="res://Scenes/Tests/World.tscn" id="1_yymet"]
+[ext_resource type="PackedScene" uid="uid://b1f37ebgxsquf" path="res://Scenes/Player.tscn" id="2_os7vs"]
+[ext_resource type="PackedScene" uid="uid://bon8bptfjfpue" path="res://Scenes/MovingPlatform.tscn" id="3_uogp1"]
+[ext_resource type="PackedScene" uid="uid://d2cwefjigkop1" path="res://Scenes/MovingPlatformPoint.tscn" id="4_vjfe1"]
+[ext_resource type="Script" uid="uid://dd8or5oo0cmw2" path="res://Scripts/Values/Bool/Actor.gd" id="5_q8hrf"]
+[ext_resource type="PackedScene" uid="uid://b6mm1wjjwcmeh" path="res://Scenes/PressurePlate.tscn" id="6_iukv2"]
+[ext_resource type="PackedScene" uid="uid://c3obafcdtdwal" path="res://Scenes/Door.tscn" id="7_vrlp0"]
+[ext_resource type="PackedScene" uid="uid://bvv3sij1qe3xe" path="res://Assests/3D/Objects/Door_Wall.tscn" id="8_flqn6"]
+[ext_resource type="PackedScene" uid="uid://b1unhe5jr1qe3" path="res://Assests/3D/Objects/Moveable_Crate.tscn" id="9_qp3sb"]
+[ext_resource type="PackedScene" uid="uid://dkhpghpfg7uab" path="res://Scenes/CameraGrab.tscn" id="10_5jmxx"]
+[ext_resource type="Script" uid="uid://dgpskhft1ffgp" path="res://Scripts/Bits/AudioBusBit.gd" id="11_evfw7"]
+[ext_resource type="PackedScene" uid="uid://5opnwc5uryxc" path="res://Scenes/InputMappingEntry.tscn" id="12_ec7uc"]
+[ext_resource type="Script" uid="uid://dw7w6pry2g435" path="res://Scripts/Bits/PlayerAnimator.gd" id="13_fjq41"]
+[ext_resource type="FontFile" uid="uid://c0ncglrrkwb6a" path="res://Assests/Cinzel-VariableFont_wght.ttf" id="13_vjfe1"]
+[ext_resource type="Script" uid="uid://dk0hts3twf6t" path="res://Scripts/Bits/MouseCapture.gd" id="14_g20pa"]
+[ext_resource type="Script" uid="uid://dekpk8relyucb" path="res://Scripts/Bits/Input.gd" id="15_xainh"]
+[ext_resource type="Script" uid="uid://cox1ysk6bulx2" path="res://Scripts/Values/Bool/Manual.gd" id="16_7r63o"]
+[ext_resource type="PackedScene" uid="uid://cj3ygyynwwo0q" path="res://Assests/3D/Player Character/player_character.tscn" id="17_fjq41"]
+[ext_resource type="PackedScene" uid="uid://cw5v3k3rnk5jn" path="res://Scenes/Signpost.tscn" id="20_q8hrf"]
+[ext_resource type="Script" uid="uid://b1o48vkwquyxs" path="res://Scripts/Values/Node/ManualNode.gd" id="26_s66fw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q8hrf"]
+bg_color = Color(0.33599997, 0.84, 0.43679997, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vjfe1"]
+bg_color = Color(0.2784314, 0.7019608, 0.3647059, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vrlp0"]
+bg_color = Color(0.24399999, 0.61, 0.3172, 1)
+
+[sub_resource type="Gradient" id="Gradient_uogp1"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.27999997, 0.7, 0.364, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vjfe1"]
+gradient = SubResource("Gradient_uogp1")
+width = 16
+height = 16
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_q8hrf"]
+gradient = SubResource("Gradient_uogp1")
+width = 16
+height = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iukv2"]
+bg_color = Color(0.2784314, 0.7019608, 0.3647059, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_flqn6"]
+bg_color = Color(0.32399997, 0.81, 0.42119998, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_vrlp0"]
+color = Color(0.2784314, 0.7019608, 0.3647059, 0.6156863)
+thickness = 10
+
+[sub_resource type="Theme" id="Theme_flqn6"]
+Button/font_sizes/font_size = 19
+Button/fonts/font = ExtResource("13_vjfe1")
+Button/styles/hover = SubResource("StyleBoxFlat_q8hrf")
+Button/styles/normal = SubResource("StyleBoxFlat_vjfe1")
+Button/styles/pressed = SubResource("StyleBoxFlat_vrlp0")
+HSlider/icons/grabber = SubResource("GradientTexture2D_vjfe1")
+HSlider/icons/grabber_highlight = SubResource("GradientTexture2D_q8hrf")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_iukv2")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_flqn6")
+HSlider/styles/slider = SubResource("StyleBoxLine_vrlp0")
+Label/font_sizes/font_size = 19
+Label/fonts/font = ExtResource("13_vjfe1")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uogp1"]
+bg_color = Color(0.055200003, 0.13677335, 0.23, 0.8235294)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+corner_detail = 10
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_nq5sn"]
+color = Color(0, 0, 0, 0.5921569)
+grow_begin = -150.0
+grow_end = -150.0
+thickness = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_os7vs"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_0sclb"]
+resource_name = "Options->Start"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StartScreen:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1152, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("OptionsMenu:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1152, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("InputCatcher:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_v1gob"]
+resource_name = "Pause"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/PauseInput/IsPaused:response")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/MouseCapturerBit:update_mouse_mode")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/MouseCapturerBit:update")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("OptionsMenu:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1152, 0), Vector2(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("OptionsMenu/MarginContainer/VBoxContainer/Label:text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["PAUSED"]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("OptionsMenu/Button/PlayerAnimatorBit:animation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Unpause"]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("InputCatcher:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_jw32o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/PauseInput/IsPaused:response")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/MouseCapturerBit:update_mouse_mode")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/MouseCapturerBit:update")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("StartScreen:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("OptionsMenu:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1152, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../VisibilityToggle:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Backdrop:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Backdrop/SubViewport/Player_Character:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Backdrop/SubViewport/Camera3D:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Fade:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Fade:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("StartScreen:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("OptionsMenu/MarginContainer/VBoxContainer/Label:text")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["PAUSED"]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("OptionsMenu/Button/PlayerAnimatorBit:animation")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Options->Start"]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("InputCatcher:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("AnimationPlayer/GameStarted:response")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("OptionsMenu/MarginContainer2/Panel:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_346fj"]
+resource_name = "Start->Game"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../VisibilityToggle:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/MouseCapturerBit:update_mouse_mode")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/MouseCapturerBit:update")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Backdrop:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Backdrop/SubViewport/Player_Character:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Backdrop/SubViewport/Camera3D:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Fade:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Fade:modulate")
+tracks/7/interp = 2
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.4, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("StartScreen:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("InputCatcher:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("AnimationPlayer/GameStarted:response")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("OptionsMenu/MarginContainer2/Panel:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_sxkr1"]
+resource_name = "Start->Options"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OptionsMenu:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1152, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StartScreen:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-1152, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("InputCatcher:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_50glp"]
+resource_name = "Unpause"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/PauseInput/IsPaused:response")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/MouseCapturerBit:update_mouse_mode")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/MouseCapturerBit:update")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("OptionsMenu:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-1152, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("InputCatcher:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oyyor"]
+_data = {
+&"Options->Start": SubResource("Animation_0sclb"),
+&"Pause": SubResource("Animation_v1gob"),
+&"RESET": SubResource("Animation_jw32o"),
+&"Start->Game": SubResource("Animation_346fj"),
+&"Start->Options": SubResource("Animation_sxkr1"),
+&"Unpause": SubResource("Animation_50glp")
+}
+
+[node name="Main Hub" type="Node" unique_id=1164429392]
+
+[node name="World" parent="." unique_id=690942651 instance=ExtResource("1_yymet")]
+
+[node name="Player" parent="." unique_id=623680313 instance=ExtResource("2_os7vs")]
+transform = Transform3D(-0.4934562, 0, -0.86977065, 0, 1, 0, 0.86977065, 0, -0.4934562, 32.514038, 95.68314, -175.2224)
+
+[node name="FlameAmbient" parent="Player/CharacterBody3D" parent_id_path=PackedInt32Array(623680313, 844716186) index="0" unique_id=1381693877]
+bus = &"SFX"
+
+[node name="Player_Character" parent="Player/CharacterBody3D" parent_id_path=PackedInt32Array(623680313, 844716186) index="2" unique_id=1831994608]
+transform = Transform3D(-0.5941662, 0, -8.971661e-08, 0, 0.5941662, 0, 8.971661e-08, 0, -0.5941662, 0, -0.9654732, 0)
+
+[node name="LookBit" parent="Player/CharacterBody3D" parent_id_path=PackedInt32Array(623680313, 844716186) index="4" unique_id=570069494 node_paths=PackedStringArray("tos")]
+tos = {
+NodePath("../Player_Character/AnimationControl/Idle"): NodePath("GlobalDirection"),
+NodePath("../Player_Character/AnimationControl/Wall_Grab"): NodePath("GlobalWallNorm"),
+NodePath("MovingCrate"): null
+}
+
+[node name="FootstepSound" parent="Player/CharacterBody3D" parent_id_path=PackedInt32Array(623680313, 844716186) index="8" unique_id=599239755 node_paths=PackedStringArray("terrain_node")]
+terrain_node = NodePath("ManualNode")
+
+[node name="ManualNode" type="Node" parent="Player/CharacterBody3D/FootstepSound" index="2" unique_id=601114542 node_paths=PackedStringArray("response")]
+script = ExtResource("26_s66fw")
+response = NodePath("../../../../World/Terrain3D")
+metadata/_custom_type_script = "uid://b1o48vkwquyxs"
+
+[node name="Camera3D" parent="Player/CameraPivot" parent_id_path=PackedInt32Array(623680313, 330284818) index="0" unique_id=947941269]
+current = true
+
+[node name="VisibilityToggle" type="Node3D" parent="." unique_id=1911293438]
+visible = false
+
+[node name="Platforms" type="Node3D" parent="VisibilityToggle" unique_id=94530620]
+
+[node name="Node" type="Node" parent="VisibilityToggle/Platforms" unique_id=1481423592]
+
+[node name="MovingPlatform" parent="VisibilityToggle/Platforms/Node" unique_id=1114646680 node_paths=PackedStringArray("points") instance=ExtResource("3_uogp1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.26445, 20.195908, -12.155345)
+floor_constant_speed = true
+move_in_editor = false
+points = [NodePath("../MovingPlatform\'s 2"), NodePath("../MovingPlatform\'s 3"), NodePath("../MovingPlatform\'s 4"), NodePath("../MovingPlatform\'s 5")]
+
+[node name="MovingPlatform\'s 2" parent="VisibilityToggle/Platforms/Node" unique_id=1766241102 instance=ExtResource("4_vjfe1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.232315, 20.835436, -1.1798143)
+skeleton = NodePath("../..")
+easing = 2.0
+time = 6.0
+after_wait = 3.0
+
+[node name="MovingPlatform\'s 3" parent="VisibilityToggle/Platforms/Node" unique_id=197796453 instance=ExtResource("4_vjfe1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.93754, 20.195908, -2.7505684)
+skeleton = NodePath("../..")
+easing = 0.5
+time = 6.0
+after_wait = 0.0
+
+[node name="MovingPlatform\'s 4" parent="VisibilityToggle/Platforms/Node" unique_id=971036885 instance=ExtResource("4_vjfe1")]
+transform = Transform3D(0.7959809, 0, -0.60532176, 0, 1, 0, 0.60532176, 0, 0.7959809, -47.26445, 21.566639, -11.975927)
+skeleton = NodePath("../..")
+easing = 2.0
+time = 6.0
+after_wait = 3.0
+
+[node name="MovingPlatform\'s 5" parent="VisibilityToggle/Platforms/Node" unique_id=1689109219 instance=ExtResource("4_vjfe1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.283842, 20.256834, -4.8147497)
+easing = 0.5
+time = 6.0
+after_wait = 0.0
+
+[node name="Node3D" type="Node3D" parent="VisibilityToggle/Platforms" unique_id=1455508250]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 103.301636, 38.759125, 48.673454)
+
+[node name="MovingPlatform2" parent="VisibilityToggle/Platforms/Node3D" unique_id=1696910594 node_paths=PackedStringArray("points") instance=ExtResource("3_uogp1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3466911, 0)
+points = [NodePath("../MovingPlatform2\'s 1"), NodePath("../MovingPlatform2\'s 3")]
+
+[node name="MovingPlatform2\'s 1" parent="VisibilityToggle/Platforms/Node3D" unique_id=982019132 instance=ExtResource("4_vjfe1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -15.657873, 0)
+easing = -2.0
+time = 3.0
+after_wait = 3.0
+
+[node name="MovingPlatform2\'s 3" parent="VisibilityToggle/Platforms/Node3D" unique_id=650970334 instance=ExtResource("4_vjfe1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3466911, 0)
+easing = -2.0
+time = 3.0
+after_wait = 3.0
+
+[node name="Node3D10" type="Node3D" parent="VisibilityToggle/Platforms" unique_id=965466366]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.99377, 38.710392, 68.48193)
+
+[node name="MovingPlatform2" parent="VisibilityToggle/Platforms/Node3D10" unique_id=771347652 node_paths=PackedStringArray("points") instance=ExtResource("3_uogp1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0706177, 1.5996132, 3.7185745)
+points = [NodePath("../MovingPlatform2\'s 1")]
+
+[node name="MovingPlatform2\'s 1" parent="VisibilityToggle/Platforms/Node3D10" unique_id=1391474707 instance=ExtResource("4_vjfe1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0706177, 1.5996132, 3.7185745)
+
+[node name="Node3D5" type="Node3D" parent="VisibilityToggle/Platforms" unique_id=1285223072]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.475548, 38.759125, -25.457664)
+
+[node name="MovingPlatform2" parent="VisibilityToggle/Platforms/Node3D5" unique_id=1767451122 node_paths=PackedStringArray("points", "condition") instance=ExtResource("3_uogp1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5407372, 0)
+move_in_editor = false
+points = [NodePath("../MovingPlatform2\'s 1"), NodePath("../MovingPlatform2\'s 3")]
+condition = NodePath("ActorBool")
+
+[node name="PressurePlate" parent="VisibilityToggle/Platforms/Node3D5/MovingPlatform2" unique_id=157249335 instance=ExtResource("6_iukv2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3394585, 0.52389145, 0.0052719116)
+
+[node name="ActorBool" type="Node" parent="VisibilityToggle/Platforms/Node3D5/MovingPlatform2" unique_id=2117836113 node_paths=PackedStringArray("actor")]
+script = ExtResource("5_q8hrf")
+actor = NodePath("../PressurePlate")
+metadata/_custom_type_script = "uid://dd8or5oo0cmw2"
+
+[node name="MovingPlatform2\'s 1" parent="VisibilityToggle/Platforms/Node3D5" unique_id=1480876741 instance=ExtResource("4_vjfe1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -15.657873, 0)
+time = 5.0
+after_wait = 2.0
+
+[node name="MovingPlatform2\'s 3" parent="VisibilityToggle/Platforms/Node3D5" unique_id=1204590416 instance=ExtResource("4_vjfe1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.558659, 0)
+time = 5.0
+after_wait = 2.0
+
+[node name="Node3D2" type="Node3D" parent="VisibilityToggle/Platforms" unique_id=1078279360]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.249454, 58.880405, 63.614677)
+
+[node name="MovingPlatform2" parent="VisibilityToggle/Platforms/Node3D2" unique_id=238358996 node_paths=PackedStringArray("points") instance=ExtResource("3_uogp1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.73627, -16.32899, 10.308434)
+points = [NodePath("../MovingPlatform2\'s 1"), NodePath("../MovingPlatform2\'s 2")]
+
+[node name="MovingPlatform2\'s 1" parent="VisibilityToggle/Platforms/Node3D2" unique_id=17390072 instance=ExtResource("4_vjfe1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.003218, -16.19228, 10.360458)
+time = 10.0
+after_wait = 3.0
+
+[node name="MovingPlatform2\'s 2" parent="VisibilityToggle/Platforms/Node3D2" unique_id=1537967310 instance=ExtResource("4_vjfe1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9989243, -17.238552, 9.96228)
+time = 10.0
+after_wait = 3.0
+
+[node name="Node3D3" type="Node3D" parent="VisibilityToggle/Platforms" unique_id=1731544612]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.249454, 58.880405, 73.696144)
+
+[node name="MovingPlatform2" parent="VisibilityToggle/Platforms/Node3D3" unique_id=833542127 node_paths=PackedStringArray("points") instance=ExtResource("3_uogp1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.107128, -14.639473, 7.682266)
+points = [NodePath("../MovingPlatform2\'s 1"), NodePath("../MovingPlatform2\'s 2")]
+
+[node name="MovingPlatform2\'s 1" parent="VisibilityToggle/Platforms/Node3D3" unique_id=805920347 instance=ExtResource("4_vjfe1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.003218, -16.19228, 7.6139755)
+time = 10.0
+after_wait = 3.0
+
+[node name="MovingPlatform2\'s 2" parent="VisibilityToggle/Platforms/Node3D3" unique_id=1933356667 instance=ExtResource("4_vjfe1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.798449, -4.308552, 8.136612)
+time = 10.0
+after_wait = 3.0
+
+[node name="Node3D4" type="Node3D" parent="VisibilityToggle/Platforms" unique_id=845686699]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.550056, 69.19933, 73.696144)
+
+[node name="MovingPlatform2" parent="VisibilityToggle/Platforms/Node3D4" unique_id=853549821 node_paths=PackedStringArray("points") instance=ExtResource("3_uogp1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.694538, -5.8613625, 8.068321)
+points = [NodePath("../MovingPlatform2\'s 2"), NodePath("../MovingPlatform2\'s 1")]
+
+[node name="MovingPlatform2\'s 1" parent="VisibilityToggle/Platforms/Node3D4" unique_id=849416997 instance=ExtResource("4_vjfe1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.003218, -16.19228, 7.6139755)
+time = 10.0
+after_wait = 3.0
+
+[node name="MovingPlatform2\'s 2" parent="VisibilityToggle/Platforms/Node3D4" unique_id=30761467 instance=ExtResource("4_vjfe1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.798449, -4.308552, 8.136612)
+time = 10.0
+after_wait = 3.0
+
+[node name="Node3D6" type="Node3D" parent="VisibilityToggle/Platforms" unique_id=1784896356]
+transform = Transform3D(0.9097005, 0, -0.4152649, 0, 1, 0, 0.4152649, 0, 0.9097005, 95.61943, 66.61241, -73.175186)
+
+[node name="MovingPlatform2" parent="VisibilityToggle/Platforms/Node3D6" unique_id=1317438144 node_paths=PackedStringArray("points") instance=ExtResource("3_uogp1")]
+transform = Transform3D(1.000005, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1.000005, -23.107124, -14.639473, 7.6822815)
+points = [NodePath("../MovingPlatform2\'s 1"), NodePath("../MovingPlatform2\'s 2")]
+
+[node name="MovingPlatform2\'s 1" parent="VisibilityToggle/Platforms/Node3D6" unique_id=551987493 instance=ExtResource("4_vjfe1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.003218, -16.19228, 7.6139755)
+time = 10.0
+after_wait = 3.0
+
+[node name="MovingPlatform2\'s 2" parent="VisibilityToggle/Platforms/Node3D6" unique_id=1986915607 instance=ExtResource("4_vjfe1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.798449, -4.308552, 8.136612)
+time = 10.0
+after_wait = 3.0
+
+[node name="Node3D7" type="Node3D" parent="VisibilityToggle/Platforms" unique_id=1008335619]
+transform = Transform3D(0.9097005, 0, -0.4152649, 0, 1, 0, 0.4152649, 0, 0.9097005, 104.908554, 66.61241, -68.93484)
+
+[node name="MovingPlatform2" parent="VisibilityToggle/Platforms/Node3D7" unique_id=511578271 node_paths=PackedStringArray("points") instance=ExtResource("3_uogp1")]
+transform = Transform3D(1.000005, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1.000005, -23.107147, -14.639473, 7.6822586)
+points = [NodePath("../MovingPlatform2\'s 1"), NodePath("../MovingPlatform2\'s 2")]
+
+[node name="MovingPlatform2\'s 1" parent="VisibilityToggle/Platforms/Node3D7" unique_id=526881518 instance=ExtResource("4_vjfe1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.003218, -16.19228, 7.6139755)
+time = 10.0
+after_wait = 3.0
+
+[node name="MovingPlatform2\'s 2" parent="VisibilityToggle/Platforms/Node3D7" unique_id=1525212791 instance=ExtResource("4_vjfe1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.798449, -4.308552, 8.136612)
+time = 10.0
+after_wait = 3.0
+
+[node name="Node3D8" type="Node3D" parent="VisibilityToggle/Platforms" unique_id=1559900205]
+transform = Transform3D(0.9097005, 0, -0.4152649, 0, 1, 0, 0.4152649, 0, 0.9097005, 95.675354, 82.0514, -74.90381)
+
+[node name="MovingPlatform2" parent="VisibilityToggle/Platforms/Node3D8" unique_id=1086705985 node_paths=PackedStringArray("points") instance=ExtResource("3_uogp1")]
+transform = Transform3D(1.000005, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1.000005, -23.107132, -14.639473, 7.682266)
+points = [NodePath("../MovingPlatform2\'s 1"), NodePath("../MovingPlatform2\'s 2")]
+
+[node name="MovingPlatform2\'s 1" parent="VisibilityToggle/Platforms/Node3D8" unique_id=49058209 instance=ExtResource("4_vjfe1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.003218, -16.19228, 7.6139755)
+time = 10.0
+after_wait = 3.0
+
+[node name="MovingPlatform2\'s 2" parent="VisibilityToggle/Platforms/Node3D8" unique_id=1335660216 instance=ExtResource("4_vjfe1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.798449, -4.308552, 8.136612)
+time = 10.0
+after_wait = 3.0
+
+[node name="Node3D9" type="Node3D" parent="VisibilityToggle/Platforms" unique_id=1234600767]
+transform = Transform3D(0.9097005, 0, -0.4152649, 0, 1, 0, 0.4152649, 0, 0.9097005, 119.34645, 70.69578, -64.0983)
+
+[node name="MovingPlatform2" parent="VisibilityToggle/Platforms/Node3D9" unique_id=1959502623 node_paths=PackedStringArray("points") instance=ExtResource("3_uogp1")]
+transform = Transform3D(1.000005, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1.000005, -23.107132, -14.639473, 7.682274)
+points = [NodePath("../MovingPlatform2\'s 1"), NodePath("../MovingPlatform2\'s 2")]
+
+[node name="MovingPlatform2\'s 1" parent="VisibilityToggle/Platforms/Node3D9" unique_id=95284139 instance=ExtResource("4_vjfe1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.003218, -16.19228, 7.6139755)
+time = 10.0
+after_wait = 3.0
+
+[node name="MovingPlatform2\'s 2" parent="VisibilityToggle/Platforms/Node3D9" unique_id=1223520974 instance=ExtResource("4_vjfe1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.798449, -4.308552, 8.136612)
+time = 10.0
+after_wait = 3.0
+
+[node name="Doors" type="Node3D" parent="VisibilityToggle" unique_id=1097658957]
+
+[node name="PressurePlate" parent="VisibilityToggle/Doors" unique_id=458564268 instance=ExtResource("6_iukv2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.397676, 0.09738922, 11.103442)
+
+[node name="PressurePlate4" parent="VisibilityToggle/Doors" unique_id=2072116259 instance=ExtResource("6_iukv2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.579044, 45.927956, -42.460564)
+
+[node name="Door" parent="VisibilityToggle/Doors" unique_id=697453936 node_paths=PackedStringArray("condition") instance=ExtResource("7_vrlp0")]
+transform = Transform3D(-1.9527503, 0, -0.4321636, 0, 2, 0, 0.4321636, 0, -1.9527503, 26.100925, 9.538709, 43.24159)
+time = 7.0
+open_extent = Vector3(0, -10, 0)
+condition = NodePath("ActorBool")
+
+[node name="ActorBool" type="Node" parent="VisibilityToggle/Doors/Door" unique_id=1974381318 node_paths=PackedStringArray("actor")]
+script = ExtResource("5_q8hrf")
+actor = NodePath("../../PressurePlate")
+metadata/_custom_type_script = "uid://dd8or5oo0cmw2"
+
+[node name="Door2" parent="VisibilityToggle/Doors" unique_id=2099620363 node_paths=PackedStringArray("condition") instance=ExtResource("7_vrlp0")]
+transform = Transform3D(-1.9527506, -0.43127933, 0.027632535, 0, -0.12788014, -1.9959073, 0.4321636, -1.9487547, 0.12485899, -40.1039, 38.757988, -77.684715)
+open_extent = Vector3(0, -10, 0)
+condition = NodePath("ActorBool")
+
+[node name="ActorBool" type="Node" parent="VisibilityToggle/Doors/Door2" unique_id=815743101 node_paths=PackedStringArray("actor")]
+script = ExtResource("5_q8hrf")
+actor = NodePath("../../PressurePlate4")
+metadata/_custom_type_script = "uid://dd8or5oo0cmw2"
+
+[node name="Node3D" parent="VisibilityToggle/Doors" unique_id=1378238659 instance=ExtResource("8_flqn6")]
+transform = Transform3D(-1.6651676, 0, -0.521768, 0, 1.745, 0, 0.521768, 0, -1.6651676, 24.370075, -0.061691284, 43.29313)
+
+[node name="Node3D2" parent="VisibilityToggle/Doors" unique_id=1562180475 instance=ExtResource("8_flqn6")]
+transform = Transform3D(1.3831768, 0, -1.0638827, 0, 1.745, 0, 1.0638827, 0, 1.3831768, -51.66933, 19.451859, 36.396538)
+
+[node name="Crates" type="Node3D" parent="VisibilityToggle" unique_id=1335155844]
+
+[node name="Crate" parent="VisibilityToggle/Crates" unique_id=946948200 instance=ExtResource("9_qp3sb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1733184, 1.2405834, 0)
+
+[node name="CameraGrab" parent="VisibilityToggle" unique_id=2053990340 instance=ExtResource("10_5jmxx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.10616, 15.332206, 8.121075)
+
+[node name="GrabTo" parent="VisibilityToggle/CameraGrab" index="0" unique_id=1105713157]
+transform = Transform3D(0.2869258, 0.32763913, -0.900181, 1.3404454e-08, 0.9396925, 0.34202006, 0.9579526, -0.09813441, 0.26962206, -19.119953, 7.810914, 6.742076)
+
+[node name="CollisionShape3D" parent="VisibilityToggle/CameraGrab" index="1" unique_id=2042857866]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.080992, -3.7608109, 7.106057)
+
+[node name="Signposts" type="Node3D" parent="VisibilityToggle" unique_id=705169948]
+
+[node name="Signpost" parent="VisibilityToggle/Signposts" unique_id=1718605348 instance=ExtResource("20_q8hrf")]
+transform = Transform3D(0.6452977, 0, -0.7639312, 0, 1, 0, 0.7639312, 0, 0.6452977, -99.86167, 3.1988187, 0.5860923)
+text = "Use WASD / The       D-Pad to move."
+
+[node name="Signpost2" parent="VisibilityToggle/Signposts" unique_id=1762546639 instance=ExtResource("20_q8hrf")]
+transform = Transform3D(-0.24442741, 0, -0.9696677, 0, 1, 0, 0.9696677, 0, -0.24442741, -97.156425, 3.1988187, 7.0752206)
+text = "Use your mouse /      right joystick to 
+look around."
+
+[node name="Signpost3" parent="VisibilityToggle/Signposts" unique_id=1920349304 instance=ExtResource("20_q8hrf")]
+transform = Transform3D(-0.24442741, 0, -0.9696677, 0, 1, 0, 0.9696677, 0, -0.24442741, -45.834206, 3.570026, 5.517579)
+text = "Jump onto the wall
+using Space or A
+Use WASD / DPad
+to climb the wall."
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1359845995]
+layer = 2
+
+[node name="Backdrop" type="SubViewportContainer" parent="UI" unique_id=1600539675]
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="SubViewport" type="SubViewport" parent="UI/Backdrop" unique_id=364374767]
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="UI/Backdrop/SubViewport" unique_id=736722659]
+transform = Transform3D(0.072607756, -0.11966671, -0.9901556, -0.001095968, 0.9927657, -0.120062545, 0.99736, 0.009802649, 0.071951345, -4.509954, 1.9735076, 1.6260126)
+
+[node name="Player_Character" parent="UI/Backdrop/SubViewport" unique_id=796559658 instance=ExtResource("17_fjq41")]
+transform = Transform3D(0.17043191, 0, 0.5691981, 0, 0.5941662, 0, -0.5691981, 0, 0.17043191, 0, 0.6806419, 0.94229424)
+movement_state = "Push"
+
+[node name="OptionsMenu" type="Control" parent="UI" unique_id=1357842052]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1152.0
+offset_right = -1152.0
+offset_bottom = -0.00018310547
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_flqn6")
+
+[node name="MarginContainer2" type="MarginContainer" parent="UI/OptionsMenu" unique_id=1899841927]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Panel" type="Panel" parent="UI/OptionsMenu/MarginContainer2" unique_id=1312394675]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_uogp1")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/OptionsMenu" unique_id=530209146]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 125
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 125
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/OptionsMenu/MarginContainer" unique_id=1191256233]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="UI/OptionsMenu/MarginContainer/VBoxContainer" unique_id=548277570]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("13_vjfe1")
+theme_override_font_sizes/font_size = 30
+text = "PAUSED"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="HSeparator" type="HSeparator" parent="UI/OptionsMenu/MarginContainer/VBoxContainer" unique_id=1365532926]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_nq5sn")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/OptionsMenu/MarginContainer/VBoxContainer" unique_id=1154128581]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer" unique_id=1773046731]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=228273398]
+layout_mode = 2
+text = "AUDIO"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1789173626 node_paths=PackedStringArray("bar", "label")]
+layout_mode = 2
+script = ExtResource("11_evfw7")
+bar = NodePath("HSlider")
+label = NodePath("Label2")
+bus_name = &"Master"
+
+[node name="Label" type="Label" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer" unique_id=262410294]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Master"
+
+[node name="Label2" type="Label" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer" unique_id=679284310]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "20.0"
+horizontal_alignment = 2
+
+[node name="HSlider" type="HSlider" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer" unique_id=569301115]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+value = 50.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=978865621 node_paths=PackedStringArray("bar", "label")]
+layout_mode = 2
+script = ExtResource("11_evfw7")
+bar = NodePath("HSlider")
+label = NodePath("Label2")
+bus_name = &"Music"
+
+[node name="Label" type="Label" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer2" unique_id=1710899206]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Music"
+
+[node name="Label2" type="Label" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer2" unique_id=38753975]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "20.0"
+horizontal_alignment = 2
+
+[node name="HSlider" type="HSlider" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer2" unique_id=492937990]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=731074023 node_paths=PackedStringArray("bar", "label")]
+layout_mode = 2
+script = ExtResource("11_evfw7")
+bar = NodePath("HSlider")
+label = NodePath("Label2")
+bus_name = &"SFX"
+
+[node name="Label" type="Label" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer3" unique_id=388164721]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Sound Effects"
+
+[node name="Label2" type="Label" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer3" unique_id=1547590533]
+custom_minimum_size = Vector2(95.845, 0)
+layout_mode = 2
+text = "20.0"
+horizontal_alignment = 2
+
+[node name="HSlider" type="HSlider" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer3" unique_id=1111235691]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="Label2" type="Label" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1412984002]
+layout_mode = 2
+text = "CONTROLS"
+horizontal_alignment = 1
+
+[node name="InputEntry" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=2685080 instance=ExtResource("12_ec7uc")]
+layout_mode = 2
+event_name = &"Jump"
+display_name = &"Jump"
+
+[node name="InputEntry6" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1827161920 instance=ExtResource("12_ec7uc")]
+layout_mode = 2
+event_name = &"Sprint"
+display_name = &"Sprint"
+
+[node name="InputEntry8" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=348663596 instance=ExtResource("12_ec7uc")]
+layout_mode = 2
+event_name = &"Grab"
+display_name = &"Grab"
+
+[node name="InputEntry9" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=618529026 instance=ExtResource("12_ec7uc")]
+layout_mode = 2
+event_name = &"Pause"
+display_name = &"Pause"
+
+[node name="Button" type="Button" parent="UI/OptionsMenu" unique_id=1996459486]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 200.0
+offset_bottom = 73.0
+focus_mode = 0
+theme_override_font_sizes/font_size = 25
+text = "Back
+"
+flat = true
+
+[node name="PlayerAnimatorBit" type="Node" parent="UI/OptionsMenu/Button" unique_id=1329279622]
+script = ExtResource("13_fjq41")
+animation = "Options->Start"
+metadata/_custom_type_script = "uid://dw7w6pry2g435"
+
+[node name="StartScreen" type="Control" parent="UI" unique_id=1401595588]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="UI/StartScreen" unique_id=2073756521]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 55.0
+offset_right = 1092.0
+offset_bottom = 158.0
+theme_override_fonts/font = ExtResource("13_vjfe1")
+theme_override_font_sizes/font_size = 69
+text = "Little Guy"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="UI/StartScreen" unique_id=844997784]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -174.0
+offset_top = 211.0
+offset_right = -81.0
+offset_bottom = 261.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("13_vjfe1")
+theme_override_font_sizes/font_size = 30
+text = "Start"
+flat = true
+
+[node name="PlayerAnimatorBit2" type="Node" parent="UI/StartScreen/Button" unique_id=119216752]
+script = ExtResource("13_fjq41")
+animation = "Start->Game"
+metadata/_custom_type_script = "uid://dw7w6pry2g435"
+
+[node name="Button2" type="Button" parent="UI/StartScreen" unique_id=1065601815]
+layout_mode = 0
+offset_left = 583.0
+offset_top = 536.0
+offset_right = 719.0
+offset_bottom = 586.0
+size_flags_horizontal = 0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("13_vjfe1")
+theme_override_font_sizes/font_size = 30
+text = "Options"
+flat = true
+
+[node name="PlayerAnimatorBit" type="Node" parent="UI/StartScreen/Button2" unique_id=1759604094]
+script = ExtResource("13_fjq41")
+animation = "Start->Options"
+metadata/_custom_type_script = "uid://dw7w6pry2g435"
+
+[node name="Fade" type="Panel" parent="UI" unique_id=479185455]
+visible = false
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_os7vs")
+
+[node name="InputCatcher" type="Control" parent="UI" unique_id=386935065]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI" unique_id=712609406]
+libraries/ = SubResource("AnimationLibrary_oyyor")
+
+[node name="Pause" type="Node" parent="UI/AnimationPlayer" unique_id=1022383511 node_paths=PackedStringArray("condition")]
+script = ExtResource("13_fjq41")
+animation = "Pause"
+condition = NodePath("../GameStarted")
+metadata/_custom_type_script = "uid://dw7w6pry2g435"
+
+[node name="Unpause" type="Node" parent="UI/AnimationPlayer" unique_id=77172231 node_paths=PackedStringArray("condition")]
+script = ExtResource("13_fjq41")
+animation = "Unpause"
+condition = NodePath("../GameStarted")
+metadata/_custom_type_script = "uid://dw7w6pry2g435"
+
+[node name="MouseCapturerBit" type="Node" parent="UI/AnimationPlayer" unique_id=1731722380]
+script = ExtResource("14_g20pa")
+update_mouse_mode = 0
+update = true
+metadata/_custom_type_script = "uid://dk0hts3twf6t"
+
+[node name="PauseInput" type="Node" parent="UI/AnimationPlayer" unique_id=1493946608 node_paths=PackedStringArray("condition")]
+script = ExtResource("15_xainh")
+input = "Pause"
+condition = NodePath("IsPaused")
+metadata/_custom_type_script = "uid://dekpk8relyucb"
+
+[node name="IsPaused" type="Node" parent="UI/AnimationPlayer/PauseInput" unique_id=1790237618]
+script = ExtResource("16_7r63o")
+metadata/_custom_type_script = "uid://cox1ysk6bulx2"
+
+[node name="GameStarted" type="Node" parent="UI/AnimationPlayer" unique_id=1040579402]
+script = ExtResource("16_7r63o")
+response = false
+metadata/_custom_type_script = "uid://cox1ysk6bulx2"
+
+[connection signal="pressed" from="UI/OptionsMenu/Button" to="UI/OptionsMenu/Button/PlayerAnimatorBit" method="animate"]
+[connection signal="pressed" from="UI/StartScreen/Button" to="UI/StartScreen/Button/PlayerAnimatorBit2" method="animate"]
+[connection signal="pressed" from="UI/StartScreen/Button2" to="UI/StartScreen/Button2/PlayerAnimatorBit" method="animate"]
+[connection signal="just_false" from="UI/AnimationPlayer/PauseInput" to="UI/AnimationPlayer/Unpause" method="animate"]
+[connection signal="just_true" from="UI/AnimationPlayer/PauseInput" to="UI/AnimationPlayer/Pause" method="animate"]
+
+[editable path="Player"]
+[editable path="VisibilityToggle/Crates/Crate"]
+[editable path="VisibilityToggle/CameraGrab"]
