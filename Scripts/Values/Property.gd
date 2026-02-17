@@ -15,9 +15,7 @@ func value() -> Variant:
 	if property != null and from != null:
 		
 		var from_node = from.value()
-		if not from_node: 
-			push_warning(self, " is returning null...")
-			return null
+		if not from_node: return null
 		
 		# If it's a call, call that and return it instead of returning the callable itself.
 		if "()" in property:
