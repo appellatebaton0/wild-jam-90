@@ -21,8 +21,6 @@ func phys_active(delta:float) -> void:
 	## Rotate the direction to face the direction the player is facing (into the wall, because of VelocityLook).
 	
 	var real_direction = Vector3(direction.x, direction.y, 0).rotated(Vector3.UP, master.mover.global_rotation.y)
-	## NOTE: The X isn't working; look into it.
-	print(direction, " -> ", real_direction)
 	
 	master.mover.velocity = real_direction * climb_speed * delta
 	
@@ -32,7 +30,6 @@ func phys_active(delta:float) -> void:
 		
 		master.mover.velocity.x = vel.x
 		master.mover.velocity.z = vel.z
-	print("REAL: ", master.mover.velocity)
 	
 func absmax(a:Vector3, b:Vector3) -> Vector3:
 	if abs(a.x) > abs(b.x): b.x = a.x
