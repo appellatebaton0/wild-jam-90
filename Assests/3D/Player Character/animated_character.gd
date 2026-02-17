@@ -20,37 +20,37 @@ extends Node3D
 			AnimTree.set("parameters/Movement/transition_request", to)
 		movement_state = to
 
-var total_time := 0.0
+@export var wall_move_vector := Vector2(0.0, 0.0):
+	set(to):
+		wall_move_vector = to
 
+var lerped_wall_move_vector := wall_move_vector
 var tracked_position := self.global_position
 var fire_direction := Vector3.UP
-#var fire_strength := 0.5
 
 func _process(delta: float):
-	total_time += delta
-	
 	RenderingServer.global_shader_parameter_set("player_position", self.global_position)
 	
 	tracked_position = lerp(tracked_position, self.global_position, 6.0 * delta);
 	fire_direction = lerp(fire_direction, to_local(tracked_position) + Vector3.UP, 12.0 * delta)
-	#
-	#fire_strength = 0.75 + (0.125 * sin(total_time * 1.0))
-	#
+	
+	lerped_wall_move_vector = lerped_wall_move_vector.lerp(wall_move_vector, 0.1)
+	if AnimTree:
+		AnimTree.set("parameters/Wall_Movement/blend_position", lerped_wall_move_vector)
+	
 	if character_material:
 		character_material.set_shader_parameter("vertex_fire_direction", fire_direction)
-		#character_material.set_shader_parameter("vertex_fire_strength", fire_strength)
 
 func play_animation(anim_name: String):
-	if AnimTree.has_animation(anim_name):
+	if AnimTree.get(str("parameters/Play_", anim_name)):
 		AnimTree.set(str("parameters/Play_", anim_name, "/request"), AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
 
 func stop_animation(anim_name: String):
-	if AnimTree.has_animation(anim_name):
+	if AnimTree.get(str("parameters/Play_", anim_name)):
 		AnimTree.set(str("parameters/Play_", anim_name, "/request"), AnimationNodeOneShot.ONE_SHOT_REQUEST_FADE_OUT)
 
 func _on_state_transition(state_from: String, state_to: String) -> void:
-	pass
-	#if state_from == "Wall_Grab" and state_to == "Fall":
-		#play_animation("Wall_Jump")
-	#if state_to != "Fall":
-		#stop_animation("Wall_Jump")
+	if state_from == "Wall_Grab" and state_to == "Fall":
+		play_animation("Wall_Jump")
+	if state_to != "Fall":
+		stop_animation("Wall_Jump")
