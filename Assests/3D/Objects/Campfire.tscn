@@ -2,6 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://cibkfdf5y77sk" path="res://Assests/3D/Objects/Campfire.glb" id="1_ldbl5"]
 [ext_resource type="Texture2D" uid="uid://dsbth10rqq2uq" path="res://Assests/2D/Fire alpha.png" id="2_kc1w6"]
+[ext_resource type="PackedScene" uid="uid://b68wu2u68lltp" path="res://Assests/3D/VFX/fire_sphere.scn" id="3_kc1w6"]
+
+[sub_resource type="Gradient" id="Gradient_ldbl5"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_kc1w6"]
+gradient = SubResource("Gradient_ldbl5")
+width = 64
 
 [sub_resource type="Curve" id="Curve_ldbl5"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
@@ -9,6 +17,14 @@ point_count = 2
 
 [sub_resource type="CurveTexture" id="CurveTexture_ccjay"]
 curve = SubResource("Curve_ldbl5")
+
+[sub_resource type="Curve" id="Curve_ccjay"]
+_data = [Vector2(0, 1), 0.0, -2.3193877, 0, 0, Vector2(1, 0), -0.045139216, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_vrk8r"]
+width = 128
+curve = SubResource("Curve_ccjay")
 
 [sub_resource type="Curve" id="Curve_vrk8r"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.25365853, 0.45884), 0.0, 0.0, 0, 0, Vector2(0.50731707, 0.42843777), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -29,6 +45,8 @@ damping_curve = SubResource("CurveTexture_ccjay")
 scale_curve = SubResource("CurveTexture_6sknr")
 scale_over_velocity_min = 72.5
 scale_over_velocity_max = 97.049995
+color_ramp = SubResource("GradientTexture1D_kc1w6")
+emission_curve = SubResource("CurveTexture_vrk8r")
 turbulence_enabled = true
 turbulence_noise_strength = 6.59
 turbulence_noise_speed_random = 0.81
@@ -39,11 +57,12 @@ alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 diffuse_mode = 3
 disable_ambient_light = true
-albedo_color = Color(0.74533784, 0.25914472, 0.27778476, 1)
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.6907291, 0.48691505, 0.22718945, 1)
 albedo_texture = ExtResource("2_kc1w6")
 emission_enabled = true
-emission = Color(0.5568527, 0.2526823, 0.1669566, 1)
-emission_energy_multiplier = 6.16
+emission = Color(0.5360157, 0.2754477, 0.08749098, 1)
+emission_energy_multiplier = 3.0
 billboard_mode = 2
 billboard_keep_scale = true
 
@@ -52,13 +71,20 @@ material = SubResource("StandardMaterial3D_mlio4")
 size = Vector2(1.715, 2.56)
 orientation = 2
 
-[node name="Node3D" type="Node3D" unique_id=1733423825]
+[node name="Campfire" type="Node3D" unique_id=1733423825]
 
-[node name="Campfire" parent="." unique_id=670445628 instance=ExtResource("1_ldbl5")]
+[node name="ImportedMesh" parent="." unique_id=670445628 instance=ExtResource("1_ldbl5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1110661, 0, -0.04573989)
 
-[node name="Light" type="GPUParticles3D" parent="Campfire" unique_id=1019182618]
+[node name="OmniLight3D" type="OmniLight3D" parent="ImportedMesh" unique_id=680418275]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1924968, 0)
+light_color = Color(0.8669634, 0.3744744, 0.12562364, 1)
+light_energy = 10.573
+
+[node name="Light" type="GPUParticles3D" parent="ImportedMesh" unique_id=1019182618]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0317762, 0)
+visible = false
+cast_shadow = 0
 amount = 38
 lifetime = 0.99
 speed_scale = 0.45
@@ -66,8 +92,5 @@ randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_h8rlu")
 draw_pass_1 = SubResource("PlaneMesh_ucx6k")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Campfire/Light" unique_id=680418275]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16072059, 0)
-light_color = Color(0.8610218, 0.3626028, 0.34054992, 1)
-light_energy = 10.573
-shadow_enabled = true
+[node name="fire_sphere" parent="ImportedMesh" unique_id=1409154347 instance=ExtResource("3_kc1w6")]
+transform = Transform3D(0.365, 0, 0, 0, 0.365, 0, 0, 0, 0.365, -0.05403453, 0.8504324, 0.05290726)

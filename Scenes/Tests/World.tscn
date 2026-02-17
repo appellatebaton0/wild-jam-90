@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://b5rf7frqulgd5" path="res://Assests/3D/Objects/crystal_large.tscn" id="26_56pty"]
 [ext_resource type="PackedScene" uid="uid://btfxborye2xtt" path="res://Assests/3D/Objects/Single Crystal.tscn" id="27_y3gbf"]
 [ext_resource type="PackedScene" uid="uid://cv5kq7i0djne4" path="res://Assests/3D/Objects/Campfire.tscn" id="29_56pty"]
+[ext_resource type="PackedScene" uid="uid://byxk2xjmk3qvt" path="res://Scenes/Checkpoint.tscn" id="30_y3gbf"]
 [ext_resource type="Material" uid="uid://or8blx8y5xq7" path="res://Assests/3D/Materials/water.res" id="32_pa8kd"]
 [ext_resource type="PackedScene" uid="uid://b6mm1wjjwcmeh" path="res://Scenes/PressurePlate.tscn" id="33_efgxu"]
 [ext_resource type="PackedScene" uid="uid://d2ub6lwhrem6w" path="res://Assests/3D/Objects/Sokaban box.tscn" id="36_8c2l8"]
@@ -925,21 +926,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.114618, 15.435742, 27.1248
 omni_range = 30.0
 omni_attenuation = 0.5
 
-[node name="Node3D" parent="." unique_id=1733423825 instance=ExtResource("29_56pty")]
-transform = Transform3D(1.41, 0, 0, 0, 1.41, 0, 0, 0, 1.41, 60.043278, 21.499449, 2.539219)
+[node name="Campfire" parent="." unique_id=1733423825 instance=ExtResource("29_56pty")]
+transform = Transform3D(1.498757, -0.03905413, -0.04692774, 0.036353346, 1.4971528, -0.08492149, 0.049049683, 0.08371379, 1.4968587, 22.159054, 0.13137865, 2.3699913)
 
-[node name="Campfire" parent="Node3D" index="0" unique_id=670445628]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.970783, -14.890291, -0.04573989)
-
-[node name="OmniLight3D" parent="Node3D/Campfire/Light" parent_id_path=PackedInt32Array(1733423825, 1019182618) index="0" unique_id=680418275]
-light_color = Color(0.97235554, 0, 0.26833373, 1)
-light_energy = 12.447
-light_indirect_energy = 12.582
-light_volumetric_fog_energy = 16.0
-shadow_enabled = false
-omni_range = 6.9406524
+[node name="Checkpoint" parent="." unique_id=464787710 instance=ExtResource("30_y3gbf")]
+transform = Transform3D(0.9977098, 0.06710203, -0.008513467, -0.06597456, 0.9931637, 0.09629875, 0.014917101, -0.09551655, 0.9953161, -27.228096, 9.852415, 14.84761)
 
 [editable path="CameraGrab"]
 [editable path="CameraGrab2"]
 [editable path="Sokaban/CameraGrab"]
-[editable path="Node3D"]
