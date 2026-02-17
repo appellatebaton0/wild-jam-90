@@ -28,7 +28,7 @@ func phys_active(delta:float) -> void:
 	
 	### Stick to the wall while climbing.
 	if not Input.is_action_pressed(inputs[inp.up]):
-		var vel = absmax(-master.mover.get_wall_normal() * 10, master.mover.velocity)
+		var vel = absmax(-master.mover.get_wall_normal() * 2, master.mover.velocity)
 		
 		master.mover.velocity.x = vel.x
 		master.mover.velocity.z = vel.z
