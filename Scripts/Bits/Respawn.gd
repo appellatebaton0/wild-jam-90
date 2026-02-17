@@ -51,7 +51,6 @@ func _process(delta: float) -> void:
 			should_kill = false
 
 func setup(): 
-	print("RES: ", self, " -> ", bot)
 	if not target: target = find_target()
 	
 	if target:

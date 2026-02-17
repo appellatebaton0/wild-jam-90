@@ -7,6 +7,10 @@ const POINT_SCENE := preload("res://Scenes/MovingPlatformPoint.tscn")
 @export_tool_button("New Point") var new_point := create_new_point
 @export_tool_button("Clear Points") var clear_all := clear_points
 
+@export_tool_button("Reset") var reset := _ready
+
+@export var move_in_editor := true ## Whether or not to animate in-editor
+
 @export var points:Array[PlatformPoint] = get_points()
 var index_direction = 1
 
@@ -41,6 +45,8 @@ func _ready() -> void:
 
 func _process(delta: float) -> void: if len(points) > 0:
 	
+	if Engine.is_editor_hint() and not move_in_editor: return
+	
 	for point in points: if not is_instance_valid(point): points.erase(point)
 	if not current_point or not next_point: return
 	
@@ -51,6 +57,11 @@ func _process(delta: float) -> void: if len(points) > 0:
 		var to  :Vector3 = next_point.node.global_position
 		
 		node.global_position = lerp(from, to, ease((current_point.time - timer) / current_point.time, current_point.easing))
+		
+		var from_rot:Vector3 = current_point.node.global_rotation
+		var to_rot  :Vector3 = next_point.node.global_rotation
+		
+		node.global_rotation = lerp(from_rot, to_rot, ease((current_point.time - timer) / current_point.time, current_point.easing))
 		
 		timer = move_toward(timer, 0.0, delta)
 		
@@ -63,6 +74,7 @@ func _process(delta: float) -> void: if len(points) > 0:
 			pause = current_point.after_wait
 	else: 
 		node.global_position = current_point.global_position
+		node.global_rotation = current_point.global_rotation
 		pause = move_toward(pause, 0, delta)
 		
 

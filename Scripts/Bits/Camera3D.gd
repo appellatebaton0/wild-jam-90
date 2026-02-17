@@ -6,6 +6,11 @@ class_name CameraBit3D extends Bit
 ## The node to pass the X rotation to
 @export var x_target:NodeValue
 
+@export var x_neg_input:StringName
+@export var y_neg_input:StringName
+@export var x_pos_input:StringName
+@export var y_pos_input:StringName
+
 ## The angles to clamp the x rotation to.
 @export var x_clamp := Vector2(-90, 90)
 
@@ -23,10 +28,17 @@ func set_valid(value:NodeValue, amount:Vector3):
 			
 			node.rotation = next_rotation
 
+func _process(delta: float) -> void:
+	if x_neg_input and x_pos_input and y_neg_input and y_pos_input:
+		var vec = Input.get_vector(x_neg_input,x_pos_input,y_neg_input,y_pos_input)
+		
+		set_valid(x_target, Vector3(vec.y * 0.02 * sensitivity, 0, 0))
+		set_valid(y_target, Vector3(0, -vec.x * 0.02 * sensitivity, 0))
+		
+	
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		if not must_be_captured or Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 			set_valid(x_target, Vector3(-event.relative.y * 0.001 * sensitivity, 0, 0))
 			set_valid(y_target, Vector3(0, -event.relative.x * 0.001 * sensitivity, 0))
-		

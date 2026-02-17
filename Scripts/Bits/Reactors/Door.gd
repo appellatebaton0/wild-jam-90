@@ -39,7 +39,7 @@ func _process(delta: float) -> void:
 	
 	if value != last:
 		last = value
-		timer = time
+		timer = time - timer
 	
 	var to   := open_extent  if value else close_extent
 	var from := close_extent if value else open_extent

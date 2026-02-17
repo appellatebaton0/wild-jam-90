@@ -1,0 +1,25 @@
+[gd_resource type="AudioStreamRandomizer" format=3 uid="uid://cv0ubd2y2vpxh"]
+
+[ext_resource type="AudioStream" uid="uid://bxwrerq5eugkv" path="res://Assests/SFX Main Char/Grass Step-001.wav" id="1_w55ee"]
+[ext_resource type="AudioStream" uid="uid://3fbvc8cx86i4" path="res://Assests/SFX Main Char/Grass Step-002.wav" id="2_afia3"]
+[ext_resource type="AudioStream" uid="uid://bbdg0aai8v32s" path="res://Assests/SFX Main Char/Grass Step-003.wav" id="3_mojvp"]
+[ext_resource type="AudioStream" uid="uid://c7fp2vfj7qk2s" path="res://Assests/SFX Main Char/Grass Step-004.wav" id="4_dvt5v"]
+[ext_resource type="AudioStream" uid="uid://dvvjko5o8m12q" path="res://Assests/SFX Main Char/Grass Step-005.wav" id="5_rqk8o"]
+[ext_resource type="AudioStream" uid="uid://c41yuj6gy2n21" path="res://Assests/SFX Main Char/Grass Step-006.wav" id="6_4mjhb"]
+[ext_resource type="AudioStream" uid="uid://bsdsp3082miwe" path="res://Assests/SFX Main Char/Grass Step-007.wav" id="7_gcw7k"]
+[ext_resource type="AudioStream" uid="uid://bcfm2oqofeq4w" path="res://Assests/SFX Main Char/Grass Step-008.wav" id="8_1wvai"]
+[ext_resource type="AudioStream" uid="uid://ckh0b6hal1n3d" path="res://Assests/SFX Main Char/Grass Step-009.wav" id="9_7mtqd"]
+[ext_resource type="AudioStream" uid="uid://deglvjyhgbpmu" path="res://Assests/SFX Main Char/Grass Step-010.wav" id="10_0xlji"]
+
+[resource]
+streams_count = 10
+stream_0/stream = ExtResource("1_w55ee")
+stream_1/stream = ExtResource("2_afia3")
+stream_2/stream = ExtResource("3_mojvp")
+stream_3/stream = ExtResource("4_dvt5v")
+stream_4/stream = ExtResource("5_rqk8o")
+stream_5/stream = ExtResource("6_4mjhb")
+stream_6/stream = ExtResource("7_gcw7k")
+stream_7/stream = ExtResource("8_1wvai")
+stream_8/stream = ExtResource("9_7mtqd")
+stream_9/stream = ExtResource("10_0xlji")
