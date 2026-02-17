@@ -26,5 +26,5 @@ func update():
 	if target != null and value != null:
 		var target_node = target.value()
 		var new_value = value.value()
-		if target_node != null: if new_value != target_node.get(property):
+		if target_node and is_instance_valid(target_node) and new_value != target_node.get(property):
 			target_node.set(property, value.value())

@@ -5,7 +5,6 @@ uniform float burn_depth = 0.15;
 uniform float warble_strength = 0.125;
 uniform float warble_speed = 1.0;
 
-uniform vec3 vertex_fire_direction = vec3(0.0, 1.0, 0.0);
 uniform float vertex_fire_strength = 1.0;
 
 uniform float energy = 2.0;
@@ -15,7 +14,6 @@ uniform vec3 fire_color_b : source_color = vec3(1.0, 0.8, 0.0);
 
 uniform sampler2D fire_noise : hint_default_black;
 
-uniform float triplanar_scale = 1.0;
 uniform vec2 texture_scale = vec2(1.0, 1.0);
 
 uniform bool inverted_normals = false;
