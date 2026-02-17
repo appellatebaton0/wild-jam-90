@@ -1,0 +1,25 @@
+[gd_resource type="AudioStreamRandomizer" format=3 uid="uid://cw2wseapxh88p"]
+
+[ext_resource type="AudioStream" uid="uid://cdcer6gnhm115" path="res://Assests/SFX Main Char/StoneWalk/Stone Walk-001.wav" id="1_4hxxn"]
+[ext_resource type="AudioStream" uid="uid://dg1phofkv5vul" path="res://Assests/SFX Main Char/StoneWalk/Stone Walk-002.wav" id="2_4nfa7"]
+[ext_resource type="AudioStream" uid="uid://byuisayxc37gp" path="res://Assests/SFX Main Char/StoneWalk/Stone Walk-003.wav" id="3_kxrw2"]
+[ext_resource type="AudioStream" uid="uid://b3hxl1foicb72" path="res://Assests/SFX Main Char/StoneWalk/Stone Walk-004.wav" id="4_lmyj4"]
+[ext_resource type="AudioStream" uid="uid://c5tfp2en6j231" path="res://Assests/SFX Main Char/StoneWalk/Stone Walk-005.wav" id="5_ibept"]
+[ext_resource type="AudioStream" uid="uid://bfjcx6w8iv1qg" path="res://Assests/SFX Main Char/StoneWalk/Stone Walk-006.wav" id="6_1wji1"]
+[ext_resource type="AudioStream" uid="uid://dhubjvubn7tlw" path="res://Assests/SFX Main Char/StoneWalk/Stone Walk-007.wav" id="7_lidbx"]
+[ext_resource type="AudioStream" uid="uid://db8w1yjjifi0r" path="res://Assests/SFX Main Char/StoneWalk/Stone Walk-008.wav" id="8_u57up"]
+[ext_resource type="AudioStream" uid="uid://cfjqhla42umo3" path="res://Assests/SFX Main Char/StoneWalk/Stone Walk-009.wav" id="9_lavds"]
+[ext_resource type="AudioStream" uid="uid://cgo481baqic3i" path="res://Assests/SFX Main Char/StoneWalk/Stone Walk-010.wav" id="10_r64qy"]
+
+[resource]
+streams_count = 10
+stream_0/stream = ExtResource("1_4hxxn")
+stream_1/stream = ExtResource("2_4nfa7")
+stream_2/stream = ExtResource("3_kxrw2")
+stream_3/stream = ExtResource("4_lmyj4")
+stream_4/stream = ExtResource("5_ibept")
+stream_5/stream = ExtResource("6_1wji1")
+stream_6/stream = ExtResource("7_lidbx")
+stream_7/stream = ExtResource("8_u57up")
+stream_8/stream = ExtResource("9_lavds")
+stream_9/stream = ExtResource("10_r64qy")
