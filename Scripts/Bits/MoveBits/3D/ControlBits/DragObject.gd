@@ -29,31 +29,26 @@ func phys_active(delta:float) -> void:
 	
 	# Apply it to the mover.
 	if direction:
-		# Get the current acceleration
-		var current_acceleration = acceleration
-		
 		# Set the next velocity
 		var next_velocity = master.mover.velocity
 		
-		next_velocity.x = move_toward(next_velocity.x, direction.x * max_speed, current_acceleration * delta)
-		next_velocity.z = move_toward(next_velocity.z, direction.z * max_speed, current_acceleration * delta)
+		next_velocity.x = move_toward(next_velocity.x, direction.x * max_speed, acceleration * delta)
+		next_velocity.z = move_toward(next_velocity.z, direction.z * max_speed, acceleration * delta)
 		
 		master.mover.velocity.x = next_velocity.x
 		master.mover.velocity.z = next_velocity.z
 	else:
-		# Get the current friction
-		var current_friction = friction
 		
-		master.mover.velocity.x = move_toward(master.mover.velocity.x, 0, current_friction * delta)
-		master.mover.velocity.z = move_toward(master.mover.velocity.z, 0, current_friction * delta)
+		master.mover.velocity.x = move_toward(master.mover.velocity.x, 0, friction * delta)
+		master.mover.velocity.z = move_toward(master.mover.velocity.z, 0, friction * delta)
 	
 	master.direction = direction
 
-func lock_to_obj(direction:Vector3) -> Vector3:
+func lock_to_obj(vector:Vector3) -> Vector3:
 	
-	if not direction: return direction
+	if not vector: return vector
 	
-	var dir := Vector2(direction.x, direction.z)
+	var dir := Vector2(vector.x, vector.z)
 	
 	var object = pushpull.holding
 	var obj_rotation = object.rotation.y
