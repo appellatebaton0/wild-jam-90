@@ -217,6 +217,7 @@ name = ""
 id = 2
 albedo_texture = ExtResource("14_jg0jb")
 normal_texture = SubResource("ImageTexture_cvje1")
+uv_scale = 0.5
 
 [sub_resource type="Terrain3DAssets" id="Terrain3DAssets_iqkbw"]
 mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_pmfsj"), SubResource("Terrain3DMeshAsset_iqkbw"), SubResource("Terrain3DMeshAsset_i28qj"), SubResource("Terrain3DMeshAsset_k50v0"), SubResource("Terrain3DMeshAsset_ske5e"), SubResource("Terrain3DMeshAsset_x2jjp"), SubResource("Terrain3DMeshAsset_52us0"), SubResource("Terrain3DMeshAsset_11yo2"), SubResource("Terrain3DMeshAsset_trh55")])
