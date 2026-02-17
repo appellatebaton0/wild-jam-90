@@ -620,7 +620,7 @@ script = ExtResource("24_kih0c")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D/CamearCheck" unique_id=1028648525]
 shape = SubResource("CapsuleShape3D_utwlt")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="CharacterBody3D" unique_id=1381693877 node_paths=PackedStringArray("player", "ray", "terrain_node", "condition", "switch_condition", "speed_modifier")]
+[node name="FootstepSound" type="AudioStreamPlayer3D" parent="CharacterBody3D" unique_id=1381693878 node_paths=PackedStringArray("player", "ray", "terrain_node", "condition", "switch_condition", "speed_modifier")]
 volume_db = 10.0
 max_db = 6.0
 bus = &"SFX"
