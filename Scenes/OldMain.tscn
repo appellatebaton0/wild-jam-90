@@ -17,8 +17,6 @@
 [ext_resource type="PackedScene" uid="uid://b6mm1wjjwcmeh" path="res://Scenes/PressurePlate.tscn" id="10_1p5hy"]
 [ext_resource type="Script" uid="uid://cj85aq1o3xpfw" path="res://Scripts/Bits/AreaBits/3D/Checkpoint.gd" id="10_erwvk"]
 [ext_resource type="PackedScene" uid="uid://dkhpghpfg7uab" path="res://Scenes/CameraGrab.tscn" id="13_0sclb"]
-[ext_resource type="PackedScene" uid="uid://5opnwc5uryxc" path="res://Scenes/InputMappingEntry.tscn" id="14_0sclb"]
-[ext_resource type="Script" uid="uid://dgpskhft1ffgp" path="res://Scripts/Bits/AudioBusBit.gd" id="14_346fj"]
 
 [sub_resource type="Gradient" id="Gradient_idj7w"]
 offsets = PackedFloat32Array(0.33939394, 0.54545456, 0.6181818)
@@ -83,95 +81,8 @@ sky_material = SubResource("ProceduralSkyMaterial_r150o")
 background_mode = 2
 sky = SubResource("Sky_idj7w")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0sclb"]
-bg_color = Color(0.09, 0.09, 0.09, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_346fj"]
-bg_color = Color(0.20699994, 0.1404, 0.54, 1)
-
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_2w5on"]
-color = Color(0, 0, 0, 0.5921569)
-grow_begin = -150.0
-grow_end = -150.0
-thickness = 10
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2w5on"]
-bg_color = Color(0.6, 0.204, 0.204, 1)
-
 [sub_resource type="Animation" id="Animation_0sclb"]
 resource_name = "Options->Start"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("OptionsMenu:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, -400), Vector2(0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("StartScreen:position")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, 250), Vector2(0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("OptionsMenu:z_index")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [1, 0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("StartScreen:z_index")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [0, 0]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("OptionsMenu:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("StartScreen:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
 
 [sub_resource type="Animation" id="Animation_lmxn3"]
 resource_name = "Pause"
@@ -274,204 +185,12 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector2(0, 0)]
 }
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("StartScreen:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("OptionsMenu:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("StartScreen:z_index")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("OptionsMenu:z_index")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("StartScreen:visible")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("OptionsMenu:visible")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("Backdrop:visible")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
 
 [sub_resource type="Animation" id="Animation_346fj"]
 resource_name = "Start->Game"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("StartScreen:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, -648)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("OptionsMenu:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Backdrop:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
 
 [sub_resource type="Animation" id="Animation_sxkr1"]
 resource_name = "Start->Options"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("StartScreen:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, -400), Vector2(0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("OptionsMenu:position")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, 250), Vector2(0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("StartScreen:z_index")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [0, 0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("OptionsMenu:z_index")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [0, 1]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("StartScreen:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("OptionsMenu:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
 
 [sub_resource type="Animation" id="Animation_k4p64"]
 resource_name = "Unpause"
@@ -551,6 +270,15 @@ mesh = SubResource("BoxMesh_pbw6q")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Level/TestPlatforms/MeshInstance3D/StaticBody3D" unique_id=1141583290]
 shape = SubResource("BoxShape3D_v1gob")
 
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="Level/TestPlatforms" unique_id=804693367]
+transform = Transform3D(1, 0, 0, 0, 0.9715326, -0.23690595, 0, 0.23690595, 0.9715326, -0.0025672913, 2.3841858e-07, -15.022332)
+mesh = SubResource("BoxMesh_pbw6q")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Level/TestPlatforms/MeshInstance3D9" unique_id=721499071]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/TestPlatforms/MeshInstance3D9/StaticBody3D" unique_id=856656353]
+shape = SubResource("BoxShape3D_v1gob")
+
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Level/TestPlatforms" unique_id=1807238823]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.959123, 3.8694565, 0)
 mesh = SubResource("BoxMesh_r150o")
@@ -609,9 +337,6 @@ shape = SubResource("BoxShape3D_idj7w")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7012305, 3.1623414, -11.78254)
 collision_layer = 4
 collision_mask = 5
-axis_lock_angular_x = true
-axis_lock_angular_y = true
-axis_lock_angular_z = true
 physics_material_override = SubResource("PhysicsMaterial_pbw6q")
 can_sleep = false
 script = ExtResource("2_v1gob")
@@ -732,243 +457,6 @@ text = "PRESS P TO TOGGLE MOUSE CAPTURE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Backdrop" type="Panel" parent="CanvasLayer" unique_id=470627577]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_0sclb")
-
-[node name="OptionsMenu" type="Panel" parent="CanvasLayer" unique_id=498174720]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_346fj")
-
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/OptionsMenu" unique_id=1423999940]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 125
-theme_override_constants/margin_top = 30
-theme_override_constants/margin_right = 125
-theme_override_constants/margin_bottom = 50
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/OptionsMenu/MarginContainer" unique_id=121975614]
-layout_mode = 2
-theme_override_constants/separation = 10
-
-[node name="Label" type="Label" parent="CanvasLayer/OptionsMenu/MarginContainer/VBoxContainer" unique_id=989516321]
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "OPTIONS"
-horizontal_alignment = 1
-
-[node name="HSeparator" type="HSeparator" parent="CanvasLayer/OptionsMenu/MarginContainer/VBoxContainer" unique_id=1823587920]
-layout_mode = 2
-theme_override_styles/separator = SubResource("StyleBoxLine_2w5on")
-
-[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/OptionsMenu/MarginContainer/VBoxContainer" unique_id=1516594406]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer" unique_id=1672079856]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Label" type="Label" parent="CanvasLayer/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1775746752]
-layout_mode = 2
-text = "AUDIO"
-horizontal_alignment = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1573236205 node_paths=PackedStringArray("bar", "label")]
-layout_mode = 2
-script = ExtResource("14_346fj")
-bar = NodePath("HSlider")
-label = NodePath("Label2")
-bus_name = &"Master"
-
-[node name="Label" type="Label" parent="CanvasLayer/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer" unique_id=1375253010]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-text = "Master"
-
-[node name="Label2" type="Label" parent="CanvasLayer/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer" unique_id=843291282]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-text = "20.0"
-horizontal_alignment = 2
-
-[node name="HSlider" type="HSlider" parent="CanvasLayer/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer" unique_id=1663416775]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 4
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=54475636 node_paths=PackedStringArray("bar", "label")]
-layout_mode = 2
-script = ExtResource("14_346fj")
-bar = NodePath("HSlider")
-label = NodePath("Label2")
-bus_name = &"Music"
-
-[node name="Label" type="Label" parent="CanvasLayer/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer2" unique_id=562817458]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-text = "Music"
-
-[node name="Label2" type="Label" parent="CanvasLayer/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer2" unique_id=1032795824]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-text = "20.0"
-horizontal_alignment = 2
-
-[node name="HSlider" type="HSlider" parent="CanvasLayer/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer2" unique_id=321153257]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 4
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=510410476 node_paths=PackedStringArray("bar", "label")]
-layout_mode = 2
-script = ExtResource("14_346fj")
-bar = NodePath("HSlider")
-label = NodePath("Label2")
-bus_name = &"SFX"
-
-[node name="Label" type="Label" parent="CanvasLayer/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer3" unique_id=442341662]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-text = "Sound Effects"
-
-[node name="Label2" type="Label" parent="CanvasLayer/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer3" unique_id=1014828344]
-custom_minimum_size = Vector2(95.845, 0)
-layout_mode = 2
-text = "20.0"
-horizontal_alignment = 2
-
-[node name="HSlider" type="HSlider" parent="CanvasLayer/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/HBoxContainer3" unique_id=1305640264]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 4
-
-[node name="Label2" type="Label" parent="CanvasLayer/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1779446343]
-layout_mode = 2
-text = "CONTROLS"
-horizontal_alignment = 1
-
-[node name="InputEntry" parent="CanvasLayer/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=2685080 instance=ExtResource("14_0sclb")]
-layout_mode = 2
-event_name = &"Jump"
-display_name = &"Jump"
-
-[node name="InputEntry6" parent="CanvasLayer/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1952329396 instance=ExtResource("14_0sclb")]
-layout_mode = 2
-event_name = &"Sprint"
-display_name = &"Sprint"
-
-[node name="InputEntry7" parent="CanvasLayer/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=2129443870 instance=ExtResource("14_0sclb")]
-layout_mode = 2
-event_name = &"Climb"
-display_name = &"Climb"
-
-[node name="InputEntry8" parent="CanvasLayer/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=586048703 instance=ExtResource("14_0sclb")]
-layout_mode = 2
-event_name = &"Grab"
-display_name = &"Grab"
-
-[node name="InputEntry9" parent="CanvasLayer/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1294109508 instance=ExtResource("14_0sclb")]
-layout_mode = 2
-event_name = &"Pause"
-display_name = &"Pause"
-
-[node name="Button" type="Button" parent="CanvasLayer/OptionsMenu" unique_id=1328595564]
-layout_mode = 0
-offset_left = 30.0
-offset_top = 30.0
-offset_right = 200.0
-offset_bottom = 73.0
-focus_mode = 0
-theme_override_font_sizes/font_size = 25
-text = "<- BACK"
-flat = true
-
-[node name="PlayerAnimatorBit" type="Node" parent="CanvasLayer/OptionsMenu/Button" unique_id=1729777602]
-script = ExtResource("3_rgh2o")
-animation = "Options->Start"
-metadata/_custom_type_script = "uid://dw7w6pry2g435"
-
-[node name="StartScreen" type="Panel" parent="CanvasLayer" unique_id=594858714]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_2w5on")
-
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/StartScreen" unique_id=836014015]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 60
-theme_override_constants/margin_top = 60
-theme_override_constants/margin_right = 60
-theme_override_constants/margin_bottom = 60
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/StartScreen/MarginContainer" unique_id=553926384]
-layout_mode = 2
-theme_override_constants/separation = 50
-
-[node name="Label" type="Label" parent="CanvasLayer/StartScreen/MarginContainer/VBoxContainer" unique_id=723407408]
-layout_mode = 2
-theme_override_font_sizes/font_size = 75
-text = "[GAME NAME]"
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/StartScreen/MarginContainer/VBoxContainer" unique_id=624343051]
-layout_mode = 2
-
-[node name="Control" type="Control" parent="CanvasLayer/StartScreen/MarginContainer/VBoxContainer/HBoxContainer" unique_id=897067080]
-custom_minimum_size = Vector2(20, 0)
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/StartScreen/MarginContainer/VBoxContainer/HBoxContainer" unique_id=307444845]
-layout_mode = 2
-theme_override_constants/separation = 20
-
-[node name="Button" type="Button" parent="CanvasLayer/StartScreen/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=559987572]
-custom_minimum_size = Vector2(300, 100)
-layout_mode = 2
-focus_mode = 0
-theme_override_font_sizes/font_size = 30
-text = "Start"
-
-[node name="PlayerAnimatorBit2" type="Node" parent="CanvasLayer/StartScreen/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Button" unique_id=660418641]
-script = ExtResource("3_rgh2o")
-animation = "Start->Game"
-metadata/_custom_type_script = "uid://dw7w6pry2g435"
-
-[node name="Button2" type="Button" parent="CanvasLayer/StartScreen/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1798813046]
-custom_minimum_size = Vector2(275, 100)
-layout_mode = 2
-size_flags_horizontal = 0
-focus_mode = 0
-theme_override_font_sizes/font_size = 30
-text = "Options"
-
-[node name="PlayerAnimatorBit" type="Node" parent="CanvasLayer/StartScreen/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Button2" unique_id=1125592106]
-script = ExtResource("3_rgh2o")
-animation = "Start->Options"
-metadata/_custom_type_script = "uid://dw7w6pry2g435"
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer" unique_id=1848380471]
 libraries/ = SubResource("AnimationLibrary_vy5pj")
 
@@ -999,8 +487,5 @@ script = ExtResource("5_pbw6q")
 response = false
 metadata/_custom_type_script = "uid://cox1ysk6bulx2"
 
-[connection signal="pressed" from="CanvasLayer/OptionsMenu/Button" to="CanvasLayer/OptionsMenu/Button/PlayerAnimatorBit" method="animate"]
-[connection signal="pressed" from="CanvasLayer/StartScreen/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Button" to="CanvasLayer/StartScreen/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Button/PlayerAnimatorBit2" method="animate"]
-[connection signal="pressed" from="CanvasLayer/StartScreen/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Button2" to="CanvasLayer/StartScreen/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Button2/PlayerAnimatorBit" method="animate"]
 [connection signal="just_false" from="CanvasLayer/AnimationPlayer/PauseInput" to="CanvasLayer/AnimationPlayer/Unpause" method="animate"]
 [connection signal="just_true" from="CanvasLayer/AnimationPlayer/PauseInput" to="CanvasLayer/AnimationPlayer/Pause" method="animate"]

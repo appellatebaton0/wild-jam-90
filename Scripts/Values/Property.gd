@@ -14,10 +14,15 @@ func _ready() -> void:
 func value() -> Variant:
 	if property != null and from != null:
 		
+		var from_node = from.value()
+		if not from_node: 
+			push_warning(self, " is returning null...")
+			return null
+		
 		# If it's a call, call that and return it instead of returning the callable itself.
 		if "()" in property:
-			return from.value().call(property.replace("()", ""))
+			return from_node.call(property.replace("()", ""))
 		
 		# Otherwise, return the property.
-		return from.value().get(property)
+		return from_node.get(property) 
 	return null

@@ -12,20 +12,21 @@ func _ready() -> void:
 			input = child
 			break
 
+var direction:Vector2
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func phys_active(delta:float) -> void:
 	## Get the input direction.
-	var direction = Input.get_vector(inputs[inp.left], inputs[inp.right], inputs[inp.backwards], inputs[inp.forwards])
+	direction = Input.get_vector(inputs[inp.left], inputs[inp.right], inputs[inp.backwards], inputs[inp.forwards])
 	
 	## Rotate the direction to face the direction the player is facing (into the wall, because of VelocityLook).
 	
-	direction = Vector3(direction.x, direction.y, 0).rotated(Vector3.UP, master.mover.rotation.y)
+	var real_direction = Vector3(direction.x, direction.y, 0).rotated(Vector3.UP, master.mover.global_rotation.y)
 	
-	master.mover.velocity = direction * climb_speed * delta
+	master.mover.velocity = real_direction * climb_speed * delta
 	
 	### Stick to the wall while climbing.
 	if not Input.is_action_pressed(inputs[inp.up]):
-		var vel = absmax(-master.mover.get_wall_normal() * 10, master.mover.velocity)
+		var vel = absmax(-master.mover.get_wall_normal() * 2, master.mover.velocity)
 		
 		master.mover.velocity.x = vel.x
 		master.mover.velocity.z = vel.z
