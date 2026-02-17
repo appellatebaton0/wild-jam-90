@@ -22,7 +22,9 @@ func _process(_delta: float) -> void:
 		update()
 
 func update():
+	#print(value.value())
 	if target != null and value != null:
 		var target_node = target.value()
-		if target_node != null:
+		var new_value = value.value()
+		if target_node != null: if new_value != target_node.get(property):
 			target_node.set(property, value.value())

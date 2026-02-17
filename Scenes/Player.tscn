@@ -28,7 +28,6 @@
 [ext_resource type="Script" uid="uid://bcg6hjtowf1lj" path="res://Scripts/Bits/MoveBits/3D/ControlBits/WallClimb.gd" id="21_70hv0"]
 [ext_resource type="Script" uid="uid://b7wu1d0ipllfp" path="res://Scripts/Bits/MoveBits/3D/ControlBits/PushPull.gd" id="21_qidb7"]
 [ext_resource type="Shader" uid="uid://7x40gwinm2ws" path="res://Scripts/Shaders/Outline.gdshader" id="23_qidb7"]
-[ext_resource type="Script" uid="uid://cl8xie6u05gcq" path="res://Scripts/camear_check.gd" id="24_kih0c"]
 [ext_resource type="Script" uid="uid://ctgxew4bdf2rx" path="res://Scripts/Bits/BarBit.gd" id="26_8flut"]
 [ext_resource type="Script" uid="uid://cwmi2fpsn8by2" path="res://Scripts/Bits/Respawn.gd" id="27_kih0c"]
 [ext_resource type="Script" uid="uid://brdcqfv0k15le" path="res://Scripts/Bits/MaterialSoundBit.gd" id="27_rxg2u"]
@@ -90,8 +89,6 @@
 [ext_resource type="AudioStream" uid="uid://cgo481baqic3i" path="res://Assests/SFX Main Char/StoneWalk/Stone Walk-010.wav" id="81_36t8t"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r150o"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_utwlt"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_867uf"]
 streams_count = 7
@@ -492,12 +489,6 @@ input_name = &"Grab"
 bot_collision_mask = 2
 obj_collision_layer = 3
 exclusive = false
-
-[node name="CamearCheck" type="Area3D" parent="CharacterBody3D" unique_id=1523412890]
-script = ExtResource("24_kih0c")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D/CamearCheck" unique_id=1028648525]
-shape = SubResource("CapsuleShape3D_utwlt")
 
 [node name="AudioListener3D" type="AudioListener3D" parent="CharacterBody3D" unique_id=1466845776]
 current = true
