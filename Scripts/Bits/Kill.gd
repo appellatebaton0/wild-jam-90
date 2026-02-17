@@ -10,10 +10,25 @@ var activated:bool = false
 
 var respawner:RespawnBit3D
 
+@onready var parent = get_parent()
 func _ready() -> void:
+	
+	
+	if parent is AreaMasterBit3D:
+		
+		var a = Property.new()
+		a.property = "has_overlapping_bodies()"
+		var b = CastBool.new()
+		b.input = a
+		var c = ManualNode.new()
+		c.response = parent
+		
+		a.from = c
+		
+		condition = b
+	
 	if not condition:
 		# Try the parent is an actor.
-		var parent = get_parent()
 		if parent is Actor:
 			condition = ActorBool.new()
 			condition.actor = parent
@@ -27,6 +42,8 @@ func _ready() -> void:
 	find_respawner()
 
 func _process(_delta: float) -> void: if condition:
+	
+	if parent is AreaMasterBit3D: if parent.area.has_overlapping_bodies(): target = parent.area.get_overlapping_bodies()[0]
 	
 	if condition.value():
 		if not activated or not pulse: # Kill the target.
