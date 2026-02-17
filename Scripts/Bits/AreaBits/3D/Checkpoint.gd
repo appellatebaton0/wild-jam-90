@@ -1,14 +1,15 @@
 class_name CheckpointBit extends AreaBit3D
 
-var player:Bot
+var respawn:RespawnBit3D
 
 func on_body_entered(body:Node) -> void:
-	if body is Bot:
-		player = body
-	
-	var scan := player.scan_bot("RespawnBit3D")
-	
-	if len(scan) > 0:
-		var respawn:RespawnBit3D = scan[0]
+	if body is Bit:
+		body = body.bot
+		var scan:Array[Bit] = body.scan_bot("RespawnBit3D")
 		
-		respawn.setup()
+		if len(scan) > 0:
+			respawn = scan[0]
+			
+			respawn.setup(self)
+
+func is_current() -> bool: return (respawn.setup_by == self) if respawn else false

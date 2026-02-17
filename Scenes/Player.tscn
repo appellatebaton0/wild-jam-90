@@ -28,66 +28,9 @@
 [ext_resource type="Script" uid="uid://bcg6hjtowf1lj" path="res://Scripts/Bits/MoveBits/3D/ControlBits/WallClimb.gd" id="21_70hv0"]
 [ext_resource type="Script" uid="uid://b7wu1d0ipllfp" path="res://Scripts/Bits/MoveBits/3D/ControlBits/PushPull.gd" id="21_qidb7"]
 [ext_resource type="Shader" uid="uid://7x40gwinm2ws" path="res://Scripts/Shaders/Outline.gdshader" id="23_qidb7"]
-[ext_resource type="Script" uid="uid://cl8xie6u05gcq" path="res://Scripts/camear_check.gd" id="24_kih0c"]
 [ext_resource type="Script" uid="uid://ctgxew4bdf2rx" path="res://Scripts/Bits/BarBit.gd" id="26_8flut"]
 [ext_resource type="Script" uid="uid://cwmi2fpsn8by2" path="res://Scripts/Bits/Respawn.gd" id="27_kih0c"]
-[ext_resource type="Script" uid="uid://brdcqfv0k15le" path="res://Scripts/Bits/MaterialSoundBit.gd" id="27_rxg2u"]
 [ext_resource type="Texture2D" uid="uid://cqeetefpi1co3" path="res://Assests/2D/Progress_Bar.png" id="27_u7x0b"]
-[ext_resource type="AudioStream" uid="uid://dlfu1n1vgnswj" path="res://Assests/SFX Main Char/DirtRun/Dirt Run-001.wav" id="28_867uf"]
-[ext_resource type="Script" uid="uid://bslmamakq2ao5" path="res://Scripts/Values/Node/GroupNode.gd" id="28_xixlo"]
-[ext_resource type="AudioStream" uid="uid://goywnvlv82yk" path="res://Assests/SFX Main Char/DirtRun/Dirt Run-002.wav" id="29_6ilcf"]
-[ext_resource type="AudioStream" uid="uid://w8r2n03npyc8" path="res://Assests/SFX Main Char/DirtRun/Dirt Run-003.wav" id="30_6id3a"]
-[ext_resource type="AudioStream" uid="uid://s1pwlhxqxmlp" path="res://Assests/SFX Main Char/DirtRun/Dirt Run-004.wav" id="31_w1x0d"]
-[ext_resource type="AudioStream" uid="uid://c7pa3hlj3iceg" path="res://Assests/SFX Main Char/DirtRun/Dirt Run-005.wav" id="32_ovjwc"]
-[ext_resource type="AudioStream" uid="uid://cx2b1hpqypxrm" path="res://Assests/SFX Main Char/DirtRun/Dirt Run-006.wav" id="33_jawh0"]
-[ext_resource type="AudioStream" uid="uid://qg70emdnxncn" path="res://Assests/SFX Main Char/DirtRun/Dirt Run-007.wav" id="34_jq6en"]
-[ext_resource type="AudioStream" uid="uid://juh2ujwk143c" path="res://Assests/SFX Main Char/DirtRun/Dirt Run-008.wav" id="35_1g8ls"]
-[ext_resource type="AudioStream" uid="uid://bixc4pdmqfp88" path="res://Assests/SFX Main Char/DirtRun/Dirt Run-009.wav" id="36_4wp3f"]
-[ext_resource type="AudioStream" uid="uid://y3rqb5r3y26j" path="res://Assests/SFX Main Char/DirtRun/Dirt Run-010.wav" id="37_x1vvj"]
-[ext_resource type="AudioStream" uid="uid://bxavb5l4thkjn" path="res://Assests/SFX Main Char/GrassRun/Grass Run-001.wav" id="38_y07qb"]
-[ext_resource type="AudioStream" uid="uid://dna55eqwhbr80" path="res://Assests/SFX Main Char/GrassRun/Grass Run-002.wav" id="39_50dqm"]
-[ext_resource type="AudioStream" uid="uid://dvxfon6noy071" path="res://Assests/SFX Main Char/GrassRun/Grass Run-003.wav" id="40_7j56s"]
-[ext_resource type="AudioStream" uid="uid://buvuw8yasaytj" path="res://Assests/SFX Main Char/GrassRun/Grass Run-004.wav" id="41_24qlq"]
-[ext_resource type="AudioStream" uid="uid://b2eajna6bnvv5" path="res://Assests/SFX Main Char/GrassRun/Grass Run-005.wav" id="42_wc235"]
-[ext_resource type="AudioStream" uid="uid://buem162qy7p3" path="res://Assests/SFX Main Char/GrassRun/Grass Run-006.wav" id="43_ibc4f"]
-[ext_resource type="AudioStream" uid="uid://dsilx8dcxfkxe" path="res://Assests/SFX Main Char/GrassRun/Grass Run-007.wav" id="44_b4mdf"]
-[ext_resource type="AudioStream" uid="uid://cq24vh2pjpkwg" path="res://Assests/SFX Main Char/GrassRun/Grass Run-008.wav" id="45_p08dw"]
-[ext_resource type="AudioStream" uid="uid://tnchqg2d8tix" path="res://Assests/SFX Main Char/StoneRun/Stone Run-001.wav" id="46_ygeqm"]
-[ext_resource type="AudioStream" uid="uid://bo6ogmyxa4qal" path="res://Assests/SFX Main Char/StoneRun/Stone Run-002.wav" id="47_r3wjv"]
-[ext_resource type="AudioStream" uid="uid://cgaimwqnply1s" path="res://Assests/SFX Main Char/StoneRun/Stone Run-003.wav" id="48_yg2vm"]
-[ext_resource type="AudioStream" uid="uid://b00cp4sjbnuk0" path="res://Assests/SFX Main Char/StoneRun/Stone Run-004.wav" id="49_cqava"]
-[ext_resource type="AudioStream" uid="uid://df42253rrvok3" path="res://Assests/SFX Main Char/StoneRun/Stone Run-005.wav" id="50_6m422"]
-[ext_resource type="AudioStream" uid="uid://dr4w887nf5ved" path="res://Assests/SFX Main Char/StoneRun/Stone Run-006.wav" id="51_rmrb7"]
-[ext_resource type="AudioStream" uid="uid://bieeea56rm4yr" path="res://Assests/SFX Main Char/StoneRun/Stone Run-007.wav" id="52_njfn6"]
-[ext_resource type="AudioStream" uid="uid://m1dbt6fmxgem" path="res://Assests/SFX Main Char/DirtWalk/Dirt Walk-001.wav" id="53_y8to0"]
-[ext_resource type="AudioStream" uid="uid://bm4ik7fpnf8c4" path="res://Assests/SFX Main Char/DirtWalk/Dirt Walk-002.wav" id="54_5vo8g"]
-[ext_resource type="AudioStream" uid="uid://3gy1qd34jgqw" path="res://Assests/SFX Main Char/DirtWalk/Dirt Walk-003.wav" id="55_p406h"]
-[ext_resource type="AudioStream" uid="uid://pcyk5eis86v" path="res://Assests/SFX Main Char/DirtWalk/Dirt Walk-004.wav" id="56_yiptt"]
-[ext_resource type="AudioStream" uid="uid://d0s2n6rkt2vks" path="res://Assests/SFX Main Char/DirtWalk/Dirt Walk-005.wav" id="57_ln7c5"]
-[ext_resource type="AudioStream" uid="uid://kngyqjtr56wv" path="res://Assests/SFX Main Char/DirtWalk/Dirt Walk-006.wav" id="58_nsahh"]
-[ext_resource type="AudioStream" uid="uid://fef42d55xkyv" path="res://Assests/SFX Main Char/DirtWalk/Dirt Walk-007.wav" id="59_w5axw"]
-[ext_resource type="AudioStream" uid="uid://b5s54kcemlmbj" path="res://Assests/SFX Main Char/DirtWalk/Dirt Walk-008.wav" id="60_2gwnh"]
-[ext_resource type="AudioStream" uid="uid://cbsfpfsn7skoa" path="res://Assests/SFX Main Char/DirtWalk/Dirt Walk-009.wav" id="61_6s5yb"]
-[ext_resource type="AudioStream" uid="uid://bxwrerq5eugkv" path="res://Assests/SFX Main Char/GrassStep/Grass Step-001.wav" id="62_op78e"]
-[ext_resource type="AudioStream" uid="uid://3fbvc8cx86i4" path="res://Assests/SFX Main Char/GrassStep/Grass Step-002.wav" id="63_4oq1b"]
-[ext_resource type="AudioStream" uid="uid://bbdg0aai8v32s" path="res://Assests/SFX Main Char/GrassStep/Grass Step-003.wav" id="64_ta47a"]
-[ext_resource type="AudioStream" uid="uid://c7fp2vfj7qk2s" path="res://Assests/SFX Main Char/GrassStep/Grass Step-004.wav" id="65_6v1ow"]
-[ext_resource type="AudioStream" uid="uid://dvvjko5o8m12q" path="res://Assests/SFX Main Char/GrassStep/Grass Step-005.wav" id="66_f2r1p"]
-[ext_resource type="AudioStream" uid="uid://c41yuj6gy2n21" path="res://Assests/SFX Main Char/GrassStep/Grass Step-006.wav" id="67_k1igm"]
-[ext_resource type="AudioStream" uid="uid://bsdsp3082miwe" path="res://Assests/SFX Main Char/GrassStep/Grass Step-007.wav" id="68_fyqbc"]
-[ext_resource type="AudioStream" uid="uid://bcfm2oqofeq4w" path="res://Assests/SFX Main Char/GrassStep/Grass Step-008.wav" id="69_iuj5c"]
-[ext_resource type="AudioStream" uid="uid://ckh0b6hal1n3d" path="res://Assests/SFX Main Char/GrassStep/Grass Step-009.wav" id="70_c8x12"]
-[ext_resource type="AudioStream" uid="uid://deglvjyhgbpmu" path="res://Assests/SFX Main Char/GrassStep/Grass Step-010.wav" id="71_wllee"]
-[ext_resource type="AudioStream" uid="uid://cdcer6gnhm115" path="res://Assests/SFX Main Char/StoneWalk/Stone Walk-001.wav" id="72_gtyc3"]
-[ext_resource type="AudioStream" uid="uid://dg1phofkv5vul" path="res://Assests/SFX Main Char/StoneWalk/Stone Walk-002.wav" id="73_al1hg"]
-[ext_resource type="AudioStream" uid="uid://byuisayxc37gp" path="res://Assests/SFX Main Char/StoneWalk/Stone Walk-003.wav" id="74_8co7j"]
-[ext_resource type="AudioStream" uid="uid://b3hxl1foicb72" path="res://Assests/SFX Main Char/StoneWalk/Stone Walk-004.wav" id="75_pm5nx"]
-[ext_resource type="AudioStream" uid="uid://c5tfp2en6j231" path="res://Assests/SFX Main Char/StoneWalk/Stone Walk-005.wav" id="76_8cvkf"]
-[ext_resource type="AudioStream" uid="uid://bfjcx6w8iv1qg" path="res://Assests/SFX Main Char/StoneWalk/Stone Walk-006.wav" id="77_8ewrp"]
-[ext_resource type="AudioStream" uid="uid://dhubjvubn7tlw" path="res://Assests/SFX Main Char/StoneWalk/Stone Walk-007.wav" id="78_la6u7"]
-[ext_resource type="AudioStream" uid="uid://db8w1yjjifi0r" path="res://Assests/SFX Main Char/StoneWalk/Stone Walk-008.wav" id="79_qgmyy"]
-[ext_resource type="AudioStream" uid="uid://cfjqhla42umo3" path="res://Assests/SFX Main Char/StoneWalk/Stone Walk-009.wav" id="80_n46lj"]
-[ext_resource type="AudioStream" uid="uid://cgo481baqic3i" path="res://Assests/SFX Main Char/StoneWalk/Stone Walk-010.wav" id="81_36t8t"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r150o"]
 
@@ -216,7 +159,7 @@ collision_mask = 13
 script = ExtResource("2_bhhdu")
 rotator = NodePath("../CameraPivot/FloatCast/Camera")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="CharacterBody3D" unique_id=1381693877]
+[node name="FlameAmbience" type="AudioStreamPlayer3D" parent="CharacterBody3D" unique_id=1381693877]
 stream = ExtResource("3_avx33")
 volume_db = -3.618
 autoplay = true
@@ -324,28 +267,6 @@ transform = Transform3D(0.34476408, 0.26510167, 0.40483603, 0.022551438, -0.5053
 
 [node name="Grunt Player" type="AudioStreamPlayer3D" parent="CharacterBody3D/Player_Character" unique_id=323100267]
 transform = Transform3D(-1.6830307, 0, 1.4713524e-07, 0, 1.6830307, 0, -1.4713524e-07, 0, -1.6830307, 0, 1.624921, 0)
-bus = &"SFX"
-
-[node name="Walk L" type="AudioStreamPlayer3D" parent="CharacterBody3D/Player_Character" unique_id=691101618]
-transform = Transform3D(-1.6830307, 0, 1.4713522e-07, 0, 1.6830307, 0, -1.4713522e-07, 0, -1.6830307, 0, 1.624921, 0)
-attenuation_model = 3
-bus = &"SFX"
-
-[node name="Walk R" type="AudioStreamPlayer3D" parent="CharacterBody3D/Player_Character" unique_id=489165679]
-transform = Transform3D(-1.6830307, 0, 1.4713522e-07, 0, 1.6830307, 0, -1.4713522e-07, 0, -1.6830307, 0, 1.624921, 0)
-attenuation_model = 3
-bus = &"SFX"
-
-[node name="Run L" type="AudioStreamPlayer3D" parent="CharacterBody3D/Player_Character" unique_id=1960999039]
-transform = Transform3D(-1.6830307, 0, 1.4713522e-07, 0, 1.6830307, 0, -1.4713522e-07, 0, -1.6830307, 0, 1.624921, 0)
-attenuation_model = 3
-volume_db = -1.0
-bus = &"SFX"
-
-[node name="Run R" type="AudioStreamPlayer3D" parent="CharacterBody3D/Player_Character" unique_id=1434520855]
-transform = Transform3D(-1.6830307, 0, 1.4713522e-07, 0, 1.6830307, 0, -1.4713522e-07, 0, -1.6830307, 0, 1.624921, 0)
-attenuation_model = 3
-volume_db = -1.0
 bus = &"SFX"
 
 [node name="AnimationControl" type="Node" parent="CharacterBody3D/Player_Character" unique_id=247797212 node_paths=PackedStringArray("target", "condition_switches")]
