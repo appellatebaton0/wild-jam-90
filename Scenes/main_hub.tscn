@@ -1,0 +1,363 @@
+[gd_scene format=3 uid="uid://hgdnv1u63uc5"]
+
+[ext_resource type="PackedScene" uid="uid://83d86tf2bp3e" path="res://Scenes/Tests/World.tscn" id="1_qv37j"]
+[ext_resource type="PackedScene" uid="uid://b1f37ebgxsquf" path="res://Scenes/Player.tscn" id="2_r8vha"]
+[ext_resource type="PackedScene" uid="uid://bon8bptfjfpue" path="res://Scenes/MovingPlatform.tscn" id="3_y7xdp"]
+[ext_resource type="PackedScene" uid="uid://d2cwefjigkop1" path="res://Scenes/MovingPlatformPoint.tscn" id="4_b0s1k"]
+[ext_resource type="Script" uid="uid://dd8or5oo0cmw2" path="res://Scripts/Values/Bool/Actor.gd" id="5_qfses"]
+[ext_resource type="PackedScene" uid="uid://b6mm1wjjwcmeh" path="res://Scenes/PressurePlate.tscn" id="6_34pv5"]
+[ext_resource type="PackedScene" uid="uid://c3obafcdtdwal" path="res://Scenes/Door.tscn" id="7_vyek5"]
+[ext_resource type="PackedScene" uid="uid://bvv3sij1qe3xe" path="res://Assests/3D/Objects/Door_Wall.tscn" id="8_d3t7f"]
+[ext_resource type="PackedScene" uid="uid://b1unhe5jr1qe3" path="res://Assests/3D/Objects/Moveable_Crate.tscn" id="9_b0s1k"]
+[ext_resource type="PackedScene" uid="uid://dkhpghpfg7uab" path="res://Scenes/CameraGrab.tscn" id="10_qfses"]
+
+[node name="Main Hub" type="Node" unique_id=1164429392]
+
+[node name="World" parent="." unique_id=690942651 instance=ExtResource("1_qv37j")]
+
+[node name="Player" parent="." unique_id=623680313 instance=ExtResource("2_r8vha")]
+transform = Transform3D(-0.010716158, 0, -0.9999426, 0, 1, 0, 0.9999426, 0, -0.010716158, 0.31414413, 3.0173445, 5)
+
+[node name="Player_Character" parent="Player/CharacterBody3D" parent_id_path=PackedInt32Array(623680313, 844716186) index="2" unique_id=1831994608]
+transform = Transform3D(-0.5941662, 0, -8.971661e-08, 0, 0.5941662, 0, 8.971661e-08, 0, -0.5941662, 0, -0.9654732, 0)
+
+[node name="Skeleton3D" parent="Player/CharacterBody3D/Player_Character/root" parent_id_path=PackedInt32Array(623680313, 1831994608, 1366504503) index="0" unique_id=1590216947]
+bones/1/position = Vector3(0.0013994, 0.71659255, 0.06959151)
+bones/6/rotation = Quaternion(-0.0778414, 7.819368e-18, -4.029478e-17, 0.99696577)
+bones/7/rotation = Quaternion(-0.8042048, -0.020838672, -0.03226403, 0.59310997)
+bones/8/rotation = Quaternion(0.3608817, 0.01604741, -0.034826074, 0.931823)
+bones/10/rotation = Quaternion(-0.46650854, -0.16713694, 0.25848255, 0.8292297)
+bones/11/rotation = Quaternion(7.74502e-07, 0.3187951, -2.1044421e-07, 0.94782364)
+bones/12/rotation = Quaternion(5.832889e-07, 0.240949, -1.8613194e-07, 0.97053784)
+bones/13/rotation = Quaternion(8.656947e-07, 0.16153009, 1.3934522e-08, 0.9868679)
+bones/14/rotation = Quaternion(1.6007823e-07, 0.08107428, -1.470501e-07, 0.9967081)
+bones/16/rotation = Quaternion(6.277963e-08, 0.24944083, -1.2816038e-07, 0.96839005)
+bones/17/rotation = Quaternion(1.500555e-08, 0.18271086, -5.7209846e-08, 0.98316675)
+bones/18/rotation = Quaternion(4.8546e-08, 0.11523918, -4.9722125e-08, 0.99333775)
+bones/19/rotation = Quaternion(-1.8425212e-08, 0.047069818, 1.7332131e-07, 0.9988916)
+bones/20/rotation = Quaternion(0.08963079, 0.27920917, -0.026076742, 0.95568234)
+bones/22/rotation = Quaternion(-0.4679449, 0.16708449, -0.25940242, 0.82814306)
+bones/23/rotation = Quaternion(9.3158144e-07, -0.31939438, 2.1522087e-07, 0.947622)
+bones/24/rotation = Quaternion(4.3056713e-07, -0.24140984, 5.1539196e-08, 0.9704233)
+bones/25/rotation = Quaternion(9.821097e-07, -0.16182987, 3.4641104e-08, 0.9868187)
+bones/26/rotation = Quaternion(1.3225477e-07, -0.081229635, 1.4225697e-07, 0.99669546)
+bones/28/rotation = Quaternion(-1.1234526e-07, -0.24930829, 8.9563045e-08, 0.9684242)
+bones/29/rotation = Quaternion(-6.3991564e-08, -0.18268059, 1.1284932e-07, 0.98317236)
+bones/30/rotation = Quaternion(9.686929e-09, -0.115174696, 1.3504982e-07, 0.99334526)
+bones/31/rotation = Quaternion(-7.967524e-08, -0.04711984, -2.4134079e-07, 0.9988892)
+bones/32/rotation = Quaternion(0.09144691, -0.27964225, 0.026943952, 0.9553595)
+bones/33/rotation = Quaternion(0.9476009, 0.2129424, 0.19997182, -0.12930362)
+bones/34/rotation = Quaternion(2.66547e-07, -0.11178875, 1.1675065e-06, 0.99373204)
+bones/35/rotation = Quaternion(1.751565e-07, -0.08391834, 8.445252e-07, 0.9964726)
+bones/36/rotation = Quaternion(2.7209403e-08, -0.05598226, 6.808905e-07, 0.9984318)
+bones/37/rotation = Quaternion(-4.974553e-08, -0.028002039, 3.026345e-07, 0.9996079)
+bones/38/rotation = Quaternion(1.0594436e-07, -4.6610456e-08, 0.1654696, 0.9862149)
+bones/39/rotation = Quaternion(-0.027255543, -0.6435001, 0.74536717, -0.17202474)
+bones/41/rotation = Quaternion(-3.0209276e-07, -0.111346334, -6.782317e-07, 0.9937817)
+bones/42/rotation = Quaternion(-1.8656984e-07, -0.08358569, -4.7372927e-07, 0.9965006)
+bones/43/rotation = Quaternion(-7.346104e-08, -0.05575992, -3.3713104e-07, 0.99844426)
+bones/44/rotation = Quaternion(-8.635145e-08, -0.027890949, -3.1628478e-08, 0.999611)
+bones/45/rotation = Quaternion(0.9481428, -0.21106085, -0.19870132, -0.1303697)
+bones/46/rotation = Quaternion(3.5030212e-07, 0.11089416, -1.6111214e-06, 0.9938323)
+bones/47/rotation = Quaternion(2.8424122e-07, 0.083245516, -1.1791026e-06, 0.9965291)
+bones/48/rotation = Quaternion(9.53938e-08, 0.055532806, -8.566948e-07, 0.9984569)
+bones/49/rotation = Quaternion(4.569132e-08, 0.027777063, -3.1903977e-07, 0.99961424)
+bones/50/rotation = Quaternion(2.2423684e-07, 1.8592918e-07, -0.15812534, 0.9874191)
+bones/51/rotation = Quaternion(0.023046535, -0.6434488, 0.7448136, 0.17520028)
+bones/53/rotation = Quaternion(-4.2551545e-07, 0.11034717, 5.0751083e-07, 0.99389315)
+bones/54/rotation = Quaternion(-3.7095447e-07, 0.082834326, 3.8379164e-07, 0.99656343)
+bones/55/rotation = Quaternion(-2.2717008e-07, 0.05525807, 2.99333e-07, 0.9984722)
+bones/56/rotation = Quaternion(-4.737015e-08, 0.027639735, -1.6800781e-08, 0.99961805)
+bones/61/position = Vector3(-0.032803874, -0.033110976, -0.5071926)
+bones/61/scale = Vector3(0.9325972, 0.93259734, 0.9325972)
+bones/65/position = Vector3(-0.09140438, 0.20977034, -0.38590196)
+bones/65/scale = Vector3(0.9337344, 0.93373436, 0.93373424)
+bones/69/position = Vector3(0.108127475, 0.23646933, -0.30321875)
+bones/69/scale = Vector3(0.9325972, 0.9325974, 0.9325972)
+bones/73/position = Vector3(0.10695509, 0.21537663, -0.333212)
+bones/73/scale = Vector3(0.9337343, 0.9337344, 0.93373424)
+bones/77/position = Vector3(0.38497072, 0.037542433, -0.16825211)
+bones/77/scale = Vector3(0.93259716, 0.9325972, 0.9325971)
+bones/81/position = Vector3(0.31535524, -0.03606519, -0.24988787)
+bones/81/scale = Vector3(0.9325975, 0.9325976, 0.9325975)
+bones/85/position = Vector3(-0.23288393, -0.21567026, -0.32872868)
+bones/85/scale = Vector3(0.93259746, 0.9325975, 0.9325976)
+bones/89/position = Vector3(-0.010091947, 0.013283014, -0.3839164)
+bones/89/scale = Vector3(0.9337346, 0.9337346, 0.9337343)
+bones/93/position = Vector3(-0.11369003, 0.147708, -0.31673574)
+bones/93/scale = Vector3(0.9325976, 0.93259704, 0.9325974)
+bones/97/position = Vector3(-0.07647618, 0.13328739, -0.33729511)
+bones/97/scale = Vector3(0.93373424, 0.9337342, 0.9337342)
+bones/101/position = Vector3(-0.32105196, -0.013601959, -0.20554598)
+bones/101/scale = Vector3(0.93259746, 0.9325976, 0.9325973)
+bones/105/position = Vector3(-0.06303421, -0.11695306, -0.35076925)
+bones/105/scale = Vector3(0.9325976, 0.9325976, 0.9325976)
+
+[node name="BodyJiggle" parent="Player/CharacterBody3D/Player_Character/root/Skeleton3D" index="1" unique_id=1224292015]
+transform = Transform3D(0.006367195, -0.0006788707, 0.59413165, 5.2677475e-05, 0.5941658, 0.00067834515, -0.5941321, 4.540514e-05, 0.00636725, 0.31414416, 3.0518713, 4.9999995)
+
+[node name="FlameJiggle" parent="Player/CharacterBody3D/Player_Character/root/Skeleton3D" index="2" unique_id=1142166283]
+transform = Transform3D(0.04154057, -0.5730743, -0.1513064, -0.0077571184, -0.15219022, 0.5742921, -0.59266156, -0.03817573, -0.018121995, -0.9635252, 3.5130637, 4.904287)
+
+[node name="HeadJiggle" parent="Player/CharacterBody3D/Player_Character/root/Skeleton3D" index="3" unique_id=152199067]
+transform = Transform3D(0.0063320566, 0.122362815, 0.5813954, -0.00016694279, 0.5814288, -0.12236803, -0.5941324, 0.0011407271, 0.006230694, 0.4861676, 4.065835, 5.0010676)
+
+[node name="LArmJiggle" parent="Player/CharacterBody3D/Player_Character/root/Skeleton3D" index="4" unique_id=1014996254]
+transform = Transform3D(0.594132, 0.00625964, -0.0011516826, 0.0011446106, 0.000671856, 0.5941646, 0.0062609073, -0.5941329, 0.0006597682, 0.303971, 2.9830682, 3.9396906)
+
+[node name="LArmJiggle2" parent="Player/CharacterBody3D/Player_Character/root/Skeleton3D" index="5" unique_id=1078964516]
+transform = Transform3D(0.4768824, 0.16854402, 0.31178418, -0.018212616, -0.5103393, 0.30373558, 0.35395598, -0.25333756, -0.4044362, 0.62690675, 1.9756224, 4.262505)
+
+[node name="RArmJiggle" parent="Player/CharacterBody3D/Player_Character/root/Skeleton3D" index="6" unique_id=2141569191]
+transform = Transform3D(-0.59412974, -0.00647471, -0.0011372785, -0.0011446438, 0.0006719186, 0.59416467, -0.0064734565, 0.5941306, -0.0006843159, 0.28126803, 2.9830682, 6.0581846)
+
+[node name="RArmJiggle2" parent="Player/CharacterBody3D/Player_Character/root/Skeleton3D" index="7" unique_id=2001702917]
+transform = Transform3D(-0.48507228, 0.16276264, 0.30207017, 0.019113023, -0.50943846, 0.3051894, 0.3425972, 0.2588713, 0.41066554, 0.6104224, 1.9774265, 5.7463303)
+
+[node name="LookBit" parent="Player/CharacterBody3D" parent_id_path=PackedInt32Array(623680313, 844716186) index="4" unique_id=570069494 node_paths=PackedStringArray("tos")]
+tos = {
+NodePath("../Player_Character/AnimationControl/Idle"): NodePath("GlobalDirection"),
+NodePath("../Player_Character/AnimationControl/Wall_Grab"): NodePath("GlobalWallNorm"),
+NodePath("MovingCrate"): null
+}
+
+[node name="Camera3D" parent="Player/CameraPivot" parent_id_path=PackedInt32Array(623680313, 330284818) index="0" unique_id=947941269]
+current = true
+
+[node name="Platforms" type="Node" parent="." unique_id=1809399826]
+
+[node name="MovingPlatform" parent="Platforms" unique_id=1114646680 node_paths=PackedStringArray("points") instance=ExtResource("3_y7xdp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8731804, 20.290808, -4.402781)
+floor_constant_speed = true
+points = [NodePath("../MovingPlatform\'s 2"), NodePath("../MovingPlatform\'s 3")]
+
+[node name="MovingPlatform\'s 2" parent="Platforms" unique_id=1766241102 instance=ExtResource("4_b0s1k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.232315, 20.486559, -1.1798143)
+time = 10.0
+after_wait = 3.0
+
+[node name="MovingPlatform\'s 3" parent="Platforms" unique_id=197796453 instance=ExtResource("4_b0s1k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.194685, 20.195908, -5.965273)
+time = 10.0
+after_wait = 3.0
+
+[node name="Node3D" type="Node3D" parent="Platforms" unique_id=1455508250]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 103.301636, 38.759125, 48.673454)
+
+[node name="MovingPlatform2" parent="Platforms/Node3D" unique_id=1696910594 node_paths=PackedStringArray("points") instance=ExtResource("3_y7xdp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.531948, 0)
+points = [NodePath("../MovingPlatform2\'s 1"), NodePath("../MovingPlatform2\'s 3")]
+
+[node name="MovingPlatform2\'s 2" parent="Platforms/Node3D" unique_id=1721229111 instance=ExtResource("4_b0s1k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -15.657873, 0)
+
+[node name="MovingPlatform2\'s 1" parent="Platforms/Node3D" unique_id=982019132 instance=ExtResource("4_b0s1k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -15.657873, 0)
+time = 10.0
+after_wait = 3.0
+
+[node name="MovingPlatform2\'s 3" parent="Platforms/Node3D" unique_id=650970334 instance=ExtResource("4_b0s1k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3466911, 0)
+time = 10.0
+after_wait = 3.0
+
+[node name="Node3D5" type="Node3D" parent="Platforms" unique_id=1285223072]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.475548, 38.759125, -25.457664)
+
+[node name="MovingPlatform2" parent="Platforms/Node3D5" unique_id=1767451122 node_paths=PackedStringArray("points", "condition") instance=ExtResource("3_y7xdp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6517601, 0)
+points = [NodePath("../MovingPlatform2\'s 1"), NodePath("../MovingPlatform2\'s 3")]
+condition = NodePath("ActorBool")
+
+[node name="ActorBool" type="Node" parent="Platforms/Node3D5/MovingPlatform2" unique_id=976702001]
+script = ExtResource("5_qfses")
+metadata/_custom_type_script = "uid://dd8or5oo0cmw2"
+
+[node name="MovingPlatform2\'s 2" parent="Platforms/Node3D5" unique_id=1626692937 instance=ExtResource("4_b0s1k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -17.772943, 0)
+
+[node name="MovingPlatform2\'s 1" parent="Platforms/Node3D5" unique_id=1480876741 instance=ExtResource("4_b0s1k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -15.657873, 0)
+time = 10.0
+after_wait = 3.0
+
+[node name="MovingPlatform2\'s 3" parent="Platforms/Node3D5" unique_id=1204590416 instance=ExtResource("4_b0s1k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.558659, 0)
+time = 10.0
+after_wait = 3.0
+
+[node name="Node3D2" type="Node3D" parent="Platforms" unique_id=1078279360]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.249454, 58.880405, 63.614677)
+
+[node name="MovingPlatform2" parent="Platforms/Node3D2" unique_id=238358996 node_paths=PackedStringArray("points") instance=ExtResource("3_y7xdp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.164482, -16.896935, 10.092285)
+points = [NodePath("../MovingPlatform2\'s 1"), NodePath("../MovingPlatform2\'s 2")]
+
+[node name="MovingPlatform2\'s 1" parent="Platforms/Node3D2" unique_id=17390072 instance=ExtResource("4_b0s1k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.003218, -16.19228, 10.360458)
+time = 10.0
+after_wait = 3.0
+
+[node name="MovingPlatform2\'s 2" parent="Platforms/Node3D2" unique_id=1537967310 instance=ExtResource("4_b0s1k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9989243, -17.238552, 9.96228)
+time = 10.0
+after_wait = 3.0
+
+[node name="Node3D3" type="Node3D" parent="Platforms" unique_id=1731544612]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.249454, 58.880405, 73.696144)
+
+[node name="MovingPlatform2" parent="Platforms/Node3D3" unique_id=833542127 node_paths=PackedStringArray("points") instance=ExtResource("3_y7xdp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5388, -8.188686, 7.9659653)
+points = [NodePath("../MovingPlatform2\'s 1"), NodePath("../MovingPlatform2\'s 2")]
+
+[node name="MovingPlatform2\'s 1" parent="Platforms/Node3D3" unique_id=805920347 instance=ExtResource("4_b0s1k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.003218, -16.19228, 7.6139755)
+time = 10.0
+after_wait = 3.0
+
+[node name="MovingPlatform2\'s 2" parent="Platforms/Node3D3" unique_id=1933356667 instance=ExtResource("4_b0s1k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.798449, -4.308552, 8.136612)
+time = 10.0
+after_wait = 3.0
+
+[node name="Node3D4" type="Node3D" parent="Platforms" unique_id=845686699]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.550056, 69.19933, 73.696144)
+
+[node name="MovingPlatform2" parent="Platforms/Node3D4" unique_id=853549821 node_paths=PackedStringArray("points") instance=ExtResource("3_y7xdp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5388, -8.18869, 7.9659653)
+points = [NodePath("../MovingPlatform2\'s 1"), NodePath("../MovingPlatform2\'s 2")]
+
+[node name="MovingPlatform2\'s 1" parent="Platforms/Node3D4" unique_id=849416997 instance=ExtResource("4_b0s1k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.003218, -16.19228, 7.6139755)
+time = 10.0
+after_wait = 3.0
+
+[node name="MovingPlatform2\'s 2" parent="Platforms/Node3D4" unique_id=30761467 instance=ExtResource("4_b0s1k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.798449, -4.308552, 8.136612)
+time = 10.0
+after_wait = 3.0
+
+[node name="Node3D6" type="Node3D" parent="Platforms" unique_id=1784896356]
+transform = Transform3D(0.9097005, 0, -0.4152649, 0, 1, 0, 0.4152649, 0, 0.9097005, 95.61943, 66.61241, -73.175186)
+
+[node name="MovingPlatform2" parent="Platforms/Node3D6" unique_id=1317438144 node_paths=PackedStringArray("points") instance=ExtResource("3_y7xdp")]
+transform = Transform3D(1.000005, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1.000005, -23.538795, -8.188686, 7.965988)
+points = [NodePath("../MovingPlatform2\'s 1"), NodePath("../MovingPlatform2\'s 2")]
+
+[node name="MovingPlatform2\'s 1" parent="Platforms/Node3D6" unique_id=551987493 instance=ExtResource("4_b0s1k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.003218, -16.19228, 7.6139755)
+time = 10.0
+after_wait = 3.0
+
+[node name="MovingPlatform2\'s 2" parent="Platforms/Node3D6" unique_id=1986915607 instance=ExtResource("4_b0s1k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.798449, -4.308552, 8.136612)
+time = 10.0
+after_wait = 3.0
+
+[node name="Node3D7" type="Node3D" parent="Platforms" unique_id=1008335619]
+transform = Transform3D(0.9097005, 0, -0.4152649, 0, 1, 0, 0.4152649, 0, 0.9097005, 104.908554, 66.61241, -68.93484)
+
+[node name="MovingPlatform2" parent="Platforms/Node3D7" unique_id=511578271 node_paths=PackedStringArray("points") instance=ExtResource("3_y7xdp")]
+transform = Transform3D(1.000005, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1.000005, -23.538803, -8.188686, 7.9659576)
+points = [NodePath("../MovingPlatform2\'s 1"), NodePath("../MovingPlatform2\'s 2")]
+
+[node name="MovingPlatform2\'s 1" parent="Platforms/Node3D7" unique_id=526881518 instance=ExtResource("4_b0s1k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.003218, -16.19228, 7.6139755)
+time = 10.0
+after_wait = 3.0
+
+[node name="MovingPlatform2\'s 2" parent="Platforms/Node3D7" unique_id=1525212791 instance=ExtResource("4_b0s1k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.798449, -4.308552, 8.136612)
+time = 10.0
+after_wait = 3.0
+
+[node name="Node3D8" type="Node3D" parent="Platforms" unique_id=1559900205]
+transform = Transform3D(0.9097005, 0, -0.4152649, 0, 1, 0, 0.4152649, 0, 0.9097005, 95.675354, 82.0514, -74.90381)
+
+[node name="MovingPlatform2" parent="Platforms/Node3D8" unique_id=1086705985 node_paths=PackedStringArray("points") instance=ExtResource("3_y7xdp")]
+transform = Transform3D(1.000005, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1.000005, -23.5388, -8.18869, 7.965973)
+points = [NodePath("../MovingPlatform2\'s 1"), NodePath("../MovingPlatform2\'s 2")]
+
+[node name="MovingPlatform2\'s 1" parent="Platforms/Node3D8" unique_id=49058209 instance=ExtResource("4_b0s1k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.003218, -16.19228, 7.6139755)
+time = 10.0
+after_wait = 3.0
+
+[node name="MovingPlatform2\'s 2" parent="Platforms/Node3D8" unique_id=1335660216 instance=ExtResource("4_b0s1k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.798449, -4.308552, 8.136612)
+time = 10.0
+after_wait = 3.0
+
+[node name="Node3D9" type="Node3D" parent="Platforms" unique_id=1234600767]
+transform = Transform3D(0.9097005, 0, -0.4152649, 0, 1, 0, 0.4152649, 0, 0.9097005, 119.34645, 70.69578, -64.0983)
+
+[node name="MovingPlatform2" parent="Platforms/Node3D9" unique_id=1959502623 node_paths=PackedStringArray("points") instance=ExtResource("3_y7xdp")]
+transform = Transform3D(1.000005, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1.000005, -23.538803, -8.18869, 7.9659653)
+points = [NodePath("../MovingPlatform2\'s 1"), NodePath("../MovingPlatform2\'s 2")]
+
+[node name="MovingPlatform2\'s 1" parent="Platforms/Node3D9" unique_id=95284139 instance=ExtResource("4_b0s1k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.003218, -16.19228, 7.6139755)
+time = 10.0
+after_wait = 3.0
+
+[node name="MovingPlatform2\'s 2" parent="Platforms/Node3D9" unique_id=1223520974 instance=ExtResource("4_b0s1k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.798449, -4.308552, 8.136612)
+time = 10.0
+after_wait = 3.0
+
+[node name="Doors" type="Node" parent="." unique_id=2089439523]
+
+[node name="PressurePlate" parent="Doors" unique_id=157249335 instance=ExtResource("6_34pv5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.397676, 0.09738922, 11.103442)
+
+[node name="PressurePlate3" parent="Doors" unique_id=1322751787 instance=ExtResource("6_34pv5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.8871, 21.329674, 1.3861642)
+
+[node name="PressurePlate4" parent="Doors" unique_id=2072116259 instance=ExtResource("6_34pv5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.579044, 45.927956, -42.460564)
+
+[node name="Door" parent="Doors" unique_id=697453936 node_paths=PackedStringArray("condition") instance=ExtResource("7_vyek5")]
+transform = Transform3D(-1.9527503, 0, -0.4321636, 0, 2, 0, 0.4321636, 0, -1.9527503, 26.100925, 9.538709, 43.24159)
+time = 7.0
+open_extent = Vector3(0, -10, 0)
+condition = NodePath("ActorBool")
+
+[node name="ActorBool" type="Node" parent="Doors/Door" unique_id=1974381318 node_paths=PackedStringArray("actor")]
+script = ExtResource("5_qfses")
+actor = NodePath("../../PressurePlate")
+metadata/_custom_type_script = "uid://dd8or5oo0cmw2"
+
+[node name="Door2" parent="Doors" unique_id=2099620363 node_paths=PackedStringArray("condition") instance=ExtResource("7_vyek5")]
+transform = Transform3D(-1.9527506, -0.43127933, 0.027632535, 0, -0.12788014, -1.9959073, 0.4321636, -1.9487547, 0.12485899, -40.1039, 38.757988, -77.684715)
+open_extent = Vector3(0, -10, 0)
+condition = NodePath("ActorBool")
+
+[node name="ActorBool" type="Node" parent="Doors/Door2" unique_id=815743101 node_paths=PackedStringArray("actor")]
+script = ExtResource("5_qfses")
+actor = NodePath("../../PressurePlate4")
+metadata/_custom_type_script = "uid://dd8or5oo0cmw2"
+
+[node name="Node3D" parent="Doors" unique_id=1378238659 instance=ExtResource("8_d3t7f")]
+transform = Transform3D(-1.6651676, 0, -0.521768, 0, 1.745, 0, 0.521768, 0, -1.6651676, 24.370075, -0.061691284, 43.29313)
+
+[node name="Node3D2" parent="Doors" unique_id=1562180475 instance=ExtResource("8_d3t7f")]
+transform = Transform3D(1.3831768, 0, -1.0638827, 0, 1.745, 0, 1.0638827, 0, 1.3831768, -51.66933, 19.451859, 36.396538)
+
+[node name="Crates" type="Node" parent="." unique_id=1477412114]
+
+[node name="Crate" parent="Crates" unique_id=946948200 instance=ExtResource("9_b0s1k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1733184, 1.2405834, 0)
+
+[node name="CameraGrab" parent="." unique_id=2053990340 instance=ExtResource("10_qfses")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.10616, 15.332206, 8.121075)
+
+[node name="GrabTo" parent="CameraGrab" index="0" unique_id=1105713157]
+transform = Transform3D(0.2869258, 0.32763913, -0.900181, 1.3404454e-08, 0.9396925, 0.34202006, 0.9579526, -0.09813441, 0.26962206, -19.119953, 7.810914, 6.742076)
+
+[node name="CollisionShape3D" parent="CameraGrab" index="1" unique_id=2042857866]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.080992, -3.7608109, 7.106057)
+
+[editable path="Player"]
+[editable path="Player/CharacterBody3D/Player_Character"]
+[editable path="Crates/Crate"]
+[editable path="CameraGrab"]

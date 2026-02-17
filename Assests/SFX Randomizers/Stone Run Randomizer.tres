@@ -1,0 +1,19 @@
+[gd_resource type="AudioStreamRandomizer" format=3 uid="uid://bgako0abbxwvq"]
+
+[ext_resource type="AudioStream" uid="uid://tnchqg2d8tix" path="res://Assests/SFX Main Char/StoneRun/Stone Run-001.wav" id="1_ayoh4"]
+[ext_resource type="AudioStream" uid="uid://bo6ogmyxa4qal" path="res://Assests/SFX Main Char/StoneRun/Stone Run-002.wav" id="2_ov7ra"]
+[ext_resource type="AudioStream" uid="uid://cgaimwqnply1s" path="res://Assests/SFX Main Char/StoneRun/Stone Run-003.wav" id="3_ykoyh"]
+[ext_resource type="AudioStream" uid="uid://b00cp4sjbnuk0" path="res://Assests/SFX Main Char/StoneRun/Stone Run-004.wav" id="4_jpevu"]
+[ext_resource type="AudioStream" uid="uid://df42253rrvok3" path="res://Assests/SFX Main Char/StoneRun/Stone Run-005.wav" id="5_0wd5b"]
+[ext_resource type="AudioStream" uid="uid://dr4w887nf5ved" path="res://Assests/SFX Main Char/StoneRun/Stone Run-006.wav" id="6_r5v3d"]
+[ext_resource type="AudioStream" uid="uid://bieeea56rm4yr" path="res://Assests/SFX Main Char/StoneRun/Stone Run-007.wav" id="7_mmqmd"]
+
+[resource]
+streams_count = 7
+stream_0/stream = ExtResource("1_ayoh4")
+stream_1/stream = ExtResource("2_ov7ra")
+stream_2/stream = ExtResource("3_ykoyh")
+stream_3/stream = ExtResource("4_jpevu")
+stream_4/stream = ExtResource("5_0wd5b")
+stream_5/stream = ExtResource("6_r5v3d")
+stream_6/stream = ExtResource("7_mmqmd")
