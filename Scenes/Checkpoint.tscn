@@ -58,10 +58,10 @@ shape = SubResource("BoxShape3D_erwvk")
 [node name="Node3D" parent="." unique_id=1733423825 instance=ExtResource("3_14q6d")]
 
 [node name="Light" parent="Node3D/ImportedMesh" parent_id_path=PackedInt32Array(1733423825, 670445628) index="2" unique_id=1019182618]
+visible = true
 emitting = false
 
 [node name="fire_sphere" parent="Node3D/ImportedMesh" parent_id_path=PackedInt32Array(1733423825, 670445628) index="3" unique_id=1409154347]
-visible = false
 burning = false
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1084146038]

@@ -13,12 +13,13 @@ class_name DragObjectBit extends ControlBit3D
 ## The amount of gravity to apply to the bot.
 @export var gravity_scale := 2.0
 
+var direction:Vector3
 func phys_active(delta:float) -> void:
 	if not master.mover.is_on_floor():
 		master.mover.velocity += gravity_scale * master.mover.get_gravity() * delta
 	
 	# The directional input the player is giving as a vec3
-	var direction := Vector3(0.0, 0.0, Input.get_axis(inputs[inp.forwards], inputs[inp.backwards]))
+	direction = Vector3(0.0, 0.0, Input.get_axis(inputs[inp.forwards], inputs[inp.backwards]))
 	
 	# Rotate it by the mover's rotation
 	direction = direction.rotated(Vector3(0,1,0), master.mover.global_rotation.y)
