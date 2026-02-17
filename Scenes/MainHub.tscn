@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://83d86tf2bp3e" path="res://Scenes/Tests/World.tscn" id="1_yymet"]
 [ext_resource type="PackedScene" uid="uid://b1f37ebgxsquf" path="res://Scenes/Player.tscn" id="2_os7vs"]
 [ext_resource type="PackedScene" uid="uid://bon8bptfjfpue" path="res://Scenes/MovingPlatform.tscn" id="3_uogp1"]
+[ext_resource type="PackedScene" uid="uid://byxk2xjmk3qvt" path="res://Scenes/Checkpoint.tscn" id="4_iukv2"]
 [ext_resource type="PackedScene" uid="uid://d2cwefjigkop1" path="res://Scenes/MovingPlatformPoint.tscn" id="4_vjfe1"]
 [ext_resource type="Script" uid="uid://dd8or5oo0cmw2" path="res://Scripts/Values/Bool/Actor.gd" id="5_q8hrf"]
 [ext_resource type="PackedScene" uid="uid://b6mm1wjjwcmeh" path="res://Scenes/PressurePlate.tscn" id="6_iukv2"]
@@ -687,7 +688,7 @@ _data = {
 [node name="World" parent="." unique_id=690942651 instance=ExtResource("1_yymet")]
 
 [node name="Player" parent="." unique_id=623680313 instance=ExtResource("2_os7vs")]
-transform = Transform3D(-0.4934562, 0, -0.86977065, 0, 1, 0, 0.86977065, 0, -0.4934562, -44.675484, 4.6415844, 0.10978508)
+transform = Transform3D(-0.4934562, 0, -0.86977065, 0, 1, 0, 0.86977065, 0, -0.4934562, 1.6943903, 4.021734, 2.8404598)
 
 [node name="FlameAmbient" parent="Player/CharacterBody3D" parent_id_path=PackedInt32Array(623680313, 844716186) index="0" unique_id=1381693877]
 bus = &"SFX"
@@ -702,7 +703,7 @@ NodePath("../Player_Character/AnimationControl/Wall_Grab"): NodePath("GlobalWall
 NodePath("MovingCrate"): null
 }
 
-[node name="FootstepSound" parent="Player/CharacterBody3D" parent_id_path=PackedInt32Array(623680313, 844716186) index="8" unique_id=599239755 node_paths=PackedStringArray("terrain_node")]
+[node name="FootstepSound" parent="Player/CharacterBody3D" parent_id_path=PackedInt32Array(623680313, 844716186) index="7" unique_id=599239755 node_paths=PackedStringArray("terrain_node")]
 terrain_node = NodePath("ManualNode")
 
 [node name="ManualNode" type="Node" parent="Player/CharacterBody3D/FootstepSound" index="2" unique_id=601114542 node_paths=PackedStringArray("response")]
@@ -757,7 +758,7 @@ after_wait = 0.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 103.301636, 38.759125, 48.673454)
 
 [node name="MovingPlatform2" parent="VisibilityToggle/Platforms/Node3D" unique_id=1696910594 node_paths=PackedStringArray("points") instance=ExtResource("3_uogp1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -15.370836, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -15.657873, 0)
 points = [NodePath("../MovingPlatform2\'s 1"), NodePath("../MovingPlatform2\'s 3")]
 
 [node name="MovingPlatform2\'s 1" parent="VisibilityToggle/Platforms/Node3D" unique_id=982019132 instance=ExtResource("4_vjfe1")]
@@ -813,7 +814,7 @@ after_wait = 2.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.249454, 58.880405, 63.614677)
 
 [node name="MovingPlatform2" parent="VisibilityToggle/Platforms/Node3D2" unique_id=238358996 node_paths=PackedStringArray("points") instance=ExtResource("3_uogp1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.505333, -16.840824, 10.11364)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.098572, -16.48122, 10.250496)
 points = [NodePath("../MovingPlatform2\'s 1"), NodePath("../MovingPlatform2\'s 2")]
 
 [node name="MovingPlatform2\'s 1" parent="VisibilityToggle/Platforms/Node3D2" unique_id=17390072 instance=ExtResource("4_vjfe1")]
@@ -830,7 +831,7 @@ after_wait = 3.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.249454, 58.880405, 73.696144)
 
 [node name="MovingPlatform2" parent="VisibilityToggle/Platforms/Node3D3" unique_id=833542127 node_paths=PackedStringArray("points") instance=ExtResource("3_uogp1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.496151, -8.826004, 7.937935)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.22283, -12.910442, 7.7583084)
 points = [NodePath("../MovingPlatform2\'s 1"), NodePath("../MovingPlatform2\'s 2")]
 
 [node name="MovingPlatform2\'s 1" parent="VisibilityToggle/Platforms/Node3D3" unique_id=805920347 instance=ExtResource("4_vjfe1")]
@@ -847,7 +848,7 @@ after_wait = 3.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.550056, 69.19933, 73.696144)
 
 [node name="MovingPlatform2" parent="VisibilityToggle/Platforms/Node3D4" unique_id=853549821 node_paths=PackedStringArray("points") instance=ExtResource("3_uogp1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.305515, -11.674828, 7.8126526)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.578836, -7.5903893, 7.992279)
 points = [NodePath("../MovingPlatform2\'s 2"), NodePath("../MovingPlatform2\'s 1")]
 
 [node name="MovingPlatform2\'s 1" parent="VisibilityToggle/Platforms/Node3D4" unique_id=849416997 instance=ExtResource("4_vjfe1")]
@@ -864,7 +865,7 @@ after_wait = 3.0
 transform = Transform3D(0.9097005, 0, -0.4152649, 0, 1, 0, 0.4152649, 0, 0.9097005, 95.61943, 66.61241, -73.175186)
 
 [node name="MovingPlatform2" parent="VisibilityToggle/Platforms/Node3D6" unique_id=1317438144 node_paths=PackedStringArray("points") instance=ExtResource("3_uogp1")]
-transform = Transform3D(1.000005, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1.000005, -23.496155, -8.826004, 7.9379425)
+transform = Transform3D(1.000005, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1.000005, -23.222836, -12.910446, 7.7583313)
 points = [NodePath("../MovingPlatform2\'s 1"), NodePath("../MovingPlatform2\'s 2")]
 
 [node name="MovingPlatform2\'s 1" parent="VisibilityToggle/Platforms/Node3D6" unique_id=551987493 instance=ExtResource("4_vjfe1")]
@@ -881,7 +882,7 @@ after_wait = 3.0
 transform = Transform3D(0.9097005, 0, -0.4152649, 0, 1, 0, 0.4152649, 0, 0.9097005, 104.908554, 66.61241, -68.93484)
 
 [node name="MovingPlatform2" parent="VisibilityToggle/Platforms/Node3D7" unique_id=511578271 node_paths=PackedStringArray("points") instance=ExtResource("3_uogp1")]
-transform = Transform3D(1.000005, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1.000005, -23.49617, -8.826004, 7.937935)
+transform = Transform3D(1.000005, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1.000005, -23.22284, -12.910446, 7.7583084)
 points = [NodePath("../MovingPlatform2\'s 1"), NodePath("../MovingPlatform2\'s 2")]
 
 [node name="MovingPlatform2\'s 1" parent="VisibilityToggle/Platforms/Node3D7" unique_id=526881518 instance=ExtResource("4_vjfe1")]
@@ -898,7 +899,7 @@ after_wait = 3.0
 transform = Transform3D(0.9097005, 0, -0.4152649, 0, 1, 0, 0.4152649, 0, 0.9097005, 95.675354, 82.0514, -74.90381)
 
 [node name="MovingPlatform2" parent="VisibilityToggle/Platforms/Node3D8" unique_id=1086705985 node_paths=PackedStringArray("points") instance=ExtResource("3_uogp1")]
-transform = Transform3D(1.000005, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1.000005, -23.496162, -8.826012, 7.93795)
+transform = Transform3D(1.000005, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1.000005, -23.222832, -12.910446, 7.7583084)
 points = [NodePath("../MovingPlatform2\'s 1"), NodePath("../MovingPlatform2\'s 2")]
 
 [node name="MovingPlatform2\'s 1" parent="VisibilityToggle/Platforms/Node3D8" unique_id=49058209 instance=ExtResource("4_vjfe1")]
@@ -915,7 +916,7 @@ after_wait = 3.0
 transform = Transform3D(0.9097005, 0, -0.4152649, 0, 1, 0, 0.4152649, 0, 0.9097005, 119.34645, 70.69578, -64.0983)
 
 [node name="MovingPlatform2" parent="VisibilityToggle/Platforms/Node3D9" unique_id=1959502623 node_paths=PackedStringArray("points") instance=ExtResource("3_uogp1")]
-transform = Transform3D(1.000005, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1.000005, -23.49617, -8.826008, 7.937935)
+transform = Transform3D(1.000005, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1.000005, -23.22284, -12.910446, 7.7583084)
 points = [NodePath("../MovingPlatform2\'s 1"), NodePath("../MovingPlatform2\'s 2")]
 
 [node name="MovingPlatform2\'s 1" parent="VisibilityToggle/Platforms/Node3D9" unique_id=95284139 instance=ExtResource("4_vjfe1")]
@@ -1312,6 +1313,12 @@ metadata/_custom_type_script = "uid://cox1ysk6bulx2"
 script = ExtResource("16_7r63o")
 response = false
 metadata/_custom_type_script = "uid://cox1ysk6bulx2"
+
+[node name="Checkpoint" parent="." unique_id=464787710 instance=ExtResource("4_iukv2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.725704, 2.725193, -0.37305355)
+
+[node name="Checkpoint2" parent="." unique_id=675189468 instance=ExtResource("4_iukv2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.725704, 2.725193, 3.742105)
 
 [connection signal="pressed" from="UI/OptionsMenu/Button" to="UI/OptionsMenu/Button/PlayerAnimatorBit" method="animate"]
 [connection signal="pressed" from="UI/StartScreen/Button" to="UI/StartScreen/Button/PlayerAnimatorBit2" method="animate"]

@@ -1,0 +1,25 @@
+[gd_resource type="AudioStreamRandomizer" format=3 uid="uid://df1ra8ehh8bpx"]
+
+[ext_resource type="AudioStream" uid="uid://dlfu1n1vgnswj" path="res://Assests/SFX Main Char/DirtRun/Dirt Run-001.wav" id="1_eks6e"]
+[ext_resource type="AudioStream" uid="uid://goywnvlv82yk" path="res://Assests/SFX Main Char/DirtRun/Dirt Run-002.wav" id="2_6t23r"]
+[ext_resource type="AudioStream" uid="uid://w8r2n03npyc8" path="res://Assests/SFX Main Char/DirtRun/Dirt Run-003.wav" id="3_vsta7"]
+[ext_resource type="AudioStream" uid="uid://s1pwlhxqxmlp" path="res://Assests/SFX Main Char/DirtRun/Dirt Run-004.wav" id="4_bak8x"]
+[ext_resource type="AudioStream" uid="uid://c7pa3hlj3iceg" path="res://Assests/SFX Main Char/DirtRun/Dirt Run-005.wav" id="5_i2wom"]
+[ext_resource type="AudioStream" uid="uid://cx2b1hpqypxrm" path="res://Assests/SFX Main Char/DirtRun/Dirt Run-006.wav" id="6_jeei4"]
+[ext_resource type="AudioStream" uid="uid://qg70emdnxncn" path="res://Assests/SFX Main Char/DirtRun/Dirt Run-007.wav" id="7_qupfr"]
+[ext_resource type="AudioStream" uid="uid://juh2ujwk143c" path="res://Assests/SFX Main Char/DirtRun/Dirt Run-008.wav" id="8_ouwao"]
+[ext_resource type="AudioStream" uid="uid://bixc4pdmqfp88" path="res://Assests/SFX Main Char/DirtRun/Dirt Run-009.wav" id="9_gu4mi"]
+[ext_resource type="AudioStream" uid="uid://y3rqb5r3y26j" path="res://Assests/SFX Main Char/DirtRun/Dirt Run-010.wav" id="10_7vun4"]
+
+[resource]
+streams_count = 10
+stream_0/stream = ExtResource("1_eks6e")
+stream_1/stream = ExtResource("2_6t23r")
+stream_2/stream = ExtResource("3_vsta7")
+stream_3/stream = ExtResource("4_bak8x")
+stream_4/stream = ExtResource("5_i2wom")
+stream_5/stream = ExtResource("6_jeei4")
+stream_6/stream = ExtResource("7_qupfr")
+stream_7/stream = ExtResource("8_ouwao")
+stream_8/stream = ExtResource("9_gu4mi")
+stream_9/stream = ExtResource("10_7vun4")

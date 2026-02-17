@@ -28,66 +28,9 @@
 [ext_resource type="Script" uid="uid://bcg6hjtowf1lj" path="res://Scripts/Bits/MoveBits/3D/ControlBits/WallClimb.gd" id="21_70hv0"]
 [ext_resource type="Script" uid="uid://b7wu1d0ipllfp" path="res://Scripts/Bits/MoveBits/3D/ControlBits/PushPull.gd" id="21_qidb7"]
 [ext_resource type="Shader" uid="uid://7x40gwinm2ws" path="res://Scripts/Shaders/Outline.gdshader" id="23_qidb7"]
-[ext_resource type="Script" uid="uid://cl8xie6u05gcq" path="res://Scripts/camear_check.gd" id="24_kih0c"]
 [ext_resource type="Script" uid="uid://ctgxew4bdf2rx" path="res://Scripts/Bits/BarBit.gd" id="26_8flut"]
 [ext_resource type="Script" uid="uid://cwmi2fpsn8by2" path="res://Scripts/Bits/Respawn.gd" id="27_kih0c"]
-[ext_resource type="Script" uid="uid://brdcqfv0k15le" path="res://Scripts/Bits/MaterialSoundBit.gd" id="27_rxg2u"]
 [ext_resource type="Texture2D" uid="uid://cqeetefpi1co3" path="res://Assests/2D/Progress_Bar.png" id="27_u7x0b"]
-[ext_resource type="AudioStream" uid="uid://dlfu1n1vgnswj" path="res://Assests/SFX Main Char/DirtRun/Dirt Run-001.wav" id="28_867uf"]
-[ext_resource type="Script" uid="uid://bslmamakq2ao5" path="res://Scripts/Values/Node/GroupNode.gd" id="28_xixlo"]
-[ext_resource type="AudioStream" uid="uid://goywnvlv82yk" path="res://Assests/SFX Main Char/DirtRun/Dirt Run-002.wav" id="29_6ilcf"]
-[ext_resource type="AudioStream" uid="uid://w8r2n03npyc8" path="res://Assests/SFX Main Char/DirtRun/Dirt Run-003.wav" id="30_6id3a"]
-[ext_resource type="AudioStream" uid="uid://s1pwlhxqxmlp" path="res://Assests/SFX Main Char/DirtRun/Dirt Run-004.wav" id="31_w1x0d"]
-[ext_resource type="AudioStream" uid="uid://c7pa3hlj3iceg" path="res://Assests/SFX Main Char/DirtRun/Dirt Run-005.wav" id="32_ovjwc"]
-[ext_resource type="AudioStream" uid="uid://cx2b1hpqypxrm" path="res://Assests/SFX Main Char/DirtRun/Dirt Run-006.wav" id="33_jawh0"]
-[ext_resource type="AudioStream" uid="uid://qg70emdnxncn" path="res://Assests/SFX Main Char/DirtRun/Dirt Run-007.wav" id="34_jq6en"]
-[ext_resource type="AudioStream" uid="uid://juh2ujwk143c" path="res://Assests/SFX Main Char/DirtRun/Dirt Run-008.wav" id="35_1g8ls"]
-[ext_resource type="AudioStream" uid="uid://bixc4pdmqfp88" path="res://Assests/SFX Main Char/DirtRun/Dirt Run-009.wav" id="36_4wp3f"]
-[ext_resource type="AudioStream" uid="uid://y3rqb5r3y26j" path="res://Assests/SFX Main Char/DirtRun/Dirt Run-010.wav" id="37_x1vvj"]
-[ext_resource type="AudioStream" uid="uid://bxavb5l4thkjn" path="res://Assests/SFX Main Char/GrassRun/Grass Run-001.wav" id="38_y07qb"]
-[ext_resource type="AudioStream" uid="uid://dna55eqwhbr80" path="res://Assests/SFX Main Char/GrassRun/Grass Run-002.wav" id="39_50dqm"]
-[ext_resource type="AudioStream" uid="uid://dvxfon6noy071" path="res://Assests/SFX Main Char/GrassRun/Grass Run-003.wav" id="40_7j56s"]
-[ext_resource type="AudioStream" uid="uid://buvuw8yasaytj" path="res://Assests/SFX Main Char/GrassRun/Grass Run-004.wav" id="41_24qlq"]
-[ext_resource type="AudioStream" uid="uid://b2eajna6bnvv5" path="res://Assests/SFX Main Char/GrassRun/Grass Run-005.wav" id="42_wc235"]
-[ext_resource type="AudioStream" uid="uid://buem162qy7p3" path="res://Assests/SFX Main Char/GrassRun/Grass Run-006.wav" id="43_ibc4f"]
-[ext_resource type="AudioStream" uid="uid://dsilx8dcxfkxe" path="res://Assests/SFX Main Char/GrassRun/Grass Run-007.wav" id="44_b4mdf"]
-[ext_resource type="AudioStream" uid="uid://cq24vh2pjpkwg" path="res://Assests/SFX Main Char/GrassRun/Grass Run-008.wav" id="45_p08dw"]
-[ext_resource type="AudioStream" uid="uid://tnchqg2d8tix" path="res://Assests/SFX Main Char/StoneRun/Stone Run-001.wav" id="46_ygeqm"]
-[ext_resource type="AudioStream" uid="uid://bo6ogmyxa4qal" path="res://Assests/SFX Main Char/StoneRun/Stone Run-002.wav" id="47_r3wjv"]
-[ext_resource type="AudioStream" uid="uid://cgaimwqnply1s" path="res://Assests/SFX Main Char/StoneRun/Stone Run-003.wav" id="48_yg2vm"]
-[ext_resource type="AudioStream" uid="uid://b00cp4sjbnuk0" path="res://Assests/SFX Main Char/StoneRun/Stone Run-004.wav" id="49_cqava"]
-[ext_resource type="AudioStream" uid="uid://df42253rrvok3" path="res://Assests/SFX Main Char/StoneRun/Stone Run-005.wav" id="50_6m422"]
-[ext_resource type="AudioStream" uid="uid://dr4w887nf5ved" path="res://Assests/SFX Main Char/StoneRun/Stone Run-006.wav" id="51_rmrb7"]
-[ext_resource type="AudioStream" uid="uid://bieeea56rm4yr" path="res://Assests/SFX Main Char/StoneRun/Stone Run-007.wav" id="52_njfn6"]
-[ext_resource type="AudioStream" uid="uid://m1dbt6fmxgem" path="res://Assests/SFX Main Char/DirtWalk/Dirt Walk-001.wav" id="53_y8to0"]
-[ext_resource type="AudioStream" uid="uid://bm4ik7fpnf8c4" path="res://Assests/SFX Main Char/DirtWalk/Dirt Walk-002.wav" id="54_5vo8g"]
-[ext_resource type="AudioStream" uid="uid://3gy1qd34jgqw" path="res://Assests/SFX Main Char/DirtWalk/Dirt Walk-003.wav" id="55_p406h"]
-[ext_resource type="AudioStream" uid="uid://pcyk5eis86v" path="res://Assests/SFX Main Char/DirtWalk/Dirt Walk-004.wav" id="56_yiptt"]
-[ext_resource type="AudioStream" uid="uid://d0s2n6rkt2vks" path="res://Assests/SFX Main Char/DirtWalk/Dirt Walk-005.wav" id="57_ln7c5"]
-[ext_resource type="AudioStream" uid="uid://kngyqjtr56wv" path="res://Assests/SFX Main Char/DirtWalk/Dirt Walk-006.wav" id="58_nsahh"]
-[ext_resource type="AudioStream" uid="uid://fef42d55xkyv" path="res://Assests/SFX Main Char/DirtWalk/Dirt Walk-007.wav" id="59_w5axw"]
-[ext_resource type="AudioStream" uid="uid://b5s54kcemlmbj" path="res://Assests/SFX Main Char/DirtWalk/Dirt Walk-008.wav" id="60_2gwnh"]
-[ext_resource type="AudioStream" uid="uid://cbsfpfsn7skoa" path="res://Assests/SFX Main Char/DirtWalk/Dirt Walk-009.wav" id="61_6s5yb"]
-[ext_resource type="AudioStream" uid="uid://bxwrerq5eugkv" path="res://Assests/SFX Main Char/GrassStep/Grass Step-001.wav" id="62_op78e"]
-[ext_resource type="AudioStream" uid="uid://3fbvc8cx86i4" path="res://Assests/SFX Main Char/GrassStep/Grass Step-002.wav" id="63_4oq1b"]
-[ext_resource type="AudioStream" uid="uid://bbdg0aai8v32s" path="res://Assests/SFX Main Char/GrassStep/Grass Step-003.wav" id="64_ta47a"]
-[ext_resource type="AudioStream" uid="uid://c7fp2vfj7qk2s" path="res://Assests/SFX Main Char/GrassStep/Grass Step-004.wav" id="65_6v1ow"]
-[ext_resource type="AudioStream" uid="uid://dvvjko5o8m12q" path="res://Assests/SFX Main Char/GrassStep/Grass Step-005.wav" id="66_f2r1p"]
-[ext_resource type="AudioStream" uid="uid://c41yuj6gy2n21" path="res://Assests/SFX Main Char/GrassStep/Grass Step-006.wav" id="67_k1igm"]
-[ext_resource type="AudioStream" uid="uid://bsdsp3082miwe" path="res://Assests/SFX Main Char/GrassStep/Grass Step-007.wav" id="68_fyqbc"]
-[ext_resource type="AudioStream" uid="uid://bcfm2oqofeq4w" path="res://Assests/SFX Main Char/GrassStep/Grass Step-008.wav" id="69_iuj5c"]
-[ext_resource type="AudioStream" uid="uid://ckh0b6hal1n3d" path="res://Assests/SFX Main Char/GrassStep/Grass Step-009.wav" id="70_c8x12"]
-[ext_resource type="AudioStream" uid="uid://deglvjyhgbpmu" path="res://Assests/SFX Main Char/GrassStep/Grass Step-010.wav" id="71_wllee"]
-[ext_resource type="AudioStream" uid="uid://cdcer6gnhm115" path="res://Assests/SFX Main Char/StoneWalk/Stone Walk-001.wav" id="72_gtyc3"]
-[ext_resource type="AudioStream" uid="uid://dg1phofkv5vul" path="res://Assests/SFX Main Char/StoneWalk/Stone Walk-002.wav" id="73_al1hg"]
-[ext_resource type="AudioStream" uid="uid://byuisayxc37gp" path="res://Assests/SFX Main Char/StoneWalk/Stone Walk-003.wav" id="74_8co7j"]
-[ext_resource type="AudioStream" uid="uid://b3hxl1foicb72" path="res://Assests/SFX Main Char/StoneWalk/Stone Walk-004.wav" id="75_pm5nx"]
-[ext_resource type="AudioStream" uid="uid://c5tfp2en6j231" path="res://Assests/SFX Main Char/StoneWalk/Stone Walk-005.wav" id="76_8cvkf"]
-[ext_resource type="AudioStream" uid="uid://bfjcx6w8iv1qg" path="res://Assests/SFX Main Char/StoneWalk/Stone Walk-006.wav" id="77_8ewrp"]
-[ext_resource type="AudioStream" uid="uid://dhubjvubn7tlw" path="res://Assests/SFX Main Char/StoneWalk/Stone Walk-007.wav" id="78_la6u7"]
-[ext_resource type="AudioStream" uid="uid://db8w1yjjifi0r" path="res://Assests/SFX Main Char/StoneWalk/Stone Walk-008.wav" id="79_qgmyy"]
-[ext_resource type="AudioStream" uid="uid://cfjqhla42umo3" path="res://Assests/SFX Main Char/StoneWalk/Stone Walk-009.wav" id="80_n46lj"]
-[ext_resource type="AudioStream" uid="uid://cgo481baqic3i" path="res://Assests/SFX Main Char/StoneWalk/Stone Walk-010.wav" id="81_36t8t"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r150o"]
 
@@ -216,9 +159,11 @@ collision_mask = 13
 script = ExtResource("2_bhhdu")
 rotator = NodePath("../CameraPivot/FloatCast/Camera")
 
-[node name="FlameAmbient" type="AudioStreamPlayer3D" parent="CharacterBody3D" unique_id=1381693877]
+[node name="FlameAmbience" type="AudioStreamPlayer3D" parent="CharacterBody3D" unique_id=1381693877]
 stream = ExtResource("3_avx33")
+volume_db = -3.618
 autoplay = true
+bus = &"SFX"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1371614169]
 shape = SubResource("CapsuleShape3D_r150o")
@@ -226,6 +171,103 @@ shape = SubResource("CapsuleShape3D_r150o")
 [node name="Player_Character" parent="CharacterBody3D" unique_id=1831994608 instance=ExtResource("3_o3h8g")]
 transform = Transform3D(-0.5941662, 0, -5.1943662e-08, 0, 0.5941662, 0, 5.1943662e-08, 0, -0.5941662, 0, -0.9654732, 0)
 movement_state = "Push"
+
+[node name="Skeleton3D" parent="CharacterBody3D/Player_Character/root" parent_id_path=PackedInt32Array(1831994608, 1366504503) index="0" unique_id=1590216947]
+bones/1/position = Vector3(0.00030178286, 0.7227884, 0.06865081)
+bones/6/rotation = Quaternion(-0.09528776, 2.0620266e-17, 8.3418955e-17, 0.99544984)
+bones/7/rotation = Quaternion(-0.803639, -0.004041007, -0.008104067, 0.59504825)
+bones/8/rotation = Quaternion(0.36285737, 0.0040469016, -0.02377051, 0.93153274)
+bones/10/rotation = Quaternion(-0.45723993, -0.16640334, 0.2542964, 0.8358079)
+bones/11/rotation = Quaternion(1.0343495e-06, 0.3162989, -2.9889642e-07, 0.94865966)
+bones/12/rotation = Quaternion(8.090409e-07, 0.23906256, -2.3067221e-07, 0.9710042)
+bones/13/rotation = Quaternion(9.622618e-07, 0.16030227, -1.706297e-07, 0.987068)
+bones/14/rotation = Quaternion(7.627918e-08, 0.080426104, -2.1134369e-07, 0.99676067)
+bones/16/rotation = Quaternion(2.2739029e-07, 0.25169918, -1.2778438e-07, 0.96780556)
+bones/17/rotation = Quaternion(7.630994e-08, 0.18452577, -1.2100797e-07, 0.9828278)
+bones/18/rotation = Quaternion(4.972115e-08, 0.116289824, -5.7237905e-08, 0.9932153)
+bones/19/rotation = Quaternion(1.7159515e-08, 0.047678873, 1.3706361e-07, 0.9988628)
+bones/20/rotation = Quaternion(0.07807857, 0.27833262, -0.022744615, 0.9570358)
+bones/22/rotation = Quaternion(-0.45753777, 0.16640985, -0.25450042, 0.8355816)
+bones/23/rotation = Quaternion(7.9081786e-07, -0.3166115, 2.608942e-07, 0.94855535)
+bones/24/rotation = Quaternion(5.6911017e-07, -0.23932047, 2.153589e-07, 0.9709407)
+bones/25/rotation = Quaternion(9.3777595e-07, -0.16044855, 1.2126728e-07, 0.9870442)
+bones/26/rotation = Quaternion(2.535516e-07, -0.08063977, 1.6526529e-07, 0.9967433)
+bones/28/rotation = Quaternion(9.316649e-08, -0.25194943, 1.681475e-07, 0.9677404)
+bones/29/rotation = Quaternion(5.5374006e-08, -0.18460341, 9.5167564e-08, 0.9828131)
+bones/30/rotation = Quaternion(-1.1281077e-08, -0.11638886, 4.1597097e-08, 0.9932038)
+bones/31/rotation = Quaternion(-3.6864778e-09, -0.047781993, -1.4947038e-07, 0.99885786)
+bones/32/rotation = Quaternion(0.07845401, -0.27870646, 0.022947704, 0.9568914)
+bones/33/rotation = Quaternion(0.967237, 0.1928957, 0.104896806, -0.12743883)
+bones/34/rotation = Quaternion(1.5571572e-07, -0.019491794, -1.145988e-08, 0.99981)
+bones/35/rotation = Quaternion(2.0118293e-06, -0.0146190515, 5.8350315e-07, 0.9998931)
+bones/36/rotation = Quaternion(2.606171e-06, -0.00974616, 9.1648246e-07, 0.99995255)
+bones/37/rotation = Quaternion(1.8669522e-06, -0.004873012, 6.0918677e-07, 0.9999882)
+bones/38/rotation = Quaternion(1.299156e-07, -1.7342606e-08, 0.102231756, 0.99476063)
+bones/39/rotation = Quaternion(0.057247028, -0.6667315, 0.7310897, -0.13304107)
+bones/41/rotation = Quaternion(-2.0995994e-07, -0.019355396, -5.322964e-07, 0.9998127)
+bones/42/rotation = Quaternion(1.761632e-06, -0.014516948, 5.4353507e-08, 0.9998947)
+bones/43/rotation = Quaternion(2.597659e-06, -0.009678102, 2.9923544e-07, 0.99995327)
+bones/44/rotation = Quaternion(1.933176e-06, -0.0048392187, 4.345239e-07, 0.9999884)
+bones/45/rotation = Quaternion(0.9674194, -0.19198732, -0.10468424, -0.12760065)
+bones/46/rotation = Quaternion(7.9890874e-08, 0.019405052, 2.1078634e-08, 0.9998117)
+bones/47/rotation = Quaternion(2.011036e-06, 0.014553937, -5.746218e-07, 0.99989414)
+bones/48/rotation = Quaternion(2.5477598e-06, 0.009702762, -9.2167755e-07, 0.99995303)
+bones/49/rotation = Quaternion(1.8815447e-06, 0.0048512877, -5.3693805e-07, 0.99998826)
+bones/50/rotation = Quaternion(3.5363843e-08, 1.8864739e-07, -0.09975849, 0.9950117)
+bones/51/rotation = Quaternion(-0.05834443, -0.6666144, 0.7309184, 0.13408749)
+bones/53/rotation = Quaternion(-2.4242618e-07, 0.019260623, 5.252048e-07, 0.9998145)
+bones/54/rotation = Quaternion(1.7818713e-06, 0.014445867, -9.8134315e-08, 0.9998957)
+bones/55/rotation = Quaternion(2.5421143e-06, 0.009630708, -3.1168378e-07, 0.9999536)
+bones/56/rotation = Quaternion(1.953653e-06, 0.0048155584, -4.1712207e-07, 0.9999885)
+bones/61/position = Vector3(-0.041600306, -0.027007729, -0.5012551)
+bones/61/scale = Vector3(0.9408317, 0.9408319, 0.94083184)
+bones/65/position = Vector3(-0.09630168, 0.21735072, -0.3772806)
+bones/65/scale = Vector3(0.94170797, 0.9417078, 0.9417079)
+bones/69/position = Vector3(0.10455313, 0.24419379, -0.29279748)
+bones/69/scale = Vector3(0.9408319, 0.940832, 0.9408318)
+bones/73/position = Vector3(0.11009718, 0.2238638, -0.32361633)
+bones/73/scale = Vector3(0.94170755, 0.9417077, 0.94170785)
+bones/77/position = Vector3(0.38362888, 0.044934317, -0.15708978)
+bones/77/scale = Vector3(0.94083184, 0.9408317, 0.94083166)
+bones/81/position = Vector3(0.3151015, -0.030702874, -0.23888652)
+bones/81/scale = Vector3(0.94083196, 0.94083214, 0.94083214)
+bones/85/position = Vector3(-0.22929469, -0.21314529, -0.31929383)
+bones/85/scale = Vector3(0.94083196, 0.940832, 0.9408321)
+bones/89/position = Vector3(-0.008224169, 0.0149986595, -0.37523633)
+bones/89/scale = Vector3(0.94170797, 0.941708, 0.9417077)
+bones/93/position = Vector3(-0.1104103, 0.15073347, -0.3070301)
+bones/93/scale = Vector3(0.940832, 0.94083154, 0.9408318)
+bones/97/position = Vector3(-0.07793238, 0.13723406, -0.32792565)
+bones/97/scale = Vector3(0.94170785, 0.94170785, 0.9417079)
+bones/101/position = Vector3(-0.31632614, -0.00891763, -0.19635805)
+bones/101/scale = Vector3(0.940832, 0.940832, 0.94083196)
+bones/105/position = Vector3(-0.057021156, -0.11343698, -0.3420707)
+bones/105/scale = Vector3(0.94083214, 0.94083214, 0.94083214)
+
+[node name="BodyJiggle" parent="CharacterBody3D/Player_Character/root/Skeleton3D" index="1" unique_id=1224292015]
+transform = Transform3D(-0.5941662, 4.7856156e-05, 1.06948875e-07, 4.785624e-05, 0.5941659, 0.0005782587, -6.0373935e-08, 0.0005782587, -0.59416586, -1.709753e-09, 0.034526825, -2.8601145e-08)
+
+[node name="FlameJiggle" parent="CharacterBody3D/Player_Character/root/Skeleton3D" index="2" unique_id=1142166283]
+transform = Transform3D(-0.594044, -0.010872505, -0.005189886, -0.0016162707, -0.18171977, 0.56569356, -0.011938749, 0.5655912, 0.18165277, -0.045747977, 0.43905294, 1.287614)
+
+[node name="HeadJiggle" parent="CharacterBody3D/Player_Character/root/Skeleton3D" index="3" unique_id=152199067]
+transform = Transform3D(-0.59416616, -0.00017382961, 4.0576744e-08, -0.0001701154, 0.5814421, -0.12230455, 3.574177e-05, -0.12230454, -0.58144206, -0.00027278403, 1.0520716, -0.17194664)
+
+[node name="LArmJiggle" parent="CharacterBody3D/Player_Character/root/Skeleton3D" index="4" unique_id=1014996254]
+transform = Transform3D(0.000545836, -0.59416586, -0.000350432, 0.0011447079, -0.0003494122, 0.59416497, -0.5941648, -0.00054648647, 0.0011444179, -1.0594876, -0.031356815, 0.021769905)
+
+[node name="LArmJiggle2" parent="CharacterBody3D/Player_Character/root/Skeleton3D" index="5" unique_id=1078964516]
+transform = Transform3D(0.34562343, -0.26428157, -0.4046395, -0.02154642, -0.5053935, 0.3116831, -0.48281842, -0.16663082, -0.30356854, -0.75973517, -1.0275826, -0.3056022)
+
+[node name="RArmJiggle" parent="CharacterBody3D/Player_Character/root/Skeleton3D" index="6" unique_id=2141569191]
+transform = Transform3D(0.0005672597, 0.5941659, -0.0003148576, -0.0011445109, 0.0003159299, 0.594165, 0.5941648, -0.00056661677, 0.0011448452, 1.059129, -0.031163475, 0.021867374)
+
+[node name="RArmJiggle2" parent="CharacterBody3D/Player_Character/root/Skeleton3D" index="7" unique_id=2001702917]
+transform = Transform3D(0.34476408, 0.26510167, 0.40483603, 0.022551438, -0.5053353, 0.31170684, 0.48338637, -0.16550215, -0.3032818, 0.7642224, -1.0254924, -0.30420062)
+
+[node name="Grunt Player" type="AudioStreamPlayer3D" parent="CharacterBody3D/Player_Character" unique_id=323100267]
+transform = Transform3D(-1.6830307, 0, 1.4713524e-07, 0, 1.6830307, 0, -1.4713524e-07, 0, -1.6830307, 0, 1.624921, 0)
+bus = &"SFX"
 
 [node name="AnimationControl" type="Node" parent="CharacterBody3D/Player_Character" unique_id=247797212 node_paths=PackedStringArray("target", "condition_switches")]
 script = ExtResource("4_1e7my")
@@ -499,32 +541,8 @@ script = ExtResource("24_kih0c")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D/CamearCheck" unique_id=1028648525]
 shape = SubResource("CapsuleShape3D_utwlt")
 
-[node name="AudioListener3D" type="AudioListener3D" parent="CharacterBody3D" unique_id=1466845776]
-current = true
 
-[node name="FootstepSound" type="AudioStreamPlayer3D" parent="CharacterBody3D" unique_id=599239755 node_paths=PackedStringArray("player", "ray", "terrain_node", "condition", "switch_condition", "speed_modifier")]
-volume_db = 10.0
-max_db = 6.0
-bus = &"SFX"
-script = ExtResource("27_rxg2u")
-a_stream_directories = Array[String](["/home/Baton/Documents/Projects/wild-jam-90/Assests/SFX Main Char/StoneRun", "/home/Baton/Documents/Projects/wild-jam-90/Assests/SFX Main Char/GrassRun", "/home/Baton/Documents/Projects/wild-jam-90/Assests/SFX Main Char/DirtRun"])
-b_stream_directories = Array[String](["/home/Baton/Documents/Projects/wild-jam-90/Assests/SFX Main Char/StoneWalk", "/home/Baton/Documents/Projects/wild-jam-90/Assests/SFX Main Char/GrassStep", "/home/Baton/Documents/Projects/wild-jam-90/Assests/SFX Main Char/DirtWalk"])
-a_streams = Array[AudioStream]([SubResource("AudioStreamRandomizer_867uf"), SubResource("AudioStreamRandomizer_6ilcf"), SubResource("AudioStreamRandomizer_6id3a")])
-b_streams = Array[AudioStream]([SubResource("AudioStreamRandomizer_w1x0d"), SubResource("AudioStreamRandomizer_ovjwc"), SubResource("AudioStreamRandomizer_jawh0")])
-player = NodePath(".")
-ray = NodePath("RayCast3D")
-terrain_node = NodePath("GroupNode")
-condition = NodePath("../Player_Character/AnimationControl/Walk")
-switch_condition = NodePath("../Player_Character/AnimationControl/Sprint")
-speed_modifier = NodePath("../Player_Character/AnimationControl/Walk/MagnitudeFloat")
 
-[node name="RayCast3D" type="RayCast3D" parent="CharacterBody3D/FootstepSound" unique_id=1307578436]
-target_position = Vector3(0, -1.1, 0)
-
-[node name="GroupNode" type="Node" parent="CharacterBody3D/FootstepSound" unique_id=2129904672]
-script = ExtResource("28_xixlo")
-group_name = "Terrain"
-metadata/_custom_type_script = "uid://bslmamakq2ao5"
 
 [node name="CameraPivot" type="Node3D" parent="." unique_id=330284818 node_paths=PackedStringArray("y_target", "x_target")]
 script = ExtResource("6_glx4g")
@@ -596,3 +614,5 @@ down_increment = 5.0
 bar = NodePath("..")
 hide_on_full = true
 metadata/_custom_type_script = "uid://ctgxew4bdf2rx"
+
+[editable path="CharacterBody3D/Player_Character"]
