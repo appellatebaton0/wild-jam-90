@@ -1,0 +1,23 @@
+[gd_resource type="AudioStreamRandomizer" format=3 uid="uid://c02q33vwyxjue"]
+
+[ext_resource type="AudioStream" uid="uid://m1dbt6fmxgem" path="res://Assests/SFX Main Char/DirtWalk/Dirt Walk-001.wav" id="1_17avq"]
+[ext_resource type="AudioStream" uid="uid://bm4ik7fpnf8c4" path="res://Assests/SFX Main Char/DirtWalk/Dirt Walk-002.wav" id="2_e5rjg"]
+[ext_resource type="AudioStream" uid="uid://3gy1qd34jgqw" path="res://Assests/SFX Main Char/DirtWalk/Dirt Walk-003.wav" id="3_jqxje"]
+[ext_resource type="AudioStream" uid="uid://pcyk5eis86v" path="res://Assests/SFX Main Char/DirtWalk/Dirt Walk-004.wav" id="4_f1qai"]
+[ext_resource type="AudioStream" uid="uid://d0s2n6rkt2vks" path="res://Assests/SFX Main Char/DirtWalk/Dirt Walk-005.wav" id="5_rs0xh"]
+[ext_resource type="AudioStream" uid="uid://kngyqjtr56wv" path="res://Assests/SFX Main Char/DirtWalk/Dirt Walk-006.wav" id="6_rhq17"]
+[ext_resource type="AudioStream" uid="uid://fef42d55xkyv" path="res://Assests/SFX Main Char/DirtWalk/Dirt Walk-007.wav" id="7_vum7b"]
+[ext_resource type="AudioStream" uid="uid://b5s54kcemlmbj" path="res://Assests/SFX Main Char/DirtWalk/Dirt Walk-008.wav" id="8_gswh6"]
+[ext_resource type="AudioStream" uid="uid://cbsfpfsn7skoa" path="res://Assests/SFX Main Char/DirtWalk/Dirt Walk-009.wav" id="9_0dxro"]
+
+[resource]
+streams_count = 9
+stream_0/stream = ExtResource("1_17avq")
+stream_1/stream = ExtResource("2_e5rjg")
+stream_2/stream = ExtResource("3_jqxje")
+stream_3/stream = ExtResource("4_f1qai")
+stream_4/stream = ExtResource("5_rs0xh")
+stream_5/stream = ExtResource("6_rhq17")
+stream_6/stream = ExtResource("7_vum7b")
+stream_7/stream = ExtResource("8_gswh6")
+stream_8/stream = ExtResource("9_0dxro")

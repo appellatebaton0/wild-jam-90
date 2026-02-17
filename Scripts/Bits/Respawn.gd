@@ -1,6 +1,8 @@
 class_name RespawnBit3D extends Bit
 ## Provides functionality for respawning a Bot at a certain location.
 
+var setup_by:Node
+
 @export var global_kill:StringName = "" ## An optional group to recursively kill.
 @export var delay := 0.0
 var delay_time = 0.0
@@ -50,7 +52,9 @@ func _process(delta: float) -> void:
 			_real_respawn()
 			should_kill = false
 
-func setup(): 
+func setup(by:Node = self):
+	setup_by = by
+	 
 	if not target: target = find_target()
 	
 	if target:
