@@ -49,6 +49,7 @@ metadata/_custom_type_script = "uid://cwmi2fpsn8by2"
 stream = SubResource("AudioStreamWAV_68nug")
 volume_db = -5.0
 pitch_scale = 0.7
+bus = &"SFX"
 
 [node name="Node" type="Node" parent="AudioStreamPlayer3D" unique_id=342704830 node_paths=PackedStringArray("target", "condition")]
 script = ExtResource("4_tpwf0")
@@ -66,7 +67,6 @@ property = "being_pushed()"
 from = NodePath("ManualNode")
 metadata/_custom_type_script = "uid://d7n7ctdl2nsg"
 
-[node name="ManualNode" type="Node" parent="AudioStreamPlayer3D/BeingPushed/Property" unique_id=766962887 node_paths=PackedStringArray("response")]
+[node name="ManualNode" type="Node" parent="AudioStreamPlayer3D/BeingPushed/Property" unique_id=766962887]
 script = ExtResource("7_gfgkr")
-response = NodePath("")
 metadata/_custom_type_script = "uid://b1o48vkwquyxs"
