@@ -2,9 +2,24 @@
 
 [ext_resource type="Script" uid="uid://dspykia0ahijk" path="res://Scripts/Bits/Reactors/Door.gd" id="1_38ogf"]
 [ext_resource type="PackedScene" uid="uid://x12byuqfnyd7" path="res://Assests/3D/Objects/Door.glb" id="2_mw28t"]
+[ext_resource type="AudioStream" uid="uid://bcjl2mplnob" path="res://Assests/SFX Misc/Door Moving 1.wav" id="3_1ijo3"]
+[ext_resource type="Script" uid="uid://cs7fttn8dysxc" path="res://Scripts/Bits/AudioBit.gd" id="3_7mbvs"]
+[ext_resource type="Script" uid="uid://w0g2u1stumau" path="res://Scripts/Values/Bool/Cast.gd" id="4_g50tm"]
+[ext_resource type="AudioStream" uid="uid://3h3pixpfllcx" path="res://Assests/SFX Misc/Door Moving 2.wav" id="4_jjilt"]
+[ext_resource type="AudioStream" uid="uid://dl74q7a6035id" path="res://Assests/SFX Misc/Door Moving 3.wav" id="5_7w4hd"]
+[ext_resource type="Script" uid="uid://d7n7ctdl2nsg" path="res://Scripts/Values/Property.gd" id="5_vxo0x"]
+[ext_resource type="AudioStream" uid="uid://cbvomop76su5g" path="res://Assests/SFX Misc/Door Moving 4.wav" id="6_2gr8i"]
+[ext_resource type="Script" uid="uid://b1o48vkwquyxs" path="res://Scripts/Values/Node/ManualNode.gd" id="6_kqji6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1p5hy"]
 size = Vector3(6.40584, 9.7, 2.61)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_f3eo3"]
+streams_count = 4
+stream_0/stream = ExtResource("3_1ijo3")
+stream_1/stream = ExtResource("4_jjilt")
+stream_2/stream = ExtResource("5_7w4hd")
+stream_3/stream = ExtResource("6_2gr8i")
 
 [node name="Door" type="Node3D" unique_id=697453936]
 script = ExtResource("1_38ogf")
@@ -27,3 +42,35 @@ debug_color = Color(1, 1, 1, 1)
 
 [node name="Door" parent="CharacterBody3D" unique_id=460615689 instance=ExtResource("2_mw28t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.05, 0)
+
+[node name="Moving" type="AudioStreamPlayer3D" parent="." unique_id=679420993 node_paths=PackedStringArray("target", "condition")]
+stream = SubResource("AudioStreamRandomizer_f3eo3")
+volume_db = 3.0
+bus = &"SFX"
+script = ExtResource("3_7mbvs")
+target = NodePath(".")
+condition = NodePath("IsMoving")
+
+[node name="Opening" type="Node" parent="Moving" unique_id=1455635665]
+script = ExtResource("4_g50tm")
+metadata/_custom_type_script = "uid://w0g2u1stumau"
+
+[node name="Property" type="Node" parent="Moving/Opening" unique_id=141858174]
+script = ExtResource("5_vxo0x")
+property = "value"
+metadata/_custom_type_script = "uid://d7n7ctdl2nsg"
+
+[node name="IsMoving" type="Node" parent="Moving" unique_id=677450214]
+script = ExtResource("4_g50tm")
+metadata/_custom_type_script = "uid://w0g2u1stumau"
+
+[node name="Property" type="Node" parent="Moving/IsMoving" unique_id=925304957 node_paths=PackedStringArray("from")]
+script = ExtResource("5_vxo0x")
+property = "is_moving()"
+from = NodePath("ManualNode")
+metadata/_custom_type_script = "uid://d7n7ctdl2nsg"
+
+[node name="ManualNode" type="Node" parent="Moving/IsMoving/Property" unique_id=183412763 node_paths=PackedStringArray("response")]
+script = ExtResource("6_kqji6")
+response = NodePath("../../../..")
+metadata/_custom_type_script = "uid://b1o48vkwquyxs"

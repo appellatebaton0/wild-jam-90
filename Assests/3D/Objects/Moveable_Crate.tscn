@@ -149,6 +149,7 @@ libraries/ = SubResource("AnimationLibrary_yx64t")
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1790832961]
 stream = SubResource("AudioStreamWAV_k61bn")
 volume_db = -5.0
+bus = &"SFX"
 
 [node name="Node" type="Node" parent="AudioStreamPlayer3D" unique_id=88455260 node_paths=PackedStringArray("target", "condition")]
 script = ExtResource("8_b2eg6")

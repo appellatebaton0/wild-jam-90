@@ -31,19 +31,24 @@ func _ready() -> void:
 	find_condition()
 	
 
+var value
+var to:Vector3
+var from:Vector3
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
-	var value = (condition.value() if condition else true) or area.has_overlapping_bodies()
+	value = (condition.value() if condition else true) or area.has_overlapping_bodies()
 	
 	if value != last:
 		last = value
 		timer = time - timer
 	
-	var to   := open_extent  if value else close_extent
-	var from := close_extent if value else open_extent
+	to   = open_extent  if value else close_extent
+	from = close_extent if value else open_extent
 	
 	body.position = lerp(to, from, ease(timer / time, easing))
 	
 	timer = move_toward(timer, 0.0, delta)
+
+func is_moving() -> bool: return body.position != to and body.position != from

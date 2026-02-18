@@ -6,28 +6,12 @@ class_name TransferBit extends Bit
 @export var target_property:StringName
 
 @export var sets_to:Value
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
+@export var constant := true
 
 var last_target:Node
 var last_real_target:Node
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void: if target and sets_to:
-	
-	var t_node := target.value()
-	var to:Variant = sets_to.value()
-	
-	if last_target != t_node:
-		
-		for node in recur_children(t_node): if node.name == target_name:
-			last_real_target = node
-			break
-	
-	if last_real_target: last_real_target.set(target_property, to)
+func _process(_delta: float) -> void: if constant: transfer()
 
 func find_target_value(from:Node) -> Value: 
 	if from is Bot:
@@ -47,3 +31,20 @@ func recur_children(with:Node) -> Array[Node]:
 		response.append_array(recur_children(child))
 	
 	return response
+
+func transfer() -> void: if target and sets_to:
+	
+	var t_node := target.value()
+	var to:Variant = sets_to.value()
+	
+	if last_target != t_node or last_real_target == null: if t_node:
+		var search = t_node
+		if search is Bit: search = search.bot
+		
+		for node in recur_children(search): if node.name == target_name:
+			last_real_target = node
+			break
+	
+	if last_real_target: last_real_target.set(target_property, to)
+	
+	pass

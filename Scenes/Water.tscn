@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://b4soergejolc8"]
+
+[ext_resource type="Material" uid="uid://or8blx8y5xq7" path="res://Assests/3D/Materials/water.res" id="1_j5j8c"]
+[ext_resource type="Script" uid="uid://bmbnethi8oyh3" path="res://Scripts/Bits/AreaMaster3D.gd" id="2_2mu07"]
+[ext_resource type="Script" uid="uid://bekt6vd73jjuq" path="res://Scripts/Bits/Kill.gd" id="3_40b5d"]
+[ext_resource type="Script" uid="uid://bu0n6wodebobi" path="res://Scripts/Bits/TransferCondition.gd" id="4_43g02"]
+[ext_resource type="Script" uid="uid://dmeoycdcis1sp" path="res://Scripts/Values/Node/CastNode.gd" id="5_uv37i"]
+[ext_resource type="Script" uid="uid://d7n7ctdl2nsg" path="res://Scripts/Values/Property.gd" id="6_6f32e"]
+[ext_resource type="Script" uid="uid://b1o48vkwquyxs" path="res://Scripts/Values/Node/ManualNode.gd" id="7_qhbtp"]
+[ext_resource type="Script" uid="uid://cox1ysk6bulx2" path="res://Scripts/Values/Bool/Manual.gd" id="8_7f5ct"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_1hnqj"]
+size = Vector2(50, 50)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pa8kd"]
+size = Vector3(50, 50, 12)
+
+[node name="WaterMesh" type="MeshInstance3D" unique_id=1210634507]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+cast_shadow = 0
+mesh = SubResource("QuadMesh_1hnqj")
+surface_material_override/0 = ExtResource("1_j5j8c")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=713232997]
+collision_layer = 128
+collision_mask = 6
+script = ExtResource("2_2mu07")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=497991898]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+shape = SubResource("BoxShape3D_pa8kd")
+debug_color = Color(0, 0.14509805, 0.69803923, 1)
+
+[node name="KillBit" type="Node" parent="Area3D" unique_id=928272478]
+script = ExtResource("3_40b5d")
+metadata/_custom_type_script = "uid://bekt6vd73jjuq"
+
+[node name="PlayWaterSFX" type="Node" parent="." unique_id=564251930 node_paths=PackedStringArray("target", "sets_to")]
+script = ExtResource("4_43g02")
+target = NodePath("Target")
+target_name = &"IsInWater"
+target_property = &"response"
+sets_to = NodePath("IsInWater")
+constant = false
+
+[node name="Target" type="Node" parent="PlayWaterSFX" unique_id=1092236384]
+script = ExtResource("5_uv37i")
+metadata/_custom_type_script = "uid://dmeoycdcis1sp"
+
+[node name="Property" type="Node" parent="PlayWaterSFX/Target" unique_id=59488854]
+script = ExtResource("6_6f32e")
+property = "target"
+metadata/_custom_type_script = "uid://d7n7ctdl2nsg"
+
+[node name="ManualNode" type="Node" parent="PlayWaterSFX/Target/Property" unique_id=742268485 node_paths=PackedStringArray("response")]
+script = ExtResource("7_qhbtp")
+response = NodePath("../../../../Area3D/KillBit")
+metadata/_custom_type_script = "uid://b1o48vkwquyxs"
+
+[node name="IsInWater" type="Node" parent="PlayWaterSFX" unique_id=1103222056]
+script = ExtResource("8_7f5ct")
+metadata/_custom_type_script = "uid://cox1ysk6bulx2"
+
+[connection signal="killing" from="Area3D/KillBit" to="PlayWaterSFX" method="transfer"]
