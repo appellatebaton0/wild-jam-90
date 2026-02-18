@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://e6ymwhgiai4b"]
+
+[ext_resource type="Script" uid="uid://bchpelkbi2rma" path="res://Scripts/search_radius.gd" id="1_xsan8"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_viarr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xsan8"]
+emission_enabled = true
+emission = Color(0.3255587, 0.7621307, 0.89798844, 1)
+emission_energy_multiplier = 7.64
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qocii"]
+radius = 6.22833
+
+[node name="Wandering Orb" type="Node3D" unique_id=1657823546]
+
+[node name="Wandering Light" type="MeshInstance3D" parent="." unique_id=145085831]
+mesh = SubResource("SphereMesh_viarr")
+surface_material_override/0 = SubResource("StandardMaterial3D_xsan8")
+
+[node name="Search radius" type="Area3D" parent="Wandering Light" unique_id=258900215]
+script = ExtResource("1_xsan8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wandering Light/Search radius" unique_id=604549948]
+shape = SubResource("SphereShape3D_qocii")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Wandering Light" unique_id=1020334922]
+light_color = Color(0.30328694, 0.65359485, 0.76437634, 1)
+light_energy = 11.108
+light_indirect_energy = 5.887
+light_volumetric_fog_energy = 3.075
+shadow_enabled = true
+omni_range = 5.8026147
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=295322746]
