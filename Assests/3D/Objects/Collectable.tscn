@@ -10,7 +10,7 @@
 radius = 0.295
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_8051g"]
-radius = 4.331525
+radius = 7.5
 
 [sub_resource type="SphereMesh" id="SphereMesh_btcff"]
 
