@@ -33,11 +33,12 @@ var lerped_wall_move_vector := wall_move_vector
 var fire_direction := Vector3.UP
 
 func _process(delta: float):
-	RenderingServer.global_shader_parameter_set("player_position", self.global_position)
+	RenderingServer.global_shader_parameter_set("player_position", self.global_position + Vector3(0, 1.0, 0))
 	
 	tracked_position = lerp(tracked_position, self.global_position, 6.0 * delta);
 	fire_direction = lerp(fire_direction, to_local(tracked_position) + Vector3.UP, 12.0 * delta)
 	
+	RenderingServer.global_shader_parameter_set("player_movement", self.global_position - tracked_position)
 	lerped_wall_move_vector = lerped_wall_move_vector.lerp(wall_move_vector, 0.1)
 	if AnimTree:
 		AnimTree.set("parameters/Wall_Movement/blend_position", lerped_wall_move_vector)
