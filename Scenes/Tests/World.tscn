@@ -653,6 +653,24 @@ transform = Transform3D(25, 0, 0, 0, 25, 0, 0, 0, 25, 73.90392, 15.322542, -83.2
 [node name="Node3D2" parent="Rooms/Crystals" unique_id=225592219 instance=ExtResource("26_efgxu")]
 transform = Transform3D(17.914476, -1.1030462, 1.007823, 1.2593082, 17.022432, -6.268301, -0.39743567, 4.2170434, 25.566113, 57.729168, 27.356571, -99.38027)
 
+[node name="OmniLight3D" type="OmniLight3D" parent="Rooms" unique_id=1650212470]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59, 4.1167493, 5)
+light_color = Color(0.1299119, 0.7732187, 0.8094173, 1)
+light_energy = 5.0
+omni_range = 15.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Rooms" unique_id=1590175133]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -82, 4.1167493, 5)
+light_color = Color(0.1299119, 0.7732187, 0.8094173, 1)
+light_energy = 5.0
+omni_range = 15.0
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Rooms" unique_id=1739706090]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -107, 11.090918, 5)
+light_color = Color(0.1299119, 0.7732187, 0.8094173, 1)
+light_energy = 5.0
+omni_range = 25.0
+
 [node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1784514578]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.9724097, 0)
 amount = 27
