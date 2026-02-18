@@ -640,6 +640,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
+
 "values": [2]
 }
 tracks/2/type = "value"
@@ -1082,11 +1083,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.080992, -3.7608109, 7.106
 
 [node name="Signpost" parent="VisibilityToggle/Signposts" unique_id=1718605348 instance=ExtResource("20_q8hrf")]
 transform = Transform3D(0.6452977, 0, -0.7639312, 0, 1, 0, 0.7639312, 0, 0.6452977, -99.86167, 3.1988187, 0.5860923)
-text = "Use WASD / The       D-Pad to move."
+text = "Use WASD / The D-Pad to move."
 
 [node name="Signpost2" parent="VisibilityToggle/Signposts" unique_id=1762546639 instance=ExtResource("20_q8hrf")]
-transform = Transform3D(-0.24442741, 0, -0.9696677, 0, 1, 0, 0.9696677, 0, -0.24442741, -97.156425, 3.1988187, 7.0752206)
-text = "Use your mouse /      right joystick to 
+transform = Transform3D(-0.24442741, 0, -0.9696677, 0, 1, 0, 0.9696677, 0, -0.24442741, -97.899796, 3.1988187, 6.7486205)
+text = "Use your mouse / right joystick to 
 look around."
 
 [node name="Signpost3" parent="VisibilityToggle/Signposts" unique_id=1920349304 instance=ExtResource("20_q8hrf")]
