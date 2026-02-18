@@ -167,6 +167,7 @@ UseTeleporter={
 3d_physics/layer_5="PressurePlate"
 3d_physics/layer_6="Checkpoint"
 3d_physics/layer_7="Collectable"
+3d_physics/layer_8="Water"
 
 [physics]
 
