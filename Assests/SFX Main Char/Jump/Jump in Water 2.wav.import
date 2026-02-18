@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dinapq0rgyjrl"
+path="res://.godot/imported/Jump in Water 2.wav-c78567d1764e7052e2c36b3f4431928b.sample"
+
+[deps]
+
+source_file="res://Assests/SFX Main Char/Jump/Jump in Water 2.wav"
+dest_files=["res://.godot/imported/Jump in Water 2.wav-c78567d1764e7052e2c36b3f4431928b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
