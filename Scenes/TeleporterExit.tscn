@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://esg4ciusc8a1"]
 
 [ext_resource type="Script" uid="uid://5pb45v7v1w0y" path="res://Scripts/Bits/TeleporterExit.gd" id="1_n3cyd"]
+[ext_resource type="Script" uid="uid://bu0n6wodebobi" path="res://Scripts/Bits/TransferCondition.gd" id="2_md2b8"]
+[ext_resource type="Script" uid="uid://dmeoycdcis1sp" path="res://Scripts/Values/Node/CastNode.gd" id="3_3ured"]
+[ext_resource type="Script" uid="uid://d7n7ctdl2nsg" path="res://Scripts/Values/Property.gd" id="4_yjkkj"]
+[ext_resource type="Script" uid="uid://b1o48vkwquyxs" path="res://Scripts/Values/Node/ManualNode.gd" id="5_s7pmu"]
+[ext_resource type="Script" uid="uid://cox1ysk6bulx2" path="res://Scripts/Values/Bool/Manual.gd" id="6_nawrg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v608y"]
 size = Vector3(1.5, 1.5, 1.5)
@@ -10,17 +15,132 @@ top_radius = 0.9
 bottom_radius = 1.0
 height = 0.1
 
-[sub_resource type="Animation" id="Animation_n3cyd"]
-resource_name = "warp_in"
-
-[sub_resource type="Animation" id="Animation_y1ul7"]
-resource_name = "warp_out"
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ca4pq"]
-_data = {
-&"warp_in": SubResource("Animation_n3cyd"),
-&"warp_out": SubResource("Animation_y1ul7")
+[sub_resource type="Animation" id="Animation_ht0s6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Panel:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Panel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PauseInputOnTP/Pausing:response")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_b0nsn"]
+resource_name = "warp_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Panel:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Panel:modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PauseInputOnTP/Pausing:response")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_v608y"]
+resource_name = "warp_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Panel:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PauseInputOnTP/Pausing:response")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n3cyd"]
+_data = {
+&"RESET": SubResource("Animation_ht0s6"),
+&"warp_in": SubResource("Animation_b0nsn"),
+&"warp_out": SubResource("Animation_v608y")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y1ul7"]
+bg_color = Color(0, 0, 0, 1)
 
 [node name="TeleporterExit" type="Area3D" unique_id=234579865 node_paths=PackedStringArray("animator") groups=["TeleporterExit"]]
 collision_layer = 0
@@ -36,5 +156,44 @@ shape = SubResource("BoxShape3D_v608y")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=241671183]
 mesh = SubResource("CylinderMesh_ht0s6")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=215367717]
-libraries/ = SubResource("AnimationLibrary_ca4pq")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=154956121]
+libraries/ = SubResource("AnimationLibrary_n3cyd")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=631896093]
+layer = 3
+
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=1826074281]
+visible = false
+modulate = Color(0, 0, 0, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_y1ul7")
+
+[node name="PauseInputOnTP" type="Node" parent="." unique_id=492442987 node_paths=PackedStringArray("target", "sets_to")]
+script = ExtResource("2_md2b8")
+target = NodePath("LastUser")
+target_name = &"IsTeleporting"
+target_property = &"response"
+sets_to = NodePath("Pausing")
+
+[node name="LastUser" type="Node" parent="PauseInputOnTP" unique_id=1843861109]
+script = ExtResource("3_3ured")
+metadata/_custom_type_script = "uid://dmeoycdcis1sp"
+
+[node name="Property" type="Node" parent="PauseInputOnTP/LastUser" unique_id=665790588]
+script = ExtResource("4_yjkkj")
+property = "used_by"
+metadata/_custom_type_script = "uid://d7n7ctdl2nsg"
+
+[node name="ManualNode" type="Node" parent="PauseInputOnTP/LastUser/Property" unique_id=286035121 node_paths=PackedStringArray("response")]
+script = ExtResource("5_s7pmu")
+response = NodePath("../../../..")
+metadata/_custom_type_script = "uid://b1o48vkwquyxs"
+
+[node name="Pausing" type="Node" parent="PauseInputOnTP" unique_id=1765004731]
+script = ExtResource("6_nawrg")
+response = false
+metadata/_custom_type_script = "uid://cox1ysk6bulx2"
