@@ -6,3 +6,11 @@ class_name Collectable
 
 func _ready() -> void:
 	Value
+	
+
+
+
+func _on_area_entered(area:Detector) -> void:
+	var collect = $".."
+	print("YUM")
+	collect.queue_free()

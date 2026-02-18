@@ -14,7 +14,7 @@ bottom_radius = 0.1
 height = 0.4
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sxkr1"]
-size = Vector3(3, 3, 3)
+size = Vector3(9.201172, 30.186646, 27.060135)
 
 [node name="CameraGrab" type="Area3D" unique_id=2053990340]
 collision_layer = 0
