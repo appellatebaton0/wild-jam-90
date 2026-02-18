@@ -54,6 +54,8 @@ func _process(_delta: float) -> void: if condition:
 func kill():
 	if not respawner: find_respawner()
 	if respawner: respawner.respawn()
+	respawner = null
+	target = null
 
 func find_respawner():
 	

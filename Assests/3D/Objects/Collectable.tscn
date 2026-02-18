@@ -6,6 +6,12 @@
 [ext_resource type="Script" uid="uid://c5aqrj2yuhbde" path="res://Scripts/Suck.gd" id="5_6o08o"]
 [ext_resource type="Script" uid="uid://jbqvo3y8hqsy" path="res://Scripts/Collectable.gd" id="5_8051g"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_jsjdp"]
+radius = 0.295
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_8051g"]
+radius = 4.331525
+
 [sub_resource type="SphereMesh" id="SphereMesh_btcff"]
 
 [sub_resource type="Gradient" id="Gradient_jsjdp"]
@@ -87,18 +93,34 @@ material = SubResource("StandardMaterial3D_qidb7")
 radius = 0.16
 height = 0.275
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_jsjdp"]
-radius = 0.295
+[node name="Collectable" type="Area3D" unique_id=2046027389]
+collision_layer = 0
+collision_mask = 64
+script = ExtResource("5_8051g")
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_8051g"]
-radius = 4.331525
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1229333748]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.91439056, 0)
+shape = SubResource("SphereShape3D_jsjdp")
 
-[node name="Collectable" type="Node3D" unique_id=1768170752]
+[node name="Suck Range" type="Area3D" parent="." unique_id=840155436]
+collision_layer = 0
+collision_mask = 64
+script = ExtResource("5_6o08o")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Suck Range" unique_id=1725265586]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0240847, 0)
+shape = SubResource("SphereShape3D_8051g")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=722350513]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.94632447, 0)
 mesh = SubResource("SphereMesh_btcff")
+skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_picub")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1475383196]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.99439406, 0)
+light_color = Color(0.7179597, 0.29002744, 0.80884284, 1)
+light_energy = 2.941
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=796881371]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.625307, 0.0218575)
@@ -109,24 +131,5 @@ randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_pvhdv")
 draw_pass_1 = SubResource("SphereMesh_0bqg2")
 
-[node name="Area3D" type="Area3D" parent="." unique_id=2046027389]
-script = ExtResource("5_8051g")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1229333748]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.91439056, 0)
-shape = SubResource("SphereShape3D_jsjdp")
-
-[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1475383196]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.99439406, 0)
-light_color = Color(0.7179597, 0.29002744, 0.80884284, 1)
-light_energy = 2.941
-
-[node name="Suck Range" type="Area3D" parent="." unique_id=840155436]
-script = ExtResource("5_6o08o")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Suck Range" unique_id=1725265586]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0240847, 0)
-shape = SubResource("SphereShape3D_8051g")
-
-[connection signal="area_entered" from="Area3D" to="Area3D" method="_on_area_entered"]
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_entered" from="Suck Range" to="Suck Range" method="_on_area_entered"]

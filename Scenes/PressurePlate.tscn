@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://q7a6eo8u6tsr" path="res://Scripts/Bits/Actors/PressurePlate.gd" id="1_6dsqy"]
 [ext_resource type="Texture2D" uid="uid://bqqfhha1ru7hp" path="res://Assests/3D/Objects/Pressure_Plate_DefaultMaterial_BaseColor.png" id="3_gwnrm"]
+[ext_resource type="AudioStream" uid="uid://dub3uxr1v6yi0" path="res://Assests/SFX Misc/Pressure Plate Down.wav" id="4_aes4l"]
 [ext_resource type="Texture2D" uid="uid://dhpvgwj2i4t7t" path="res://Assests/3D/Objects/Pressure_Plate_DefaultMaterial_Roughness.png" id="4_hpfql"]
+[ext_resource type="AudioStream" uid="uid://coc0jhylsd6ru" path="res://Assests/SFX Misc/Pressure Plate Up.wav" id="5_1e03t"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_grg3l"]
 size = Vector3(2, 0.75, 2)
@@ -88,7 +90,7 @@ shadow_mesh = SubResource("ArrayMesh_7diyh")
 
 [sub_resource type="Animation" id="Animation_1e03t"]
 resource_name = "Press"
-length = 0.25
+length = 0.5
 tracks/0/type = "position_3d"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -96,6 +98,21 @@ tracks/0/path = NodePath("ButtonCollider")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.25, 1, 0, -0.35, 0)
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ButtonAudioPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_aes4l")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
 
 [sub_resource type="Animation" id="Animation_picw0"]
 resource_name = "RESET"
@@ -110,7 +127,7 @@ tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0)
 
 [sub_resource type="Animation" id="Animation_xysx1"]
 resource_name = "Release"
-length = 0.25
+length = 0.5
 tracks/0/type = "position_3d"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -118,6 +135,21 @@ tracks/0/path = NodePath("ButtonCollider")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = PackedFloat32Array(0, 1, 0, -0.35, 0, 0.25, 1, 0, 0, 0)
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ButtonAudioPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_1e03t")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nebar"]
 _data = {
@@ -159,3 +191,6 @@ skeleton = NodePath("")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2043819129]
 libraries/ = SubResource("AnimationLibrary_nebar")
+
+[node name="ButtonAudioPlayer" type="AudioStreamPlayer3D" parent="." unique_id=892084044]
+bus = &"SFX"

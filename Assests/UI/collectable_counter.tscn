@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cejs1f6tv8mel"]
+
+[ext_resource type="Texture2D" uid="uid://cmkqst4ck6y8q" path="res://Assests/2D/collectable_icon.png" id="1_a4dxk"]
+[ext_resource type="Script" uid="uid://c7wd66qrd7rxv" path="res://Scripts/UI/collectable_counter.gd" id="1_j3fjx"]
+[ext_resource type="FontFile" uid="uid://c0ncglrrkwb6a" path="res://Assests/Cinzel-VariableFont_wght.ttf" id="2_j3fjx"]
+
+[node name="CollectableCounter" type="MarginContainer" unique_id=857772092 node_paths=PackedStringArray("amount_label")]
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+script = ExtResource("1_j3fjx")
+amount_label = NodePath("HBoxContainer/Label")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2129117372]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=715427261]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_a4dxk")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=881305491]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_j3fjx")
+theme_override_font_sizes/font_size = 32
+text = "0"
