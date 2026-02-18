@@ -24,6 +24,10 @@ extends Node3D
 	set(to):
 		wall_move_vector = to
 
+@export var extinguish_target := 0.0
+var _extinguish_time := 0.1
+var _extinguish_lerped := extinguish_target
+
 var lerped_wall_move_vector := wall_move_vector
 @onready var tracked_position := self.global_position
 var fire_direction := Vector3.UP
@@ -38,14 +42,21 @@ func _process(delta: float):
 	if AnimTree:
 		AnimTree.set("parameters/Wall_Movement/blend_position", lerped_wall_move_vector)
 	
+	_extinguish_lerped = move_toward(_extinguish_lerped, extinguish_target, delta / _extinguish_time)
+	
 	if character_material:
 		character_material.set_shader_parameter("vertex_fire_direction", fire_direction)
+		character_material.set_shader_parameter("extinguish", _extinguish_lerped)
 
 func play_animation(anim_name: String):
 	AnimTree.set(str("parameters/Play_", anim_name, "/request"), AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
 
 func stop_animation(anim_name: String):
 	AnimTree.set(str("parameters/Play_", anim_name, "/request"), AnimationNodeOneShot.ONE_SHOT_REQUEST_FADE_OUT)
+
+func set_extinguish(to: float, time := 0.1):
+	extinguish_target = to
+	_extinguish_time = time
 
 func _on_state_transition(state_from: String, state_to: String) -> void:
 	if state_from == "Wall_Grab" and state_to == "Fall":
