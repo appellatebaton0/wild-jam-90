@@ -1025,12 +1025,6 @@ light_color = Color(0.7270162, 0.3814293, 0, 1)
 light_energy = 11.979
 shadow_enabled = true
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1023924046]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.17869, 8.843002, -10.158125)
-light_color = Color(0.7270162, 0.3814293, 0, 1)
-light_energy = 11.979
-shadow_enabled = true
-
 [node name="OmniLight3D3" type="OmniLight3D" parent="." unique_id=1418528313]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.70951, 8.843002, -37.964672)
 light_color = Color(0.7270162, 0.3814293, 0, 1)
