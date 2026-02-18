@@ -44,6 +44,6 @@ shadow_mesh = SubResource("ArrayMesh_khlui")
 
 [node name="Plant003" unique_id=534685655 instance=ExtResource("1_50eer")]
 
-[node name="Plane_005" parent="." index="0" unique_id=766330471]
+[node name="Plane_005" parent="." index="0" unique_id=1181819836]
 mesh = SubResource("ArrayMesh_kv2sp")
 surface_material_override/0 = ExtResource("3_1onmw")

@@ -11,7 +11,7 @@ data = PackedVector3Array(-3.3465998, -1.0904, -1.1987, -4.1112, -0.86319995, -1
 [node name="Tunnel_Straight1" parent="." unique_id=571043568 instance=ExtResource("1_e5wks")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.123966575, -1.1920929e-07, -1.3268409)
 
-[node name="Cube" parent="Tunnel_Straight1" index="0" unique_id=1404997543]
+[node name="Cube" parent="Tunnel_Straight1" index="0" unique_id=1685582175]
 surface_material_override/0 = ExtResource("2_joyx7")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Tunnel_Straight1/Cube" index="0" unique_id=1009266876]

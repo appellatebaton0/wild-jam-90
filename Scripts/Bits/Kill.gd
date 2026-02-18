@@ -1,6 +1,8 @@
 class_name KillBit extends Bit
 ## Kills a target Bot (if possible) when a condition becomes true.
 
+signal killing
+
 @export var target:Bot ## The target to kill.
 @export var condition:BoolValue ## The condition upon which the target is killed.
 
@@ -43,7 +45,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void: if condition:
 	
-	if parent is AreaMasterBit3D: if parent.area.has_overlapping_bodies(): target = parent.area.get_overlapping_bodies()[0]
+	if parent is AreaMasterBit3D: target = parent.area.get_overlapping_bodies()[0] if parent.area.has_overlapping_bodies() else null
 	
 	if condition.value():
 		if not activated or not pulse: # Kill the target.
@@ -52,8 +54,14 @@ func _process(_delta: float) -> void: if condition:
 	else: activated = false
 
 func kill():
+	killing.emit()
+	
 	if not respawner: find_respawner()
 	if respawner: respawner.respawn()
+	respawner = null
+	target = null
+	
+	
 
 func find_respawner():
 	

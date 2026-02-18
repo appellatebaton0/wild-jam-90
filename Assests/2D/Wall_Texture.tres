@@ -1,7 +1,12 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://du4gm6127akq5"]
 
-[ext_resource type="Texture2D" uid="uid://be3cj36gttw00" path="res://Assests/2D/Packed_Wall.png" id="1_aq1nk"]
+[ext_resource type="Texture2D" uid="uid://soequa38as1q" path="res://Assests/2D/Wall_Texture.png" id="1_aq1nk"]
+[ext_resource type="Texture2D" uid="uid://0v0u1qwhyued" path="res://Assests/2D/Packed_Wall_Normal.png" id="2_r117m"]
 
 [resource]
+albedo_color = Color(0.32941177, 0.36078432, 0.5058824, 1)
 albedo_texture = ExtResource("1_aq1nk")
-uv1_scale = Vector3(12.16, 12.16, 12.16)
+normal_enabled = true
+normal_scale = 1.49
+normal_texture = ExtResource("2_r117m")
+uv1_scale = Vector3(4, 4, 4)

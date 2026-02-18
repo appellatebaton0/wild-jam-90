@@ -4,6 +4,8 @@ extends Node3D
 @export var fire_meshes: Array[MeshInstance3D]
 @export var fire_strengths: Array[float] = []
 
+@export var lights: Array[OmniLight3D]
+
 @export var burning := true:
 	set(value):
 		burning = value
@@ -13,6 +15,7 @@ extends Node3D
 var was_burning = true
 var is_ready = false
 
+var light_energies: Dictionary[int, float] = {}
 var fire_materials: Array[ShaderMaterial] = []
 var tweens: Dictionary[int, Tween] = {}
 var tween_alphas: Dictionary[int, float] = {}
@@ -23,6 +26,8 @@ func _ready():
 		var fire_material: ShaderMaterial = mesh.mesh.surface_get_material(0).duplicate()
 		mesh.set_surface_override_material(0, fire_material)
 		fire_materials.append(fire_material)
+	for light_idx in lights.size():
+		light_energies[light_idx] = lights[light_idx].light_energy
 	is_ready = true
 	_update_fire_fx.call_deferred()
 
@@ -55,6 +60,9 @@ func _update_fire_fx():
 func _update_tween(alpha: float, idx: int):
 	var mesh = fire_meshes[idx]
 	var material = fire_materials[idx]
+	
+	if light_energies.has(idx):
+		lights[idx].light_energy = light_energies[idx] * alpha
 	
 	tween_alphas[idx] = alpha
 	mesh.transparency = 1.0 - alpha

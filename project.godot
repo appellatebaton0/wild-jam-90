@@ -50,6 +50,7 @@ buses/default_bus_layout="uid://cfhn6jpambp6i"
 [autoload]
 
 SimpleGrass="*uid://bfq0snth8sj3h"
+GameState="*uid://c3u0ujipcexdh"
 
 [display]
 
@@ -165,6 +166,8 @@ UseTeleporter={
 3d_physics/layer_4="Flint"
 3d_physics/layer_5="PressurePlate"
 3d_physics/layer_6="Checkpoint"
+3d_physics/layer_7="Collectable"
+3d_physics/layer_8="Water"
 
 [physics]
 
@@ -232,4 +235,8 @@ sgt_wind_turbulence={
 sgt_wind_pattern={
 "type": "sampler2D",
 "value": "res://addons/simplegrasstextured/images/wind_pattern.png"
+}
+player_movement={
+"type": "vec3",
+"value": Vector3(0, 0, 0)
 }

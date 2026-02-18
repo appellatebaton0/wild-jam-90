@@ -28,7 +28,7 @@ func set_valid(value:NodeValue, amount:Vector3):
 			
 			node.rotation = next_rotation
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if x_neg_input and x_pos_input and y_neg_input and y_pos_input:
 		var vec = Input.get_vector(x_neg_input,x_pos_input,y_neg_input,y_pos_input)
 		

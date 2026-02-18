@@ -16,7 +16,6 @@ func _setup_audio_and_slider():
 	bar.value_changed.connect(_on_value_changed)
 	var current_volume = AudioServer.get_bus_volume_linear(bus_idx)
 	current_volume -= fmod(current_volume, bar.step)
-	#print(bus_name, ", ", bus_idx, ", ", current_volume)
 	bar.value = current_volume
 	_on_value_changed(current_volume)
 

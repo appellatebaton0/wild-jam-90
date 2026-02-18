@@ -13,9 +13,9 @@ func _process(_delta: float) -> void: if condition and target:
 	
 	if on_true and last_value != value:
 		last_value = value
-		stream(value)
-	else: stream(value)
+		play_stream(value)
+	else: play_stream(value)
 
-func stream(play:bool): if target: 
+func play_stream(play:bool): if target: 
 	if not target.playing and play: target.play()
 	elif   target.playing and not play: target.stop()

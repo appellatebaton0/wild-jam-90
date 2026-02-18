@@ -1,22 +1,17 @@
-[gd_scene format=3 uid="uid://x1j2yawophd6"]
+[gd_scene format=3 uid="uid://wguoowilhb3p"]
 
-[ext_resource type="Environment" uid="uid://8ivgd0ijm8ix" path="res://Assests/3D/World_Env.tres" id="1_kmio1"]
-[ext_resource type="MeshLibrary" uid="uid://dxo8thlnlijfg" path="res://Assests/Ruins_Libary_Final.meshlib" id="2_j2i4q"]
-[ext_resource type="PackedScene" uid="uid://dkhpghpfg7uab" path="res://Scenes/CameraGrab.tscn" id="3_2l40m"]
-[ext_resource type="PackedScene" uid="uid://bmmhldj3h2120" path="res://Assests/3D/Player Character/PC_Main.glb" id="3_mjgqx"]
-[ext_resource type="Material" uid="uid://dvmvo1ejv7urt" path="res://Assests/3D/Materials/PlayerCharacter.tres" id="4_feqmv"]
-[ext_resource type="FontFile" uid="uid://c0ncglrrkwb6a" path="res://Assests/Cinzel-VariableFont_wght.ttf" id="5_mjgqx"]
-[ext_resource type="PackedScene" uid="uid://bseh5orb0njgn" path="res://Assests/UI/audio_slider.scn" id="6_feqmv"]
-[ext_resource type="PackedScene" uid="uid://5opnwc5uryxc" path="res://Scenes/InputMappingEntry.tscn" id="7_8gm8v"]
-[ext_resource type="Script" uid="uid://dw7w6pry2g435" path="res://Scripts/Bits/PlayerAnimator.gd" id="8_1ounl"]
-[ext_resource type="Script" uid="uid://dk0hts3twf6t" path="res://Scripts/Bits/MouseCapture.gd" id="9_4vba8"]
-[ext_resource type="PackedScene" uid="uid://cejs1f6tv8mel" path="res://Assests/UI/collectable_counter.tscn" id="9_feqmv"]
-[ext_resource type="Script" uid="uid://dekpk8relyucb" path="res://Scripts/Bits/Input.gd" id="10_caxjg"]
-[ext_resource type="Script" uid="uid://cox1ysk6bulx2" path="res://Scripts/Values/Bool/Manual.gd" id="11_oxidg"]
-[ext_resource type="PackedScene" uid="uid://b1f37ebgxsquf" path="res://Scenes/Player.tscn" id="12_xi8hv"]
-[ext_resource type="PackedScene" uid="uid://bon8bptfjfpue" path="res://Scenes/MovingPlatform.tscn" id="13_pwxnj"]
-[ext_resource type="PackedScene" uid="uid://d2cwefjigkop1" path="res://Scenes/MovingPlatformPoint.tscn" id="14_mjgqx"]
-[ext_resource type="PackedScene" uid="uid://bv0nkuimkjuah" path="res://Assests/3D/Objects/Collectable.tscn" id="16_mjgqx"]
+[ext_resource type="Environment" uid="uid://8ivgd0ijm8ix" path="res://Assests/3D/World_Env.tres" id="1_6bgle"]
+[ext_resource type="MeshLibrary" uid="uid://dxo8thlnlijfg" path="res://Assests/Ruins_Libary_Final.meshlib" id="2_35auo"]
+[ext_resource type="PackedScene" uid="uid://b1f37ebgxsquf" path="res://Scenes/Player.tscn" id="3_wguiu"]
+[ext_resource type="PackedScene" uid="uid://bmmhldj3h2120" path="res://Assests/3D/Player Character/PC_Main.glb" id="4_5dh3t"]
+[ext_resource type="Material" uid="uid://dvmvo1ejv7urt" path="res://Assests/3D/Materials/PlayerCharacter.tres" id="5_58vqi"]
+[ext_resource type="FontFile" uid="uid://c0ncglrrkwb6a" path="res://Assests/Cinzel-VariableFont_wght.ttf" id="6_ptock"]
+[ext_resource type="PackedScene" uid="uid://bseh5orb0njgn" path="res://Assests/UI/audio_slider.scn" id="7_sjm26"]
+[ext_resource type="PackedScene" uid="uid://5opnwc5uryxc" path="res://Scenes/InputMappingEntry.tscn" id="8_qws72"]
+[ext_resource type="Script" uid="uid://dw7w6pry2g435" path="res://Scripts/Bits/PlayerAnimator.gd" id="9_r44h5"]
+[ext_resource type="Script" uid="uid://dk0hts3twf6t" path="res://Scripts/Bits/MouseCapture.gd" id="10_uxgwr"]
+[ext_resource type="Script" uid="uid://dekpk8relyucb" path="res://Scripts/Bits/Input.gd" id="11_m2oa2"]
+[ext_resource type="Script" uid="uid://cox1ysk6bulx2" path="res://Scripts/Values/Bool/Manual.gd" id="12_g2jy8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q8hrf"]
 bg_color = Color(0.33599997, 0.84, 0.43679997, 1)
@@ -53,7 +48,7 @@ thickness = 10
 
 [sub_resource type="Theme" id="Theme_7aeuw"]
 Button/font_sizes/font_size = 19
-Button/fonts/font = ExtResource("5_mjgqx")
+Button/fonts/font = ExtResource("6_ptock")
 Button/styles/hover = SubResource("StyleBoxFlat_q8hrf")
 Button/styles/normal = SubResource("StyleBoxFlat_vjfe1")
 Button/styles/pressed = SubResource("StyleBoxFlat_vrlp0")
@@ -63,7 +58,7 @@ HSlider/styles/grabber_area = SubResource("StyleBoxFlat_iukv2")
 HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_flqn6")
 HSlider/styles/slider = SubResource("StyleBoxLine_vrlp0")
 Label/font_sizes/font_size = 19
-Label/fonts/font = ExtResource("5_mjgqx")
+Label/fonts/font = ExtResource("6_ptock")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_58kue"]
 bg_color = Color(0.055200003, 0.13677335, 0.23, 0.8235294)
@@ -655,49 +650,120 @@ _data = {
 &"Unpause": SubResource("Animation_50glp")
 }
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jn765"]
-transparency = 1
-albedo_color = Color(0, 1.7014465, 1.7014465, 0.6)
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_i8wk6"]
-material = SubResource("StandardMaterial3D_jn765")
-top_radius = 0.15
-bottom_radius = 0.2
-height = 1.5
-
-[node name="Kyveri Puzzle" type="Node" unique_id=1857325157]
+[node name="MovementIntroduction" type="Node" unique_id=1857325157]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=219973446]
-environment = ExtResource("1_kmio1")
+environment = ExtResource("1_6bgle")
 
 [node name="GridMap" type="GridMap" parent="." unique_id=805171723]
-mesh_library = ExtResource("2_j2i4q")
+mesh_library = ExtResource("2_35auo")
 cell_size = Vector3(4, 0.035, 4)
 data = {
-"cells": PackedInt32Array(65535, 65531, 1, 65535, 65532, 1, 65535, 65533, 1, 65535, 65534, 1, 65535, 65535, 1, 65535, 0, 1, 0, 65531, 1, 0, 65532, 1, 0, 65533, 1, 0, 65534, 1, 0, 65535, 1, 0, 0, 1, 1, 65531, 1, 1, 65532, 1, 1, 65533, 1, 1, 65534, 1, 1, 65535, 1, 1, 0, 1, 65522, 65524, 1, 65522, 65525, 1, 65522, 65526, 1, 65522, 65527, 1, 65522, 65528, 1, 65522, 65529, 1, 65522, 65530, 1, 65522, 65531, 1, 65522, 65532, 1, 65522, 65533, 1, 65522, 65534, 1, 65522, 65535, 1, 65522, 0, 1, 65522, 1, 1, 65522, 2, 1, 65522, 3, 1, 65522, 4, 1, 65523, 65524, 1, 65523, 65525, 1, 65523, 65526, 1, 65523, 65527, 1, 65523, 65528, 1, 65523, 65529, 1, 65523, 65530, 1, 65523, 65531, 1, 65523, 65532, 1, 65523, 65533, 1, 65523, 65534, 1, 65523, 65535, 1, 65523, 0, 1, 65523, 1, 1, 65523, 2, 1, 65523, 3, 1, 65523, 4, 1, 65524, 65524, 1, 65524, 65525, 1, 65524, 65526, 1, 65524, 65527, 1, 65524, 65528, 1, 65524, 65529, 1, 65524, 65530, 1, 65524, 65531, 1, 65524, 65532, 1, 65524, 65533, 1, 65524, 65534, 1, 65524, 65535, 1, 65524, 0, 1, 65524, 1, 1, 65524, 2, 1, 65524, 3, 1, 65524, 4, 1, 65525, 65524, 1, 65525, 65525, 1, 65525, 65526, 1, 65525, 65527, 1, 65525, 65528, 1, 65525, 65529, 1, 65525, 65530, 1, 65525, 65531, 1, 65525, 65532, 1, 65525, 65533, 1, 65525, 65534, 1, 65525, 65535, 1, 65525, 0, 1, 65525, 1, 1, 65525, 2, 1, 65525, 3, 1, 65525, 4, 1, 65526, 65524, 1, 65526, 65525, 1, 65526, 65526, 1, 65526, 65527, 1, 65526, 65528, 1, 65526, 65529, 1, 65526, 65530, 1, 65526, 65531, 1, 65526, 65532, 1, 65526, 65533, 1, 65526, 65534, 1, 65526, 65535, 1, 65526, 0, 1, 65526, 1, 1, 65526, 2, 1, 65526, 3, 1, 65526, 4, 1, 65527, 65524, 1, 65527, 65525, 1, 65527, 65526, 1, 65527, 65527, 1, 65527, 65528, 1, 65527, 65529, 1, 65527, 65530, 1, 65527, 65531, 1, 65527, 65532, 1, 65527, 65533, 1, 65527, 65534, 1, 65527, 65535, 1, 65527, 0, 1, 65527, 1, 1, 65527, 2, 1, 65527, 3, 1, 65527, 4, 1, 65528, 65524, 1, 65528, 65525, 1, 65528, 65526, 1, 65528, 65527, 1, 65528, 65528, 1, 65528, 65529, 1, 65528, 65530, 1, 65528, 65531, 1, 65528, 65532, 1, 65528, 65533, 1, 65528, 65534, 1, 65528, 65535, 1, 65528, 0, 1, 65528, 1, 1, 65528, 2, 1, 65528, 3, 1, 65528, 4, 1, 65529, 65524, 1, 65529, 65535, 1, 65529, 0, 1, 65529, 1, 1, 65529, 2, 1, 65529, 3, 1, 65529, 4, 1, 65533, 65524, 1, 65533, 65525, 1, 65533, 65526, 1, 65533, 65527, 1, 65533, 65528, 1, 65533, 65529, 1, 65534, 65524, 1, 65534, 65525, 1, 65534, 65526, 1, 65534, 65527, 1, 65534, 65528, 1, 65534, 65529, 1, 65535, 65524, 1, 65535, 65525, 1, 65535, 65526, 1, 65535, 65527, 1, 65535, 65528, 1, 65535, 65529, 1, 65535, 65530, 1, 65535, 1, 1, 65535, 2, 1, 65535, 3, 1, 65535, 4, 1, 0, 65524, 1, 0, 65525, 1, 0, 65526, 1, 0, 65527, 1, 0, 65528, 1, 0, 65529, 1, 0, 65530, 1, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 1, 65524, 1, 1, 65525, 1, 1, 65526, 1, 1, 65527, 1, 1, 65529, 1, 1, 65530, 1, 1, 1, 1, 1, 2, 1, 1, 3, 1, 1, 4, 1, 2, 65524, 1, 2, 65525, 1, 2, 65526, 1, 2, 65527, 1, 2, 65528, 1, 2, 65529, 1, 2, 65530, 1, 2, 65531, 1, 2, 65532, 1, 2, 65533, 1, 2, 65534, 1, 2, 65535, 1, 2, 0, 1, 2, 1, 1, 2, 2, 1, 2, 3, 1, 2, 4, 1, 3, 65524, 1, 3, 65525, 1, 3, 65526, 1, 3, 65527, 1, 3, 65528, 1, 3, 65529, 1, 3, 65530, 1, 3, 65531, 1, 3, 65532, 1, 3, 65533, 1, 3, 65534, 1, 3, 65535, 1, 3, 0, 1, 3, 1, 1, 3, 2, 1, 3, 3, 1, 3, 4, 1, 4, 65524, 1, 4, 65525, 1, 4, 65526, 1, 4, 65527, 1, 4, 65528, 1, 4, 65529, 1, 4, 65530, 1, 4, 65531, 1, 4, 65532, 1, 4, 65533, 1, 4, 65534, 1, 4, 65535, 1, 4, 0, 1, 4, 1, 1, 4, 2, 1, 4, 3, 1, 4, 4, 1, 5, 65524, 1, 5, 65525, 1, 5, 65526, 1, 5, 65527, 1, 5, 65528, 1, 5, 65529, 1, 5, 65530, 1, 5, 65531, 1, 5, 65532, 1, 5, 65533, 1, 5, 65534, 1, 5, 65535, 1, 5, 0, 1, 5, 1, 1, 5, 2, 1, 5, 3, 1, 5, 4, 1, 6, 65524, 1, 6, 65525, 1, 6, 65526, 1, 6, 65527, 1, 6, 65528, 1, 6, 65529, 1, 6, 65530, 1, 6, 65531, 1, 6, 65532, 1, 6, 65533, 1, 6, 65534, 1, 6, 65535, 1, 6, 0, 1, 6, 1, 1, 6, 2, 1, 6, 3, 1, 6, 4, 1, 7, 65524, 1, 7, 65525, 1, 7, 65526, 1, 7, 65527, 1, 7, 65528, 1, 7, 65529, 1, 7, 65530, 1, 7, 65531, 1, 7, 65532, 1, 7, 65533, 1, 7, 65534, 1, 7, 65535, 1, 7, 0, 1, 7, 1, 1, 7, 2, 1, 7, 3, 1, 7, 4, 1, 8, 65524, 1, 8, 65525, 1, 8, 65526, 1, 8, 65527, 1, 8, 65528, 1, 8, 65529, 1, 8, 65530, 1, 8, 65531, 1, 8, 65532, 1, 8, 65533, 1, 8, 65534, 1, 8, 65535, 1, 8, 0, 1, 8, 1, 1, 8, 2, 1, 8, 3, 1, 8, 4, 1)
+"cells": PackedInt32Array(65535, 65534, 1441800, 0, 65534, 1441800, 1, 65534, 1441800, 65533, 65524, 8, 65533, 65525, 1, 65533, 65526, 1, 65533, 65528, 1, 65533, 65529, 1, 65534, 65524, 8, 65534, 65525, 655369, 65534, 65526, 655369, 65534, 65527, 655369, 65534, 65528, 9, 65535, 65524, 8, 65535, 65527, 655369, 0, 65524, 8, 0, 65527, 655369, 1, 65524, 1441800, 1, 65527, 655369, 2, 65524, 1441800, 2, 65527, 655369, 2, 65528, 655369, 2, 65529, 655369, 2, 65530, 655369, 2, 65531, 655369, 2, 65534, 1441800, 3, 65524, 1441800, 3, 65527, 1, 3, 65528, 9, 3, 65529, 9, 3, 65530, 9, 3, 65531, 1, 3, 65534, 1441800, 4, 65524, 1441800, 4, 65525, 1, 4, 65526, 1, 4, 65527, 1, 4, 65528, 9, 4, 65529, 9, 4, 65530, 9, 4, 65531, 1, 4, 65532, 1, 4, 65533, 1, 4, 65534, 1441800, 5, 65524, 1441800, 5, 65525, 1441800, 5, 65526, 1441800, 5, 65527, 1441800, 5, 65528, 1441800, 5, 65529, 1441800, 5, 65530, 1441800, 5, 65531, 1441800, 5, 65532, 1441800, 5, 65533, 1441800, 5, 65534, 1441800, 65531, 65524, 8, 65531, 65525, 1441800, 65531, 65526, 1441800, 65531, 65527, 1441800, 65531, 65528, 1441800, 65531, 65529, 1441800, 65531, 65530, 1441800, 65531, 65531, 1441800, 65531, 65532, 1441800, 65531, 65533, 1441800, 65531, 65534, 1441800, 65532, 65524, 8, 65532, 65525, 1, 65532, 65526, 1, 65532, 65527, 1441800, 65532, 65528, 1441800, 65532, 65529, 1441800, 65532, 65530, 1441800, 65532, 65531, 1441800, 65532, 65532, 1, 65532, 65533, 1, 65532, 65534, 1441800, 65533, 65530, 1, 65533, 65531, 1441800, 65533, 65532, 1, 65533, 65533, 1, 65533, 65534, 1441800, 65534, 65532, 655369, 65534, 65533, 655369, 65534, 65534, 1441800, 65534, 65529, 9, 65534, 65530, 9, 65534, 65531, 655369, 10485762, 65531, 1441800, 10485761, 65531, 1441800, 10485760, 65531, 1441800, 10551295, 65531, 1441800, 10485762, 65527, 1441800, 10485761, 65527, 1441800, 10485760, 65527, 1441800, 10551295, 65527, 1441800, 10551294, 65531, 1441800, 10551294, 65527, 1441800, 10551294, 65533, 1441800, 10551294, 65532, 1441800, 10551294, 65526, 1441800, 10551294, 65525, 1441800, 1, 65531, 655369, 0, 65531, 655369, 65535, 65531, 655369, 3, 65526, 655361, 3, 65525, 655361, 3, 65533, 655361, 3, 65532, 655361, -10485758, 65528, 655369, -10485758, 65529, 655369, -10485758, 65530, 655369, -10420226, 65528, 655369, -10420226, 65529, 655369, -10420226, 65530, 655369, -10420226, 65527, 655369, -10420226, 65526, 655369, -10420226, 65525, 1048585, -10420226, 65524, 1048585, -10420225, 65524, 1048585, -10485760, 65524, 1048585, -10485758, 65527, 1048585, -10485759, 65524, 1048585, -10485758, 65524, 1048585, -10485757, 65525, 1048585, -10485757, 65526, 1048585, -10485758, 65531, 1048585, -10485757, 65532, 1048585, -10485757, 65533, 1048585, -10485758, 65534, 1048585, -10485759, 65534, 1048585, -10485760, 65534, 1048585, -10420225, 65534, 1048585, -10420226, 65533, 1048585, -10420226, 65532, 1048585, -10420226, 65531, 1048585, -11730945, 65530, 1, -11730945, 65529, 1, -11730945, 65528, 1, -11796480, 65528, 1, -11796480, 65529, 1, -11796480, 65530, 1, -11796479, 65530, 1, -11796479, 65529, 1, -11796479, 65528, 1, -11796479, 65527, 1, -11796480, 65527, 1, -11730945, 65527, 1, -11730945, 65526, 1, -11730945, 65525, 1, -11796480, 65525, 1, -11796479, 65525, 1, -11796478, 65525, 1, -11796478, 65526, 1, -11796479, 65526, 1, -11796480, 65526, 1, -11730945, 65533, 1, -11730945, 65532, 1, -11730945, 65531, 1, -11796480, 65532, 1, -11796480, 65533, 1, -11796480, 65531, 1, -11796479, 65532, 1, -11796479, 65531, 1, -11796479, 65533, 1, -11796478, 65532, 1, -11796478, 65533, 1, -10944510, 65526, 10, -10944510, 65525, 10, -10944510, 65532, 10, -10944510, 65533, 10, 655363, 65531, 10, 655364, 65531, 10, 720899, 65527, 10, 720900, 65527, 10, 8978431, 65528, 1, 8978431, 65529, 1, 8978431, 65530, 1, 8912897, 65528, 1, 8912897, 65530, 1, 8912897, 65529, 1, 65533, 65527, 1441800, 23330812, 65529, 1441800, 23330812, 65527, 1441800, 23330812, 65528, 1441800, 23330813, 65527, 1441800, 23330812, 65531, 1441800, 23330813, 65531, 1441800, 23330812, 65530, 1441800, 23265282, 65530, 655369, 23265282, 65529, 655369, 23265282, 65528, 655369, 23330814, 65530, 655369, 23330814, 65529, 655369, 23330814, 65528, 655369, 23330815, 65532, 655361, 23330815, 65533, 655361, 23265280, 65532, 655361, 23265280, 65533, 655361, 23265281, 65532, 655361, 23265281, 65533, 655361, 23265282, 65532, 655361, 23265282, 65533, 655361, 23265283, 65532, 655361, 23265283, 65533, 655361, 23265283, 65525, 655361, 23265283, 65526, 655361, 23265283, 65527, 655361, 23265283, 65528, 655361, 23265283, 65529, 655361, 23265283, 65530, 655361, 23265283, 65531, 655361, 23265284, 65525, 655361, 23265284, 65526, 655361, 23265284, 65527, 655361, 23265284, 65528, 655361, 23265284, 65529, 655361, 23265284, 65530, 655361, 23265284, 65531, 655361, 23265284, 65532, 655361, 23265284, 65533, 655361, 23330815, 65525, 655361, 23330815, 65526, 655361, 23265280, 65525, 655361, 23265280, 65526, 655361, 23265281, 65525, 655361, 23265281, 65526, 655361, 23265282, 65525, 655361, 23265282, 65526, 655361, 33685502, 65531, 655369, 33685503, 65531, 655369, 33619968, 65531, 655369, 33619969, 65531, 655369, 33619970, 65531, 655369, 33619970, 65530, 655369, 33619970, 65529, 655369, 33619970, 65528, 655369, 33619970, 65527, 655369, 33685502, 65527, 655369, 33685503, 65527, 655369, 33619969, 65527, 655369, 33619968, 65527, 655369, 32309247, 65528, 655361, 32243713, 65528, 655361, 32243712, 65528, 655361, 32243713, 65529, 655361, 32243713, 65530, 655361, 32243712, 65530, 655361, 32309247, 65530, 655361, 32309247, 65529, 655360, 32243712, 65529, 655362, 43909117, 65528, 655361, 43909117, 65529, 655361, 43909117, 65530, 655361, 43909118, 65528, 655361, 43909118, 65529, 655361, 43909118, 65530, 655361, 43909119, 65528, 655361, 43909119, 65529, 655361, 43909119, 65530, 655361, 43843584, 65528, 655361, 43843584, 65529, 655361, 43843584, 65530, 655361, 43843585, 65528, 655361, 43843585, 65529, 655361, 43843585, 65530, 655361, 27525125, 65528, 1179658, 27525125, 65527, 1179658, 27525123, 65524, 1179658, 27525122, 65524, 1179658, 27525121, 65524, 1179658, 27525120, 65524, 1179658, 27525124, 65524, 1179658, 27525125, 65524, 1179658, 27525125, 65525, 1179658, 27525125, 65526, 1179658, 27525125, 65529, 1179658, 27525125, 65530, 1179658, 27590655, 65524, 1179658, 27590654, 65524, 1179658, 27590653, 65524, 1179658, 27590652, 65524, 1179658, 27590651, 65524, 1179658, 27590651, 65525, 1179658, 27590651, 65526, 1179658, 27590651, 65527, 1179658, 27590651, 65528, 1179658, 27590651, 65529, 1179658, 27590651, 65530, 1179658, 27590651, 65531, 1179658, 27590651, 65532, 1179658, 27525125, 65531, 1179658, 27525125, 65532, 1179658, 27525125, 65533, 1179658, 27525125, 65534, 1179658, 27525124, 65534, 1179658, 27525123, 65534, 1179658, 27525122, 65534, 1179658, 27525121, 65534, 1179658, 27525120, 65534, 1179658, 27590655, 65534, 1179658, 27590654, 65534, 1179658, 27590653, 65534, 1179658, 27590652, 65534, 1179658, 27590651, 65534, 1179658, 27590651, 65533, 1179658)
 }
+metadata/_editor_floor_ = Vector3(0, 420, 0)
 
-[node name="GridMap3" type="GridMap" parent="." unique_id=42426904]
-mesh_library = ExtResource("2_j2i4q")
-cell_size = Vector3(4, 0.035, 4)
-data = {
-"cells": PackedInt32Array(65535, 65524, 9, 65534, 65524, 9, 65533, 65524, 9, 65533, 65525, 9, 65533, 65526, 9, 65533, 65527, 9, 65533, 65528, 9, 65533, 65529, 9, 65534, 65529, 9, 0, 65524, 9, 1, 65524, 9, 8, 65532, 9, 5, 65528, 9, 0, 65535, 8, 65535, 65535, 8, 65534, 65535, 8)
-}
+[node name="Player" parent="." unique_id=623680313 instance=ExtResource("3_wguiu")]
+transform = Transform3D(-0.99666, 0, -0.08166308, 0, 1, 0, 0.08166308, 0, -0.99666, 13.06617, 7.4727874, -29.439465)
 
-[node name="GridMap2" type="GridMap" parent="." unique_id=1630772266]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 2.68, 0, 0)
-mesh_library = ExtResource("2_j2i4q")
-cell_size = Vector3(4, 0.035, 4)
-data = {
-"cells": PackedInt32Array(65531, 65531, 1, 65531, 65532, 1, 65531, 65533, 1, 65531, 65534, 1, 65531, 65535, 1, 65531, 0, 1, 65532, 65531, 1, 65532, 65532, 1, 65532, 65533, 1, 65532, 65534, 1, 65532, 65535, 1, 65532, 0, 1, 65533, 65531, 1, 65533, 65532, 1, 65533, 65533, 1, 65533, 65534, 1, 65533, 65535, 1, 65533, 0, 1, 65534, 65531, 1, 65534, 65532, 1, 65534, 65533, 1, 65534, 65534, 1, 65534, 65535, 1, 65534, 0, 1, 65535, 65531, 1, 65535, 65532, 1, 65535, 65533, 1, 65535, 65534, 1, 65535, 65535, 1, 65535, 0, 1, 65522, 65524, 1, 65522, 65525, 1, 65522, 65526, 1, 65522, 65527, 1, 65522, 65528, 1, 65522, 65529, 1, 65522, 65530, 1, 65522, 65531, 1, 65522, 65532, 1, 65522, 65533, 1, 65522, 65534, 1, 65522, 65535, 1, 65522, 0, 1, 65522, 1, 1, 65522, 2, 1, 65522, 3, 1, 65522, 4, 1, 65523, 65524, 1, 65523, 65525, 1, 65523, 65526, 1, 65523, 65527, 1, 65523, 65528, 1, 65523, 65529, 1, 65523, 65530, 1, 65523, 65531, 1, 65523, 65532, 1, 65523, 65533, 1, 65523, 65534, 1, 65523, 65535, 1, 65523, 0, 1, 65523, 1, 1, 65523, 2, 1, 65523, 3, 1, 65523, 4, 1, 65524, 65524, 1, 65524, 65525, 1, 65524, 65526, 1, 65524, 65527, 1, 65524, 65528, 1, 65524, 65529, 1, 65524, 65530, 1, 65524, 65531, 1, 65524, 65532, 1, 65524, 65533, 1, 65524, 65534, 1, 65524, 65535, 1, 65524, 0, 1, 65524, 1, 1, 65524, 2, 1, 65524, 3, 1, 65524, 4, 1, 65525, 65524, 1, 65525, 65525, 1, 65525, 65526, 1, 65525, 65527, 1, 65525, 65528, 1, 65525, 65529, 1, 65525, 65530, 1, 65525, 65531, 1, 65525, 65532, 1, 65525, 65533, 1, 65525, 65534, 1, 65525, 65535, 1, 65525, 0, 1, 65525, 1, 1, 65525, 2, 1, 65525, 3, 1, 65525, 4, 1, 65526, 65524, 1, 65526, 65525, 1, 65526, 65526, 1, 65526, 65527, 1, 65526, 65528, 1, 65526, 65529, 1, 65526, 65530, 1, 65526, 65531, 1, 65526, 65532, 1, 65526, 65533, 1, 65526, 65534, 1, 65526, 65535, 1, 65526, 0, 1, 65526, 1, 1, 65526, 2, 1, 65526, 3, 1, 65526, 4, 1, 65527, 65524, 1, 65527, 65525, 1, 65527, 65526, 1, 65527, 65527, 1, 65527, 65528, 1, 65527, 65529, 1, 65527, 65530, 1, 65527, 65531, 1, 65527, 65532, 1, 65527, 65533, 1, 65527, 65534, 1, 65527, 65535, 1, 65527, 0, 1, 65527, 1, 1, 65527, 2, 1, 65527, 3, 1, 65527, 4, 1, 65528, 65524, 1, 65528, 65525, 1, 65528, 65526, 1, 65528, 65527, 1, 65528, 65528, 1, 65528, 65529, 1, 65528, 65530, 1, 65528, 65531, 1, 65528, 65532, 1, 65528, 65533, 1, 65528, 65534, 1, 65528, 65535, 1, 65528, 0, 1, 65528, 1, 1, 65528, 2, 1, 65528, 3, 1, 65528, 4, 1, 65529, 65524, 1, 65529, 65525, 1, 65529, 65526, 1, 65529, 65527, 1, 65529, 65528, 1, 65529, 65529, 1, 65529, 65530, 1, 65529, 65531, 1, 65529, 65532, 1, 65529, 65533, 1, 65529, 65534, 1, 65529, 65535, 1, 65529, 0, 1, 65529, 1, 1, 65529, 2, 1, 65529, 3, 1, 65529, 4, 1, 65530, 65524, 1, 65530, 65525, 1, 65530, 65526, 1, 65530, 65527, 1, 65530, 65528, 1, 65530, 65529, 1, 65530, 65530, 1, 65530, 65531, 1, 65530, 65532, 1, 65530, 65533, 1, 65530, 65534, 1, 65530, 65535, 1, 65530, 0, 1, 65530, 1, 1, 65530, 2, 1, 65530, 3, 1, 65530, 4, 1, 65531, 65524, 1, 65531, 65525, 1, 65531, 65526, 1, 65531, 65527, 1, 65531, 65528, 1, 65531, 65529, 1, 65531, 65530, 1, 65531, 1, 1, 65531, 2, 1, 65531, 3, 1, 65531, 4, 1, 65532, 65524, 1, 65532, 65525, 1, 65532, 65526, 1, 65532, 65527, 1, 65532, 65528, 1, 65532, 65529, 1, 65532, 65530, 1, 65532, 1, 1, 65532, 2, 1, 65532, 3, 1, 65532, 4, 1, 65533, 65524, 1, 65533, 65525, 1, 65533, 65526, 1, 65533, 65527, 1, 65533, 65528, 1, 65533, 65529, 1, 65533, 65530, 1, 65533, 1, 1, 65533, 2, 1, 65533, 3, 1, 65533, 4, 1, 65534, 65524, 1, 65534, 65525, 1, 65534, 65526, 1, 65534, 65527, 1, 65534, 65528, 1, 65534, 65529, 1, 65534, 65530, 1, 65534, 1, 1, 65534, 2, 1, 65534, 3, 1, 65534, 4, 1, 65535, 65524, 1, 65535, 65525, 1, 65535, 65526, 1, 65535, 65527, 1, 65535, 65528, 1, 65535, 65529, 1, 65535, 65530, 1, 65535, 1, 1, 65535, 2, 1, 65535, 3, 1, 65535, 4, 1, 0, 65524, 1, 0, 65525, 1, 0, 65526, 1, 0, 65527, 1, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 1, 65524, 1, 1, 65525, 1, 1, 65526, 1, 1, 65527, 1, 1, 1, 1, 1, 2, 1, 1, 3, 1, 1, 4, 1, 2, 65524, 1, 2, 65525, 1, 2, 65526, 1, 2, 65527, 1, 2, 0, 1, 2, 1, 1, 2, 2, 1, 2, 3, 1, 2, 4, 1, 3, 65524, 1, 3, 65525, 1, 3, 65526, 1, 3, 65527, 1, 3, 0, 1, 3, 1, 1, 3, 2, 1, 3, 3, 1, 3, 4, 1, 4, 65524, 1, 4, 65525, 1, 4, 65526, 1, 4, 65527, 1, 4, 65528, 1, 4, 65529, 1, 4, 65535, 1, 4, 0, 1, 4, 1, 1, 4, 2, 1, 4, 3, 1, 4, 4, 1, 5, 65524, 1, 5, 65525, 1, 5, 65526, 1, 5, 65527, 1, 5, 65528, 1, 5, 65529, 1, 5, 65530, 1, 5, 65531, 1, 5, 65532, 1, 5, 65533, 1, 5, 65534, 1, 5, 65535, 1, 5, 0, 1, 5, 1, 1, 5, 2, 1, 5, 3, 1, 5, 4, 1, 6, 65524, 1, 6, 65525, 1, 6, 65526, 1, 6, 65527, 1, 6, 65528, 1, 6, 65529, 1, 6, 65530, 1, 6, 65531, 1, 6, 65532, 1, 6, 65533, 1, 6, 65534, 1, 6, 65535, 1, 6, 0, 1, 6, 1, 1, 6, 2, 1, 6, 3, 1, 6, 4, 1, 7, 65524, 1, 7, 65525, 1, 7, 65526, 1, 7, 65527, 1, 7, 65528, 1, 7, 65529, 1, 7, 65530, 1, 7, 65531, 1, 7, 65532, 1, 7, 65533, 1, 7, 65534, 1, 7, 65535, 1, 7, 0, 1, 7, 1, 1, 7, 2, 1, 7, 3, 1, 7, 4, 1, 8, 65524, 1, 8, 65525, 1, 8, 65526, 1, 8, 65527, 1, 8, 65528, 1, 8, 65529, 1, 8, 65530, 1, 8, 65531, 1, 8, 65532, 1, 8, 65533, 1, 8, 65534, 1, 8, 65535, 1, 8, 0, 1, 8, 1, 1, 8, 2, 1, 8, 3, 1, 8, 4, 1, 4, 65532, 1, 4, 65531, 1, 4, 65530, 1, 3, 65530, 1, 3, 65528, 1, 2, 65528, 1, 1, 65528, 1, 0, 65528, 1, 0, 65529, 1, 2, 65532, 1, 3, 65529, 1, 2, 65529, 1, 2, 65530, 1, 2, 65531, 1, 3, 65531, 1, 3, 65532, 1, 3, 65533, 1, 4, 65533, 1, 4, 65534, 1, 3, 65535, 1, 0, 65534, 1, 2, 65533, 1, 3, 65534, 1, 2, 65534, 1, 2, 65535, 1, 1, 0, 1, 0, 0, 1, 0, 65535, 1, 1, 65535, 1, 0, 65531, 1, 0, 65532, 1, 0, 65533, 1, 1, 65534, 1, 1, 65533, 1, 1, 65532, 1, 1, 65531, 1, 1, 65529, 1, 1, 65530, 1, 0, 65530, 1)
-}
+[node name="Skeleton3D" parent="Player/CharacterBody3D/Player_Character/root" parent_id_path=PackedInt32Array(623680313, 1831994608, 992819664) index="0" unique_id=951532203]
+bones/1/position = Vector3(0.0019522136, 0.70451045, 0.0715932)
+bones/6/rotation = Quaternion(-0.053274035, -1.0155471e-17, -2.1405318e-16, 0.99858)
+bones/7/rotation = Quaternion(-0.8036742, -0.044406336, -0.06614512, 0.58971244)
+bones/8/rotation = Quaternion(0.35826376, 0.032982994, -0.050257593, 0.9316832)
+bones/10/rotation = Quaternion(-0.47955865, -0.16778238, 0.26449174, 0.81970525)
+bones/11/rotation = Quaternion(7.251377e-07, 0.3221031, -2.4979562e-07, 0.9467046)
+bones/12/rotation = Quaternion(5.19911e-07, 0.2434901, -1.5226914e-07, 0.96990347)
+bones/13/rotation = Quaternion(8.2104617e-07, 0.16319503, -1.0280677e-07, 0.98659384)
+bones/14/rotation = Quaternion(6.844809e-08, 0.08149349, -1.2589342e-07, 0.99667394)
+bones/16/rotation = Quaternion(4.3289692e-08, 0.24596806, -1.5321612e-07, 0.969278)
+bones/17/rotation = Quaternion(1.05443554e-07, 0.1801628, -4.5463516e-08, 0.9836369)
+bones/18/rotation = Quaternion(-9.910973e-08, 0.113545835, 8.955943e-08, 0.9935328)
+bones/19/rotation = Quaternion(-3.0287644e-08, 0.046721537, 1.4833762e-07, 0.998908)
+bones/20/rotation = Quaternion(0.10597681, 0.28012878, -0.031067288, 0.95358884)
+bones/22/rotation = Quaternion(-0.48163942, 0.16764839, -0.2657912, 0.8180908)
+bones/23/rotation = Quaternion(9.403607e-07, -0.3228002, 2.0462706e-07, 0.94646716)
+bones/24/rotation = Quaternion(6.110538e-07, -0.2440141, 4.0753505e-08, 0.9697717)
+bones/25/rotation = Quaternion(9.418045e-07, -0.16323563, 1.3622825e-07, 0.9865872)
+bones/26/rotation = Quaternion(2.0951504e-07, -0.081484534, 1.4123404e-07, 0.99667466)
+bones/28/rotation = Quaternion(-2.4960474e-07, -0.24561965, 1.18072435e-07, 0.9693663)
+bones/29/rotation = Quaternion(5.490346e-08, -0.17987323, 1.03315024e-07, 0.9836899)
+bones/30/rotation = Quaternion(-1.1462889e-07, -0.113377735, 1.6246472e-07, 0.99355197)
+bones/31/rotation = Quaternion(-3.3217734e-08, -0.04673593, -1.4040656e-07, 0.99890727)
+bones/32/rotation = Quaternion(0.10861712, -0.2805376, 0.032316696, 0.95312995)
+bones/33/rotation = Quaternion(0.92504406, 0.24410525, 0.2632742, -0.12406803)
+bones/34/rotation = Quaternion(2.5711793e-07, -0.17134446, 4.9927894e-07, 0.98521125)
+bones/35/rotation = Quaternion(2.2709418e-07, -0.12878695, 3.79086e-07, 0.9916723)
+bones/36/rotation = Quaternion(7.6809044e-08, -0.085990824, 3.5558878e-07, 0.9962959)
+bones/37/rotation = Quaternion(2.8485874e-09, -0.04303521, 1.0642036e-07, 0.9990736)
+bones/38/rotation = Quaternion(1.8204129e-07, -1.061524e-07, 0.24182728, 0.97031933)
+bones/39/rotation = Quaternion(-0.08979465, -0.6197761, 0.7575625, -0.18415637)
+bones/41/rotation = Quaternion(-3.793935e-07, -0.16971904, -5.083705e-07, 0.9854926)
+bones/42/rotation = Quaternion(-3.7030094e-07, -0.12755999, -3.5388888e-07, 0.9918309)
+bones/43/rotation = Quaternion(-1.2666698e-07, -0.085168995, -2.4421544e-07, 0.9963666)
+bones/44/rotation = Quaternion(-7.891448e-08, -0.04262338, 1.9377513e-08, 0.99909127)
+bones/45/rotation = Quaternion(0.9256572, -0.2433703, -0.26103237, -0.12566614)
+bones/46/rotation = Quaternion(3.2385336e-07, 0.16939415, -6.5205376e-07, 0.9855484)
+bones/47/rotation = Quaternion(1.8825348e-07, 0.1273147, -4.8276286e-07, 0.9918624)
+bones/48/rotation = Quaternion(9.967648e-08, 0.08500484, -4.1908285e-07, 0.99638057)
+bones/49/rotation = Quaternion(-3.5263674e-09, 0.042540822, -8.533624e-08, 0.9990947)
+bones/50/rotation = Quaternion(1.3548768e-07, 2.0467085e-07, -0.23481509, 0.9720401)
+bones/51/rotation = Quaternion(0.08433467, -0.62017465, 0.75716084, 0.18702598)
+bones/53/rotation = Quaternion(-4.4190938e-07, 0.16749848, 6.8202934e-07, 0.9858724)
+bones/54/rotation = Quaternion(-2.8008245e-07, 0.12588407, 4.741766e-07, 0.9920449)
+bones/55/rotation = Quaternion(-1.9391405e-07, 0.08404663, 3.4352058e-07, 0.99646187)
+bones/56/rotation = Quaternion(-1.1213051e-07, 0.0420607, 1.670168e-08, 0.9991151)
+bones/61/position = Vector3(-0.020436836, -0.04169184, -0.51554)
+bones/61/scale = Vector3(0.9210201, 0.9210202, 0.92102003)
+bones/65/position = Vector3(-0.0845586, 0.19916485, -0.39796054)
+bones/65/scale = Vector3(0.9225804, 0.9225804, 0.9225803)
+bones/69/position = Vector3(0.11315252, 0.22560915, -0.31787014)
+bones/69/scale = Vector3(0.92102015, 0.9210203, 0.9210202)
+bones/73/position = Vector3(0.102551416, 0.20350237, -0.34663126)
+bones/73/scale = Vector3(0.9225798, 0.9225799, 0.92258006)
+bones/77/position = Vector3(0.38685724, 0.027150095, -0.18394583)
+bones/77/scale = Vector3(0.92102015, 0.92102003, 0.92101985)
+bones/81/position = Vector3(0.3157118, -0.043604225, -0.26535434)
+bones/81/scale = Vector3(0.9210204, 0.9210204, 0.92102045)
+bones/85/position = Vector3(-0.23793, -0.21922085, -0.3419939)
+bones/85/scale = Vector3(0.9210203, 0.92102045, 0.92102027)
+bones/89/position = Vector3(-0.012700933, 0.010879472, -0.39605805)
+bones/89/scale = Vector3(0.92258006, 0.92258024, 0.9225802)
+bones/93/position = Vector3(-0.118301064, 0.14345427, -0.33038104)
+bones/93/scale = Vector3(0.9210205, 0.9210199, 0.92102027)
+bones/97/position = Vector3(-0.07443152, 0.12776668, -0.3503982)
+bones/97/scale = Vector3(0.9225799, 0.92257994, 0.92258)
+bones/101/position = Vector3(-0.32769632, -0.020187482, -0.21846388)
+bones/101/scale = Vector3(0.9210204, 0.92102027, 0.92102027)
+bones/105/position = Vector3(-0.07148788, -0.12189643, -0.36299834)
+bones/105/scale = Vector3(0.92102027, 0.92102027, 0.92102045)
 
-[node name="GridMap4" type="GridMap" parent="." unique_id=678567454]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 2.68, 0, 0)
-mesh_library = ExtResource("2_j2i4q")
-cell_size = Vector3(4, 0.035, 4)
-data = {
-"cells": PackedInt32Array(65522, 65524, 1, 65522, 65525, 1, 65522, 65526, 1, 65522, 65527, 1, 65522, 65528, 1, 65522, 65529, 1, 65522, 65530, 1, 65522, 65531, 1, 65522, 65532, 1, 65522, 65533, 1, 65522, 65534, 1, 65522, 65535, 1, 65522, 0, 1, 65522, 1, 1, 65522, 2, 1, 65522, 3, 1, 65522, 4, 1, 1, 65533, 9, 1, 65532, 9, 1, 65531, 9, 2, 65529, 4, 3, 65531, 4, 3, 65533, 4)
+[node name="BodyJiggle" parent="Player/CharacterBody3D/Player_Character/root/Skeleton3D" index="1" unique_id=1224292015]
+transform = Transform3D(0.5921811, -0.00084583636, 0.048521306, 0.00084314024, 0.59416556, 6.7500514e-05, -0.048521362, 1.5782498e-06, 0.5921816, 13.06617, 7.507314, -29.439463)
+
+[node name="FlameJiggle" parent="Player/CharacterBody3D/Player_Character/root/Skeleton3D" index="2" unique_id=1142166283]
+transform = Transform3D(0.5909503, 0.057836052, 0.02159143, -0.010110676, -0.11432921, 0.5829752, 0.060901277, -0.5801871, -0.11272624, 13.1688795, 8.038723, -30.69856)
+
+[node name="HeadJiggle" parent="Player/CharacterBody3D/Player_Character/root/Skeleton3D" index="3" unique_id=152199067]
+transform = Transform3D(0.5921801, 0.010087648, 0.047481533, -9.4264586e-05, 0.58143216, -0.12235203, -0.04854121, 0.12193548, 0.57949007, 13.081563, 8.514013, -29.266521)
+
+[node name="LArmJiggle" parent="Player/CharacterBody3D/Player_Character/root/Skeleton3D" index="4" unique_id=1014996254]
+transform = Transform3D(0.04842333, 0.5921895, 0.00047646964, 0.0011446592, -0.0005716394, 0.59416467, 0.59218836, -0.04842227, -0.0011874245, 14.121452, 7.429925, -29.54612)
+
+[node name="LArmJiggle2" parent="Player/CharacterBody3D/Player_Character/root/Skeleton3D" index="5" unique_id=1078964516]
+transform = Transform3D(-0.31623846, 0.24274123, 0.44057167, -0.0059222067, -0.52216524, 0.28344598, 0.50298274, 0.14646965, 0.28033617, 13.782034, 6.4013414, -29.191065)
+
+[node name="RArmJiggle" parent="Player/CharacterBody3D/Player_Character/root/Skeleton3D" index="6" unique_id=2141569191]
+transform = Transform3D(-0.04861698, -0.59217346, -0.00066384603, -0.0011446438, -0.00057210645, 0.5941648, -0.5921726, 0.048618205, -0.0010939928, 12.009913, 7.429925, -29.373102)
+
+[node name="RArmJiggle2" parent="Player/CharacterBody3D/Player_Character/root/Skeleton3D" index="7" unique_id=2001702917]
+transform = Transform3D(-0.39257973, -0.21907069, -0.3884874, 0.0076905326, -0.52079743, 0.28590956, -0.44593176, 0.18387908, 0.34693873, 12.395937, 6.404024, -29.078339)
+
+[node name="LookBit" parent="Player/CharacterBody3D" parent_id_path=PackedInt32Array(623680313, 844716186) index="4" unique_id=570069494 node_paths=PackedStringArray("tos")]
+tos = {
+NodePath("../Player_Character/AnimationControl/Idle"): NodePath("GlobalDirection"),
+NodePath("../Player_Character/AnimationControl/Wall_Grab"): NodePath("GlobalWallNorm"),
+NodePath("MovingCrate"): null
 }
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=2044884161]
@@ -715,10 +781,10 @@ render_target_update_mode = 4
 [node name="Camera3D" type="Camera3D" parent="UI/Backdrop/SubViewport" unique_id=505657531]
 transform = Transform3D(0.072607756, -0.11966671, -0.9901556, -0.001095968, 0.9927657, -0.120062545, 0.99736, 0.009802649, 0.071951345, -4.509954, 1.9735076, 1.6260126)
 
-[node name="PC_Main" parent="UI/Backdrop/SubViewport" unique_id=1280227698 instance=ExtResource("3_mjgqx")]
+[node name="PC_Main" parent="UI/Backdrop/SubViewport" unique_id=1280227698 instance=ExtResource("4_5dh3t")]
 transform = Transform3D(-0.024092056, 0, -0.9997097, 0, 1, 0, 0.9997097, 0, -0.024092056, 0, 0.57039356, 2.5850382)
 
-[node name="Skeleton3D" parent="UI/Backdrop/SubViewport/PC_Main/root" parent_id_path=PackedInt32Array(1280227698, 1788779974) index="0" unique_id=963255568]
+[node name="Skeleton3D" parent="UI/Backdrop/SubViewport/PC_Main/root" parent_id_path=PackedInt32Array(1280227698, 992819664) index="0" unique_id=951532203]
 bones/0/scale = Vector3(1, 0.99999994, 0.9999999)
 bones/1/position = Vector3(-0.065041415, 0.16932577, 0.12263414)
 bones/1/rotation = Quaternion(-0.19320463, -3.2799692e-06, 6.730784e-07, 0.9811585)
@@ -954,10 +1020,10 @@ bones/105/position = Vector3(-0.2586735, -0.046397522, -0.25656357)
 bones/105/rotation = Quaternion(-2.8158428e-08, -1.4556036e-07, 8.5516824e-08, 1)
 bones/105/scale = Vector3(0.9444543, 0.94445425, 0.9444543)
 
-[node name="Cape" parent="UI/Backdrop/SubViewport/PC_Main/root/Skeleton3D" index="0" unique_id=624149185]
-surface_material_override/0 = ExtResource("4_feqmv")
+[node name="Cape" parent="UI/Backdrop/SubViewport/PC_Main/root/Skeleton3D" index="0" unique_id=1094262781]
+surface_material_override/0 = ExtResource("5_58vqi")
 
-[node name="AnimationPlayer" parent="UI/Backdrop/SubViewport/PC_Main" index="1" unique_id=1235231294]
+[node name="AnimationPlayer" parent="UI/Backdrop/SubViewport/PC_Main" index="1" unique_id=102272202]
 autoplay = &"Idle_Break01_001"
 
 [node name="OmniLight3D" type="OmniLight3D" parent="UI/Backdrop/SubViewport/PC_Main" unique_id=1943270133]
@@ -1014,7 +1080,7 @@ theme_override_constants/separation = 10
 
 [node name="Label" type="Label" parent="UI/OptionsMenu/MarginContainer/VBoxContainer" unique_id=659102800]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("5_mjgqx")
+theme_override_fonts/font = ExtResource("6_ptock")
 theme_override_font_sizes/font_size = 30
 text = "PAUSED"
 horizontal_alignment = 1
@@ -1038,15 +1104,15 @@ layout_mode = 2
 text = "AUDIO"
 horizontal_alignment = 1
 
-[node name="MasterBus" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=413050528 instance=ExtResource("6_feqmv")]
+[node name="MasterBus" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=413050528 instance=ExtResource("7_sjm26")]
 layout_mode = 2
 bus_name = &"Master"
 
-[node name="MusicBus" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1123157694 instance=ExtResource("6_feqmv")]
+[node name="MusicBus" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1123157694 instance=ExtResource("7_sjm26")]
 layout_mode = 2
 bus_name = &"Music"
 
-[node name="SFXBus" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1961769117 instance=ExtResource("6_feqmv")]
+[node name="SFXBus" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1961769117 instance=ExtResource("7_sjm26")]
 layout_mode = 2
 bus_name = &"SFX"
 
@@ -1055,22 +1121,22 @@ layout_mode = 2
 text = "CONTROLS"
 horizontal_alignment = 1
 
-[node name="InputEntry" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=2685080 instance=ExtResource("7_8gm8v")]
+[node name="InputEntry" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=2685080 instance=ExtResource("8_qws72")]
 layout_mode = 2
 event_name = &"Jump"
 display_name = &"Jump"
 
-[node name="InputEntry6" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=2087874597 instance=ExtResource("7_8gm8v")]
+[node name="InputEntry6" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=2087874597 instance=ExtResource("8_qws72")]
 layout_mode = 2
 event_name = &"Sprint"
 display_name = &"Sprint"
 
-[node name="InputEntry8" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=116921702 instance=ExtResource("7_8gm8v")]
+[node name="InputEntry8" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=116921702 instance=ExtResource("8_qws72")]
 layout_mode = 2
 event_name = &"Grab"
 display_name = &"Grab"
 
-[node name="InputEntry9" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=898898100 instance=ExtResource("7_8gm8v")]
+[node name="InputEntry9" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=898898100 instance=ExtResource("8_qws72")]
 layout_mode = 2
 event_name = &"Pause"
 display_name = &"Pause"
@@ -1088,7 +1154,7 @@ text = "Back
 flat = true
 
 [node name="PlayerAnimatorBit" type="Node" parent="UI/OptionsMenu/Button" unique_id=1610406195]
-script = ExtResource("8_1ounl")
+script = ExtResource("9_r44h5")
 animation = "Options->Start"
 metadata/_custom_type_script = "uid://dw7w6pry2g435"
 
@@ -1106,7 +1172,7 @@ offset_left = 60.0
 offset_top = 55.0
 offset_right = 1092.0
 offset_bottom = 158.0
-theme_override_fonts/font = ExtResource("5_mjgqx")
+theme_override_fonts/font = ExtResource("6_ptock")
 theme_override_font_sizes/font_size = 69
 text = "Little Guy"
 horizontal_alignment = 1
@@ -1125,13 +1191,13 @@ offset_bottom = 261.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 0
-theme_override_fonts/font = ExtResource("5_mjgqx")
+theme_override_fonts/font = ExtResource("6_ptock")
 theme_override_font_sizes/font_size = 30
 text = "Start"
 flat = true
 
 [node name="PlayerAnimatorBit2" type="Node" parent="UI/StartScreen/Button" unique_id=825821918]
-script = ExtResource("8_1ounl")
+script = ExtResource("9_r44h5")
 animation = "Start->Game"
 metadata/_custom_type_script = "uid://dw7w6pry2g435"
 
@@ -1143,13 +1209,13 @@ offset_right = 719.0
 offset_bottom = 586.0
 size_flags_horizontal = 0
 focus_mode = 0
-theme_override_fonts/font = ExtResource("5_mjgqx")
+theme_override_fonts/font = ExtResource("6_ptock")
 theme_override_font_sizes/font_size = 30
 text = "Options"
 flat = true
 
 [node name="PlayerAnimatorBit" type="Node" parent="UI/StartScreen/Button2" unique_id=1948312414]
-script = ExtResource("8_1ounl")
+script = ExtResource("9_r44h5")
 animation = "Start->Options"
 metadata/_custom_type_script = "uid://dw7w6pry2g435"
 
@@ -1172,186 +1238,73 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CollectableCounter" parent="UI" unique_id=857772092 instance=ExtResource("9_feqmv")]
-offset_right = 121.0
-offset_bottom = 94.0
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="UI" unique_id=385052594]
 libraries/ = SubResource("AnimationLibrary_78pm4")
 
 [node name="Pause" type="Node" parent="UI/AnimationPlayer" unique_id=952363448 node_paths=PackedStringArray("condition")]
-script = ExtResource("8_1ounl")
+script = ExtResource("9_r44h5")
 animation = "Pause"
 condition = NodePath("../GameStarted")
 metadata/_custom_type_script = "uid://dw7w6pry2g435"
 
 [node name="Unpause" type="Node" parent="UI/AnimationPlayer" unique_id=845214954 node_paths=PackedStringArray("condition")]
-script = ExtResource("8_1ounl")
+script = ExtResource("9_r44h5")
 animation = "Unpause"
 condition = NodePath("../GameStarted")
 metadata/_custom_type_script = "uid://dw7w6pry2g435"
 
 [node name="MouseCapturerBit" type="Node" parent="UI/AnimationPlayer" unique_id=1878406228]
-script = ExtResource("9_4vba8")
+script = ExtResource("10_uxgwr")
 update_mouse_mode = 0
 update = true
 metadata/_custom_type_script = "uid://dk0hts3twf6t"
 
 [node name="PauseInput" type="Node" parent="UI/AnimationPlayer" unique_id=160115649 node_paths=PackedStringArray("condition")]
-script = ExtResource("10_caxjg")
+script = ExtResource("11_m2oa2")
 input = "Pause"
 condition = NodePath("IsPaused")
 metadata/_custom_type_script = "uid://dekpk8relyucb"
 
 [node name="IsPaused" type="Node" parent="UI/AnimationPlayer/PauseInput" unique_id=1740499463]
-script = ExtResource("11_oxidg")
+script = ExtResource("12_g2jy8")
 metadata/_custom_type_script = "uid://cox1ysk6bulx2"
 
 [node name="GameStarted" type="Node" parent="UI/AnimationPlayer" unique_id=1217927846]
-script = ExtResource("11_oxidg")
+script = ExtResource("12_g2jy8")
 response = false
 metadata/_custom_type_script = "uid://cox1ysk6bulx2"
 
-[node name="CameraGrab" parent="." unique_id=2053990340 instance=ExtResource("3_2l40m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14.706955)
+[node name="DirectionalLight3D" type="OmniLight3D" parent="." unique_id=1852702245]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3144364, 10.447776, -25.465471)
+light_color = Color(1, 0.72104746, 0.5527951, 1)
+light_volumetric_fog_energy = 0.0
+shadow_enabled = true
+omni_range = 17.0
+omni_attenuation = -0.613
 
-[node name="GrabTo" parent="CameraGrab" index="0" unique_id=1105713157]
-transform = Transform3D(0.07910985, 0, -0.9968659, 0, 1, 0, 0.9968659, 0, 0.07910985, -20.787334, 9.017867, 0.16657639)
+[node name="DirectionalLight3D4" type="OmniLight3D" parent="." unique_id=207817112]
+transform = Transform3D(0.99999994, -0.00040142573, 0, 0.00040142573, 0.99999994, 0, 0, 0, 1, -9.542773, 19.817612, -25.465471)
+light_color = Color(1, 0.72104746, 0.5527951, 1)
+light_volumetric_fog_energy = 0.0
+shadow_enabled = true
+omni_range = 17.0
+omni_attenuation = -0.613
 
-[node name="MeshInstance3D" parent="CameraGrab/GrabTo" index="0" unique_id=1294043823]
-transform = Transform3D(1, 0, -2.220446e-16, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.092113495, 0, -1.1607208)
+[node name="DirectionalLight3D2" type="OmniLight3D" parent="." unique_id=2016727142]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3144355, 6.334853, -11.963247)
+light_color = Color(1, 0.72104746, 0.5527951, 1)
+light_volumetric_fog_energy = 0.0
+shadow_enabled = true
+omni_range = 17.0
+omni_attenuation = -0.613
 
-[node name="CollisionShape3D" parent="CameraGrab" index="1" unique_id=2042857866]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.942688, 0.6866989)
-
-[node name="Platforms" type="Node" parent="." unique_id=1104787008]
-
-[node name="MovingPlatform" parent="Platforms" unique_id=1114646680 node_paths=PackedStringArray("points") instance=ExtResource("13_pwxnj")]
-transform = Transform3D(0.635, 0, 0, 0, 0.635, 0, 0, 0, 0.635, -2.3648267, 14.575916, -26.371918)
-points = [NodePath("../MovingPlatform\'s 1"), NodePath("../MovingPlatform\'s 2")]
-
-[node name="MovingPlatform\'s 1" parent="Platforms" unique_id=1766241102 instance=ExtResource("14_mjgqx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.992691, 26.496237, -26.371918)
-mesh = SubResource("CylinderMesh_i8wk6")
-time = 5.0
-after_wait = 5.0
-
-[node name="MovingPlatform\'s 2" parent="Platforms" unique_id=1381148092 instance=ExtResource("14_mjgqx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3648267, 14.575916, -26.371918)
-mesh = SubResource("CylinderMesh_i8wk6")
-time = 5.0
-after_wait = 5.0
-
-[node name="Player" parent="." unique_id=623680313 instance=ExtResource("12_xi8hv")]
-transform = Transform3D(-0.99666, 0, -0.08166308, 0, 1, 0, 0.08166308, 0, -0.99666, 0, 2.9089718, -38.989975)
-
-[node name="Skeleton3D" parent="Player/CharacterBody3D/Player_Character/root" parent_id_path=PackedInt32Array(623680313, 1831994608, 1788779974) index="0" unique_id=963255568]
-bones/1/position = Vector3(0.00018682527, 0.72507155, 0.06827367)
-bones/6/rotation = Quaternion(-0.10149105, 2.5177831e-17, 1.274706e-16, 0.99483657)
-bones/7/rotation = Quaternion(-0.80324763, 0.0019411935, 0.0005032631, 0.5956419)
-bones/8/rotation = Quaternion(0.36358288, -0.00021416879, -0.019820085, 0.931351)
-bones/10/rotation = Quaternion(-0.45409006, -0.16614453, 0.2528228, 0.83802086)
-bones/11/rotation = Quaternion(4.6577588e-07, 0.31577912, -3.3116922e-07, 0.9488328)
-bones/12/rotation = Quaternion(3.5694438e-07, 0.23876384, -2.1391953e-07, 0.97107774)
-bones/13/rotation = Quaternion(8.263304e-07, 0.16011404, -9.006564e-08, 0.9870986)
-bones/14/rotation = Quaternion(8.562823e-08, 0.08037947, -1.4651997e-07, 0.99676436)
-bones/16/rotation = Quaternion(1.4562309e-09, 0.2521974, -1.2582599e-07, 0.9676758)
-bones/17/rotation = Quaternion(1.0559691e-07, 0.18475765, -6.091935e-08, 0.98278415)
-bones/18/rotation = Quaternion(8.4930306e-08, 0.11652206, -8.9324864e-08, 0.9931881)
-bones/19/rotation = Quaternion(-3.5218992e-09, 0.04775109, 1.3762737e-07, 0.9988593)
-bones/20/rotation = Quaternion(0.07415816, 0.27800208, -0.02157441, 0.95747066)
-bones/22/rotation = Quaternion(-0.45417824, 0.166158, -0.25289246, 0.83794934)
-bones/23/rotation = Quaternion(1.1621729e-06, -0.3160995, 1.5130502e-07, 0.9487261)
-bones/24/rotation = Quaternion(8.774572e-07, -0.23887922, 1.1240927e-07, 0.9710493)
-bones/25/rotation = Quaternion(1.1233537e-06, -0.16021128, 7.894123e-08, 0.98708284)
-bones/26/rotation = Quaternion(2.2892462e-07, -0.08047419, 1.513413e-07, 0.9967568)
-bones/28/rotation = Quaternion(1.7737969e-07, -0.25240797, -2.2044755e-09, 0.96762097)
-bones/29/rotation = Quaternion(1.3602708e-07, -0.18490359, 9.985028e-08, 0.98275673)
-bones/30/rotation = Quaternion(1.1079065e-07, -0.11661229, 5.3432405e-08, 0.9931776)
-bones/31/rotation = Quaternion(-3.035993e-08, -0.047816835, -2.317861e-07, 0.9988561)
-bones/32/rotation = Quaternion(0.07426853, -0.2783602, 0.021654401, 0.9573563)
-bones/33/rotation = Quaternion(0.9731668, 0.16947865, 0.088737115, -0.12786388)
-bones/34/rotation = Quaternion(1.641109e-07, -0.006299847, -8.065889e-08, 0.9999802)
-bones/35/rotation = Quaternion(1.0799624e-06, -0.0047247843, 1.796306e-07, 0.9999889)
-bones/36/rotation = Quaternion(1.3496043e-06, -0.0031498815, 4.3096222e-07, 0.9999951)
-bones/37/rotation = Quaternion(8.6966e-07, -0.0015748398, 2.3922118e-07, 0.9999988)
-bones/38/rotation = Quaternion(1.4949586e-07, -5.52364e-08, 0.055971697, 0.99843246)
-bones/39/rotation = Quaternion(0.08020257, -0.6684417, 0.72617114, -0.13938732)
-bones/41/rotation = Quaternion(-2.4655358e-07, -0.006287693, -4.8202565e-07, 0.99998033)
-bones/42/rotation = Quaternion(7.440874e-07, -0.0047158063, -1.0757033e-07, 0.999989)
-bones/43/rotation = Quaternion(1.1731589e-06, -0.0031438307, 2.1103842e-08, 0.9999951)
-bones/44/rotation = Quaternion(8.8016566e-07, -0.0015720635, 2.3442487e-07, 0.9999988)
-bones/45/rotation = Quaternion(0.97326374, -0.16891797, -0.08864387, -0.12793256)
-bones/46/rotation = Quaternion(1.4446934e-07, 0.006277443, 1.742136e-07, 0.99998033)
-bones/47/rotation = Quaternion(1.1053315e-06, 0.0047079697, -8.857599e-08, 0.999989)
-bones/48/rotation = Quaternion(1.3215159e-06, 0.0031386535, -3.9167782e-07, 0.9999951)
-bones/49/rotation = Quaternion(9.355117e-07, 0.0015692397, -1.2943876e-07, 0.9999988)
-bones/50/rotation = Quaternion(1.2570924e-07, 1.4008337e-07, -0.054686554, 0.99850357)
-bones/51/rotation = Quaternion(-0.08069407, -0.6683779, 0.7260803, 0.13988145)
-bones/53/rotation = Quaternion(-2.7041585e-07, 0.006262959, 5.09233e-07, 0.9999804)
-bones/54/rotation = Quaternion(7.275575e-07, 0.0046972786, 1.2284349e-07, 0.999989)
-bones/55/rotation = Quaternion(1.2104367e-06, 0.003131464, -3.230891e-08, 0.9999951)
-bones/56/rotation = Quaternion(9.307763e-07, 0.0015658996, -2.5227453e-07, 0.9999988)
-bones/61/position = Vector3(-0.044731554, -0.024835378, -0.4991418)
-bones/61/scale = Vector3(0.9437628, 0.9437629, 0.9437629)
-bones/65/position = Vector3(-0.0980505, 0.22005634, -0.3742032)
-bones/65/scale = Vector3(0.9445538, 0.94455385, 0.9445538)
-bones/69/position = Vector3(0.10328082, 0.24694341, -0.28908768)
-bones/69/scale = Vector3(0.9437628, 0.94376296, 0.94376284)
-bones/73/position = Vector3(0.11121755, 0.22689314, -0.32019055)
-bones/73/scale = Vector3(0.9445536, 0.9445538, 0.9445535)
-bones/77/position = Vector3(0.38315126, 0.047565386, -0.15311635)
-bones/77/scale = Vector3(0.94376266, 0.9437628, 0.9437627)
-bones/81/position = Vector3(0.31501132, -0.028794155, -0.23497076)
-bones/81/scale = Vector3(0.9437631, 0.9437632, 0.9437632)
-bones/85/position = Vector3(-0.22808748, -0.21229568, -0.3161198)
-bones/85/scale = Vector3(0.94376296, 0.9437629, 0.9437631)
-bones/89/position = Vector3(-0.007593563, 0.015576854, -0.37230766)
-bones/89/scale = Vector3(0.94455427, 0.94455427, 0.94455403)
-bones/93/position = Vector3(-0.10930708, 0.15175113, -0.3037651)
-bones/93/scale = Vector3(0.94376314, 0.9437626, 0.9437629)
-bones/97/position = Vector3(-0.07842279, 0.13856524, -0.32476413)
-bones/97/scale = Vector3(0.94455373, 0.9445537, 0.9445538)
-bones/101/position = Vector3(-0.31473634, -0.0073420703, -0.1932671)
-bones/101/scale = Vector3(0.94376284, 0.943763, 0.9437629)
-bones/105/position = Vector3(-0.05499839, -0.11225413, -0.33914465)
-bones/105/scale = Vector3(0.94376326, 0.94376326, 0.94376326)
-
-[node name="BodyJiggle" parent="Player/CharacterBody3D/Player_Character/root/Skeleton3D" index="1" unique_id=1224292015]
-transform = Transform3D(-0.5941662, -4.3838544e-13, 8.366125e-08, 8.126137e-11, 0.5941659, 0.00058023556, -8.366122e-08, 0.00058023556, -0.59416586, 6.489544e-10, 2.9434986, -38.98997)
-
-[node name="FlameJiggle" parent="Player/CharacterBody3D/Player_Character/root/Skeleton3D" index="2" unique_id=1142166283]
-transform = Transform3D(0.59109217, -0.058798064, -0.013648732, -0.004511183, -0.17700715, 0.56716996, -0.0601926, -0.5641318, -0.17653774, -0.099723235, 3.3533418, -40.284065)
-
-[node name="HeadJiggle" parent="Player/CharacterBody3D/Player_Character/root/Skeleton3D" index="3" unique_id=152199067]
-transform = Transform3D(0.5921755, 0.0103637725, 0.04747938, -0.00035621558, 0.58140796, -0.12246661, -0.048596025, 0.12202779, 0.5794661, 0.01405786, 3.9624782, -38.819206)
-
-[node name="LArmJiggle" parent="Player/CharacterBody3D/Player_Character/root/Skeleton3D" index="4" unique_id=1014996254]
-transform = Transform3D(0.048432723, 0.5921887, 0.00047798452, 0.0011446791, -0.00057320204, 0.59416467, 0.59218764, -0.048431672, -0.0011875841, 1.0540625, 2.8794136, -39.098682)
-
-[node name="LArmJiggle2" parent="Player/CharacterBody3D/Player_Character/root/Skeleton3D" index="5" unique_id=1078964516]
-transform = Transform3D(-0.3018197, 0.28542206, 0.42482072, -0.02631593, -0.5011919, 0.31803685, 0.5111221, 0.14273816, 0.26723284, 0.7975419, 1.890518, -38.750736)
-
-[node name="RArmJiggle" parent="Player/CharacterBody3D/Player_Character/root/Skeleton3D" index="6" unique_id=2141569191]
-transform = Transform3D(-0.048614997, -0.59217364, -0.00066418113, -0.0011446615, -0.00057241024, 0.5941648, -0.59217274, 0.0486162, -0.0010939632, -1.0574757, 2.8794136, -38.925644)
-
-[node name="RArmJiggle2" parent="Player/CharacterBody3D/Player_Character/root/Skeleton3D" index="7" unique_id=2001702917]
-transform = Transform3D(-0.38069716, -0.25842598, -0.37592417, 0.026101366, -0.50116867, 0.3180913, -0.4554357, 0.18729505, 0.33246374, -0.7478612, 1.8905795, -38.624126)
-
-[node name="LookBit" parent="Player/CharacterBody3D" parent_id_path=PackedInt32Array(623680313, 844716186) index="4" unique_id=570069494 node_paths=PackedStringArray("tos")]
-tos = {
-NodePath("../Player_Character/AnimationControl/Idle"): NodePath("GlobalDirection"),
-NodePath("../Player_Character/AnimationControl/Wall_Grab"): NodePath("GlobalWallNorm"),
-NodePath("MovingCrate"): null
-}
-
-[node name="collectables" type="Node" parent="." unique_id=473426976]
-
-[node name="Node3D" parent="collectables" unique_id=1768170752 instance=ExtResource("16_mjgqx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.376942, -26.474283)
-
-[node name="Node3D2" parent="collectables" unique_id=1132405653 instance=ExtResource("16_mjgqx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0683565, 2.193349, -29.728283)
+[node name="DirectionalLight3D3" type="OmniLight3D" parent="." unique_id=477828108]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3144355, 6.334853, -41.957428)
+light_color = Color(1, 0.72104746, 0.5527951, 1)
+light_volumetric_fog_energy = 0.0
+shadow_enabled = true
+omni_range = 17.0
+omni_attenuation = -0.613
 
 [connection signal="pressed" from="UI/OptionsMenu/Button" to="UI/OptionsMenu/Button/PlayerAnimatorBit" method="animate"]
 [connection signal="pressed" from="UI/StartScreen/Button" to="UI/StartScreen/Button/PlayerAnimatorBit2" method="animate"]
@@ -1359,9 +1312,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0683565, 2.193349, -29.728
 [connection signal="just_false" from="UI/AnimationPlayer/PauseInput" to="UI/AnimationPlayer/Unpause" method="animate"]
 [connection signal="just_true" from="UI/AnimationPlayer/PauseInput" to="UI/AnimationPlayer/Pause" method="animate"]
 
-[editable path="UI/Backdrop/SubViewport/PC_Main"]
-[editable path="CameraGrab"]
-[editable path="Platforms/MovingPlatform"]
-[editable path="Platforms/MovingPlatform/Moveable_Block03"]
 [editable path="Player"]
 [editable path="Player/CharacterBody3D/Player_Character"]
+[editable path="UI/Backdrop/SubViewport/PC_Main"]
