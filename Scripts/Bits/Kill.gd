@@ -58,8 +58,10 @@ func kill():
 	
 	if not respawner: find_respawner()
 	if respawner: respawner.respawn()
-	respawner = null
-	target = null
+	
+	if parent is AreaMasterBit3D:
+		respawner = null
+		target = null
 	
 	
 
