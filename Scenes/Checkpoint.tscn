@@ -6,9 +6,10 @@
 [ext_resource type="Script" uid="uid://bc87fqj83okns" path="res://Scripts/Bits/PropertyModifier.gd" id="4_7oj4b"]
 [ext_resource type="Script" uid="uid://b1o48vkwquyxs" path="res://Scripts/Values/Node/ManualNode.gd" id="5_xtsfu"]
 [ext_resource type="Script" uid="uid://d7n7ctdl2nsg" path="res://Scripts/Values/Property.gd" id="6_6vgh2"]
+[ext_resource type="Material" uid="uid://bjfl0l7c8l1ih" path="res://Assests/3D/Materials/checkpoint_highlight.res" id="7_xtsfu"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_erwvk"]
-size = Vector3(2, 2, 2)
+[sub_resource type="SphereShape3D" id="SphereShape3D_xtsfu"]
+radius = 2.5
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_7oj4b"]
 height = 0.24621582
@@ -52,9 +53,12 @@ metadata/_custom_type_script = "uid://b1o48vkwquyxs"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=38528525]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("BoxShape3D_erwvk")
+shape = SubResource("SphereShape3D_xtsfu")
 
 [node name="Node3D" parent="." unique_id=1733423825 instance=ExtResource("3_14q6d")]
+
+[node name="Cylinder" parent="Node3D/ImportedMesh" parent_id_path=PackedInt32Array(1733423825, 670445628) index="0" unique_id=885149276]
+material_overlay = ExtResource("7_xtsfu")
 
 [node name="OmniLight3D" parent="Node3D/ImportedMesh" parent_id_path=PackedInt32Array(1733423825, 670445628) index="1" unique_id=680418275]
 visible = false
@@ -79,3 +83,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13199084, 0.13440365, 0.055
 shape = SubResource("SphereShape3D_7oj4b")
 
 [editable path="Node3D"]
+[editable path="Node3D/ImportedMesh"]
