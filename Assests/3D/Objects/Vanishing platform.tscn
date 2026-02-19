@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://ctfsvlimtkb46"]
+
+[ext_resource type="PackedScene" uid="uid://c5ybk1b3py7d4" path="res://Assests/3D/Objects/Ruins/Pillar_Round_05.glb" id="1_n5c24"]
+[ext_resource type="Script" uid="uid://bbb0fdcwvffmb" path="res://Scripts/dissapearing platforms.gd" id="2_pvsur"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_jmk87"]
+height = 0.25021908
+radius = 0.22916669
+
+[node name="Platform" type="Node3D" unique_id=230968152]
+
+[node name="Pillar_Round_05" parent="." unique_id=255035119 instance=ExtResource("1_n5c24")]
+transform = Transform3D(1.835, 0, 0, 0, 1.835, 0, 0, 0, 1.835, -0.5081711, 0, -0.48493004)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Pillar_Round_05/Plane_015" parent_id_path=PackedInt32Array(255035119, 1366122687) index="0" unique_id=1929010230]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.12887372, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pillar_Round_05/Plane_015/StaticBody3D" unique_id=1041668521]
+shape = SubResource("CylinderShape3D_jmk87")
+
+[node name="Visibility toggle" type="Area3D" parent="." unique_id=761392083]
+script = ExtResource("2_pvsur")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Visibility toggle" unique_id=266967220]
+transform = Transform3D(14.86708, 0, 0, 0, 14.86708, 0, 0, 0, 14.86708, -0.5081711, 1.4064513, -0.48493004)
+shape = SubResource("CylinderShape3D_jmk87")
+
+[connection signal="area_entered" from="Visibility toggle" to="Visibility toggle" method="_on_area_entered"]
+[connection signal="area_exited" from="Visibility toggle" to="Visibility toggle" method="_on_area_exited"]
+
+[editable path="Pillar_Round_05"]

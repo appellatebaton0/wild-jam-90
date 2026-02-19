@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cnf8igx8xu0fb"]
+
+[ext_resource type="Script" uid="uid://drihgsaejashd" path="res://Scripts/action_detection.gd" id="1_k2bsf"]
+
+[node name="Detector" type="Area3D" unique_id=1566518533]
+script = ExtResource("1_k2bsf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1423474098]

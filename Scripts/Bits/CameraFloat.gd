@@ -31,7 +31,7 @@ func _ready() -> void:
 func _process(delta: float) -> void: if active:
 	var targ:Node3D = target.value()
 	
-	var goal_pos:Vector3 = ray.to_local(ray.get_collision_point()) if ray.is_colliding() else lerp(targ.position, ray.target_position, 0.1)
+	var goal_pos:Vector3 = ray.to_local(ray.get_collision_point()) * 0.9 if ray.is_colliding() else lerp(targ.position, ray.target_position, 0.1)
 	
 	# Set the target position to the point the ray hits if there is one, otherwise as far out as it goes.
 	targ.position = lerp(goal_pos, or_pos, ease(timer/time, easing))
@@ -42,3 +42,4 @@ func _process(delta: float) -> void: if active:
 	targ.global_rotation = lerp(goal_rotation, or_rot, ease(timer/time, easing))
 	
 	timer = move_toward(timer, 0.0, delta)
+	
