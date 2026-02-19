@@ -1,12 +1,16 @@
 [gd_scene format=4 uid="uid://dyww5af6k0qoh"]
 
 [ext_resource type="Script" uid="uid://d26mxsgwyltuh" path="res://Scripts/Bits/Crate.gd" id="1_l06p0"]
-[ext_resource type="PackedScene" uid="uid://0gg8ofpfcega" path="res://Assests/3D/Objects/Moveable_Block01.glb" id="2_chw7f"]
 [ext_resource type="Script" uid="uid://cwmi2fpsn8by2" path="res://Scripts/Bits/Respawn.gd" id="3_chw7f"]
 [ext_resource type="Script" uid="uid://cs7fttn8dysxc" path="res://Scripts/Bits/AudioBit.gd" id="4_tpwf0"]
 [ext_resource type="Script" uid="uid://w0g2u1stumau" path="res://Scripts/Values/Bool/Cast.gd" id="5_m7ret"]
 [ext_resource type="Script" uid="uid://d7n7ctdl2nsg" path="res://Scripts/Values/Property.gd" id="6_faii0"]
+[ext_resource type="Material" uid="uid://bn54gscdb7bf" path="res://Assests/3D/Materials/interactive_highlight.res" id="7_68nug"]
 [ext_resource type="Script" uid="uid://b1o48vkwquyxs" path="res://Scripts/Values/Node/ManualNode.gd" id="7_gfgkr"]
+[ext_resource type="Texture2D" uid="uid://cdrv0vdehcew6" path="res://Assests/3D/Objects/Moveable_Block01_Material.png" id="8_g7xsr"]
+[ext_resource type="Texture2D" uid="uid://b7xygeqspfmgv" path="res://Assests/3D/Objects/Moveable_Block01_Material_1.png" id="9_0pa64"]
+[ext_resource type="Script" uid="uid://e7tfuwl1tw3p" path="res://Scripts/DissolveMesh.gd" id="10_fsktr"]
+[ext_resource type="Material" uid="uid://borriffcjsmgf" path="res://Assests/3D/Materials/crate_dissolve.res" id="11_7pgss"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_pbw6q"]
 friction = 1000.0
@@ -21,6 +25,89 @@ loop_mode = 1
 loop_end = 165000
 mix_rate = 48000
 stereo = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2f0ul"]
+resource_name = "Objects"
+cull_mode = 2
+albedo_texture = ExtResource("8_g7xsr")
+metallic_texture = ExtResource("9_0pa64")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("9_0pa64")
+roughness_texture_channel = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_gavd8"]
+_surfaces = [{
+"aabb": AABB(-0.24663018, -0.006100625, -0.20209992, 0.45841146, 0.45486984, 0.45841146),
+"format": 34896613377,
+"index_count": 132,
+"index_data": PackedByteArray("AgABAA0AAgANAAMADQABAA4ADQAOAAYAAwANAAYAAQAFAA4ABgAOAAwADAAOAAUAAQAEAAUADwAGAAwAAAABAAIAAAAEAAEAAgADABAAAAACABAAAwAGAAoADwAKAAYAEAADAAkACgAJAAMADwARAAoACgARAAkAEgARAA8AEgAPAAwACAAJABEAEAAJAAgAEgATABEACAARABMAEgAMAAsADAAFAAsAEgAHABMACwAHABIACwAFABQACwAUAAcAFAAFAAQAFAAEABUAFQAHABQAAAAVAAQAEwAHABYAFQAWAAcAEwAWAAgAFwAVAAAAFwAWABUAFwAIABYAAAAQABcAEAAIABcA"),
+"lods": [0.29102162, PackedByteArray("AAABAAIAAgABAAMAAAACAAMAAAAEAAEAAQAEAAUABQAEAAAAAQAFAAYAAwABAAYAAAAHAAUAAAADAAgAAAAIAAcAAwAJAAgACAAJAAoACgAJAAMACAAKAAcAAwAGAAoACwAFAAcADAAGAAUADAAFAAsACgAGAAwABwAMAAsABwAKAAwA")],
+"name": "Objects",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("uxQAAL4SAAAAAOQSF+sAAL4SAABD6wAAF+vkEv//AAD9AeQSkhIAAP0BGu2SEgAAkhIa7QH+AABs7Rrt/QEAAP//5BLnFAAAAf7kEmztAAAX6xrt//8AALsU//++EgAAvhL//0PrAACSEuQSAf4AAAAAGu0X6wAAQ+v//0DtAABD6wAAQO0AAAH+Gu1s7QAAQO3//7sUAAD//xrt5xQAAOcUGu0AAAAA5xTkEgAAAABs7eQS/QEAAEDtAAC7FAAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_faws8"]
+resource_name = "Moveable_Block01_Cube_004"
+_surfaces = [{
+"aabb": AABB(-0.24663018, -0.006100625, -0.20209992, 0.45841146, 0.45486984, 0.45841146),
+"attribute_data": PackedByteArray("jvF1bOb5l7My8YuzQvqAbGa+pQdzjMMNc4ylB7nCtApmvhUxc4wVMWzZgTaf+YE2kP1yOmzZpVp71XI6n/mWXopKnlAKTiVObXYlTm12pm8KTqZveJ0SblCXzjt4nc47rHtkBAyCxAqaR8QKrHvWPppH1j6sezZFFddHG6X4AzPB2QMzUftHG8HZjAOl+IwDhPW5ufD1U2ZmvsMNIIi0CgpOF1NtdhdT7XmeUKX4Kx2l+GMZwdljGcHZKx2se8QKDILWPppHZASaRzZFbNlyOp/5cjqQ/aVan/mlWnvVpVps2ZZeUJcSbg=="),
+"format": 34896613399,
+"index_count": 132,
+"index_data": PackedByteArray("AgABACQAAAABAAIAAAADAAEAAAAlAAMABwAmAAQABAAmAAUACAAFACYACAAJAAUABAAFAAYABgAFACcAKAAQABEAKAARABIAKAASACkAKQASACoAEwAoACkAEwAUACgAKwAsACEAIgAjACwAIgAsAC0ALgAsACsALgAtACwALgAeAC0ALgArAB8ALgAfACAALwAwABsALwAZADAAGgAvABsAGAAvABoAGAAaADEAGgAbABwAMgAcABsAMgAbAB0AMwALADQAMwAKAAsANQA0AAwANQA2ADQANAANADMANAA2AA0ADgAzAA0ADgANADcAOAANADYAOAA2AA8AFQAWABcAFQA5ABYA"),
+"lods": [0.29102162, PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAFAAcACAAJAAUACgALAAwADAANAAoADgAKAA0ADAAPAA0AEAARABIAEwAQABIAEwAUABAAFQAWABcAGAAZABoAGgAZABsAGgAbABwAHAAbAB0AHgAfACAAHgAhAB8AIgAhAB4AIgAjACEA")],
+"material": SubResource("StandardMaterial3D_2f0ul"),
+"name": "Objects",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 58,
+"vertex_data": PackedByteArray("uxQAAL4SNvsAAOQSF+vj3b4SAABD6xfv/QHkEpISjuK+Ev//Q+tVwf0BGu2SEkHPuxT//74SjNmSEhrtAf7tpQAA5BIX6x+0/QHkEpISi8/9ARrtkhIi6P0B5BKSEhnWuxQAAL4SOtRs7Rrt/QEw67sU//++Etjq///kEucUoecX6+QS//+KpQH+5BJs7Ya0///kEucUYc67FAAAvhLz5L4SAABD67jYF+sa7f//kvcB/uQSbO0J/Rfr5BL//5L3vhIAAEPrOPgAAOQSF+vm/Bfr5BL//1D9khIa7QH+2P4X6xrt//9Q/b4S//9D6zj4bO0a7f0BWPi+Ev//Q+u5w7sU//++EhHYF+sa7f//GeH//+QS5xRk9wH+5BJs7aXzkhLkEgH+X+HnFOQSAACY+AAAGu0X68m05xQa7QAAZO1D6wAAQO28wUDtAAC7FGbYbO3kEv0BtOxD6///QO3c2gH+Gu1s7anx//8a7ecUyPhA7f//uxQZ5JIS5BIB/tj+AAAa7Rfr5vxD6wAAQO3N90Pr//9A7c335xQa7QAAdv/nFOQSAAC560DtAAC7FEXrbO3kEv0B9/9A7f//uxSz0///Gu3nFKnVAf4a7WztCf3Av3vuKdp34fPM0Pk5xjneoaO9r/uUOOAapbO8KJHtqhFYpO8GYdvteVg2srVGFq3sNiPOL78nP8DViS46p+lNEW48VrtzVCkYaVIgDUpfW4xWC2SKklKPRA9G01MPdO0H0Zbzt1LHcCKQTm4x77QRsBEiEJZz9q5LzK2fnaBdsD6oR7vBlzKKxwyEvEUJXc/Q54v1j7MC4I2NetfCohzU8Vx3UFBZ+0MJXcsrg6cjnYKx6YcdwpOOFLeAo0tuMm/G8Egt1IvjUBwv1QuIygs3n0A7wVYq6NFTNUXJNclUMhm5RVO4rESP")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_gavd8")
+
+[sub_resource type="Animation" id="Animation_68nug"]
+resource_name = "Dissolve_In"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Dissolving_Block")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [true, 1.0],
+"method": &"play_dissolve_tween"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_g7xsr"]
+resource_name = "Dissolve_Out"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Dissolving_Block")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [false, 1.0],
+"method": &"play_dissolve_tween"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0pa64"]
+_data = {
+&"Dissolve_In": SubResource("Animation_68nug"),
+&"Dissolve_Out": SubResource("Animation_g7xsr")
+}
 
 [node name="Crate" type="RigidBody3D" unique_id=946948200 groups=["Respawnable"]]
 collision_layer = 4
@@ -38,11 +125,11 @@ isolated = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.027938843, 1.3017712, 0.11697388)
 shape = SubResource("BoxShape3D_knusv")
 
-[node name="Moveable_Block01" parent="." unique_id=1679666825 instance=ExtResource("2_chw7f")]
-transform = Transform3D(5.94, 0, 0, 0, 5.94, 0, 0, 0, 5.94, 0.055352688, -0.029782355, -0.11662316)
-
-[node name="RespawnBit3D" type="Node" parent="." unique_id=155638812]
+[node name="RespawnBit3D" type="Node" parent="." unique_id=155638812 node_paths=PackedStringArray("animator")]
 script = ExtResource("3_chw7f")
+animator = NodePath("../AnimationPlayer")
+out_anim_name = &"Dissolve_Out"
+in_anim_name = &"Dissolve_In"
 metadata/_custom_type_script = "uid://cwmi2fpsn8by2"
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1088018245]
@@ -70,3 +157,14 @@ metadata/_custom_type_script = "uid://d7n7ctdl2nsg"
 [node name="ManualNode" type="Node" parent="AudioStreamPlayer3D/BeingPushed/Property" unique_id=766962887]
 script = ExtResource("7_gfgkr")
 metadata/_custom_type_script = "uid://b1o48vkwquyxs"
+
+[node name="Dissolving_Block" type="MeshInstance3D" parent="." unique_id=2064669942]
+transform = Transform3D(5.94, 0, 0, 0, 5.94, 0, 0, 0, 5.94, 0.055352688, -0.029782355, -0.11662316)
+material_overlay = ExtResource("7_68nug")
+mesh = SubResource("ArrayMesh_faws8")
+skeleton = NodePath("")
+script = ExtResource("10_fsktr")
+dissolve_material = ExtResource("11_7pgss")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1512591807]
+libraries/ = SubResource("AnimationLibrary_0pa64")

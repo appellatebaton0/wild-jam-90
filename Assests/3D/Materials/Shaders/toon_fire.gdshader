@@ -94,6 +94,7 @@ void fragment() {
 	fresnel = (1.0 - fresnel) * (1.0 - heat_coefficient);
 	fresnel += noise_a * noise_b * 0.35;
 	fresnel = pow(fresnel, 2.0);
+	fresnel = smoothstep(0.0, 1.0, fresnel);
 	//fresnel = posterize(fresnel, 5.0);
 	
 	float depth_linear = get_depth(depth_texture, SCREEN_UV, INV_PROJECTION_MATRIX);
