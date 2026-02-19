@@ -8,7 +8,7 @@ colors = PackedColorArray(0.055980086, 0.01334473, 0.021609081, 1, 0.37820795, 0
 gradient = SubResource("Gradient_qwnw3")
 
 [resource]
-ambient_light_source = 3
+ambient_light_source = 2
 ambient_light_color = Color(0.18599513, 0.3263498, 0.34415233, 1)
 ambient_light_sky_contribution = 0.0
 ambient_light_energy = 4.0
@@ -23,7 +23,6 @@ glow_hdr_threshold = 0.5
 fog_enabled = true
 fog_light_color = Color(0.17409086, 0.46790218, 0.6140761, 1)
 fog_light_energy = 0.22
-fog_density = 0.007
 fog_sky_affect = 0.83
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.0025
