@@ -7,14 +7,10 @@
 [ext_resource type="Script" uid="uid://b1o48vkwquyxs" path="res://Scripts/Values/Node/ManualNode.gd" id="5_xdu48"]
 [ext_resource type="Script" uid="uid://cox1ysk6bulx2" path="res://Scripts/Values/Bool/Manual.gd" id="6_jensj"]
 [ext_resource type="AudioStream" uid="uid://c6ueaoyde8dqc" path="res://Assests/SFX Misc/Teleporter.wav" id="7_3xkkk"]
+[ext_resource type="PackedScene" uid="uid://ifm36ilym63i" path="res://Assests/3D/Objects/Shrine.tscn" id="8_xdu48"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v608y"]
 size = Vector3(1.5, 1.5, 1.5)
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_ht0s6"]
-top_radius = 0.9
-bottom_radius = 1.0
-height = 0.1
 
 [sub_resource type="Animation" id="Animation_ht0s6"]
 length = 0.001
@@ -172,14 +168,12 @@ collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_b0nsn")
 use_input = &"UseTeleporter"
+spawn_position = Vector3(0, 150, 0)
 animator = NodePath("AnimationPlayer")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1336716038]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_v608y")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=241671183]
-mesh = SubResource("CylinderMesh_ht0s6")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1643680990]
 libraries/ = SubResource("AnimationLibrary_ht0s6")
@@ -226,3 +220,6 @@ metadata/_custom_type_script = "uid://cox1ysk6bulx2"
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1637172809]
 stream = ExtResource("7_3xkkk")
 bus = &"SFX"
+
+[node name="Node3D" parent="." unique_id=883738917 instance=ExtResource("8_xdu48")]
+transform = Transform3D(2.14, 0, 0, 0, 2.14, 0, 0, 0, 2.14, -0.10264069, 0, 0)

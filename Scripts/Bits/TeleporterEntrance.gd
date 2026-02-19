@@ -61,7 +61,6 @@ func warp():
 	
 	## Create an instance, and look for the marker in it.
 	var marker := locate_marker(spawn())
-	print("marker: ", marker)
 	
 	if last_user:
 		var user_position := marker.global_position if marker else spawn_position
