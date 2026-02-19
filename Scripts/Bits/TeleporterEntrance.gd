@@ -61,6 +61,7 @@ func warp():
 	
 	## Create an instance, and look for the marker in it.
 	var marker := locate_marker(spawn())
+	print("marker: ", marker)
 	
 	if last_user:
 		var user_position := marker.global_position if marker else spawn_position
@@ -93,7 +94,7 @@ func despawn():
 func locate_marker(with:Node = instance, depth := 5) -> Marker3D:
 	
 	if depth == 0: return null
-	if with == Marker3D: return with
+	if with is Marker3D: return with
 	
 	for child in with.get_children():
 		var check = locate_marker(child, depth - 1)

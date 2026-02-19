@@ -650,7 +650,7 @@ _data = {
 &"Unpause": SubResource("Animation_50glp")
 }
 
-[node name="Puzzle Template" type="Node" unique_id=1857325157]
+[node name="Puzzle Template" type="Node3D" unique_id=1584571485]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=219973446]
 environment = ExtResource("1_sr5c2")
@@ -680,11 +680,12 @@ render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="UI/Backdrop/SubViewport" unique_id=505657531]
 transform = Transform3D(0.072607756, -0.11966671, -0.9901556, -0.001095968, 0.9927657, -0.120062545, 0.99736, 0.009802649, 0.071951345, -4.509954, 1.9735076, 1.6260126)
+current = true
 
 [node name="PC_Main" parent="UI/Backdrop/SubViewport" unique_id=1280227698 instance=ExtResource("4_i1grn")]
 transform = Transform3D(-0.024092056, 0, -0.9997097, 0, 1, 0, 0.9997097, 0, -0.024092056, 0, 0.57039356, 2.5850382)
 
-[node name="Skeleton3D" parent="UI/Backdrop/SubViewport/PC_Main/root" parent_id_path=PackedInt32Array(1280227698, 1629276081) index="0" unique_id=1550848783]
+[node name="Skeleton3D" parent="UI/Backdrop/SubViewport/PC_Main/root" parent_id_path=PackedInt32Array(1280227698, 992819664) index="0" unique_id=951532203]
 bones/0/scale = Vector3(1, 0.99999994, 0.9999999)
 bones/1/position = Vector3(-0.065041415, 0.16932577, 0.12263414)
 bones/1/rotation = Quaternion(-0.19320463, -3.2799692e-06, 6.730784e-07, 0.9811585)
@@ -920,10 +921,10 @@ bones/105/position = Vector3(-0.2586735, -0.046397522, -0.25656357)
 bones/105/rotation = Quaternion(-2.8158428e-08, -1.4556036e-07, 8.5516824e-08, 1)
 bones/105/scale = Vector3(0.9444543, 0.94445425, 0.9444543)
 
-[node name="Cape" parent="UI/Backdrop/SubViewport/PC_Main/root/Skeleton3D" index="0" unique_id=1626639963]
+[node name="Cape" parent="UI/Backdrop/SubViewport/PC_Main/root/Skeleton3D" index="0" unique_id=1094262781]
 surface_material_override/0 = ExtResource("5_ieq3e")
 
-[node name="AnimationPlayer" parent="UI/Backdrop/SubViewport/PC_Main" index="1" unique_id=782364722]
+[node name="AnimationPlayer" parent="UI/Backdrop/SubViewport/PC_Main" index="1" unique_id=102272202]
 autoplay = &"Idle_Break01_001"
 
 [node name="OmniLight3D" type="OmniLight3D" parent="UI/Backdrop/SubViewport/PC_Main" unique_id=1943270133]

@@ -34,6 +34,6 @@ func _process(delta: float) -> void:
 		bar.max_value = max_value
 		
 		if hide_on_full:
-			bar.modulate.a = move_toward(bar.modulate.a, 0.0 if value == max_value else 1.0, delta * hide_speed)
+			bar.modulate.a = move_toward(bar.modulate.a, 0.0 if real_value == max_value else 1.0, delta * hide_speed)
 
 func remains(): return real_value > 0
