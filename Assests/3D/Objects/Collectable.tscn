@@ -5,12 +5,13 @@
 [ext_resource type="Shader" uid="uid://7x40gwinm2ws" path="res://Scripts/Shaders/Outline.gdshader" id="4_evp32"]
 [ext_resource type="Script" uid="uid://c5aqrj2yuhbde" path="res://Scripts/Suck.gd" id="5_6o08o"]
 [ext_resource type="Script" uid="uid://jbqvo3y8hqsy" path="res://Scripts/Collectable.gd" id="5_8051g"]
+[ext_resource type="Script" uid="uid://cwmi2fpsn8by2" path="res://Scripts/Bits/Respawn.gd" id="6_6o08o"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_jsjdp"]
 radius = 0.295
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_8051g"]
-radius = 7.5
+radius = 3.3020735
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_evp32"]
 _surfaces = [{
@@ -173,6 +174,10 @@ preprocess = 1.07
 randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_pvhdv")
 draw_pass_1 = SubResource("SphereMesh_0bqg2")
+
+[node name="RespawnBit3D" type="Node" parent="." unique_id=369738921]
+script = ExtResource("6_6o08o")
+metadata/_custom_type_script = "uid://cwmi2fpsn8by2"
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_entered" from="Suck Range" to="Suck Range" method="_on_area_entered"]

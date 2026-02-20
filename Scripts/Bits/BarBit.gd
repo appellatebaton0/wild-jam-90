@@ -1,12 +1,14 @@
 class_name BarBit extends Bit
 ## Creates functionality for bars, like stamina, basic health, etc.
 
+signal up
+signal down
+
 @export var value := 100.0 ## The current value.
 @export var max_value := 100.0 ## The maximum value of the bar.
 
-@export_group("Up", "up_")
-@export var up_condition:BoolValue ## If true, the value will go up by the up_increment.
-@export var up_increment := 10.0 ## How much to change the value by per second.
+## If the key condition is true, the value will go up by that amount.
+@export var up_conditions:Dictionary[BoolValue, float]
 
 ## If the key condition is true, the value will go down by that amount.
 @export var down_conditions:Dictionary[BoolValue, float]
@@ -23,10 +25,14 @@ func _process(delta: float) -> void:
 	for condition in down_conditions:
 		if condition.value():
 			real_value = move_toward(real_value, 0, delta * down_conditions[condition])
+			down.emit()
 	
-	var up:bool = up_condition.value() if up_condition else false
-	if up:   real_value = move_toward(real_value, max_value, delta * up_increment)
-	
+	for condition in up_conditions:
+		if condition.value():
+			print("UP BY ", condition)
+			real_value = move_toward(real_value, max_value, delta * up_conditions[condition])
+			up.emit()
+		
 	value = lerp(value, real_value, 0.2)
 	
 	if bar:
