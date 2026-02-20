@@ -1055,15 +1055,6 @@ transform = Transform3D(23.626862, 0, 8.171373, 0, 24.999996, 0, -8.171373, 0, 2
 [node name="Node3D3" parent="." unique_id=1562982156 instance=ExtResource("31_cvje1")]
 transform = Transform3D(-14.142136, 0, -14.142136, 0, 20, 0, 14.142136, 0, -14.142136, 46.246445, 1.9847755, 17.192137)
 
-[node name="Shrine" parent="." unique_id=883738917 instance=ExtResource("32_nif8e")]
-transform = Transform3D(-1.0434651, 0, -1.8683625, 0, 2.1399999, 0, 1.8683625, 0, -1.0434651, 37.411186, 0.49892163, 10.199476)
-
-[node name="Shrine2" parent="." unique_id=68695394 instance=ExtResource("32_nif8e")]
-transform = Transform3D(1.7813755, 0, -1.1858748, 0, 2.1399999, 0, 1.1858748, 0, 1.7813755, 102.05169, 21.252588, 9.704302)
-
-[node name="Shrine3" parent="." unique_id=1821424050 instance=ExtResource("32_nif8e")]
-transform = Transform3D(-1.8420258, 0, 1.089284, 0, 2.1399999, 0, -1.089284, 0, -1.8420258, -66.705315, 30.333189, 79.71528)
-
 [node name="Doorway" parent="." unique_id=1378238659 instance=ExtResource("33_1nlqs")]
 transform = Transform3D(0.30633405, 0, 1.4683865, 0, 1.5, 0, -1.4683865, 0, 0.30633405, 70.6409, -1.7057571, -24.465414)
 
@@ -1306,7 +1297,7 @@ transform = Transform3D(3.0760977, 19.753695, -0.57377285, -4.9999967, 1.339745,
 [node name="Rock24" parent="LooseRocks" unique_id=1519568197 instance=ExtResource("13_wgs1d")]
 transform = Transform3D(-10.365127, -9.930685, 4.3526525, 1.8724663e-08, 6.0215454, 13.738303, -10.842698, 9.493284, -4.1609387, -64.10914, 33.774975, -113.240204)
 
-[node name="Node3D4" parent="LooseRocks" unique_id=1749918471 instance=ExtResource("32_nif8e")]
+[node name="PotentialShrineSpot" parent="LooseRocks" unique_id=1749918471 instance=ExtResource("32_nif8e")]
 transform = Transform3D(1.7902658, 0, 1.1724104, 0, 2.1399999, 0, -1.1724104, 0, 1.7902658, -104.38178, 60.93058, -43.65058)
 
 [node name="Rock16" parent="LooseRocks" unique_id=1678317153 instance=ExtResource("43_2thtx")]
