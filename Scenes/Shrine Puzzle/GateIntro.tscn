@@ -1,18 +1,27 @@
-[gd_scene format=3 uid="uid://wguoowilhb3p"]
+[gd_scene format=3 uid="uid://bflm07n2v1h2q"]
 
-[ext_resource type="Environment" uid="uid://8ivgd0ijm8ix" path="res://Assests/3D/World_Env.tres" id="1_6bgle"]
-[ext_resource type="MeshLibrary" uid="uid://dxo8thlnlijfg" path="res://Assests/Ruins_Libary_Final.meshlib" id="2_35auo"]
-[ext_resource type="PackedScene" uid="uid://b1f37ebgxsquf" path="res://Scenes/Player.tscn" id="3_wguiu"]
-[ext_resource type="PackedScene" uid="uid://bmmhldj3h2120" path="res://Assests/3D/Player Character/PC_Main.glb" id="4_5dh3t"]
-[ext_resource type="Material" uid="uid://dvmvo1ejv7urt" path="res://Assests/3D/Materials/PlayerCharacter.tres" id="5_58vqi"]
-[ext_resource type="FontFile" uid="uid://c0ncglrrkwb6a" path="res://Assests/Cinzel-VariableFont_wght.ttf" id="6_ptock"]
-[ext_resource type="PackedScene" uid="uid://bseh5orb0njgn" path="res://Assests/UI/audio_slider.scn" id="7_sjm26"]
-[ext_resource type="PackedScene" uid="uid://5opnwc5uryxc" path="res://Scenes/InputMappingEntry.tscn" id="8_qws72"]
-[ext_resource type="Script" uid="uid://dw7w6pry2g435" path="res://Scripts/Bits/PlayerAnimator.gd" id="9_r44h5"]
-[ext_resource type="Script" uid="uid://dk0hts3twf6t" path="res://Scripts/Bits/MouseCapture.gd" id="10_uxgwr"]
-[ext_resource type="Script" uid="uid://dekpk8relyucb" path="res://Scripts/Bits/Input.gd" id="11_m2oa2"]
-[ext_resource type="Script" uid="uid://cox1ysk6bulx2" path="res://Scripts/Values/Bool/Manual.gd" id="12_g2jy8"]
-[ext_resource type="PackedScene" uid="uid://cw5v3k3rnk5jn" path="res://Scenes/Signpost.tscn" id="13_35auo"]
+[ext_resource type="Environment" uid="uid://8ivgd0ijm8ix" path="res://Assests/3D/World_Env.tres" id="1_vask6"]
+[ext_resource type="MeshLibrary" uid="uid://dxo8thlnlijfg" path="res://Assests/Ruins_Libary_Final.meshlib" id="2_ddh04"]
+[ext_resource type="PackedScene" uid="uid://b1f37ebgxsquf" path="res://Scenes/Player.tscn" id="3_sblmi"]
+[ext_resource type="PackedScene" uid="uid://bmmhldj3h2120" path="res://Assests/3D/Player Character/PC_Main.glb" id="4_tb1we"]
+[ext_resource type="Material" uid="uid://dvmvo1ejv7urt" path="res://Assests/3D/Materials/PlayerCharacter.tres" id="5_806ps"]
+[ext_resource type="FontFile" uid="uid://c0ncglrrkwb6a" path="res://Assests/Cinzel-VariableFont_wght.ttf" id="6_xtdu8"]
+[ext_resource type="PackedScene" uid="uid://bseh5orb0njgn" path="res://Assests/UI/audio_slider.scn" id="7_oywty"]
+[ext_resource type="PackedScene" uid="uid://5opnwc5uryxc" path="res://Scenes/InputMappingEntry.tscn" id="8_d0exp"]
+[ext_resource type="Script" uid="uid://dw7w6pry2g435" path="res://Scripts/Bits/PlayerAnimator.gd" id="9_fg7vd"]
+[ext_resource type="Script" uid="uid://dk0hts3twf6t" path="res://Scripts/Bits/MouseCapture.gd" id="10_d3dcp"]
+[ext_resource type="Script" uid="uid://dekpk8relyucb" path="res://Scripts/Bits/Input.gd" id="11_3y8p1"]
+[ext_resource type="Script" uid="uid://cox1ysk6bulx2" path="res://Scripts/Values/Bool/Manual.gd" id="12_tly4m"]
+[ext_resource type="PackedScene" uid="uid://b4soergejolc8" path="res://Scenes/Water.tscn" id="13_76riy"]
+[ext_resource type="PackedScene" uid="uid://c3obafcdtdwal" path="res://Scenes/Door.tscn" id="13_igu7x"]
+[ext_resource type="PackedScene" uid="uid://dyww5af6k0qoh" path="res://Assests/3D/Objects/Moveable_Crate_Large.tscn" id="14_fhm5u"]
+[ext_resource type="PackedScene" uid="uid://b6mm1wjjwcmeh" path="res://Scenes/PressurePlate.tscn" id="15_34khg"]
+[ext_resource type="Script" uid="uid://nege5nk1sa8u" path="res://Scripts/Values/Bool/And.gd" id="17_tb1we"]
+[ext_resource type="Script" uid="uid://bekt6vd73jjuq" path="res://Scripts/Bits/Kill.gd" id="17_vask6"]
+[ext_resource type="Script" uid="uid://makmxo060e2" path="res://Scripts/Values/Bool/Or.gd" id="18_806ps"]
+[ext_resource type="Script" uid="uid://dd8or5oo0cmw2" path="res://Scripts/Values/Bool/Actor.gd" id="18_ddh04"]
+[ext_resource type="Script" uid="uid://ycifmydtbo1g" path="res://Scripts/Values/Bool/Not.gd" id="19_xtdu8"]
+[ext_resource type="PackedScene" uid="uid://esg4ciusc8a1" path="res://Scenes/TeleporterExit.tscn" id="22_806ps"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q8hrf"]
 bg_color = Color(0.33599997, 0.84, 0.43679997, 1)
@@ -49,7 +58,7 @@ thickness = 10
 
 [sub_resource type="Theme" id="Theme_7aeuw"]
 Button/font_sizes/font_size = 19
-Button/fonts/font = ExtResource("6_ptock")
+Button/fonts/font = ExtResource("6_xtdu8")
 Button/styles/hover = SubResource("StyleBoxFlat_q8hrf")
 Button/styles/normal = SubResource("StyleBoxFlat_vjfe1")
 Button/styles/pressed = SubResource("StyleBoxFlat_vrlp0")
@@ -59,7 +68,7 @@ HSlider/styles/grabber_area = SubResource("StyleBoxFlat_iukv2")
 HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_flqn6")
 HSlider/styles/slider = SubResource("StyleBoxLine_vrlp0")
 Label/font_sizes/font_size = 19
-Label/fonts/font = ExtResource("6_ptock")
+Label/fonts/font = ExtResource("6_xtdu8")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_58kue"]
 bg_color = Color(0.055200003, 0.13677335, 0.23, 0.8235294)
@@ -651,124 +660,27 @@ _data = {
 &"Unpause": SubResource("Animation_50glp")
 }
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_35auo"]
-size = Vector3(4.051, 6, 4.051)
+[sub_resource type="QuadMesh" id="QuadMesh_76riy"]
+size = Vector2(100, 100)
 
-[node name="MovementIntroduction" type="Node" unique_id=1857325157]
+[node name="LogicIntro" type="Node3D" unique_id=1584571485]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=219973446]
-environment = ExtResource("1_6bgle")
+environment = ExtResource("1_vask6")
 
-[node name="GridMap" type="GridMap" parent="." unique_id=977045223]
-mesh_library = ExtResource("2_35auo")
-cell_size = Vector3(4.051, 3, 4.051)
+[node name="GridMap" type="GridMap" parent="." unique_id=805171723]
+mesh_library = ExtResource("2_ddh04")
+cell_size = Vector3(4, 3, 4)
 data = {
-"cells": PackedInt32Array(10420233, 2, 9, 65537, 65530, 0, 131070, 65530, 0, 65537, 65529, 1, 131070, 65529, 655361, 131070, 65531, 1, 65537, 65531, 1, 65535, 65535, 655368, 0, 65535, 655368, 1, 65535, 655368, 65535, 65525, 655368, 0, 65525, 655368, 1, 65525, 655368, 2, 65525, 655368, 3, 65525, 655368, 4, 65525, 655368, 5, 65525, 655368, 6, 65525, 655368, 6, 65526, 655368, 6, 65527, 655368, 6, 65528, 655368, 6, 65529, 655368, 6, 65530, 655368, 6, 65531, 655368, 2, 65535, 655368, 3, 65535, 655368, 4, 65535, 655368, 5, 65535, 655368, 6, 65535, 655368, 6, 65534, 655368, 6, 65533, 655368, 6, 65532, 655368, 65534, 65535, 8, 65533, 65534, 8, 65533, 65533, 8, 65533, 65532, 8, 65534, 65525, 8, 65533, 65526, 8, 65533, 65527, 8, 65533, 65528, 8, 65533, 65531, 9, 65533, 65529, 9, 65533, 65530, 9, -2, 65526, 1, -2, 65527, 1, -2, 65528, 1, -2, 65529, 1, -2, 65530, 1, -2, 65531, 1, -2, 65532, 1, -2, 65533, 1, -2, 65534, 1, -1, 65526, 1, -1, 65527, 1, -1, 65528, 1, -1, 65529, 1, -1, 65530, 1, -1, 65531, 1, -1, 65532, 1, -1, 65533, 1, -1, 65534, 1, -65536, 65526, 1, -65536, 65527, 1, -65536, 65528, 1, -65536, 65529, 1, -65536, 65530, 1, -65536, 65531, 1, -65536, 65532, 1, -65536, 65533, 1, -65536, 65534, 1, -65535, 65526, 1, -65535, 65527, 1, -65535, 65528, 1, -65535, 65529, 1, -65535, 65530, 1, -65535, 65531, 1, -65535, 65532, 1, -65535, 65533, 1, -65535, 65534, 1, -65534, 65526, 1, -65534, 65527, 1, -65534, 65528, 1, -65534, 65529, 1, -65534, 65530, 1, -65534, 65531, 1, -65534, 65532, 1, -65534, 65533, 1, -65534, 65534, 1, -65533, 65526, 1, -65533, 65527, 1, -65533, 65528, 1, -65533, 65529, 1, -65533, 65530, 1, -65533, 65531, 1, -65533, 65532, 1, -65533, 65533, 1, -65533, 65534, 1, -65532, 65526, 1, -65532, 65527, 1, -65532, 65528, 1, -65532, 65529, 1, -65532, 65530, 1, -65532, 65531, 1, -65532, 65532, 1, -65532, 65533, 1, -65532, 65534, 1, -65531, 65526, 1, -65531, 65527, 1, -65531, 65528, 1, -65531, 65529, 1, -65531, 65530, 1, -65531, 65531, 1, -65531, 65532, 1, -65531, 65533, 1, -65531, 65534, 1, 2, 65531, 9, 2, 65530, 9, 2, 65529, 9, 2, 65528, 10, 2, 65527, 10, 2, 65526, 10, 2, 65534, 10, 2, 65533, 10, 2, 65532, 10, 65539, 65534, 10, 65539, 65533, 10, 65539, 65532, 10, 65539, 65526, 10, 65539, 65527, 10, 65539, 65528, 10, 65539, 65529, 10, 65539, 65531, 10, 65540, 65534, 10, 65541, 65534, 10, 65541, 65533, 10, 65541, 65532, 10, 65540, 65526, 10, 65541, 65526, 10, 65541, 65527, 10, 65541, 65528, 10, 65541, 65529, 10, 65541, 65530, 10, 65541, 65531, 10, 65540, 65527, 1, 65540, 65528, 1, 65540, 65529, 1, 65540, 65530, 1, 65540, 65531, 1, 65540, 65532, 1, 65539, 65530, 1, 65540, 65533, 1, 131068, 65529, 1, 131068, 65530, 1, 131068, 65531, 1, 131067, 65531, 1, 131067, 65530, 1, 131067, 65529, 1, 196602, 65531, 8, 196602, 65530, 8, 196602, 65529, 8, 327677, 65532, 8, 327677, 65534, 8, 327677, 65533, 8, 327677, 65526, 8, 327677, 65527, 8, 327677, 65528, 8, 327678, 65525, 8, 327679, 65525, 8, 262144, 65525, 8, 262145, 65525, 8, 262146, 65525, 8, 262147, 65525, 8, 262148, 65525, 8, 262149, 65525, 8, 262150, 65525, 8, 327678, 65535, 8, 327679, 65535, 8, 262144, 65535, 8, 262145, 65535, 8, 262146, 65535, 8, 262147, 65535, 8, 262148, 65535, 8, 262149, 65535, 8, 262150, 65526, 8, 262150, 65527, 8, 262150, 65528, 8, 262150, 65529, 8, 262150, 65530, 8, 262150, 65531, 8, 262150, 65532, 8, 262150, 65534, 8, 262150, 65533, 8, 196604, 65532, 655368, 196603, 65532, 655368, 196604, 65528, 655368, 196603, 65528, 655368, 131075, 65530, 655368, -5, 1, 655361, -5, 2, 655361, -5, 3, 655361, -4, 1, 655361, -4, 2, 655361, -4, 3, 655361, -3, 1, 655361, -3, 2, 655361, -3, 3, 655361, -2, 1, 655361, -2, 2, 655361, -2, 3, 655361, -1, 1, 655361, -1, 2, 655361, -1, 3, 655361, -65536, 1, 655361, -65536, 2, 655361, -65536, 3, 655361, -65535, 1, 655361, -65535, 2, 655361, -65535, 3, 655361, -5, 4, 655361, -5, 5, 655361, -5, 6, 655361, -5, 7, 655361, -4, 4, 655361, -4, 5, 655361, -4, 7, 655361, -3, 4, 655361, -3, 7, 655361, -3, 5, 655361, -4, 6, 655361, 65533, 4, 655370, 131068, 4, 655370, -2, 4, 655370)
+"cells": PackedInt32Array(10420233, 2, 9, -2, 65529, 1, -2, 65530, 655368, -2, 65531, 655368, -2, 65532, 655368, -1, 65529, 1, -1, 65530, 655368, -1, 65531, 1, -1, 65532, 1, -65536, 65529, 1, -65536, 65530, 655368, -65536, 65531, 1, -65536, 65532, 1, -65535, 65529, 1, -65535, 65530, 655368, -65535, 65531, 1, -65535, 65532, 1, -65534, 65529, 1, -65534, 65530, 655368, -65534, 65531, 1, -65534, 65532, 1, -65533, 65529, 1, -65533, 65530, 655368, -65533, 65531, 1, -65533, 65532, 1, -65532, 65529, 1, -65532, 65530, 655368, -65532, 65531, 1, -65532, 65532, 1, -65531, 65529, 1, -65531, 65530, 655368, -65531, 65531, 1, -65531, 65532, 1, -65530, 65529, 1, -65530, 65530, 655368, -65530, 65531, 1, -65530, 65532, 1, -65529, 65529, 1, -65529, 65530, 655368, -65529, 65531, 1, -65529, 65532, 1, -65528, 65532, 655368, -65528, 65533, 655368, -65528, 65534, 655368, -65528, 65535, 655368, -65528, 0, 655368, -65536, 1, 1, -65536, 2, 1048586, -65536, 3, 1048586, -65536, 4, 1, -65536, 5, 1, -65536, 6, 1, -65535, 1, 1, -65535, 2, 1048586, -65535, 3, 1048586, -65535, 4, 1, -65535, 5, 1, -65535, 6, 1, -65534, 1, 1, -65534, 2, 1048586, -65534, 3, 1, -65534, 4, 1, -65534, 5, 1, -65534, 6, 1, -65533, 1, 1, -65533, 2, 1048586, -65533, 3, 1, -65533, 4, 1, -65533, 5, 1, -65533, 6, 1, -65532, 1, 1, -65532, 2, 1048586, -65532, 3, 1, -65532, 4, 1, -65532, 5, 1, -65532, 6, 1, -65531, 1, 1, -65531, 2, 1048586, -65531, 3, 1, -65531, 4, 1, -65531, 5, 1, -65531, 6, 1, -65530, 1, 1, -65530, 2, 1048586, -65530, 3, 1, -65530, 4, 1, -65530, 5, 1, -65530, 6, 1, -65529, 1, 1, -65529, 2, 655368, -65529, 3, 1, -65529, 4, 1, -65529, 5, 1, -65529, 6, 1, -65528, 1, 655368, -65528, 2, 1, -65528, 3, 1, -65528, 4, 1, -65528, 5, 1, -65528, 6, 1, -3, 1, 1, -3, 2, 1, -3, 3, 1, -3, 4, 1, -3, 5, 1, -3, 6, 1, -2, 1, 655368, -2, 2, 1, -2, 3, 1, -2, 4, 1, -2, 5, 1, -2, 6, 1, -1, 1, 1, -1, 2, 655368, -1, 3, 1, -1, 4, 1, -1, 5, 1, -1, 6, 1, -65528, 65529, 1, -65528, 65530, 655368, -65528, 65531, 655368, -65527, 65529, 1, -65527, 65530, 1, -65527, 65531, 1, -4, 65529, 1, -4, 65530, 1, -4, 65531, 1, -4, 65532, 1, -3, 65529, 1, -3, 65530, 655368, -3, 65531, 1, -3, 65532, 1, -5, 65529, 1, -5, 65530, 1, -5, 65531, 1, -5, 65532, 1, -5, 65533, 1, -5, 65534, 1, -5, 65535, 1, -5, 0, 1, -5, 1, 1, -5, 2, 1, -5, 3, 1, -5, 4, 1, -5, 5, 1, -5, 6, 1, -5, 7, 1, -4, 65533, 1, -4, 65534, 1, -4, 65535, 1, -4, 0, 1, -4, 1, 1, -4, 2, 1, -4, 3, 1, -4, 4, 1, -4, 5, 1, -4, 6, 1, -4, 7, 1, -3, 65533, 1, -2, 65533, 655368, -1, 65533, 10, -65536, 65533, 10, -65535, 65533, 10, -65534, 65533, 10, -65533, 65533, 10, -65532, 65533, 10, -65531, 65533, 10, -65530, 65533, 10, -65529, 65533, 10, -65527, 65533, 1, 6, 1, 1441800, 4, 1, 1441800, 2, 1, 1441800, 0, 1, 1441800, 262150, 1, 1441800, 262148, 1, 1441800, 262146, 1, 1441800, 262144, 1, 1441800, 1, 2, 655368, 3, 2, 655368, 5, 2, 655368, 262145, 2, 655368, 262147, 2, 655368, 262149, 2, 655368, -2, 65534, 655368, -2, 0, 655368, -2, 65535, 655368, 262143, 2, 655368, 262142, 1, 655368, 262142, 0, 655368, 262142, 65535, 655368, 262142, 65534, 655368, 262142, 65533, 1048584, 262142, 65532, 1048584, 262142, 65531, 1048584, 262143, 65530, 1048584, 196608, 65530, 1048584, 196609, 65530, 1048584, 196610, 65530, 1048584, 196611, 65530, 1048584, 196612, 65530, 1048584, 196613, 65530, 1048584, 196615, 2, 1048584, 196616, 1, 1048584, 196616, 0, 1048584, 196616, 65535, 1048584, 196616, 65534, 1048584, 196616, 65533, 1048584, 196616, 65532, 1048584, 196616, 65531, 1048584, 196615, 65530, 1048584, 196614, 65530, 1048584, -196601, 2, 1048585, -196602, 2, 1048585, -196603, 2, 1048585, -196604, 2, 1048585, -196600, 1, 1048585, -196600, 0, 1048585, -196605, 2, 1048585, -196606, 2, 1048585, -196607, 2, 1048585, -196608, 2, 1048585, -131073, 2, 1048585, -131074, 2, 1048585, -131075, 2, 1048585, -131075, 3, 1048585, -131074, 1, 1048585, -131074, 0, 1048585, -131075, 0, 1048585, -131075, 65535, 1048585, -131075, 65534, 1048585, -131074, 65534, 1048585, -131074, 65533, 1048585, -131074, 65535, 1048585, -131074, 65531, 1048585, -131074, 65532, 1048585, -131073, 65533, 9, -196608, 65533, 9, -196607, 65533, 9, -196606, 65533, 9, -196605, 65533, 9, -196604, 65533, 9, -196603, 65533, 9, -196602, 65533, 9, -196600, 65534, 9, -196600, 65535, 9, -196601, 65533, 9)
 }
 metadata/_editor_floor_ = Vector3(0, -1, 0)
 
-[node name="Player" parent="." unique_id=623680313 instance=ExtResource("3_wguiu")]
-transform = Transform3D(-0.99666, 0, -0.08166308, 0, 1, 0, 0.08166308, 0, -0.99666, -6.5038834, 1.4676175, 10.085252)
+[node name="Marker3D" type="Marker3D" parent="." unique_id=130524497]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8622777, 13.753349)
 
-[node name="Skeleton3D" parent="Player/CharacterBody3D/Player_Character/root" parent_id_path=PackedInt32Array(623680313, 1831994608, 1629276081) index="0" unique_id=1550848783]
-bones/1/position = Vector3(1.3730773e-06, 0.7261154, 0.06811524)
-bones/6/rotation = Quaternion(-0.102919035, 2.6235883e-17, 1.3761539e-16, 0.9946898)
-bones/7/rotation = Quaternion(-0.80314326, 0.0033189158, 0.002485836, 0.5957715)
-bones/8/rotation = Quaternion(0.36375165, -0.0011945951, -0.018909222, 0.93130326)
-bones/10/rotation = Quaternion(-0.45334736, -0.16607502, 0.25248387, 0.83853877)
-bones/11/rotation = Quaternion(5.133156e-07, 0.31518382, -2.4821892e-07, 0.94903064)
-bones/12/rotation = Quaternion(3.4817774e-07, 0.23817338, -1.981476e-07, 0.9712227)
-bones/13/rotation = Quaternion(7.7148786e-07, 0.15963687, -1.10011094e-07, 0.9871759)
-bones/14/rotation = Quaternion(5.174423e-08, 0.08007679, -1.4506445e-07, 0.99678874)
-bones/16/rotation = Quaternion(4.0471e-08, 0.2527112, -9.9523945e-08, 0.9675418)
-bones/17/rotation = Quaternion(8.6041254e-08, 0.18526207, -1.1881796e-08, 0.9826892)
-bones/18/rotation = Quaternion(8.10171e-08, 0.11693156, -1.1322058e-07, 0.99314)
-bones/19/rotation = Quaternion(1.8703245e-08, 0.048049003, 1.3299247e-07, 0.998845)
-bones/20/rotation = Quaternion(0.07323504, 0.2779201, -0.021310106, 0.95757145)
-bones/22/rotation = Quaternion(-0.45334396, 0.16609074, -0.25249448, 0.83853424)
-bones/23/rotation = Quaternion(1.18159e-06, -0.31544733, 1.6687734e-07, 0.9489432)
-bones/24/rotation = Quaternion(9.1524674e-07, -0.23837274, 1.4362908e-07, 0.9711738)
-bones/25/rotation = Quaternion(1.1415789e-06, -0.15977742, 8.6608004e-08, 0.9871531)
-bones/26/rotation = Quaternion(2.6006737e-07, -0.080148585, 1.6006426e-07, 0.99678296)
-bones/28/rotation = Quaternion(3.0839047e-07, -0.2529834, -2.3441121e-08, 0.9674706)
-bones/29/rotation = Quaternion(2.0076112e-07, -0.18547957, 4.852599e-08, 0.98264813)
-bones/30/rotation = Quaternion(1.1785322e-07, -0.117080815, -1.4955056e-08, 0.99312246)
-bones/31/rotation = Quaternion(-1.04216396e-08, -0.048120648, -2.351816e-07, 0.9988415)
-bones/32/rotation = Quaternion(0.073229514, -0.27827033, 0.021336537, 0.9574695)
-bones/33/rotation = Quaternion(0.9748493, 0.16337587, 0.081737116, -0.12765712)
-bones/34/rotation = Quaternion(1.5816607e-07, -8.3116625e-05, -5.7534038e-08, 1)
-bones/35/rotation = Quaternion(1.15881576e-07, -6.231875e-05, -8.260131e-08, 1)
-bones/36/rotation = Quaternion(7.160295e-08, -4.1607036e-05, 5.9655115e-08, 1)
-bones/37/rotation = Quaternion(1.3636482e-08, -2.0728698e-05, -1.5798179e-09, 1)
-bones/38/rotation = Quaternion(2.0837253e-07, -3.3252803e-08, 0.04314609, 0.99906886)
-bones/39/rotation = Quaternion(0.08847953, -0.6691464, 0.72454906, -0.1394389)
-bones/41/rotation = Quaternion(-2.7862626e-07, -8.301872e-05, -4.4627365e-07, 1)
-bones/42/rotation = Quaternion(-1.5408642e-07, -6.232034e-05, -3.1029512e-07, 1)
-bones/43/rotation = Quaternion(-8.356064e-08, -4.15462e-05, -2.3918344e-07, 1)
-bones/44/rotation = Quaternion(-7.670742e-09, -2.094134e-05, 2.6646644e-08, 1)
-bones/45/rotation = Quaternion(0.9748503, -0.16336706, -0.08174227, -0.12765715)
-bones/46/rotation = Quaternion(1.2892824e-07, 8.289188e-05, 1.6315788e-07, 1)
-bones/47/rotation = Quaternion(1.3258962e-07, 6.215671e-05, 1.655479e-07, 1)
-bones/48/rotation = Quaternion(2.1600796e-08, 4.1532265e-05, 1.6735349e-08, 1)
-bones/49/rotation = Quaternion(-5.2317958e-08, 2.0709489e-05, 1.3767414e-07, 1)
-bones/50/rotation = Quaternion(1.5479797e-07, 1.4436807e-07, -0.043124504, 0.99906975)
-bones/51/rotation = Quaternion(-0.08848801, -0.66914564, 0.7245471, 0.13944682)
-bones/53/rotation = Quaternion(-1.824435e-07, 8.2057144e-05, 5.790605e-07, 1)
-bones/54/rotation = Quaternion(-2.0431807e-07, 6.1647355e-05, 4.199529e-07, 1)
-bones/55/rotation = Quaternion(3.7146844e-08, 4.1044426e-05, 2.6100057e-07, 1)
-bones/56/rotation = Quaternion(-8.057721e-09, 2.0716065e-05, 2.8824623e-08, 1)
-bones/61/position = Vector3(-0.045452345, -0.024335206, -0.49865562)
-bones/61/scale = Vector3(0.9444378, 0.9444377, 0.9444378)
-bones/65/position = Vector3(-0.09845358, 0.22067997, -0.3734939)
-bones/65/scale = Vector3(0.94521, 0.9452099, 0.9452097)
-bones/69/position = Vector3(0.10298774, 0.24757642, -0.28823358)
-bones/69/scale = Vector3(0.94443774, 0.9444377, 0.94443786)
-bones/73/position = Vector3(0.11147566, 0.22759111, -0.31940076)
-bones/73/scale = Vector3(0.9452096, 0.94520974, 0.9452095)
-bones/77/position = Vector3(0.38304138, 0.048171148, -0.15220146)
-bones/77/scale = Vector3(0.9444377, 0.9444377, 0.94443756)
-bones/81/position = Vector3(0.31499052, -0.028354734, -0.23406929)
-bones/81/scale = Vector3(0.9444381, 0.94443816, 0.94443816)
-bones/85/position = Vector3(-0.22772318, -0.21203923, -0.315162)
-bones/85/scale = Vector3(0.94443804, 0.9444378, 0.9444381)
-bones/89/position = Vector3(-0.0074029905, 0.01575166, -0.37142316)
-bones/89/scale = Vector3(0.9452103, 0.9452103, 0.94520986)
-bones/93/position = Vector3(-0.10897404, 0.15205836, -0.30277997)
-bones/93/scale = Vector3(0.94443804, 0.94443774, 0.944438)
-bones/97/position = Vector3(-0.0785707, 0.13896763, -0.32380894)
-bones/97/scale = Vector3(0.9452098, 0.94520944, 0.94521)
-bones/101/position = Vector3(-0.3142568, -0.0068665743, -0.19233446)
-bones/101/scale = Vector3(0.94443804, 0.9444379, 0.9444379)
-bones/105/position = Vector3(-0.054388, -0.111897334, -0.3382616)
-bones/105/scale = Vector3(0.94443804, 0.9444383, 0.9444381)
-
-[node name="BodyJiggle" parent="Player/CharacterBody3D/Player_Character/root/Skeleton3D" index="1" unique_id=1224292015]
-transform = Transform3D(0.5921817, 7.299932e-07, 0.048521355, 5.7306268e-05, 0.59416574, -0.00070833665, -0.04852133, 0.00071065064, 0.5921812, -6.503883, 1.5021443, 10.085253)
-
-[node name="FlameJiggle" parent="Player/CharacterBody3D/Player_Character/root/Skeleton3D" index="2" unique_id=1142166283]
-transform = Transform3D(0.59058255, -0.06348455, -0.014676002, -0.005047142, -0.17799504, 0.5668561, -0.06496307, -0.56331223, -0.17746067, -6.6117535, 1.910016, 8.790715)
-
-[node name="HeadJiggle" parent="Player/CharacterBody3D/Player_Character/root/Skeleton3D" index="3" unique_id=152199067]
-transform = Transform3D(0.59218484, 0.00968935, 0.047504682, 0.00018796393, 0.58171636, -0.12099359, -0.04848241, 0.12060513, 0.57977337, -6.4900656, 2.5218344, 10.255515)
-
-[node name="LArmJiggle" parent="Player/CharacterBody3D/Player_Character/root/Skeleton3D" index="4" unique_id=1014996254]
-transform = Transform3D(0.048667517, 0.59216887, -0.0009961402, 0.0011446791, 0.00090543437, 0.5941644, 0.5921684, -0.048669256, -0.0010666747, -5.4499545, 1.4397973, 9.976276)
-
-[node name="LArmJiggle2" parent="Player/CharacterBody3D/Player_Character/root/Skeleton3D" index="5" unique_id=1078964516]
-transform = Transform3D(-0.30017188, 0.29072922, 0.42238218, -0.028980922, -0.49826944, 0.32236752, 0.5119476, 0.14225754, 0.26590553, -5.6971307, 0.4549846, 10.323541)
-
-[node name="RArmJiggle" parent="Player/CharacterBody3D/Player_Character/root/Skeleton3D" index="6" unique_id=2141569191]
-transform = Transform3D(-0.048375905, -0.592193, 0.000809252, -0.001144699, 0.00090546085, 0.59416443, -0.5921924, 0.0483742, -0.0012146406, -7.5614924, 1.439797, 10.149289)
-
-[node name="RArmJiggle2" parent="Player/CharacterBody3D/Player_Character/root/Skeleton3D" index="7" unique_id=2001702917]
-transform = Transform3D(-0.37932163, -0.26341107, -0.3738491, 0.028571727, -0.4984108, 0.322186, -0.456434, 0.18770958, 0.33085698, -7.260602, 0.45474404, 10.451726)
-
-[node name="LookBit" parent="Player/CharacterBody3D" parent_id_path=PackedInt32Array(623680313, 844716186) index="4" unique_id=570069494 node_paths=PackedStringArray("tos")]
-tos = {
-NodePath("../Player_Character/AnimationControl/Idle"): NodePath("GlobalDirection"),
-NodePath("../Player_Character/AnimationControl/Wall_Grab"): NodePath("GlobalWallNorm"),
-NodePath("MovingCrate"): null
-}
+[node name="Player" parent="." unique_id=623680313 instance=ExtResource("3_sblmi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7687855, 2.485854, -12.800595)
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=2044884161]
 layer = 2
@@ -784,11 +696,12 @@ render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="UI/Backdrop/SubViewport" unique_id=505657531]
 transform = Transform3D(0.072607756, -0.11966671, -0.9901556, -0.001095968, 0.9927657, -0.120062545, 0.99736, 0.009802649, 0.071951345, -4.509954, 1.9735076, 1.6260126)
+current = true
 
-[node name="PC_Main" parent="UI/Backdrop/SubViewport" unique_id=1280227698 instance=ExtResource("4_5dh3t")]
+[node name="PC_Main" parent="UI/Backdrop/SubViewport" unique_id=1280227698 instance=ExtResource("4_tb1we")]
 transform = Transform3D(-0.024092056, 0, -0.9997097, 0, 1, 0, 0.9997097, 0, -0.024092056, 0, 0.57039356, 2.5850382)
 
-[node name="Skeleton3D" parent="UI/Backdrop/SubViewport/PC_Main/root" parent_id_path=PackedInt32Array(1280227698, 1629276081) index="0" unique_id=1550848783]
+[node name="Skeleton3D" parent="UI/Backdrop/SubViewport/PC_Main/root" parent_id_path=PackedInt32Array(1280227698, 992819664) index="0" unique_id=951532203]
 bones/0/scale = Vector3(1, 0.99999994, 0.9999999)
 bones/1/position = Vector3(-0.065041415, 0.16932577, 0.12263414)
 bones/1/rotation = Quaternion(-0.19320463, -3.2799692e-06, 6.730784e-07, 0.9811585)
@@ -1024,10 +937,10 @@ bones/105/position = Vector3(-0.2586735, -0.046397522, -0.25656357)
 bones/105/rotation = Quaternion(-2.8158428e-08, -1.4556036e-07, 8.5516824e-08, 1)
 bones/105/scale = Vector3(0.9444543, 0.94445425, 0.9444543)
 
-[node name="Cape" parent="UI/Backdrop/SubViewport/PC_Main/root/Skeleton3D" index="0" unique_id=1626639963]
-surface_material_override/0 = ExtResource("5_58vqi")
+[node name="Cape" parent="UI/Backdrop/SubViewport/PC_Main/root/Skeleton3D" index="0" unique_id=1094262781]
+surface_material_override/0 = ExtResource("5_806ps")
 
-[node name="AnimationPlayer" parent="UI/Backdrop/SubViewport/PC_Main" index="1" unique_id=782364722]
+[node name="AnimationPlayer" parent="UI/Backdrop/SubViewport/PC_Main" index="1" unique_id=102272202]
 autoplay = &"Idle_Break01_001"
 
 [node name="OmniLight3D" type="OmniLight3D" parent="UI/Backdrop/SubViewport/PC_Main" unique_id=1943270133]
@@ -1084,7 +997,7 @@ theme_override_constants/separation = 10
 
 [node name="Label" type="Label" parent="UI/OptionsMenu/MarginContainer/VBoxContainer" unique_id=659102800]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("6_ptock")
+theme_override_fonts/font = ExtResource("6_xtdu8")
 theme_override_font_sizes/font_size = 30
 text = "PAUSED"
 horizontal_alignment = 1
@@ -1108,15 +1021,15 @@ layout_mode = 2
 text = "AUDIO"
 horizontal_alignment = 1
 
-[node name="MasterBus" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=413050528 instance=ExtResource("7_sjm26")]
+[node name="MasterBus" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=413050528 instance=ExtResource("7_oywty")]
 layout_mode = 2
 bus_name = &"Master"
 
-[node name="MusicBus" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1123157694 instance=ExtResource("7_sjm26")]
+[node name="MusicBus" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1123157694 instance=ExtResource("7_oywty")]
 layout_mode = 2
 bus_name = &"Music"
 
-[node name="SFXBus" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1961769117 instance=ExtResource("7_sjm26")]
+[node name="SFXBus" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1961769117 instance=ExtResource("7_oywty")]
 layout_mode = 2
 bus_name = &"SFX"
 
@@ -1125,22 +1038,22 @@ layout_mode = 2
 text = "CONTROLS"
 horizontal_alignment = 1
 
-[node name="InputEntry" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=2685080 instance=ExtResource("8_qws72")]
+[node name="InputEntry" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=2685080 instance=ExtResource("8_d0exp")]
 layout_mode = 2
 event_name = &"Jump"
 display_name = &"Jump"
 
-[node name="InputEntry6" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=2087874597 instance=ExtResource("8_qws72")]
+[node name="InputEntry6" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=2087874597 instance=ExtResource("8_d0exp")]
 layout_mode = 2
 event_name = &"Sprint"
 display_name = &"Sprint"
 
-[node name="InputEntry8" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=116921702 instance=ExtResource("8_qws72")]
+[node name="InputEntry8" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=116921702 instance=ExtResource("8_d0exp")]
 layout_mode = 2
 event_name = &"Grab"
 display_name = &"Grab"
 
-[node name="InputEntry9" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=898898100 instance=ExtResource("8_qws72")]
+[node name="InputEntry9" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=898898100 instance=ExtResource("8_d0exp")]
 layout_mode = 2
 event_name = &"Pause"
 display_name = &"Pause"
@@ -1158,7 +1071,7 @@ text = "Back
 flat = true
 
 [node name="PlayerAnimatorBit" type="Node" parent="UI/OptionsMenu/Button" unique_id=1610406195]
-script = ExtResource("9_r44h5")
+script = ExtResource("9_fg7vd")
 animation = "Options->Start"
 metadata/_custom_type_script = "uid://dw7w6pry2g435"
 
@@ -1176,7 +1089,7 @@ offset_left = 60.0
 offset_top = 55.0
 offset_right = 1092.0
 offset_bottom = 158.0
-theme_override_fonts/font = ExtResource("6_ptock")
+theme_override_fonts/font = ExtResource("6_xtdu8")
 theme_override_font_sizes/font_size = 69
 text = "Little Guy"
 horizontal_alignment = 1
@@ -1195,13 +1108,13 @@ offset_bottom = 261.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 0
-theme_override_fonts/font = ExtResource("6_ptock")
+theme_override_fonts/font = ExtResource("6_xtdu8")
 theme_override_font_sizes/font_size = 30
 text = "Start"
 flat = true
 
 [node name="PlayerAnimatorBit2" type="Node" parent="UI/StartScreen/Button" unique_id=825821918]
-script = ExtResource("9_r44h5")
+script = ExtResource("9_fg7vd")
 animation = "Start->Game"
 metadata/_custom_type_script = "uid://dw7w6pry2g435"
 
@@ -1213,13 +1126,13 @@ offset_right = 719.0
 offset_bottom = 586.0
 size_flags_horizontal = 0
 focus_mode = 0
-theme_override_fonts/font = ExtResource("6_ptock")
+theme_override_fonts/font = ExtResource("6_xtdu8")
 theme_override_font_sizes/font_size = 30
 text = "Options"
 flat = true
 
 [node name="PlayerAnimatorBit" type="Node" parent="UI/StartScreen/Button2" unique_id=1948312414]
-script = ExtResource("9_r44h5")
+script = ExtResource("9_fg7vd")
 animation = "Start->Options"
 metadata/_custom_type_script = "uid://dw7w6pry2g435"
 
@@ -1246,91 +1159,210 @@ grow_vertical = 2
 libraries/ = SubResource("AnimationLibrary_78pm4")
 
 [node name="Pause" type="Node" parent="UI/AnimationPlayer" unique_id=952363448 node_paths=PackedStringArray("condition")]
-script = ExtResource("9_r44h5")
+script = ExtResource("9_fg7vd")
 animation = "Pause"
 condition = NodePath("../GameStarted")
 metadata/_custom_type_script = "uid://dw7w6pry2g435"
 
 [node name="Unpause" type="Node" parent="UI/AnimationPlayer" unique_id=845214954 node_paths=PackedStringArray("condition")]
-script = ExtResource("9_r44h5")
+script = ExtResource("9_fg7vd")
 animation = "Unpause"
 condition = NodePath("../GameStarted")
 metadata/_custom_type_script = "uid://dw7w6pry2g435"
 
 [node name="MouseCapturerBit" type="Node" parent="UI/AnimationPlayer" unique_id=1878406228]
-script = ExtResource("10_uxgwr")
+script = ExtResource("10_d3dcp")
 update_mouse_mode = 0
 update = true
 metadata/_custom_type_script = "uid://dk0hts3twf6t"
 
 [node name="PauseInput" type="Node" parent="UI/AnimationPlayer" unique_id=160115649 node_paths=PackedStringArray("condition")]
-script = ExtResource("11_m2oa2")
+script = ExtResource("11_3y8p1")
 input = "Pause"
 condition = NodePath("IsPaused")
 metadata/_custom_type_script = "uid://dekpk8relyucb"
 
 [node name="IsPaused" type="Node" parent="UI/AnimationPlayer/PauseInput" unique_id=1740499463]
-script = ExtResource("12_g2jy8")
+script = ExtResource("12_tly4m")
 metadata/_custom_type_script = "uid://cox1ysk6bulx2"
 
 [node name="GameStarted" type="Node" parent="UI/AnimationPlayer" unique_id=1217927846]
-script = ExtResource("12_g2jy8")
+script = ExtResource("12_tly4m")
 response = false
 metadata/_custom_type_script = "uid://cox1ysk6bulx2"
 
-[node name="DirectionalLight3D" type="OmniLight3D" parent="." unique_id=1852702245]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3144364, 10.447776, -25.465471)
+[node name="WaterMesh" parent="." unique_id=1210634507 instance=ExtResource("13_76riy")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 5.5135994, -0.4766178, -0.4403925)
+mesh = SubResource("QuadMesh_76riy")
+
+[node name="Crate" parent="." unique_id=946948200 instance=ExtResource("14_fhm5u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.062025, 12.026483, 6.2763033)
+
+[node name="Crate2" parent="." unique_id=1606856730 instance=ExtResource("14_fhm5u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.062025, 12.026483, 6.2763033)
+
+[node name="Crate3" parent="." unique_id=949948656 instance=ExtResource("14_fhm5u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.062025, 12.026483, 6.2763033)
+
+[node name="PressurePlate5" parent="." unique_id=157249335 instance=ExtResource("15_34khg")]
+transform = Transform3D(1.0899999, -3.38541e-22, -1.4798095e-29, -1.8259224e-29, -4.7645404e-08, 1.0899999, 3.369842e-22, -1.0899999, -4.7645404e-08, 22.012571, 8.267435, 7.806988)
+
+[node name="PressurePlate6" parent="." unique_id=152735200 instance=ExtResource("15_34khg")]
+transform = Transform3D(1.0899999, -2.1544907e-22, -9.417579e-30, -1.8259221e-29, -4.7645404e-08, 1.0899999, 3.369842e-22, -1.0899999, -4.7645404e-08, 14.012571, 8.267435, 7.806988)
+
+[node name="PressurePlate7" parent="." unique_id=554539920 instance=ExtResource("15_34khg")]
+transform = Transform3D(1.0899999, -3.38541e-22, -1.4798095e-29, -1.8259224e-29, -4.7645404e-08, 1.0899999, 3.369842e-22, -1.0899999, -4.7645404e-08, 6.0125713, 8.267435, 7.806988)
+
+[node name="Door2" parent="." unique_id=697453936 instance=ExtResource("13_igu7x")]
+transform = Transform3D(-2.0981469e-08, -0.48, 9.487666e-23, -2.0981469e-08, 9.171294e-16, -0.48, 0.48, -2.0981469e-08, -2.0981469e-08, 21.951323, 11.376699, 6.342897)
+open_extent = Vector3(10, 0, 0)
+
+[node name="ActorBool" type="Node" parent="Door2" unique_id=779002493 node_paths=PackedStringArray("actor")]
+script = ExtResource("18_ddh04")
+actor = NodePath("../../PressurePlate")
+metadata/_custom_type_script = "uid://dd8or5oo0cmw2"
+
+[node name="Door" parent="." unique_id=365563251 node_paths=PackedStringArray("condition") instance=ExtResource("13_igu7x")]
+transform = Transform3D(-2.0981469e-08, -0.48, 1.4908228e-22, -2.0981469e-08, 9.171294e-16, -0.48, 0.48, -2.0981469e-08, -2.0981469e-08, 21.951323, 5.3767, 6.342897)
+open_extent = Vector3(10, 0, 0)
+condition = NodePath("NotBool")
+
+[node name="NotBool" type="Node" parent="Door" unique_id=596579960]
+script = ExtResource("19_xtdu8")
+metadata/_custom_type_script = "uid://ycifmydtbo1g"
+
+[node name="AndBool" type="Node" parent="Door/NotBool" unique_id=1834325233 node_paths=PackedStringArray("inputs")]
+script = ExtResource("17_tb1we")
+inputs = [NodePath("../../../1")]
+metadata/_custom_type_script = "uid://nege5nk1sa8u"
+
+[node name="OrBool" type="Node" parent="Door/NotBool/AndBool" unique_id=2110153430 node_paths=PackedStringArray("inputs")]
+script = ExtResource("18_806ps")
+inputs = [NodePath("../../../../2")]
+metadata/_custom_type_script = "uid://makmxo060e2"
+
+[node name="NotBool" type="Node" parent="Door/NotBool/AndBool/OrBool" unique_id=363054015 node_paths=PackedStringArray("input")]
+script = ExtResource("19_xtdu8")
+input = NodePath("../../../../../3")
+metadata/_custom_type_script = "uid://ycifmydtbo1g"
+
+[node name="Door3" parent="." unique_id=1658927099 instance=ExtResource("13_igu7x")]
+transform = Transform3D(-2.0981469e-08, -0.48, 9.487666e-23, -2.0981469e-08, 9.171294e-16, -0.48, 0.48, -2.0981469e-08, -2.0981469e-08, 13.951323, 11.376699, 6.342897)
+open_extent = Vector3(10, 0, 0)
+
+[node name="ActorBool" type="Node" parent="Door3" unique_id=1731286458 node_paths=PackedStringArray("actor")]
+script = ExtResource("18_ddh04")
+actor = NodePath("../../PressurePlate2")
+metadata/_custom_type_script = "uid://dd8or5oo0cmw2"
+
+[node name="Door4" parent="." unique_id=72868994 node_paths=PackedStringArray("condition") instance=ExtResource("13_igu7x")]
+transform = Transform3D(-2.0981469e-08, -0.48, 9.487666e-23, -2.0981469e-08, 9.171294e-16, -0.48, 0.48, -2.0981469e-08, -2.0981469e-08, 13.951323, 5.3767, 6.342897)
+open_extent = Vector3(10, 0, 0)
+condition = NodePath("AndBool")
+
+[node name="AndBool" type="Node" parent="Door4" unique_id=343610098]
+script = ExtResource("17_tb1we")
+metadata/_custom_type_script = "uid://nege5nk1sa8u"
+
+[node name="OrBool" type="Node" parent="Door4/AndBool" unique_id=1435774878 node_paths=PackedStringArray("inputs")]
+script = ExtResource("18_806ps")
+inputs = [NodePath("../../../2"), NodePath("../../../3")]
+metadata/_custom_type_script = "uid://makmxo060e2"
+
+[node name="NotBool" type="Node" parent="Door4/AndBool" unique_id=495892584 node_paths=PackedStringArray("input")]
+script = ExtResource("19_xtdu8")
+input = NodePath("../../../1")
+metadata/_custom_type_script = "uid://ycifmydtbo1g"
+
+[node name="Door5" parent="." unique_id=699774695 instance=ExtResource("13_igu7x")]
+transform = Transform3D(-2.0981469e-08, -0.48, 9.487666e-23, -2.0981469e-08, 9.171294e-16, -0.48, 0.48, -2.0981469e-08, -2.0981469e-08, 5.9513226, 11.376699, 6.342897)
+open_extent = Vector3(10, 0, 0)
+
+[node name="ActorBool" type="Node" parent="Door5" unique_id=249273310 node_paths=PackedStringArray("actor")]
+script = ExtResource("18_ddh04")
+actor = NodePath("../../PressurePlate3")
+metadata/_custom_type_script = "uid://dd8or5oo0cmw2"
+
+[node name="Door6" parent="." unique_id=1247981716 node_paths=PackedStringArray("condition") instance=ExtResource("13_igu7x")]
+transform = Transform3D(-2.0981469e-08, -0.48, 1.4908228e-22, -2.0981469e-08, 9.171294e-16, -0.48, 0.48, -2.0981469e-08, -2.0981469e-08, 5.9513226, 5.3767, 6.342897)
+open_extent = Vector3(10, 0, 0)
+condition = NodePath("NotBool")
+
+[node name="NotBool" type="Node" parent="Door6" unique_id=148378932]
+script = ExtResource("19_xtdu8")
+metadata/_custom_type_script = "uid://ycifmydtbo1g"
+
+[node name="AndBool" type="Node" parent="Door6/NotBool" unique_id=726465883 node_paths=PackedStringArray("inputs")]
+script = ExtResource("17_tb1we")
+inputs = [NodePath("../../../1"), NodePath("../../../2")]
+metadata/_custom_type_script = "uid://nege5nk1sa8u"
+
+[node name="PressurePlate" parent="." unique_id=1569890843 instance=ExtResource("15_34khg")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 22.116623, 0.24853274, -9.956017)
+
+[node name="PressurePlate2" parent="." unique_id=1497808319 instance=ExtResource("15_34khg")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 13.989948, 0.24853274, -10.020411)
+
+[node name="PressurePlate3" parent="." unique_id=821038131 instance=ExtResource("15_34khg")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6.038192, 0.24853274, -10.046217)
+
+[node name="PressurePlate4" parent="." unique_id=682696354 instance=ExtResource("15_34khg")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -2.0008717, 0.20403239, -14.105274)
+
+[node name="KillBit" type="Node" parent="PressurePlate4" unique_id=1496555534 node_paths=PackedStringArray("target", "condition")]
+script = ExtResource("17_vask6")
+target = NodePath("../../Crate")
+condition = NodePath("../ActorBool")
+metadata/_custom_type_script = "uid://bekt6vd73jjuq"
+
+[node name="KillBit2" type="Node" parent="PressurePlate4" unique_id=1465658178 node_paths=PackedStringArray("target", "condition")]
+script = ExtResource("17_vask6")
+target = NodePath("../../Crate2")
+condition = NodePath("../ActorBool")
+metadata/_custom_type_script = "uid://bekt6vd73jjuq"
+
+[node name="KillBit3" type="Node" parent="PressurePlate4" unique_id=1972419246 node_paths=PackedStringArray("target", "condition")]
+script = ExtResource("17_vask6")
+target = NodePath("../../Crate3")
+condition = NodePath("../ActorBool")
+metadata/_custom_type_script = "uid://bekt6vd73jjuq"
+
+[node name="ActorBool" type="Node" parent="PressurePlate4" unique_id=196463651 node_paths=PackedStringArray("actor")]
+script = ExtResource("18_ddh04")
+actor = NodePath("..")
+metadata/_custom_type_script = "uid://dd8or5oo0cmw2"
+
+[node name="2" type="Node" parent="." unique_id=1895496712 node_paths=PackedStringArray("actor")]
+script = ExtResource("18_ddh04")
+actor = NodePath("../PressurePlate5")
+metadata/_custom_type_script = "uid://dd8or5oo0cmw2"
+
+[node name="1" type="Node" parent="." unique_id=943293316 node_paths=PackedStringArray("actor")]
+script = ExtResource("18_ddh04")
+actor = NodePath("../PressurePlate6")
+metadata/_custom_type_script = "uid://dd8or5oo0cmw2"
+
+[node name="3" type="Node" parent="." unique_id=1235722611 node_paths=PackedStringArray("actor")]
+script = ExtResource("18_ddh04")
+actor = NodePath("../PressurePlate7")
+metadata/_custom_type_script = "uid://dd8or5oo0cmw2"
+
+[node name="Door7" parent="." unique_id=1952933256 node_paths=PackedStringArray("condition") instance=ExtResource("13_igu7x")]
+transform = Transform3D(-5.3327895e-08, -1.22, 5.3327895e-08, 0, -5.3327895e-08, -1.22, 1.22, -5.3327895e-08, 2.3310364e-15, 13.951323, -8.623301, -2.657103)
+time = 4.0
+open_extent = Vector3(0, 0, -7)
+condition = NodePath("../3")
+
+[node name="TeleporterExit" parent="Door7/CharacterBody3D" parent_id_path=PackedInt32Array(1952933256, 1579031861) index="2" unique_id=234579865 instance=ExtResource("22_806ps")]
+transform = Transform3D(1.0000001, -4.3711395e-08, 4.3711402e-08, -4.3711402e-08, -4.371139e-08, 1.0000001, -4.3711395e-08, -1.0000001, -4.3711392e-08, 0, 0, -1.6393442)
+
+[node name="DirectionalLight3D4" type="OmniLight3D" parent="." unique_id=1883995866]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.01896, 5.2286572, -2.5042505)
 light_color = Color(1, 0.72104746, 0.5527951, 1)
 light_volumetric_fog_energy = 0.0
 shadow_enabled = true
-omni_range = 17.0
-omni_attenuation = -0.613
-
-[node name="DirectionalLight3D4" type="OmniLight3D" parent="." unique_id=207817112]
-transform = Transform3D(0.99999994, -0.00040142573, 0, 0.00040142573, 0.99999994, 0, 0, 0, 1, -9.542773, 19.817612, -25.465471)
-light_color = Color(1, 0.72104746, 0.5527951, 1)
-light_volumetric_fog_energy = 0.0
-shadow_enabled = true
-omni_range = 17.0
-omni_attenuation = -0.613
-
-[node name="DirectionalLight3D2" type="OmniLight3D" parent="." unique_id=2016727142]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3144355, 6.334853, -11.963247)
-light_color = Color(1, 0.72104746, 0.5527951, 1)
-light_volumetric_fog_energy = 0.0
-shadow_enabled = true
-omni_range = 17.0
-omni_attenuation = -0.613
-
-[node name="DirectionalLight3D3" type="OmniLight3D" parent="." unique_id=477828108]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3144355, 6.334853, -41.957428)
-light_color = Color(1, 0.72104746, 0.5527951, 1)
-light_volumetric_fog_energy = 0.0
-shadow_enabled = true
-omni_range = 17.0
-omni_attenuation = -0.613
-
-[node name="Signpost" parent="." unique_id=1718605348 instance=ExtResource("13_35auo")]
-transform = Transform3D(-0.3270035, 0, 0.9450231, 0, 1, 0, -0.9450231, 0, -0.3270035, 5.7159677, 6.866813, -23.157528)
-text = "Tap Space / A to
-Jump.
-"
-
-[node name="Signpost3" parent="." unique_id=957998082 instance=ExtResource("13_35auo")]
-transform = Transform3D(0.435781, 0, 0.9000528, 0, 1, 0, -0.9000528, 0, 0.435781, 5.641707, 6.866813, -28.824295)
-text = "Hold Shift / RT 
-to Sprint."
-
-[node name="Signpost2" parent="." unique_id=154775941 instance=ExtResource("13_35auo")]
-transform = Transform3D(0.37808317, 0, 0.9257718, 0, 1, 0, -0.9257718, 0, 0.37808317, -5.5599637, 6.866813, -28.572515)
-text = "While on a wall, use
-WASD / the DPad
-to climb, and Space
-/ A to Wall Jump"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=315939228]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.162485, 2.9815698, 18.207811)
-shape = SubResource("BoxShape3D_35auo")
+omni_range = 20.0
+omni_attenuation = -0.049
 
 [connection signal="pressed" from="UI/OptionsMenu/Button" to="UI/OptionsMenu/Button/PlayerAnimatorBit" method="animate"]
 [connection signal="pressed" from="UI/StartScreen/Button" to="UI/StartScreen/Button/PlayerAnimatorBit2" method="animate"]
@@ -1338,6 +1370,5 @@ shape = SubResource("BoxShape3D_35auo")
 [connection signal="just_false" from="UI/AnimationPlayer/PauseInput" to="UI/AnimationPlayer/Unpause" method="animate"]
 [connection signal="just_true" from="UI/AnimationPlayer/PauseInput" to="UI/AnimationPlayer/Pause" method="animate"]
 
-[editable path="Player"]
-[editable path="Player/CharacterBody3D/Player_Character"]
 [editable path="UI/Backdrop/SubViewport/PC_Main"]
+[editable path="Door7"]

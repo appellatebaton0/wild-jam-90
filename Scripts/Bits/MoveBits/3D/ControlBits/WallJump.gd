@@ -1,6 +1,8 @@
 class_name WallJumpBit3D extends ControlBit3D
 ## Allows a bot to wall jump. Nothing else, so this should likely be unexclusive.
 
+signal jumped
+
 ## The amount of upwards velocity to make the minimum when wall jumping.
 @export var vertical_velocity := 10.0
 ## The amount of velocity to push the bot off of the wall with.
@@ -46,5 +48,7 @@ func phys_active(delta:float) -> void:
 		cooldown_timer = cooldown
 		coyote_timer = 0
 		jump_buffer = 0
+		
+		jumped.emit()
 	
 #func _physics_process(delta: float) -> void: print(master.mover.is_on_wall_only())

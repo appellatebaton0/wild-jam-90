@@ -6,7 +6,7 @@ class_name AndBool extends BoolValue
 
 func _ready() -> void:
 	for child in get_children():
-		if child is BoolValue:
+		if child is BoolValue and not inputs.has(child):
 			inputs.append(child)
 
 func value() -> bool:
