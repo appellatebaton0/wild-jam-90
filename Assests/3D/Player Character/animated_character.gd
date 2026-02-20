@@ -33,6 +33,8 @@ var lerped_wall_move_vector := wall_move_vector
 var fire_direction := Vector3.UP
 
 func _process(delta: float):
+	if !visible: return
+	
 	RenderingServer.global_shader_parameter_set("player_position", self.global_position + Vector3(0, 1.0, 0))
 	
 	tracked_position = lerp(tracked_position, self.global_position, 6.0 * delta);
