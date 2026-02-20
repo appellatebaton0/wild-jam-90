@@ -9,4 +9,4 @@ func value() -> bool:
 	else: return false
 
 func activate() -> void:
-	response = true	
+	response = true
