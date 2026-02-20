@@ -10,6 +10,7 @@ const POINT_SCENE := preload("res://Scenes/MovingPlatformPoint.tscn")
 @export_tool_button("Reset") var reset := _reset
 
 @export var move_in_editor := true ## Whether or not to animate in-editor
+@export var muted := false
 
 ## How the platform cycles through its points if it has a condition, and that condition is false.
 ## || Pause: The platform will stop cycling once it reaches its next point.
@@ -39,6 +40,9 @@ func _ready() -> void:
 	
 	var me = self
 	node = me
+	
+	if muted: $AudioStreamPlayer3D.volume_db = -90.0
+	else:     $AudioStreamPlayer3D.volume_db = 0.0
 	
 	_reset()
 
