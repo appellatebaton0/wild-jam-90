@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cn4def2fvybpy"
 path.bptc="res://.godot/imported/PackedG3.png-a0c1ee7bfdf63cad2f1e0ffdca10d101.bptc.ctex"
+path.astc="res://.godot/imported/PackedG3.png-a0c1ee7bfdf63cad2f1e0ffdca10d101.astc.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assests/2D/PackedG3.png"
-dest_files=["res://.godot/imported/PackedG3.png-a0c1ee7bfdf63cad2f1e0ffdca10d101.bptc.ctex"]
+dest_files=["res://.godot/imported/PackedG3.png-a0c1ee7bfdf63cad2f1e0ffdca10d101.bptc.ctex", "res://.godot/imported/PackedG3.png-a0c1ee7bfdf63cad2f1e0ffdca10d101.astc.ctex"]
 
 [params]
 

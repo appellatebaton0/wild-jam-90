@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bgmb34qcp7npd"
 path.s3tc="res://.godot/imported/Round_Decor_02_Trimsheet.png-c8f677908d6582ba32c64c93f347e3b5.s3tc.ctex"
+path.etc2="res://.godot/imported/Round_Decor_02_Trimsheet.png-c8f677908d6582ba32c64c93f347e3b5.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assests/3D/Objects/Ruins/Round_Decor_02_Trimsheet.png"
-dest_files=["res://.godot/imported/Round_Decor_02_Trimsheet.png-c8f677908d6582ba32c64c93f347e3b5.s3tc.ctex"]
+dest_files=["res://.godot/imported/Round_Decor_02_Trimsheet.png-c8f677908d6582ba32c64c93f347e3b5.s3tc.ctex", "res://.godot/imported/Round_Decor_02_Trimsheet.png-c8f677908d6582ba32c64c93f347e3b5.etc2.ctex"]
 
 [params]
 

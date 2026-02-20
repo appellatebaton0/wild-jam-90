@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://da78ph42vs4lp"
 path.bptc="res://.godot/imported/dirt_low_contrast_alpha.png-76a4eeb01852758ba61a1559bbed7e94.bptc.ctex"
+path.astc="res://.godot/imported/dirt_low_contrast_alpha.png-76a4eeb01852758ba61a1559bbed7e94.astc.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assests/2D/dirt_low_contrast_alpha.png"
-dest_files=["res://.godot/imported/dirt_low_contrast_alpha.png-76a4eeb01852758ba61a1559bbed7e94.bptc.ctex"]
+dest_files=["res://.godot/imported/dirt_low_contrast_alpha.png-76a4eeb01852758ba61a1559bbed7e94.bptc.ctex", "res://.godot/imported/dirt_low_contrast_alpha.png-76a4eeb01852758ba61a1559bbed7e94.astc.ctex"]
 
 [params]
 
