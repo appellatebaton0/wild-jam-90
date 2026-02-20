@@ -35,7 +35,8 @@ func _process(delta: float) -> void: if not Engine.is_editor_hint():
 		
 		if not should_play or not ray.is_colliding(): return
 		
-		var new_index = terrain_data.get_texture_id(ray.get_collision_point()).x
+		var tex_data = terrain_data.get_texture_id(ray.get_collision_point())
+		var new_index = get_index_from_texture_data(tex_data, 0.7)
 		
 		var streams = a_streams if (switch_condition.value() if switch_condition else true) else b_streams
 		
@@ -46,6 +47,15 @@ func _process(delta: float) -> void: if not Engine.is_editor_hint():
 			player.play()
 			interval = 1.0
 		interval = move_toward(interval, 0, 0.4 * speed_mod * delta)
+
+func get_index_from_texture_data(tex_data: Vector3, switch_margin := 0.5) -> int:
+	if tex_data != tex_data:
+		# when tex_data is NaN
+		return 0
+	if tex_data.x != tex_data.y:
+		#print("Base: ", tex_data.x, " Overlay: ", tex_data.y, " Blend: ", tex_data.z)
+		return int(tex_data.x) if tex_data.z < switch_margin else int(tex_data.y)
+	return int(tex_data.x)
 
 func get_terrain_data(): 
 	if terrain_node:

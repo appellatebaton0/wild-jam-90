@@ -11,7 +11,7 @@ data = PackedVector3Array(-0.766, 1.3111, -1.5924, -0.8454, 1.1815, -1.6207, -0.
 [node name="Shrine" parent="." unique_id=1906968262 instance=ExtResource("1_ytuth")]
 transform = Transform3D(2.015, 0, 0, 0, 2.015, 0, 0, 0, 2.015, -0.104321, 0, 0.5269084)
 
-[node name="Plane_002" parent="Shrine" index="0" unique_id=2059974878]
+[node name="Plane_002" parent="Shrine" index="0" unique_id=853181295]
 transform = Transform3D(0.86641455, 0, 0, 0, 0.8628916, -0.07805349, 0, 0.07805349, 0.8628916, 0.1484704, -0.039747823, -0.40919727)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Shrine/Plane_002" index="0" unique_id=1416733329]
@@ -20,6 +20,6 @@ transform = Transform3D(0.86641455, 0, 0, 0, 0.8628916, -0.07805349, 0, 0.078053
 shape = SubResource("ConcavePolygonShape3D_fafhy")
 
 [node name="Round_Decor_01" parent="." unique_id=1454454273 instance=ExtResource("2_hvo5w")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.14037168, 0, 0.03769803)
+transform = Transform3D(0.35355338, 0, -0.35355338, 0, 0.5, 0, 0.35355338, 0, 0.35355338, 0.14037168, 0, 0.03769803)
 
 [editable path="Shrine"]
