@@ -13,15 +13,6 @@ var last_real_target:Node
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void: if constant: transfer()
 
-func find_target_value(from:Node) -> Value: 
-	if from is Bot:
-		
-		if from is Bit: from = from.bot
-		
-		#for bit in from.scan_bot("Value",)
-	
-	return null
-
 func recur_children(with:Node) -> Array[Node]:
 	
 	var response:Array[Node]

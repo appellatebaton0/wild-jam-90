@@ -54,10 +54,10 @@ func _physics_process(delta: float) -> void: if len(points) > 0:
 		
 		var ease_alpha: float = ease((current_point.time - timer) / current_point.time, current_point.easing)
 		
-		var from:Vector3 = current_point.node.global_position
-		var to  :Vector3 = next_point.node.global_position
+		#var from:Vector3 = current_point.node.global_position
+		#var to  :Vector3 = next_point.node.global_position
 		
-		var from_rot:Vector3 = current_point.node.global_rotation
+		#var from_rot:Vector3 = current_point.node.global_rotation
 		var to_rot  :Vector3 = next_point.node.global_rotation
 		
 		#node.global_position = lerp(from, to, ease_alpha)

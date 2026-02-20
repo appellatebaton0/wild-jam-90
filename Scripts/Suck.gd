@@ -1,6 +1,8 @@
 extends Area3D
 class_name SuckRange
 
+@export var active := true
+
 ## suction speed in m/s
 @export var suck_speed := 0.5
 ## increase force as distance closes
@@ -11,7 +13,7 @@ class_name SuckRange
 @onready var parent = $".."
 var tracking_node: Node3D
 
-func _physics_process(delta):
+func _physics_process(delta): if active:
 	if tracking_node and is_instance_valid(parent):
 		var distance = (parent.global_position - tracking_node.global_position).length()
 		if distance <= suck_abandon_range:
@@ -20,5 +22,5 @@ func _physics_process(delta):
 		else:
 			tracking_node = null
 
-func _on_area_entered(area: Area3D) -> void:
+func _on_area_entered(area: Area3D) -> void: if active:
 	tracking_node = area

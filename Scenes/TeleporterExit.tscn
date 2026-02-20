@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://b1o48vkwquyxs" path="res://Scripts/Values/Node/ManualNode.gd" id="5_s7pmu"]
 [ext_resource type="Script" uid="uid://cox1ysk6bulx2" path="res://Scripts/Values/Bool/Manual.gd" id="6_nawrg"]
 [ext_resource type="AudioStream" uid="uid://c6ueaoyde8dqc" path="res://Assests/SFX Misc/Teleporter.wav" id="7_3ured"]
-[ext_resource type="PackedScene" uid="uid://ifm36ilym63i" path="res://Assests/3D/Objects/Shrine.tscn" id="8_yjkkj"]
+[ext_resource type="PackedScene" uid="uid://hgj2s2sv21xy" path="res://Assests/3D/Objects/Ruins/Round_Decor_01.glb" id="8_yjkkj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v608y"]
 size = Vector3(1.5, 1.5, 1.5)
@@ -168,6 +168,14 @@ _data = {
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y1ul7"]
 bg_color = Color(0, 0, 0, 1)
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_s7pmu"]
+height = 0.4859619
+radius = 1.9921875
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_nawrg"]
+height = 0.1991272
+radius = 2.5893555
+
 [node name="TeleporterExit" type="Area3D" unique_id=234579865 node_paths=PackedStringArray("animator") groups=["TeleporterExit"]]
 collision_layer = 0
 collision_mask = 2
@@ -228,5 +236,14 @@ metadata/_custom_type_script = "uid://cox1ysk6bulx2"
 stream = ExtResource("7_3ured")
 bus = &"SFX"
 
-[node name="Node3D" parent="." unique_id=883738917 instance=ExtResource("8_yjkkj")]
-transform = Transform3D(2.14, 0, 0, 0, 2.14, 0, 0, 0, 2.14, -0.12513813, 0, 0)
+[node name="Round_Decor_01" parent="." unique_id=950196238 instance=ExtResource("8_yjkkj")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=529721601]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=599508679]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24456787, 0)
+shape = SubResource("CylinderShape3D_s7pmu")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" unique_id=1631330470]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10115051, 0)
+shape = SubResource("CylinderShape3D_nawrg")
