@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bivshh8savwbg"
 path.s3tc="res://.godot/imported/Crystal_Single_DefaultMaterial_Roughness.png-a4bf554246ae1a5098fae733d42cffb5.s3tc.ctex"
+path.etc2="res://.godot/imported/Crystal_Single_DefaultMaterial_Roughness.png-a4bf554246ae1a5098fae733d42cffb5.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assests/3D/Objects/Crystal_Single_DefaultMaterial_Roughness.png"
-dest_files=["res://.godot/imported/Crystal_Single_DefaultMaterial_Roughness.png-a4bf554246ae1a5098fae733d42cffb5.s3tc.ctex"]
+dest_files=["res://.godot/imported/Crystal_Single_DefaultMaterial_Roughness.png-a4bf554246ae1a5098fae733d42cffb5.s3tc.ctex", "res://.godot/imported/Crystal_Single_DefaultMaterial_Roughness.png-a4bf554246ae1a5098fae733d42cffb5.etc2.ctex"]
 
 [params]
 

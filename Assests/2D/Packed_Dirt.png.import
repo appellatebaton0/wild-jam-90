@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b021ws88tcdrb"
 path.bptc="res://.godot/imported/Packed_Dirt.png-f58b2937b1b4511436e6cfc49686c038.bptc.ctex"
+path.astc="res://.godot/imported/Packed_Dirt.png-f58b2937b1b4511436e6cfc49686c038.astc.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assests/2D/Packed_Dirt.png"
-dest_files=["res://.godot/imported/Packed_Dirt.png-f58b2937b1b4511436e6cfc49686c038.bptc.ctex"]
+dest_files=["res://.godot/imported/Packed_Dirt.png-f58b2937b1b4511436e6cfc49686c038.bptc.ctex", "res://.godot/imported/Packed_Dirt.png-f58b2937b1b4511436e6cfc49686c038.astc.ctex"]
 
 [params]
 

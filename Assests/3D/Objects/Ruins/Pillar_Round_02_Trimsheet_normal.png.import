@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dsty2wgsl4s3n"
 path.s3tc="res://.godot/imported/Pillar_Round_02_Trimsheet_normal.png-c4553ee32c0aa5118355d3befe8e5d3c.s3tc.ctex"
+path.etc2="res://.godot/imported/Pillar_Round_02_Trimsheet_normal.png-c4553ee32c0aa5118355d3befe8e5d3c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assests/3D/Objects/Ruins/Pillar_Round_02_Trimsheet_normal.png"
-dest_files=["res://.godot/imported/Pillar_Round_02_Trimsheet_normal.png-c4553ee32c0aa5118355d3befe8e5d3c.s3tc.ctex"]
+dest_files=["res://.godot/imported/Pillar_Round_02_Trimsheet_normal.png-c4553ee32c0aa5118355d3befe8e5d3c.s3tc.ctex", "res://.godot/imported/Pillar_Round_02_Trimsheet_normal.png-c4553ee32c0aa5118355d3befe8e5d3c.etc2.ctex"]
 
 [params]
 

@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://d16rpdnuvp1b4"
 path.s3tc="res://.godot/imported/Stag001_Material_1.png-6dd9a5975cd2f525be6fd22dd68004c1.s3tc.ctex"
+path.etc2="res://.godot/imported/Stag001_Material_1.png-6dd9a5975cd2f525be6fd22dd68004c1.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assests/3D/Staglitite/Imported_GLBs/Stag001_Material_1.png"
-dest_files=["res://.godot/imported/Stag001_Material_1.png-6dd9a5975cd2f525be6fd22dd68004c1.s3tc.ctex"]
+dest_files=["res://.godot/imported/Stag001_Material_1.png-6dd9a5975cd2f525be6fd22dd68004c1.s3tc.ctex", "res://.godot/imported/Stag001_Material_1.png-6dd9a5975cd2f525be6fd22dd68004c1.etc2.ctex"]
 
 [params]
 
