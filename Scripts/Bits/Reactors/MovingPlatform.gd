@@ -10,6 +10,7 @@ const POINT_SCENE := preload("res://Scenes/MovingPlatformPoint.tscn")
 @export_tool_button("Reset") var reset := _ready
 
 @export var move_in_editor := true ## Whether or not to animate in-editor
+@export var muted := false
 
 @export var points:Array[PlatformPoint] = get_points()
 var index_direction = 1
@@ -41,6 +42,9 @@ func _ready() -> void:
 	
 	current_index = 1
 	cycle_points()
+	
+	if muted: $AudioStreamPlayer3D.volume_db = -90.0
+	else:     $AudioStreamPlayer3D.volume_db = 0.0
 
 func _physics_process(delta: float) -> void: if len(points) > 0:
 	

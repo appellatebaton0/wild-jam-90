@@ -19,9 +19,9 @@
 [ext_resource type="PackedScene" uid="uid://jb833qxuovqs" path="res://Assests/3D/Staglitite/Stag1.tscn" id="16_11yo2"]
 [ext_resource type="Script" uid="uid://dbndw8p05yam7" path="res://addons/terrain_3d/utils/terrain_3d_objects.gd" id="16_hg0jb"]
 [ext_resource type="PackedScene" uid="uid://bu28itoih1xog" path="res://Assests/3D/Objects/Brazier.tscn" id="19_pa8kd"]
-[ext_resource type="AudioStream" uid="uid://bg4hf6wsfvf3s" path="res://Assests/Music/Fuego Rocks v2.mp3" id="22_8c2l8"]
 [ext_resource type="PackedScene" uid="uid://bin58wweuwgip" path="res://Assests/3D/Tunnels/Tunnel_Straight.tscn" id="22_trh55"]
 [ext_resource type="AudioStream" uid="uid://7jvmcxks5q72" path="res://Assests/SFX Ambience/Forest Ambience loop.wav" id="23_cvje1"]
+[ext_resource type="AudioStream" uid="uid://cyovps747ebhi" path="res://Assests/Music/Baton try this I think I got it.ogg" id="23_in7gc"]
 [ext_resource type="PackedScene" uid="uid://blws17kr82g77" path="res://Assests/3D/Rocks/Rocks/Rock4.tscn" id="25_1nlqs"]
 [ext_resource type="PackedScene" uid="uid://dkhpghpfg7uab" path="res://Scenes/CameraGrab.tscn" id="25_jg0jb"]
 [ext_resource type="PackedScene" uid="uid://bx6bxd2ar331n" path="res://Assests/3D/Tunnels/Room.tscn" id="25_og4n6"]
@@ -558,8 +558,8 @@ autoplay = true
 bus = &"SFX"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1399098472]
-stream = ExtResource("22_8c2l8")
-volume_db = -25.387
+stream = ExtResource("23_in7gc")
+volume_db = -9.992
 autoplay = true
 bus = &"Music"
 
