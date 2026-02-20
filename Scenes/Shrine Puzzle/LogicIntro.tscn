@@ -32,7 +32,7 @@ actor = NodePath("../../PressurePlate")
 metadata/_custom_type_script = "uid://dd8or5oo0cmw2"
 
 [node name="PressurePlate" parent="." unique_id=157249335 instance=ExtResource("14_im82o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31400967, 0.15869057, -4.5311394)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31400967, 0.2345413, -4.5311394)
 
 [node name="Door2" parent="." unique_id=701675342 node_paths=PackedStringArray("condition") instance=ExtResource("13_carpx")]
 transform = Transform3D(1.27, 0, 0, 0, 1.27, 0, 0, 0, 1.27, -0.28772736, 6.1654468, -38.101166)
@@ -55,10 +55,10 @@ actor = NodePath("../../../PressurePlate3")
 metadata/_custom_type_script = "uid://dd8or5oo0cmw2"
 
 [node name="PressurePlate2" parent="." unique_id=996374102 instance=ExtResource("14_im82o")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -5.0847607, 0.2040343, -20.90096)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -5.0847607, 0.27988502, -20.90096)
 
 [node name="PressurePlate3" parent="." unique_id=245593974 instance=ExtResource("14_im82o")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 5.0467043, 0.2040343, -20.90096)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 5.0467043, 0.27988502, -20.90096)
 weight_time = 2.0
 
 [node name="Door4" parent="." unique_id=806422354 node_paths=PackedStringArray("condition") instance=ExtResource("13_carpx")]
@@ -80,7 +80,7 @@ open_extent = Vector3(0, 6, 0)
 condition = NodePath("../Door4/ActorBool")
 
 [node name="PressurePlate4" parent="." unique_id=351862641 instance=ExtResource("14_im82o")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -0.13744569, 0.20403334, -47.831215)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -0.13744569, 0.27988407, -47.831215)
 
 [node name="Crate" parent="." unique_id=946948200 instance=ExtResource("17_hlpc8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29720765, 19.261742, -54.58865)
