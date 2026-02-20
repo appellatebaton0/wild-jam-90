@@ -7,12 +7,20 @@ const POINT_SCENE := preload("res://Scenes/MovingPlatformPoint.tscn")
 @export_tool_button("New Point") var new_point := create_new_point
 @export_tool_button("Clear Points") var clear_all := clear_points
 
-@export_tool_button("Reset") var reset := _ready
+@export_tool_button("Reset") var reset := _reset
 
 @export var move_in_editor := true ## Whether or not to animate in-editor
 
+## How the platform cycles through its points if it has a condition, and that condition is false.
+## || Pause: The platform will stop cycling once it reaches its next point.
+## || Return: The platform will cycle backwards through its points until it reaches the beginning point.
+## || Once: The platform will continue cycling through its points until it reaches the beginning.
+@export_enum(&"Pause", &"Return", &"Once") var disabled_mode: String = &"Pause"
+
 @export var points:Array[PlatformPoint] = get_points()
-var index_direction = 1
+var index_direction := 1
+
+@export var _print_debug := false
 
 var node:Node3D
 var current_index = 0
@@ -23,24 +31,16 @@ var next_point   :PlatformPoint
 
 var timer := 0.0
 var pause := 0.0
+var moving := false
+
+var passed_once := true
 
 func _ready() -> void:
-	
-	find_condition()
 	
 	var me = self
 	node = me
 	
-	if not Engine.is_editor_hint():
-		current_index = 0
-		timer = 0.0
-	
-	## Make a point at the current position if none exist.
-	
-	if len(points) == 0: create_new_point()
-	
-	current_index = 1
-	cycle_points()
+	_reset()
 
 func _physics_process(delta: float) -> void: if len(points) > 0:
 	
@@ -52,47 +52,62 @@ func _physics_process(delta: float) -> void: if len(points) > 0:
 	if pause <= 0.0:
 		if current_index > len(points) - 1: current_index = 0
 		
-		var ease_alpha: float = ease((current_point.time - timer) / current_point.time, current_point.easing)
+		if timer > 0.0:
+			var ease_alpha: float = ease((current_point.time - timer) / current_point.time, current_point.easing)
+			node.global_transform = lerp(current_point.node.global_transform, next_point.node.global_transform, ease_alpha)
+			timer = move_toward(timer, 0.0, delta)
 		
-		var from:Vector3 = current_point.node.global_position
-		var to  :Vector3 = next_point.node.global_position
+		moving = timer != 0.0
 		
-		var from_rot:Vector3 = current_point.node.global_rotation
-		var to_rot  :Vector3 = next_point.node.global_rotation
-		
-		#node.global_position = lerp(from, to, ease_alpha)
-		#node.global_rotation = lerp(from_rot, to_rot, ease_alpha)
-		
-		var to_basis = Basis.IDENTITY.rotated(Vector3.UP, to_rot.y)
-		to_basis = to_basis.rotated(Vector3.RIGHT, to_rot.x)
-		to_basis = to_basis.rotated(Vector3.FORWARD, to_rot.z)
-		
-		node.global_transform = lerp(current_point.node.global_transform, next_point.node.global_transform, ease_alpha)
-		
-		timer = move_toward(timer, 0.0, delta)
-		
-		var value = condition.value() if condition and not Engine.is_editor_hint() else true
-		if timer == 0.0 and value:
-			cycle_points()
+		if timer == 0.0:
+			var next_direction = _evaluate_condition_direction()
+			if next_direction == 0: return
+			
+			cycle_points(next_direction)
 			
 			timer = current_point.time
 			
 			pause = current_point.after_wait
 	else:
-		node.global_transform = current_point.global_transform
-		#node.global_position = current_point.global_position
-		#node.global_rotation = current_point.global_rotation
+		node.global_transform = current_point.node.global_transform
 		pause = move_toward(pause, 0, delta)
 		
 
-func cycle_points():
-	current_index = (current_index + index_direction)       % len(points)
-	next_index    = (current_index + (2 * index_direction)) 		% len(points)
+func cycle_points(index_direction_override: int = index_direction):
+	if len(points) <= 1:
+		current_index = 0
+		current_point = points[0] if len(points) > 0 else null
+		next_point = null
+		return
+	
+	if _print_debug:
+		print("| BEFORE ")
+		print("C: ", current_index, " | N: ", next_index, " | O: ", index_direction_override)
+	
+	if current_index == 0 and next_index == 0 and index_direction_override == 1:
+		current_index = 0
+		next_index = 1
+	else:
+		current_index = (current_index + index_direction_override)
+		next_index = (current_index + index_direction_override)
+		
+		var point_count = len(points)
+		current_index = clampmod(current_index, point_count)
+		next_index = clampmod(next_index, point_count)
+	
+	#if current_index < 0:
+		#current_index = abs(current_index)
+	#
+	#
+	
+	if _print_debug:
+		print("| AFTER ")
+		print("C: ", current_index, " | N: ", next_index, " | O: ", index_direction_override)
+		print("--------------------")
 	
 	current_point = next_point if next_point else points[current_index]
 	next_point = points[next_index]
 	
-
 
 func get_points() -> Array[PlatformPoint]:
 	var response:Array[PlatformPoint]
@@ -112,7 +127,7 @@ func create_new_point() -> PlatformPoint:
 	
 	points.append(new)
 	
-	new.global_position = node.global_position
+	new.global_transform = node.global_transform
 	new.name = name + "'s " + str(len(points))
 	
 	return new
@@ -124,3 +139,55 @@ func clear_points():
 	points.clear()
 	
 	create_new_point()
+
+func _evaluate_condition_direction() -> int:
+	var direction := index_direction
+	if condition and is_instance_valid(condition):
+		if Engine.is_editor_hint():
+			return direction
+		if condition.value():
+			passed_once = false
+			return direction
+		match disabled_mode:
+			&"Pause":
+				return 0
+			&"Return":
+				if next_index > 0:
+					return -direction
+				return 0
+			&"Once":
+				if !passed_once and next_index > 0:
+					return direction
+				elif !passed_once:
+					passed_once = true
+				return 0
+	
+	return direction
+	
+
+func clampmod(x: int, _max: int) -> int:
+	return maxi(0, x % _max)
+
+func absmod(x: int, _max: int) -> int:
+	if x < 0:
+		x = _max - (abs(x) % _max)
+	return x % _max
+
+func _reset():
+	find_condition()
+	
+	## Make a point at the current position if none exist.
+	if len(points) == 0: create_new_point()
+	
+	passed_once = true
+	timer = 0.0
+	# I don't know why this exact sequence of numbers works
+	# but I'm not going to question it for another eternity
+	
+	current_index = len(points) - 1
+	if len(points) > 2:
+		current_index = len(points) - 2
+	next_point = null
+	cycle_points()
+	if next_point and next_point.node:
+		node.global_transform = next_point.node.global_transform

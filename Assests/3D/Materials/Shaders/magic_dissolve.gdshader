@@ -10,8 +10,8 @@ uniform vec3 dissolve_color : source_color = vec3(0.0, 0.3, 0.6);
 uniform float dissolve_brightness = 1.0;
 uniform sampler2D dissolve_map : hint_default_black, filter_linear_mipmap, repeat_enable;
 
-uniform sampler2D object_albedo : source_color, hint_default_white, filter_linear_mipmap, repeat_enable;
-uniform vec3 albedo_tint : source_color = vec3(1.0, 1.0, 1.0);
+uniform sampler2D object_albedo : source_color, filter_linear_mipmap, repeat_enable;
+uniform vec4 albedo_tint : source_color = vec4(1.0, 1.0, 1.0, 1.0);
 
 uniform float roughness_multiplier : hint_range(0.0, 1.0, 0.05) = 1.0;
 uniform sampler2D object_roughness : hint_default_white, filter_linear_mipmap, repeat_enable;
@@ -70,11 +70,12 @@ void fragment() {
 	dissolve_base += pow(dissolve, 10.0);
 	dissolve_base = clamp(dissolve_base, 0.0, 1.0);
 	
-	ALBEDO = texture(object_albedo, UV).rgb * albedo_tint * (1.0 - dissolve_burn);
+	vec4 albedo = texture(object_albedo, UV);
+	ALBEDO = albedo.rgb * albedo_tint.rgb * (1.0 - dissolve_burn);
 	
 	EMISSION = dissolve_color * dissolve_base * dissolve_brightness;
 	
 	ALPHA_SCISSOR_THRESHOLD = alpha_scissor_threshold;
 	
-	ALPHA = (1.0 - dissolve_base);
+	ALPHA = (1.0 - dissolve_base) * albedo.a * albedo_tint.a;
 }
