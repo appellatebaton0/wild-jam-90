@@ -29,7 +29,6 @@ func _process(delta: float) -> void:
 	
 	for condition in up_conditions:
 		if condition.value():
-			print("UP BY ", condition)
 			real_value = move_toward(real_value, max_value, delta * up_conditions[condition])
 			up.emit()
 		

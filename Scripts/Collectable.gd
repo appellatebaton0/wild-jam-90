@@ -12,9 +12,9 @@ const STAMINA_NODE_NAME := &"GotStamina"
 
 @export var collectable_value := 1
 
-func _on_area_entered(area: Area3D) -> void:
+func _on_area_entered(ar: Area3D) -> void:
 	
-	var a = area
+	var a = ar
 	if a is Bit: a = a.bot
 	
 	#print("YUM")
@@ -41,5 +41,4 @@ func transfer(to:Bot) -> void:
 		target = node
 		break
 	
-	print("setting ", target, " as true")
 	if target: target.set("response", true)
