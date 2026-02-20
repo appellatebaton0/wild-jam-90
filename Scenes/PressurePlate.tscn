@@ -171,7 +171,7 @@ animation_player = NodePath("AnimationPlayer")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18485108, 0)
 shape = SubResource("BoxShape3D_grg3l")
 
-[node name="PlateCollider" type="StaticBody3D" parent="." unique_id=1745955819]
+[node name="PlateCollider" type="AnimatableBody3D" parent="." unique_id=2063588881]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlateCollider" unique_id=869491764]
 shape = SubResource("ConcavePolygonShape3D_j52f2")
