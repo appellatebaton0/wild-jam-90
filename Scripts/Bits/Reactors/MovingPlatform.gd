@@ -41,19 +41,9 @@ func _ready() -> void:
 	var me = self
 	node = me
 	
-	if not Engine.is_editor_hint():
-		current_index = 0
-		timer = 0.0
-	
-	## Make a point at the current position if none exist.
-	
-	if len(points) == 0: create_new_point()
-	
-	current_index = 1
-	cycle_points()
-	
 	if muted: $AudioStreamPlayer3D.volume_db = -90.0
 	else:     $AudioStreamPlayer3D.volume_db = 0.0
+	
 	_reset()
 
 func _physics_process(delta: float) -> void: if len(points) > 0:
