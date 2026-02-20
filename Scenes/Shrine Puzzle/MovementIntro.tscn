@@ -2,7 +2,6 @@
 
 [ext_resource type="MeshLibrary" uid="uid://dxo8thlnlijfg" path="res://Assests/Ruins_Libary_Final.meshlib" id="2_d6fsk"]
 [ext_resource type="PackedScene" uid="uid://esg4ciusc8a1" path="res://Scenes/TeleporterExit.tscn" id="3_7aaky"]
-[ext_resource type="PackedScene" uid="uid://cw5v3k3rnk5jn" path="res://Scenes/Signpost.tscn" id="13_u5jmv"]
 
 [node name="MovementIntroduction" type="Node3D" unique_id=941058485]
 
@@ -49,24 +48,6 @@ light_volumetric_fog_energy = 0.0
 shadow_enabled = true
 omni_range = 29.93
 omni_attenuation = -0.328
-
-[node name="Signpost" parent="." unique_id=1718605348 instance=ExtResource("13_u5jmv")]
-transform = Transform3D(-0.3270035, 0, 0.9450231, 0, 1, 0, -0.9450231, 0, -0.3270035, 5.7159677, 6.866813, -18.157528)
-text = "Tap Space / A to
-Jump.
-"
-
-[node name="Signpost3" parent="." unique_id=957998082 instance=ExtResource("13_u5jmv")]
-transform = Transform3D(0.435781, 0, 0.9000528, 0, 1, 0, -0.9000528, 0, 0.435781, 5.641707, 6.866813, -26.824295)
-text = "Hold Shift / RT 
-to Sprint."
-
-[node name="Signpost2" parent="." unique_id=154775941 instance=ExtResource("13_u5jmv")]
-transform = Transform3D(0.37808317, 0, 0.9257718, 0, 1, 0, -0.9257718, 0, 0.37808317, -14, 7.3934116, -24.937717)
-text = "While on a wall, use
-WASD / the DPad
-to climb, and Space
-/ A to Wall Jump"
 
 [node name="Marker3D" type="Marker3D" parent="." unique_id=250275856]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 18.04047, 7.6086655, -22.726795)

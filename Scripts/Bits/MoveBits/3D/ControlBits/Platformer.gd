@@ -1,6 +1,8 @@
 class_name PlatformerBit3D extends ControlBit3D
 ## Provides functionality for a bot to move like a 3D platformer.
 
+signal jumped
+
 @export_group("Horizontal", "horizontal_")
 ## How fast the bot gets up to top speed
 @export var horizontal_acceleration := 40.0
@@ -47,6 +49,8 @@ func phys_active(delta:float) -> void:
 	# Jumping
 	if jump_buffer > 0 and coyote_timer > 0:
 		master.mover.velocity.y += vertical_jump_velocity
+		
+		jumped.emit()
 		
 		jump_buffer = 0
 		coyote_timer = 0

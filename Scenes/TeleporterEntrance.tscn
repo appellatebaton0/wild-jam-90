@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://cox1ysk6bulx2" path="res://Scripts/Values/Bool/Manual.gd" id="6_jensj"]
 [ext_resource type="AudioStream" uid="uid://c6ueaoyde8dqc" path="res://Assests/SFX Misc/Teleporter.wav" id="7_3xkkk"]
 [ext_resource type="PackedScene" uid="uid://ifm36ilym63i" path="res://Assests/3D/Objects/Shrine.tscn" id="8_xdu48"]
+[ext_resource type="Script" uid="uid://cj85aq1o3xpfw" path="res://Scripts/Bits/AreaBits/3D/Checkpoint.gd" id="9_jensj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v608y"]
 size = Vector3(1.5, 1.5, 1.5)
@@ -163,6 +164,14 @@ _data = {
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fqe21"]
 bg_color = Color(0, 0, 0, 1)
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_xdu48"]
+height = 0.4859619
+radius = 1.9921875
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_jensj"]
+height = 0.1991272
+radius = 2.5893555
+
 [node name="TeleporterEntrance" type="Area3D" unique_id=234579865 node_paths=PackedStringArray("animator") groups=["TeleporterEntrance"]]
 collision_layer = 0
 collision_mask = 2
@@ -223,3 +232,17 @@ bus = &"SFX"
 
 [node name="Node3D" parent="." unique_id=883738917 instance=ExtResource("8_xdu48")]
 transform = Transform3D(2.14, 0, 0, 0, 2.14, 0, 0, 0, 2.14, -0.10264069, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=494226593]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1788509087]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24456787, 0)
+shape = SubResource("CylinderShape3D_xdu48")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" unique_id=418081116]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10115051, 0)
+shape = SubResource("CylinderShape3D_jensj")
+
+[node name="CheckpointBit" type="Node" parent="." unique_id=1809670130]
+script = ExtResource("9_jensj")
+metadata/_custom_type_script = "uid://cj85aq1o3xpfw"
