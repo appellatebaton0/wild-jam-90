@@ -44,12 +44,12 @@ data = PackedVector3Array(-0.2311, 0.41689998, -0.0958, -0.1505, 0.5818, -0.0191
 
 [node name="Rock003" parent="." unique_id=1428206207 instance=ExtResource("1_hb7jh")]
 
-[node name="Cube_010" parent="Rock003" index="0" unique_id=1888403559]
+[node name="Cube_010" parent="Rock003" index="0" unique_id=1635707881]
 mesh = SubResource("ArrayMesh_rv05s")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Rock003" unique_id=1969175777]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Rock003/StaticBody3D" unique_id=334626204]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rock003" unique_id=334626204]
 shape = SubResource("ConcavePolygonShape3D_v3gpv")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Rock003/CollisionShape3D" unique_id=1969175777]
 
 [editable path="Rock003"]

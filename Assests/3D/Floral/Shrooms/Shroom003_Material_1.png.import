@@ -4,9 +4,8 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cytt4nexlrsks"
 path.s3tc="res://.godot/imported/Shroom003_Material_1.png-977665ca109b00bd5f951acd6c9eb804.s3tc.ctex"
-path.etc2="res://.godot/imported/Shroom003_Material_1.png-977665ca109b00bd5f951acd6c9eb804.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -16,7 +15,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assests/3D/Floral/Shrooms/Shroom003_Material_1.png"
-dest_files=["res://.godot/imported/Shroom003_Material_1.png-977665ca109b00bd5f951acd6c9eb804.s3tc.ctex", "res://.godot/imported/Shroom003_Material_1.png-977665ca109b00bd5f951acd6c9eb804.etc2.ctex"]
+dest_files=["res://.godot/imported/Shroom003_Material_1.png-977665ca109b00bd5f951acd6c9eb804.s3tc.ctex"]
 
 [params]
 

@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dsbth10rqq2uq"
 path.s3tc="res://.godot/imported/Fire alpha.png-c2e5eeea3b5cd0ad25795ee94f929c9e.s3tc.ctex"
-path.etc2="res://.godot/imported/Fire alpha.png-c2e5eeea3b5cd0ad25795ee94f929c9e.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assests/2D/Fire alpha.png"
-dest_files=["res://.godot/imported/Fire alpha.png-c2e5eeea3b5cd0ad25795ee94f929c9e.s3tc.ctex", "res://.godot/imported/Fire alpha.png-c2e5eeea3b5cd0ad25795ee94f929c9e.etc2.ctex"]
+dest_files=["res://.godot/imported/Fire alpha.png-c2e5eeea3b5cd0ad25795ee94f929c9e.s3tc.ctex"]
 
 [params]
 

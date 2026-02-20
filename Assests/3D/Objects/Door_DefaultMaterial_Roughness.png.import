@@ -4,9 +4,8 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bpj5n533mp3lj"
 path.s3tc="res://.godot/imported/Door_DefaultMaterial_Roughness.png-cf10f2c62f8a4086c08839d6fdf89deb.s3tc.ctex"
-path.etc2="res://.godot/imported/Door_DefaultMaterial_Roughness.png-cf10f2c62f8a4086c08839d6fdf89deb.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -16,7 +15,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assests/3D/Objects/Door_DefaultMaterial_Roughness.png"
-dest_files=["res://.godot/imported/Door_DefaultMaterial_Roughness.png-cf10f2c62f8a4086c08839d6fdf89deb.s3tc.ctex", "res://.godot/imported/Door_DefaultMaterial_Roughness.png-cf10f2c62f8a4086c08839d6fdf89deb.etc2.ctex"]
+dest_files=["res://.godot/imported/Door_DefaultMaterial_Roughness.png-cf10f2c62f8a4086c08839d6fdf89deb.s3tc.ctex"]
 
 [params]
 

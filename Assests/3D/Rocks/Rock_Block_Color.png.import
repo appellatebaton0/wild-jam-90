@@ -4,9 +4,8 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ec6x6mtvisu2"
 path.s3tc="res://.godot/imported/Rock_Block_Color.png-a06a4c807c47ef0eebda919885fa94ac.s3tc.ctex"
-path.etc2="res://.godot/imported/Rock_Block_Color.png-a06a4c807c47ef0eebda919885fa94ac.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -16,7 +15,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assests/3D/Rocks/Rock_Block_Color.png"
-dest_files=["res://.godot/imported/Rock_Block_Color.png-a06a4c807c47ef0eebda919885fa94ac.s3tc.ctex", "res://.godot/imported/Rock_Block_Color.png-a06a4c807c47ef0eebda919885fa94ac.etc2.ctex"]
+dest_files=["res://.godot/imported/Rock_Block_Color.png-a06a4c807c47ef0eebda919885fa94ac.s3tc.ctex"]
 
 [params]
 

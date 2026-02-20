@@ -4,9 +4,8 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://eh18bhmb7u4j"
 path.s3tc="res://.godot/imported/PC_Main_DefaultMaterial_BaseColor.png-0e1554c7ab3ac0fd8b7ae06c9627006f.s3tc.ctex"
-path.etc2="res://.godot/imported/PC_Main_DefaultMaterial_BaseColor.png-0e1554c7ab3ac0fd8b7ae06c9627006f.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -16,7 +15,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assests/3D/Player Character/PC_Main_DefaultMaterial_BaseColor.png"
-dest_files=["res://.godot/imported/PC_Main_DefaultMaterial_BaseColor.png-0e1554c7ab3ac0fd8b7ae06c9627006f.s3tc.ctex", "res://.godot/imported/PC_Main_DefaultMaterial_BaseColor.png-0e1554c7ab3ac0fd8b7ae06c9627006f.etc2.ctex"]
+dest_files=["res://.godot/imported/PC_Main_DefaultMaterial_BaseColor.png-0e1554c7ab3ac0fd8b7ae06c9627006f.s3tc.ctex"]
 
 [params]
 

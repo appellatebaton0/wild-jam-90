@@ -4,9 +4,8 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dwqwbs6p7lrni"
 path.s3tc="res://.godot/imported/Floor_Tile02_Trimsheet.png-b5b8059e4213ca2289d6b953c218f6d9.s3tc.ctex"
-path.etc2="res://.godot/imported/Floor_Tile02_Trimsheet.png-b5b8059e4213ca2289d6b953c218f6d9.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -16,7 +15,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assests/3D/Objects/Ruins/Floor_Tile02_Trimsheet.png"
-dest_files=["res://.godot/imported/Floor_Tile02_Trimsheet.png-b5b8059e4213ca2289d6b953c218f6d9.s3tc.ctex", "res://.godot/imported/Floor_Tile02_Trimsheet.png-b5b8059e4213ca2289d6b953c218f6d9.etc2.ctex"]
+dest_files=["res://.godot/imported/Floor_Tile02_Trimsheet.png-b5b8059e4213ca2289d6b953c218f6d9.s3tc.ctex"]
 
 [params]
 

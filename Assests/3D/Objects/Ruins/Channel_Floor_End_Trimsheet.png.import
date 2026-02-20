@@ -4,9 +4,8 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://clyrhfoi5av2c"
 path.s3tc="res://.godot/imported/Channel_Floor_End_Trimsheet.png-7309aee3fadf663f2e4119d80e987cb9.s3tc.ctex"
-path.etc2="res://.godot/imported/Channel_Floor_End_Trimsheet.png-7309aee3fadf663f2e4119d80e987cb9.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -16,7 +15,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assests/3D/Objects/Ruins/Channel_Floor_End_Trimsheet.png"
-dest_files=["res://.godot/imported/Channel_Floor_End_Trimsheet.png-7309aee3fadf663f2e4119d80e987cb9.s3tc.ctex", "res://.godot/imported/Channel_Floor_End_Trimsheet.png-7309aee3fadf663f2e4119d80e987cb9.etc2.ctex"]
+dest_files=["res://.godot/imported/Channel_Floor_End_Trimsheet.png-7309aee3fadf663f2e4119d80e987cb9.s3tc.ctex"]
 
 [params]
 

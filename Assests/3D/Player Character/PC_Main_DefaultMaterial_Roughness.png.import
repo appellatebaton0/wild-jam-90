@@ -4,9 +4,8 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dhcplbwlrkuyx"
 path.s3tc="res://.godot/imported/PC_Main_DefaultMaterial_Roughness.png-d4ee09783d2633a4019c52b7f05a3596.s3tc.ctex"
-path.etc2="res://.godot/imported/PC_Main_DefaultMaterial_Roughness.png-d4ee09783d2633a4019c52b7f05a3596.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -16,7 +15,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assests/3D/Player Character/PC_Main_DefaultMaterial_Roughness.png"
-dest_files=["res://.godot/imported/PC_Main_DefaultMaterial_Roughness.png-d4ee09783d2633a4019c52b7f05a3596.s3tc.ctex", "res://.godot/imported/PC_Main_DefaultMaterial_Roughness.png-d4ee09783d2633a4019c52b7f05a3596.etc2.ctex"]
+dest_files=["res://.godot/imported/PC_Main_DefaultMaterial_Roughness.png-d4ee09783d2633a4019c52b7f05a3596.s3tc.ctex"]
 
 [params]
 

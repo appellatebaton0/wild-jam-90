@@ -4,9 +4,8 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://lp6uuyp6iccu"
 path.s3tc="res://.godot/imported/Crystal_Single_DefaultMaterial_BaseColor.png-8c4965e4bf92ab7036438dd25e862f5e.s3tc.ctex"
-path.etc2="res://.godot/imported/Crystal_Single_DefaultMaterial_BaseColor.png-8c4965e4bf92ab7036438dd25e862f5e.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -16,7 +15,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assests/3D/Objects/Crystal_Single_DefaultMaterial_BaseColor.png"
-dest_files=["res://.godot/imported/Crystal_Single_DefaultMaterial_BaseColor.png-8c4965e4bf92ab7036438dd25e862f5e.s3tc.ctex", "res://.godot/imported/Crystal_Single_DefaultMaterial_BaseColor.png-8c4965e4bf92ab7036438dd25e862f5e.etc2.ctex"]
+dest_files=["res://.godot/imported/Crystal_Single_DefaultMaterial_BaseColor.png-8c4965e4bf92ab7036438dd25e862f5e.s3tc.ctex"]
 
 [params]
 

@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bpltfdun1niuo"
 path.s3tc="res://.godot/imported/FireMask.png-14d5118b3208ff5a9f472e12315aa280.s3tc.ctex"
-path.etc2="res://.godot/imported/FireMask.png-14d5118b3208ff5a9f472e12315aa280.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assests/3D/Player Character/FireMask.png"
-dest_files=["res://.godot/imported/FireMask.png-14d5118b3208ff5a9f472e12315aa280.s3tc.ctex", "res://.godot/imported/FireMask.png-14d5118b3208ff5a9f472e12315aa280.etc2.ctex"]
+dest_files=["res://.godot/imported/FireMask.png-14d5118b3208ff5a9f472e12315aa280.s3tc.ctex"]
 
 [params]
 
