@@ -42,7 +42,7 @@ func _ready() -> void:
 	current_index = 1
 	cycle_points()
 
-func _process(delta: float) -> void: if len(points) > 0:
+func _physics_process(delta: float) -> void: if len(points) > 0:
 	
 	if Engine.is_editor_hint() and not move_in_editor: return
 	
@@ -52,15 +52,22 @@ func _process(delta: float) -> void: if len(points) > 0:
 	if pause <= 0.0:
 		if current_index > len(points) - 1: current_index = 0
 		
+		var ease_alpha: float = ease((current_point.time - timer) / current_point.time, current_point.easing)
+		
 		var from:Vector3 = current_point.node.global_position
 		var to  :Vector3 = next_point.node.global_position
-		
-		node.global_position = lerp(from, to, ease((current_point.time - timer) / current_point.time, current_point.easing))
 		
 		var from_rot:Vector3 = current_point.node.global_rotation
 		var to_rot  :Vector3 = next_point.node.global_rotation
 		
-		node.global_rotation = lerp(from_rot, to_rot, ease((current_point.time - timer) / current_point.time, current_point.easing))
+		#node.global_position = lerp(from, to, ease_alpha)
+		#node.global_rotation = lerp(from_rot, to_rot, ease_alpha)
+		
+		var to_basis = Basis.IDENTITY.rotated(Vector3.UP, to_rot.y)
+		to_basis = to_basis.rotated(Vector3.RIGHT, to_rot.x)
+		to_basis = to_basis.rotated(Vector3.FORWARD, to_rot.z)
+		
+		node.global_transform = lerp(current_point.node.global_transform, next_point.node.global_transform, ease_alpha)
 		
 		timer = move_toward(timer, 0.0, delta)
 		
@@ -71,9 +78,10 @@ func _process(delta: float) -> void: if len(points) > 0:
 			timer = current_point.time
 			
 			pause = current_point.after_wait
-	else: 
-		node.global_position = current_point.global_position
-		node.global_rotation = current_point.global_rotation
+	else:
+		node.global_transform = current_point.global_transform
+		#node.global_position = current_point.global_position
+		#node.global_rotation = current_point.global_rotation
 		pause = move_toward(pause, 0, delta)
 		
 

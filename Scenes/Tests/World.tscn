@@ -126,6 +126,7 @@ lod0_range = 128.0
 name = "Small Plant"
 id = 2
 scene_file = ExtResource("3_pmfsj")
+height_offset = 0.05
 density = 0.8171587
 material_override = ExtResource("2_y3gbf")
 last_lod = 0
@@ -1271,6 +1272,9 @@ transform = Transform3D(15.054276, 12.0279, 21.337973, 16.228094, 10.505709, -21
 
 [node name="TerrainRock4" parent="." unique_id=220538198 instance=ExtResource("47_xvg63")]
 transform = Transform3D(16.320877, -0.99261135, -20.58347, -1.9081926, -32.088543, -0.61470747, -19.37529, 2.324131, -17.278055, 72.339714, 44.86113, -22.6464)
+
+[node name="Rock8" parent="." unique_id=960005283 instance=ExtResource("31_cvje1")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 76.10617, 17.892286, -9.945917)
 
 [editable path="Water/WaterMesh3"]
 [editable path="Water/WaterMesh4"]
