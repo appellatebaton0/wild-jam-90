@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://co4hbadmeq3qu"]
+
+[ext_resource type="PackedScene" uid="uid://b6mm1wjjwcmeh" path="res://Scenes/PressurePlate.tscn" id="1_8etep"]
+[ext_resource type="PackedScene" uid="uid://bon8bptfjfpue" path="res://Scenes/MovingPlatform.tscn" id="2_qd03n"]
+[ext_resource type="Script" uid="uid://dd8or5oo0cmw2" path="res://Scripts/Values/Bool/Actor.gd" id="3_vb36b"]
+[ext_resource type="PackedScene" uid="uid://d2cwefjigkop1" path="res://Scenes/MovingPlatformPoint.tscn" id="4_iw4x5"]
+[ext_resource type="PackedScene" uid="uid://b1unhe5jr1qe3" path="res://Assests/3D/Objects/Moveable_Crate.tscn" id="5_n23iw"]
+[ext_resource type="PackedScene" uid="uid://cw5v3k3rnk5jn" path="res://Scenes/Signpost.tscn" id="6_f8hpk"]
+[ext_resource type="PackedScene" uid="uid://bv0nkuimkjuah" path="res://Assests/3D/Objects/Collectable.tscn" id="7_dqjdf"]
+[ext_resource type="Script" uid="uid://bmbnethi8oyh3" path="res://Scripts/Bits/AreaMaster3D.gd" id="8_4jemj"]
+[ext_resource type="Script" uid="uid://bekt6vd73jjuq" path="res://Scripts/Bits/Kill.gd" id="9_ixf3c"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jn765"]
+transparency = 1
+albedo_color = Color(0, 1.7014465, 1.7014465, 0.6)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_i8wk6"]
+material = SubResource("StandardMaterial3D_jn765")
+top_radius = 0.15
+bottom_radius = 0.2
+height = 1.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fjq41"]
+transparency = 1
+albedo_color = Color(0, 1.7014465, 1.7014465, 0.6)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_g20pa"]
+material = SubResource("StandardMaterial3D_fjq41")
+top_radius = 0.15
+bottom_radius = 0.2
+height = 1.5
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d7bk7"]
+size = Vector3(75, 1, 75)
+
+[node name="added_assets_before_merge" type="Node3D" unique_id=241196261]
+
+[node name="Node" type="Node3D" parent="." unique_id=1504719071]
+
+[node name="PressurePlate" parent="Node" unique_id=157249335 instance=ExtResource("1_8etep")]
+transform = Transform3D(1.4999999, 0, 0, 0, 1.5, 0, 0, 0, 1.4999999, -34.147736, 10.195393, -8.778719)
+
+[node name="MovingPlatform" parent="Node" unique_id=1114646680 node_paths=PackedStringArray("points", "condition") instance=ExtResource("2_qd03n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.54899, 9.995602, -14.072937)
+floor_constant_speed = true
+move_in_editor = false
+points = [NodePath("../MovingPlatform\'s 2"), NodePath("../MovingPlatform\'s 3"), NodePath("../MovingPlatform\'s 4"), NodePath("../MovingPlatform\'s 5")]
+condition = NodePath("ActorBool")
+
+[node name="ActorBool" type="Node" parent="Node/MovingPlatform" unique_id=812522274 node_paths=PackedStringArray("actor")]
+script = ExtResource("3_vb36b")
+actor = NodePath("../../PressurePlate")
+metadata/_custom_type_script = "uid://dd8or5oo0cmw2"
+
+[node name="MovingPlatform\'s 2" parent="Node" unique_id=1766241102 instance=ExtResource("4_iw4x5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.54899, 9.995602, -14.072937)
+mesh = SubResource("CylinderMesh_i8wk6")
+easing = -2.0
+time = 3.0
+after_wait = 0.5
+
+[node name="MovingPlatform\'s 3" parent="Node" unique_id=2073499987 instance=ExtResource("4_iw4x5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.155468, 19.9392, -18.533848)
+mesh = SubResource("CylinderMesh_i8wk6")
+easing = -2.0
+time = 3.0
+after_wait = 0.5
+
+[node name="MovingPlatform\'s 4" parent="Node" unique_id=2116273110 instance=ExtResource("4_iw4x5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65.788, 43.299488, -29.336714)
+mesh = SubResource("CylinderMesh_g20pa")
+easing = -2.0
+time = 3.0
+after_wait = 0.5
+
+[node name="MovingPlatform\'s 5" parent="Node" unique_id=778039627 instance=ExtResource("4_iw4x5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.155468, 19.9392, -18.533848)
+mesh = SubResource("CylinderMesh_i8wk6")
+easing = -2.0
+time = 3.0
+after_wait = 0.5
+
+[node name="Crate3" parent="." unique_id=946948200 instance=ExtResource("5_n23iw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.91113, 21.268906, -20.463404)
+
+[node name="Signpost5" parent="." unique_id=1251328576 instance=ExtResource("6_f8hpk")]
+transform = Transform3D(0.87832534, 0, -0.47806364, 0, 1, 0, 0.47806364, 0, 0.87832534, -33.043777, 11.113561, -13.575391)
+text = "Step on pressure plates to activate mechanisms!"
+
+[node name="Signpost6" parent="." unique_id=1170916489 instance=ExtResource("6_f8hpk")]
+transform = Transform3D(0.87832534, 0, -0.47806364, 0, 1, 0, 0.47806364, 0, 0.87832534, -57.409946, 22.870949, -25.003256)
+text = "Boxes can hold down pressure plates for you. Try it!"
+
+[node name="Collectable" parent="." unique_id=2046027389 instance=ExtResource("7_dqjdf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.791355, 23.171776, -23.479164)
+
+[node name="SpawnCrateKiller" type="Area3D" parent="." unique_id=1023149255]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.432667, 8.241431, 0)
+collision_layer = 128
+collision_mask = 4
+script = ExtResource("8_4jemj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnCrateKiller" unique_id=1164258700]
+shape = SubResource("BoxShape3D_d7bk7")
+debug_color = Color(0, 0.14509805, 0.69803923, 1)
+
+[node name="KillBit" type="Node" parent="SpawnCrateKiller" unique_id=752243973]
+script = ExtResource("9_ixf3c")
+metadata/_custom_type_script = "uid://bekt6vd73jjuq"

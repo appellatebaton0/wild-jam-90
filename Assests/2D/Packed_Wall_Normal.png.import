@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://0v0u1qwhyued"
 path.bptc="res://.godot/imported/Packed_Wall_Normal.png-a625318d6963f2e234e8571dc0988488.bptc.ctex"
+path.astc="res://.godot/imported/Packed_Wall_Normal.png-a625318d6963f2e234e8571dc0988488.astc.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assests/2D/Packed_Wall_Normal.png"
-dest_files=["res://.godot/imported/Packed_Wall_Normal.png-a625318d6963f2e234e8571dc0988488.bptc.ctex"]
+dest_files=["res://.godot/imported/Packed_Wall_Normal.png-a625318d6963f2e234e8571dc0988488.bptc.ctex", "res://.godot/imported/Packed_Wall_Normal.png-a625318d6963f2e234e8571dc0988488.astc.ctex"]
 
 [params]
 

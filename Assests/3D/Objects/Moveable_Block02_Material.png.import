@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ceenb6neea6ad"
 path.s3tc="res://.godot/imported/Moveable_Block02_Material.png-d8fc8f3a8a5d46c1d093318ad2b8666d.s3tc.ctex"
+path.etc2="res://.godot/imported/Moveable_Block02_Material.png-d8fc8f3a8a5d46c1d093318ad2b8666d.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assests/3D/Objects/Moveable_Block02_Material.png"
-dest_files=["res://.godot/imported/Moveable_Block02_Material.png-d8fc8f3a8a5d46c1d093318ad2b8666d.s3tc.ctex"]
+dest_files=["res://.godot/imported/Moveable_Block02_Material.png-d8fc8f3a8a5d46c1d093318ad2b8666d.s3tc.ctex", "res://.godot/imported/Moveable_Block02_Material.png-d8fc8f3a8a5d46c1d093318ad2b8666d.etc2.ctex"]
 
 [params]
 

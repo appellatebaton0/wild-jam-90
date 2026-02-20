@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://p0k2fpqsvfaj"
 path.s3tc="res://.godot/imported/Rock006_Material_1.png-fd6279b0c52ae9b4047750a3cf47b540.s3tc.ctex"
+path.etc2="res://.godot/imported/Rock006_Material_1.png-fd6279b0c52ae9b4047750a3cf47b540.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assests/3D/Rocks/Imported_Rock_GLBs/Rock006_Material_1.png"
-dest_files=["res://.godot/imported/Rock006_Material_1.png-fd6279b0c52ae9b4047750a3cf47b540.s3tc.ctex"]
+dest_files=["res://.godot/imported/Rock006_Material_1.png-fd6279b0c52ae9b4047750a3cf47b540.s3tc.ctex", "res://.godot/imported/Rock006_Material_1.png-fd6279b0c52ae9b4047750a3cf47b540.etc2.ctex"]
 
 [params]
 
