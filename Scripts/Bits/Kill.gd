@@ -3,10 +3,12 @@ class_name KillBit extends Bit
 
 signal killing
 
-@export var target:Bot ## The target to kill.
-@export var condition:BoolValue ## The condition upon which the target is killed.
-
-@export var pulse := true ## Whether to only kill the target once when the condition is met.
+## The target to kill.
+@export var target:Bot
+## The condition upon which the target is killed.
+@export var condition:BoolValue
+## Whether to only kill the target once when the condition is met.
+@export var pulse := true
 
 var activated:bool = false
 
@@ -14,8 +16,6 @@ var respawner:RespawnBit3D
 
 @onready var parent = get_parent()
 func _ready() -> void:
-	
-	
 	if parent is AreaMasterBit3D:
 		
 		var a = Property.new()
@@ -58,9 +58,10 @@ func kill():
 	
 	if not respawner: find_respawner()
 	if respawner: respawner.respawn()
-	respawner = null
-	target = null
 	
+	if parent is AreaMasterBit3D:
+		respawner = null
+		target = null
 	
 
 func find_respawner():

@@ -39,9 +39,8 @@ func _ready() -> void:
 	
 	if len(points) == 0: create_new_point()
 	
-	current_index = -1
+	current_index = 1
 	cycle_points()
-	
 
 func _process(delta: float) -> void: if len(points) > 0:
 	
@@ -80,12 +79,11 @@ func _process(delta: float) -> void: if len(points) > 0:
 
 func cycle_points():
 	current_index = (current_index + index_direction)       % len(points)
-	next_index    = (current_index + (2 * index_direction)) % len(points)
+	next_index    = (current_index + (2 * index_direction)) 		% len(points)
 	
 	current_point = next_point if next_point else points[current_index]
 	next_point = points[next_index]
 	
-	 
 
 
 func get_points() -> Array[PlatformPoint]:
