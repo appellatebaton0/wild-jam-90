@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bdn8iksuo6lrx"]
+
+[ext_resource type="PackedScene" uid="uid://60r10u5tfh4y" path="res://Scenes/TeleporterEntrance.tscn" id="1_57103"]
+
+[node name="Shrines" type="Node" unique_id=880109503]
+
+[node name="TeleporterEntrance" parent="." unique_id=234579865 instance=ExtResource("1_57103")]
+transform = Transform3D(-0.47711286, 0, -0.87884206, 0, 1, 0, 0.87884206, 0, -0.47711286, 37.482838, 0.41611934, 10.353336)
+
+[node name="TeleporterEntrance2" parent="." unique_id=1510346752 instance=ExtResource("1_57103")]
+transform = Transform3D(0.8319541, 0, -0.55484444, 0, 1, 0, 0.55484444, 0, 0.8319541, 102.052, 21.253, 9.704)
+
+[node name="TeleporterEntrance3" parent="." unique_id=1266533273 instance=ExtResource("1_57103")]
+transform = Transform3D(-0.9895258, 0, 0.1443562, 0, 1, 0, -0.1443562, 0, -0.9895258, -65.647, 30.333, 80.015)
