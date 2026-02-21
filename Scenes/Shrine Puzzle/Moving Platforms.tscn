@@ -2,6 +2,7 @@
 
 [ext_resource type="Environment" uid="uid://8ivgd0ijm8ix" path="res://Assests/3D/World_Env.tres" id="1_7pmqs"]
 [ext_resource type="MeshLibrary" uid="uid://dxo8thlnlijfg" path="res://Assests/Ruins_Libary_Final.meshlib" id="2_3cm5i"]
+[ext_resource type="Script" uid="uid://1n1biyfmvu7a" path="res://Scripts/Bits/Reactors/MovingPlatformPoint.gd" id="10_3cm5i"]
 [ext_resource type="PackedScene" uid="uid://bon8bptfjfpue" path="res://Scenes/MovingPlatform.tscn" id="13_ciend"]
 [ext_resource type="PackedScene" uid="uid://d2cwefjigkop1" path="res://Scenes/MovingPlatformPoint.tscn" id="14_bphh8"]
 [ext_resource type="PackedScene" uid="uid://esg4ciusc8a1" path="res://Scenes/TeleporterExit.tscn" id="14_fyob0"]
@@ -23,6 +24,16 @@ height = 16.745
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l7k8u"]
 radius = 0.099609375
 height = 16.610046
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jn765"]
+transparency = 1
+albedo_color = Color(0, 1.7014465, 1.7014465, 0.6)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_i8wk6"]
+material = SubResource("StandardMaterial3D_jn765")
+top_radius = 0.15
+bottom_radius = 0.2
+height = 1.5
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_fs56d"]
 noise_type = 2
@@ -114,10 +125,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.769171, 1.4502916, 320.48
 [node name="Platform" type="Node3D" parent="." unique_id=1356750794]
 
 [node name="MovingPlatform" parent="Platform" unique_id=1114646680 node_paths=PackedStringArray("points", "condition") instance=ExtResource("13_ciend")]
-transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 5, -6.3390355, 0, 150.9681)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -8.544326, 0, 298.60153)
 muted = false
 disabled_mode = "Once"
-points = [NodePath("../MovingPlatform\'s 1"), NodePath("../MovingPlatform\'s 3"), NodePath("../MovingPlatform\'s 2")]
+points = [NodePath("../MovingPlatform\'s 1"), NodePath("../MovingPlatform\'s 2")]
 condition = NodePath("ActorBool")
 
 [node name="ActorBool" type="Node" parent="Platform/MovingPlatform" unique_id=2033001180 node_paths=PackedStringArray("actor")]
@@ -129,23 +140,19 @@ metadata/_custom_type_script = "uid://dd8or5oo0cmw2"
 script = ExtResource("16_xo2s0")
 metadata/_custom_type_script = "uid://cwmi2fpsn8by2"
 
-[node name="MovingPlatform\'s 1" parent="Platform" unique_id=1766241102 instance=ExtResource("14_bphh8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9645057, 0, -7.482991)
-skeleton = NodePath("../..")
-time = 20.0
-after_wait = 2.0
-
-[node name="MovingPlatform\'s 2" parent="Platform" unique_id=864904719 instance=ExtResource("14_bphh8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9645057, 0, 127.517006)
-skeleton = NodePath("../..")
-time = 15.0
-after_wait = 0.0
-
-[node name="MovingPlatform\'s 3" parent="Platform" unique_id=890333178 instance=ExtResource("14_bphh8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.92132, 0, 312.65726)
-skeleton = NodePath("../..")
-time = 15.0
+[node name="MovingPlatform\'s 1" type="MeshInstance3D" parent="Platform" unique_id=1766241102 instance=ExtResource("14_bphh8")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -8.544326, 0, 305.69092)
+mesh = SubResource("CylinderMesh_i8wk6")
+script = ExtResource("10_3cm5i")
+time = 30.0
 after_wait = 10.0
+
+[node name="MovingPlatform\'s 2" type="MeshInstance3D" parent="Platform" unique_id=136426168 instance=ExtResource("14_bphh8")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -8.544326, 0, -22.899445)
+mesh = SubResource("CylinderMesh_i8wk6")
+script = ExtResource("10_3cm5i")
+time = 30.0
+after_wait = 2.0
 
 [node name="Water Balls" type="Node3D" parent="." unique_id=1686618566]
 
