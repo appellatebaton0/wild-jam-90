@@ -202,4 +202,4 @@ target = NodePath("..")
 [connection signal="area_entered" from="." to="AreaEntered" method="arg_activate"]
 [connection signal="area_entered" from="." to="Invisible" method="arg_activate"]
 [connection signal="area_entered" from="Suck Range" to="Suck Range" method="_on_area_entered"]
-[connection signal="finished" from="AudioStreamPlayer3D" to="." method="area_ent"]
+[connection signal="finished" from="AudioStreamPlayer3D" to="." method="consume"]
