@@ -392,7 +392,7 @@ transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -56.38894, 19.470182, -11.060
 transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -69.074486, 44.544567, -19.552599)
 
 [node name="Stag17" parent="Terrain3D/Terrain3DObjects" unique_id=1114394827 instance=ExtResource("16_11yo2")]
-transform = Transform3D(-0.72075003, 0, 7.9674664, 0, 8, 0, -7.9674664, 0, -0.72075003, -26.498493, 19.507122, -24.812632)
+transform = Transform3D(-0.72075003, 0, 7.9674664, 0, 8, 0, -7.9674664, 0, -0.72075003, -22.649714, 20.095428, -30.675062)
 
 [node name="Stag38" parent="Terrain3D/Terrain3DObjects" unique_id=721325157 instance=ExtResource("16_11yo2")]
 transform = Transform3D(-0.72075003, 0, 7.9674664, 0, 8, 0, -7.9674664, 0, -0.72075003, -43.134613, 33.85279, -88.06999)

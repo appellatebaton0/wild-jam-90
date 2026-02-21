@@ -47,3 +47,5 @@ func animate():
 	
 	if anim_player != null:
 		anim_player.play(animation)
+
+func arg_animate(_x): animate()
