@@ -68,7 +68,13 @@ height = 1.5
 [sub_resource type="SphereShape3D" id="SphereShape3D_evfw7"]
 radius = 7.05
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_7r63o"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_d7bk7"]
+size = Vector3(75, 1, 75)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g20pa"]
+size = Vector3(400, 1, 400)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_nq5sn"]
 viewport_path = NodePath("Node3D/SubViewport")
 
 [sub_resource type="Gradient" id="Gradient_7r63o"]
@@ -318,6 +324,18 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Player/CharacterBody3D/ControlLock/OrBool/GameNotStarted:response")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_v1gob"]
@@ -722,6 +740,18 @@ tracks/25/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("../Player/CharacterBody3D/ControlLock/OrBool/GameNotStarted:response")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_7r63o"]
 resource_name = "Splash"
@@ -1097,12 +1127,6 @@ _data = {
 &"Start->Options": SubResource("Animation_sxkr1"),
 &"Unpause": SubResource("Animation_50glp")
 }
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_d7bk7"]
-size = Vector3(75, 1, 75)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_g20pa"]
-size = Vector3(400, 1, 400)
 
 [node name="Main Hub" type="Node" unique_id=1164429392]
 
@@ -1543,6 +1567,113 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.891434, 23.171776, -21.25
 [node name="Collectable" parent="VisibilityToggle" unique_id=1904987700 instance=ExtResource("25_5jmxx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -95.98152, 51.002647, 113.77178)
 
+[node name="Shrines" type="Node" parent="." unique_id=16309694]
+
+[node name="CentralRoomTeleporter" parent="Shrines" unique_id=695552005 instance=ExtResource("21_vrlp0")]
+transform = Transform3D(-0.48760068, 0, -0.8730668, 0, 1, 0, 0.8730668, 0, -0.48760068, 37.411186, 0.56723094, 10.199476)
+scene_path = "uid://ddbp4ran4xvdg"
+spawn_position = Vector3(0, 300, 0)
+
+[node name="CentralRoomTeleporter2" parent="Shrines" unique_id=234579865 instance=ExtResource("21_vrlp0")]
+transform = Transform3D(-0.99708885, 0, -0.07624911, 0, 1, 0, 0.07624911, 0, -0.99708885, 33.857567, 0.56723094, 93.54094)
+spawn_position = Vector3(0, 300, 0)
+
+[node name="AboveExitTeleporter" parent="Shrines" unique_id=1367996436 instance=ExtResource("21_vrlp0")]
+transform = Transform3D(0.8324187, 0, -0.55414724, 0, 1, 0, 0.55414724, 0, 0.8324187, 102.05169, 21.252588, 9.704302)
+scene_path = "uid://b57fqeqgtdiak"
+spawn_position = Vector3(300, 300, 0)
+
+[node name="LakeRoomTeleporter" parent="Shrines" unique_id=458076251 instance=ExtResource("21_vrlp0")]
+transform = Transform3D(-0.8607598, 0, 0.5090114, 0, 1, 0, -0.5090114, 0, -0.8607598, -66.705315, 30.333189, 79.71528)
+scene_path = "uid://wguoowilhb3p"
+
+[node name="Areas" type="Node" parent="." unique_id=1454371248]
+
+[node name="SpawnCrateKiller" type="Area3D" parent="Areas" unique_id=1023149255]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.432667, 8.241431, 0)
+collision_layer = 128
+collision_mask = 4
+script = ExtResource("4_fjq41")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Areas/SpawnCrateKiller" unique_id=1164258700]
+shape = SubResource("BoxShape3D_d7bk7")
+debug_color = Color(0, 0.14509805, 0.69803923, 1)
+
+[node name="KillBit" type="Node" parent="Areas/SpawnCrateKiller" unique_id=752243973]
+script = ExtResource("5_g20pa")
+metadata/_custom_type_script = "uid://bekt6vd73jjuq"
+
+[node name="WorldBottom" type="Area3D" parent="Areas" unique_id=523267545]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.432667, -15.75131, 0)
+collision_layer = 128
+collision_mask = 6
+script = ExtResource("4_fjq41")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Areas/WorldBottom" unique_id=1177342792]
+shape = SubResource("BoxShape3D_g20pa")
+debug_color = Color(0, 0.14509805, 0.69803923, 1)
+
+[node name="KillBit" type="Node" parent="Areas/WorldBottom" unique_id=1649483576]
+script = ExtResource("5_g20pa")
+metadata/_custom_type_script = "uid://bekt6vd73jjuq"
+
+[node name="ExitDoor" type="Node" parent="." unique_id=1472716271]
+
+[node name="Doorway" parent="ExitDoor" unique_id=473600866 instance=ExtResource("8_flqn6")]
+transform = Transform3D(0.30633405, 0, 1.4683865, 0, 1.5, 0, -1.4683865, 0, 0.30633405, 70.6409, -1.7057571, -24.465414)
+
+[node name="Door" parent="ExitDoor" unique_id=1031487027 node_paths=PackedStringArray("condition") instance=ExtResource("7_vrlp0")]
+transform = Transform3D(0.32675633, 0, 1.5662792, 0, 1.6, 0, -1.5662792, 0, 0.32675633, 70.2936, 5.794243, -22.800652)
+open_extent = Vector3(0, -13, 0)
+condition = NodePath("AllShrinesComplete")
+
+[node name="AllShrinesComplete" type="Node" parent="ExitDoor/Door" unique_id=1722399068]
+script = ExtResource("16_7r63o")
+response = false
+metadata/_custom_type_script = "uid://cox1ysk6bulx2"
+
+[node name="ShrineIndicator" parent="." unique_id=777689206 node_paths=PackedStringArray("shrine") instance=ExtResource("29_g20pa")]
+transform = Transform3D(0.20422268, -0.9789244, -3.7252903e-08, 0, -4.3711385e-08, 0.99999994, -0.97892445, -0.20422268, 0, 69.174, 9.150881, -31.06475)
+shrine = NodePath("../Shrines/CentralRoomTeleporter")
+
+[node name="ShrineIndicator2" parent="." unique_id=1568563885 node_paths=PackedStringArray("shrine") instance=ExtResource("29_g20pa")]
+transform = Transform3D(0.20422268, -0.9789244, -3.7252903e-08, 0, -4.3711385e-08, 0.99999994, -0.97892445, -0.20422268, 0, 69.174, 12.150881, -31.06475)
+shrine = NodePath("../Shrines/LakeRoomTeleporter")
+
+[node name="ShrineIndicator3" parent="." unique_id=751483488 node_paths=PackedStringArray("shrine") instance=ExtResource("29_g20pa")]
+transform = Transform3D(0.20422268, -0.9789244, -3.7252903e-08, 0, -4.3711385e-08, 0.99999994, -0.97892445, -0.20422268, 0, 68.35711, 15.150881, -27.149052)
+shrine = NodePath("../Shrines/AboveExitTeleporter")
+
+[node name="ShrineIndicator4" parent="." unique_id=868498681 instance=ExtResource("29_g20pa")]
+transform = Transform3D(0.20422268, -0.9789244, -3.7252903e-08, 0, -4.3711385e-08, 0.99999994, -0.97892445, -0.20422268, 0, 67.540215, 15.150881, -23.233355)
+
+[node name="ShrineIndicator5" parent="." unique_id=909647512 instance=ExtResource("29_g20pa")]
+transform = Transform3D(0.20422268, -0.9789244, -3.7252903e-08, 0, -4.3711385e-08, 0.99999994, -0.97892445, -0.20422268, 0, 66.72332, 15.150881, -19.317656)
+
+[node name="ShrineIndicator6" parent="." unique_id=916262209 instance=ExtResource("29_g20pa")]
+transform = Transform3D(0.20422268, -0.9789244, -3.7252903e-08, 0, -4.3711385e-08, 0.99999994, -0.97892445, -0.20422268, 0, 65.906425, 12.150881, -15.401959)
+
+[node name="ShrineIndicator7" parent="." unique_id=927071467 instance=ExtResource("29_g20pa")]
+transform = Transform3D(0.20422268, -0.9789244, -3.7252903e-08, 0, -4.3711385e-08, 0.99999994, -0.97892445, -0.20422268, 0, 65.906425, 9.150881, -15.401959)
+
+[node name="Doors" type="Node3D" parent="." unique_id=1097658957]
+
+[node name="PressurePlate2" parent="Doors" unique_id=1251242622 instance=ExtResource("6_iukv2")]
+transform = Transform3D(1.499982, 0, -0.0073565096, 0, 1.5, 0, 0.0073565096, 0, 1.499982, 12.657391, 15.097389, 29.813074)
+
+[node name="Door" parent="Doors" unique_id=697453936 instance=ExtResource("7_vrlp0")]
+transform = Transform3D(-1.9527503, 0, -0.4321636, 0, 2, 0, 0.4321636, 0, -1.9527503, 26.100925, 9.538709, 43.24159)
+time = 7.0
+open_extent = Vector3(0, -10, 0)
+
+[node name=">>PressurePlate2" type="Node" parent="Doors/Door" unique_id=15454340 node_paths=PackedStringArray("actor")]
+script = ExtResource("5_q8hrf")
+actor = NodePath("../../PressurePlate2")
+metadata/_custom_type_script = "uid://dd8or5oo0cmw2"
+
+[node name="Node3D" parent="Doors" unique_id=1378238659 instance=ExtResource("8_flqn6")]
+transform = Transform3D(-1.6651676, 0, -0.521768, 0, 1.745, 0, 0.521768, 0, -1.6651676, 24.370075, -0.061691284, 43.29313)
+
 [node name="UI" type="CanvasLayer" parent="." unique_id=1359845995]
 layer = 4
 
@@ -1551,7 +1682,7 @@ offset_right = 121.0
 offset_bottom = 94.0
 
 [node name="TextureRect" parent="UI/CollectableCounter/HBoxContainer" parent_id_path=PackedInt32Array(857772092, 2129117372) index="0" unique_id=715427261]
-texture = SubResource("ViewportTexture_7r63o")
+texture = SubResource("ViewportTexture_nq5sn")
 
 [node name="Node3D" parent="UI/CollectableCounter" index="1" unique_id=1883165440]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.372763, 0)
@@ -1646,7 +1777,7 @@ theme_override_styles/separator = SubResource("StyleBoxLine_nq5sn")
 [node name="ScrollContainer" type="ScrollContainer" parent="UI/OptionsMenu/MarginContainer/VBoxContainer" unique_id=1154128581]
 layout_mode = 2
 size_flags_vertical = 3
-scroll_vertical = 109
+scroll_vertical = 100
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer" unique_id=1773046731]
 layout_mode = 2
