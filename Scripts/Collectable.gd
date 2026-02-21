@@ -2,8 +2,7 @@
 class_name Collectable extends AreaMasterBit3D
 
 const STAMINA_NODE_NAME := &"GotStamina"
-
-#@export var suck_range:Area3D
+@onready var SFX:AudioStreamPlayer = $AudioStreamPlayer3D
 @export var is_stamina_item := false:
 	set(to):
 		is_stamina_item = to
@@ -13,11 +12,11 @@ const STAMINA_NODE_NAME := &"GotStamina"
 @export var collectable_value := 1
 
 func _on_area_entered(ar: Area3D) -> void:
-	
+
 	var a = ar
 	if a is Bit: a = a.bot
+	SFX.playing = true
 	
-	#print("YUM")
 	GameState.add_collectable(collectable_value)
 	queue_free()
 	

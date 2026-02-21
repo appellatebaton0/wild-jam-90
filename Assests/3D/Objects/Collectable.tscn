@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://c5aqrj2yuhbde" path="res://Scripts/Suck.gd" id="5_6o08o"]
 [ext_resource type="Script" uid="uid://jbqvo3y8hqsy" path="res://Scripts/Collectable.gd" id="5_8051g"]
 [ext_resource type="Script" uid="uid://cwmi2fpsn8by2" path="res://Scripts/Bits/Respawn.gd" id="6_6o08o"]
+[ext_resource type="AudioStream" uid="uid://bo40pn0v7q537" path="res://Assests/SFX Misc/Item Pickup.wav" id="7_evp32"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_jsjdp"]
 radius = 0.295
@@ -178,5 +179,9 @@ draw_pass_1 = SubResource("SphereMesh_0bqg2")
 [node name="RespawnBit3D" type="Node" parent="." unique_id=369738921]
 script = ExtResource("6_6o08o")
 metadata/_custom_type_script = "uid://cwmi2fpsn8by2"
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer" parent="." unique_id=2018429193]
+stream = ExtResource("7_evp32")
+bus = &"SFX"
 
 [connection signal="area_entered" from="Suck Range" to="Suck Range" method="_on_area_entered"]
