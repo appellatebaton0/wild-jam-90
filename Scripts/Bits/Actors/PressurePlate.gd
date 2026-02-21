@@ -1,5 +1,7 @@
 class_name PressurePlateBit extends Actor
 
+## If true, the plate won't release once activated.
+@export var stay_pressed := false
 ## How long the plate will stay down for after it's no longer activated.
 @export var weight_time := 0.0
 var weight_timer := 0.0
@@ -29,10 +31,10 @@ func _process(delta: float) -> void:
 	var is_pressed = area.has_overlapping_bodies()
 	var is_active = is_pressed
 	
-	if is_pressed:
-		weight_timer = weight_time
-	else:
-		if weight_time > 0.0:
+	if !stay_pressed:
+		if is_pressed:
+			weight_timer = weight_time
+		elif weight_time > 0.0:
 			weight_timer = move_toward(weight_timer, 0.0, delta)
 			is_active = weight_timer > 0.0
 	
