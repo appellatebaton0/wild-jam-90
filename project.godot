@@ -41,6 +41,8 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 config/name="EmberLight"
 run/main_scene="uid://hgdnv1u63uc5"
 config/features=PackedStringArray("4.6", "Forward Plus")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/show_image=false
 config/icon="uid://h24r8mxrvp60"
 
 [audio]
