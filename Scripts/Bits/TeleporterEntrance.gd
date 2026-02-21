@@ -2,6 +2,7 @@ class_name TeleporterEntranceBit extends AreaMasterBit3D # The master can handle
 ## Creates a scene at a certain point, and teleports the activator to that scene.
 
 signal returned_from_exit(from: Node3D)
+var used := false
 
 @onready var parent := get_tree().get_first_node_in_group("TeleporterParent")
 
@@ -121,6 +122,7 @@ func notify_teleporters():
 
 func returned(from_exit: TeleporterExitBit):
 	returned_from_exit.emit(from_exit)
+	used = true
 
 func _do_warp(user: Node3D):
 	warping = true

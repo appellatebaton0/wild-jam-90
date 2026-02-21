@@ -176,7 +176,6 @@ radius = 2.5893555
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_b0nsn")
-teleport_on_enter = false
 use_input = &"UseTeleporter"
 spawn_position = Vector3(0, 150, 0)
 animator = NodePath("AnimationPlayer")
