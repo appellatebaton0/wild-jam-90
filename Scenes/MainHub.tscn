@@ -22,6 +22,8 @@
 [ext_resource type="Script" uid="uid://dekpk8relyucb" path="res://Scripts/Bits/Input.gd" id="15_xainh"]
 [ext_resource type="Script" uid="uid://cox1ysk6bulx2" path="res://Scripts/Values/Bool/Manual.gd" id="16_7r63o"]
 [ext_resource type="PackedScene" uid="uid://cj3ygyynwwo0q" path="res://Assests/3D/Player Character/player_character.tscn" id="17_fjq41"]
+[ext_resource type="Script" uid="uid://bc87fqj83okns" path="res://Scripts/Bits/PropertyModifier.gd" id="19_xainh"]
+[ext_resource type="Script" uid="uid://b72nqapr3age1" path="res://Scripts/Values/String/CastString.gd" id="20_7r63o"]
 [ext_resource type="PackedScene" uid="uid://cw5v3k3rnk5jn" path="res://Scenes/Signpost.tscn" id="20_q8hrf"]
 [ext_resource type="PackedScene" uid="uid://cejs1f6tv8mel" path="res://Assests/UI/collectable_counter.tscn" id="21_qp3sb"]
 [ext_resource type="PackedScene" uid="uid://60r10u5tfh4y" path="res://Scenes/TeleporterEntrance.tscn" id="21_vrlp0"]
@@ -63,7 +65,7 @@ height = 1.5
 [sub_resource type="SphereShape3D" id="SphereShape3D_evfw7"]
 radius = 7.05
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_g20pa"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_7r63o"]
 viewport_path = NodePath("Node3D/SubViewport")
 
 [sub_resource type="Gradient" id="Gradient_7r63o"]
@@ -754,98 +756,98 @@ transform = Transform3D(0.10399029, 0, -0.99457836, 0, 1, 0, 0.99457836, 0, 0.10
 [node name="Player_Character" parent="Player/CharacterBody3D" parent_id_path=PackedInt32Array(623680313, 844716186) index="2" unique_id=1831994608]
 transform = Transform3D(-0.5941662, 0, -8.971661e-08, 0, 0.5941662, 0, 8.971661e-08, 0, -0.5941662, 0, -0.9654732, 0)
 
-[node name="Skeleton3D" parent="Player/CharacterBody3D/Player_Character/root" parent_id_path=PackedInt32Array(623680313, 1831994608, 1788779974) index="0" unique_id=963255568]
-bones/1/position = Vector3(3.1183776e-05, 0.72595376, 0.06813966)
-bones/6/rotation = Quaternion(-0.10282578, 2.6166489e-17, 1.3695297e-16, 0.9946994)
-bones/7/rotation = Quaternion(-0.8031407, 0.0033521769, 0.0025337, 0.5957746)
-bones/8/rotation = Quaternion(0.3637406, -0.0011305917, -0.01896871, 0.9313065)
-bones/10/rotation = Quaternion(-0.45339617, -0.16607971, 0.25250593, 0.8385048)
-bones/11/rotation = Quaternion(4.8543393e-07, 0.31527585, -2.6737314e-07, 0.9490002)
-bones/12/rotation = Quaternion(3.4029367e-07, 0.23826875, -2.059814e-07, 0.9711993)
-bones/13/rotation = Quaternion(7.8514324e-07, 0.15971434, -1.15609154e-07, 0.9871633)
-bones/14/rotation = Quaternion(5.8400058e-08, 0.080125354, -1.4632607e-07, 0.9967848)
-bones/16/rotation = Quaternion(1.7822897e-08, 0.25262895, -1.0719075e-07, 0.96756333)
-bones/17/rotation = Quaternion(7.870542e-08, 0.18518457, -1.7544979e-08, 0.98270386)
-bones/18/rotation = Quaternion(8.375393e-08, 0.11686979, -1.1917086e-07, 0.99314725)
-bones/19/rotation = Quaternion(1.928594e-09, 0.04800023, 1.2457325e-07, 0.9988473)
-bones/20/rotation = Quaternion(0.07329575, 0.2779255, -0.021327287, 0.9575648)
-bones/22/rotation = Quaternion(-0.45339966, 0.16609527, -0.25252107, 0.8384952)
-bones/23/rotation = Quaternion(1.1981135e-06, -0.31554547, 1.6592922e-07, 0.94891053)
-bones/24/rotation = Quaternion(9.317073e-07, -0.2384539, 1.3249729e-07, 0.97115386)
-bones/25/rotation = Quaternion(1.1531944e-06, -0.15984297, 8.733318e-08, 0.9871425)
-bones/26/rotation = Quaternion(2.6427892e-07, -0.08019789, 1.546636e-07, 0.996779)
-bones/28/rotation = Quaternion(3.1067256e-07, -0.25289682, -2.164799e-08, 0.96749324)
-bones/29/rotation = Quaternion(1.9040499e-07, -0.18538637, 6.710232e-08, 0.9826658)
-bones/30/rotation = Quaternion(1.3084573e-07, -0.11700461, 8.0741716e-09, 0.9931314)
-bones/31/rotation = Quaternion(-1.2324153e-08, -0.048071727, -2.282917e-07, 0.99884397)
-bones/32/rotation = Quaternion(0.07329896, -0.27827635, 0.021357778, 0.95746195)
-bones/33/rotation = Quaternion(0.97489345, 0.16316299, 0.08162694, -0.12766218)
-bones/34/rotation = Quaternion(1.5739353e-07, -1.0617079e-07, -5.867332e-08, 1)
-bones/35/rotation = Quaternion(9.7788856e-08, -6.3329956e-08, -8.940701e-08, 1)
-bones/36/rotation = Quaternion(5.0291437e-08, -1.04308135e-07, 5.122275e-08, 1)
-bones/37/rotation = Quaternion(1.8601486e-07, -0.00013760942, 4.625755e-08, 1)
-bones/38/rotation = Quaternion(2.0725143e-07, -3.3806153e-08, 0.042733613, 0.9990865)
-bones/39/rotation = Quaternion(0.08866108, -0.66914755, 0.72451067, -0.13951735)
-bones/41/rotation = Quaternion(-2.793968e-07, -4.181638e-07, -4.4517216e-07, 1)
-bones/42/rotation = Quaternion(-1.6996628e-07, -3.697351e-07, -3.1292421e-07, 1)
-bones/43/rotation = Quaternion(-1.07567836e-07, -2.4680048e-07, -2.430752e-07, 1)
-bones/44/rotation = Quaternion(1.7217562e-07, -0.00013768907, 6.866402e-08, 1)
-bones/45/rotation = Quaternion(0.9748929, -0.16316384, -0.081633694, -0.12766118)
-bones/46/rotation = Quaternion(1.2945382e-07, 1.73226e-07, 1.6484407e-07, 1)
-bones/47/rotation = Quaternion(1.1641529e-07, 1.19209226e-07, 1.7322603e-07, 1)
-bones/48/rotation = Quaternion(7.847882e-15, 1.7508863e-07, 2.6076993e-08, 1)
-bones/49/rotation = Quaternion(1.4838022e-07, 0.00013720454, 8.536505e-08, 1)
-bones/50/rotation = Quaternion(1.545173e-07, 1.4470179e-07, -0.042733483, 0.9990865)
-bones/51/rotation = Quaternion(-0.08866163, -0.6691479, 0.7245103, 0.1395172)
-bones/53/rotation = Quaternion(-1.7974527e-07, -2.4307522e-07, 5.820766e-07, 1)
-bones/54/rotation = Quaternion(-2.230517e-07, -7.5437114e-08, 4.2747715e-07, 1)
-bones/55/rotation = Quaternion(1.6298117e-08, -1.0430815e-07, 2.672897e-07, 1)
-bones/56/rotation = Quaternion(1.7725777e-07, 0.00013705895, -2.3421277e-08, 1)
-bones/61/position = Vector3(-0.045405295, -0.024367854, -0.4986874)
-bones/61/scale = Vector3(0.9443937, 0.94439363, 0.94439375)
-bones/65/position = Vector3(-0.098427266, 0.22063924, -0.37354025)
-bones/65/scale = Vector3(0.9451671, 0.94516706, 0.9451668)
-bones/69/position = Vector3(0.10300686, 0.24753511, -0.28828934)
-bones/69/scale = Vector3(0.94439363, 0.94439363, 0.94439375)
-bones/73/position = Vector3(0.11145881, 0.22754556, -0.31945235)
-bones/73/scale = Vector3(0.9451668, 0.9451669, 0.94516665)
-bones/77/position = Vector3(0.38304853, 0.0481316, -0.1522612)
-bones/77/scale = Vector3(0.9443936, 0.9443936, 0.9443935)
-bones/81/position = Vector3(0.3149919, -0.028383419, -0.2341281)
-bones/81/scale = Vector3(0.944394, 0.94439405, 0.94439405)
-bones/85/position = Vector3(-0.22777806, -0.21207786, -0.31530628)
-bones/85/scale = Vector3(0.944394, 0.94439375, 0.944394)
-bones/89/position = Vector3(-0.0074316924, 0.01572533, -0.37155634)
-bones/89/scale = Vector3(0.9451675, 0.9451675, 0.94516706)
-bones/93/position = Vector3(-0.1090242, 0.1520121, -0.30292833)
-bones/93/scale = Vector3(0.94439393, 0.9443937, 0.9443939)
-bones/97/position = Vector3(-0.078548424, 0.13890705, -0.3239528)
-bones/97/scale = Vector3(0.94516695, 0.94516665, 0.9451671)
-bones/101/position = Vector3(-0.314329, -0.0069381893, -0.19247492)
-bones/101/scale = Vector3(0.94439393, 0.9443938, 0.9443938)
-bones/105/position = Vector3(-0.054479927, -0.11195107, -0.33839458)
-bones/105/scale = Vector3(0.944394, 0.9443942, 0.94439405)
+[node name="Skeleton3D" parent="Player/CharacterBody3D/Player_Character/root" parent_id_path=PackedInt32Array(623680313, 1831994608, 1629276081) index="0" unique_id=1550848783]
+bones/1/position = Vector3(0.0026202349, 0.69711226, 0.072784156)
+bones/6/rotation = Quaternion(-0.035801016, -2.2902365e-17, -3.3731568e-16, 0.999359)
+bones/7/rotation = Quaternion(-0.80234647, -0.061211117, -0.09029778, 0.58680475)
+bones/8/rotation = Quaternion(0.3565259, 0.045051266, -0.061134685, 0.93119407)
+bones/10/rotation = Quaternion(-0.48930416, -0.16811384, 0.26882416, 0.8124364)
+bones/11/rotation = Quaternion(6.405549e-07, 0.32335946, -2.3798486e-07, 0.9462763)
+bones/12/rotation = Quaternion(3.7834477e-07, 0.24469003, -1.5978881e-07, 0.9696014)
+bones/13/rotation = Quaternion(7.6576777e-07, 0.16397302, -1.00526044e-07, 0.98646486)
+bones/14/rotation = Quaternion(1.0433328e-07, 0.08189301, -6.9441164e-08, 0.99664116)
+bones/16/rotation = Quaternion(9.970558e-08, 0.2445442, -2.0025597e-07, 0.9696382)
+bones/17/rotation = Quaternion(1.1133962e-07, 0.17862056, -1.001391e-07, 0.98391813)
+bones/18/rotation = Quaternion(1.5332498e-08, 0.112874106, -1.2686999e-08, 0.9936093)
+bones/19/rotation = Quaternion(-1.6634685e-08, 0.04629827, 1.6152428e-07, 0.9989277)
+bones/20/rotation = Quaternion(0.118221626, 0.2806005, -0.0347409, 0.9518824)
+bones/22/rotation = Quaternion(-0.49218693, 0.16786863, -0.2705878, 0.81015694)
+bones/23/rotation = Quaternion(8.131217e-07, -0.3248693, 8.353542e-08, 0.94575894)
+bones/24/rotation = Quaternion(6.900416e-07, -0.24528076, 9.845452e-08, 0.96945214)
+bones/25/rotation = Quaternion(9.558902e-07, -0.1638356, 4.8310863e-08, 0.9864877)
+bones/26/rotation = Quaternion(1.66615e-07, -0.08187494, 1.074792e-07, 0.9966427)
+bones/28/rotation = Quaternion(-1.4955736e-08, -0.24343416, 1.6824526e-07, 0.9699175)
+bones/29/rotation = Quaternion(8.149083e-08, -0.1786682, 1.4190499e-07, 0.9839094)
+bones/30/rotation = Quaternion(-6.583738e-08, -0.11262932, 1.3435968e-07, 0.99363714)
+bones/31/rotation = Quaternion(-2.0044942e-08, -0.04636538, -1.5380735e-07, 0.9989246)
+bones/32/rotation = Quaternion(0.121891014, -0.2809666, 0.036461763, 0.95124704)
+bones/33/rotation = Quaternion(0.8943865, 0.24463277, 0.3556037, -0.117361605)
+bones/34/rotation = Quaternion(5.014738e-07, -0.26396328, 6.2334743e-07, 0.96453273)
+bones/35/rotation = Quaternion(3.8179917e-07, -0.1990091, 4.7348087e-07, 0.9799977)
+bones/36/rotation = Quaternion(2.6737925e-07, -0.1331677, 4.5662577e-07, 0.9910936)
+bones/37/rotation = Quaternion(3.9437637e-08, -0.066732585, 1.960112e-07, 0.9977709)
+bones/38/rotation = Quaternion(3.6632022e-07, -7.06865e-08, 0.2793923, 0.96017706)
+bones/39/rotation = Quaternion(-0.16547568, -0.5797636, 0.76426643, -0.2288864)
+bones/41/rotation = Quaternion(-4.8597263e-07, -0.26161397, -3.128908e-07, 0.9651726)
+bones/42/rotation = Quaternion(-3.3564027e-07, -0.19721931, -1.8810466e-07, 0.98035944)
+bones/43/rotation = Quaternion(-1.852896e-07, -0.13196103, -1.5500957e-07, 0.9912549)
+bones/44/rotation = Quaternion(-4.4004167e-08, -0.06612547, 1.3975274e-07, 0.9978113)
+bones/45/rotation = Quaternion(0.89564896, -0.2447596, -0.35134694, -0.120254084)
+bones/46/rotation = Quaternion(3.6804624e-07, 0.2600642, -4.193875e-07, 0.9655914)
+bones/47/rotation = Quaternion(4.115825e-07, 0.1960387, -2.9735486e-07, 0.9805962)
+bones/48/rotation = Quaternion(9.409425e-08, 0.13116549, -2.6565291e-07, 0.9913606)
+bones/49/rotation = Quaternion(4.103866e-08, 0.065724745, -1.9171411e-09, 0.9978379)
+bones/50/rotation = Quaternion(2.2795578e-07, 2.5191662e-07, -0.27120084, 0.9625228)
+bones/51/rotation = Quaternion(0.15753488, -0.58116674, 0.7641135, 0.23142745)
+bones/53/rotation = Quaternion(-4.2189495e-07, 0.2571386, 3.5060447e-07, 0.9663746)
+bones/54/rotation = Quaternion(-3.007035e-07, 0.19381084, 2.309284e-07, 0.981039)
+bones/55/rotation = Quaternion(-1.541783e-07, 0.12966391, 1.6943359e-07, 0.9915581)
+bones/56/rotation = Quaternion(-4.266698e-08, 0.0649694, -9.1581896e-08, 0.99788725)
+bones/61/position = Vector3(-0.01165119, -0.047787175, -0.52147007)
+bones/61/scale = Vector3(0.9127959, 0.91279596, 0.912796)
+bones/65/position = Vector3(-0.07972414, 0.19166869, -0.40648237)
+bones/65/scale = Vector3(0.9146974, 0.914697, 0.9146974)
+bones/69/position = Vector3(0.116722174, 0.2178941, -0.32827854)
+bones/69/scale = Vector3(0.9127961, 0.91279614, 0.9127961)
+bones/73/position = Vector3(0.09943322, 0.19510958, -0.35611194)
+bones/73/scale = Vector3(0.91469723, 0.91469723, 0.9146971)
+bones/77/position = Vector3(0.38819754, 0.019767553, -0.19509442)
+bones/77/scale = Vector3(0.91279596, 0.9127959, 0.912796)
+bones/81/position = Vector3(0.31596506, -0.048959836, -0.27634162)
+bones/81/scale = Vector3(0.91279626, 0.91279644, 0.9127964)
+bones/85/position = Vector3(-0.24154097, -0.22176102, -0.35148576)
+bones/85/scale = Vector3(0.9127962, 0.9127962, 0.9127963)
+bones/89/position = Vector3(-0.01452915, 0.009190306, -0.4045785)
+bones/89/scale = Vector3(0.91469747, 0.91469747, 0.9146978)
+bones/93/position = Vector3(-0.121600494, 0.14041099, -0.3401449)
+bones/93/scale = Vector3(0.91279614, 0.9127958, 0.9127961)
+bones/97/position = Vector3(-0.0729706, 0.12383746, -0.35972247)
+bones/97/scale = Vector3(0.9146973, 0.9146974, 0.9146977)
+bones/101/position = Vector3(-0.33245063, -0.024899721, -0.22770755)
+bones/101/scale = Vector3(0.91279626, 0.9127962, 0.9127961)
+bones/105/position = Vector3(-0.07753701, -0.12543346, -0.37174907)
+bones/105/scale = Vector3(0.91279626, 0.9127964, 0.9127964)
 
 [node name="BodyJiggle" parent="Player/CharacterBody3D/Player_Character/root/Skeleton3D" index="1" unique_id=1224292015]
 transform = Transform3D(-0.061787415, 0.0007945314, 0.5909443, 8.265016e-05, 0.5941656, -0.00079022086, -0.5909449, 2.6804628e-08, -0.06178746, -105.31206, 4.436164, 5.1653366)
 
 [node name="FlameJiggle" parent="Player/CharacterBody3D/Player_Character/root/Skeleton3D" index="2" unique_id=1142166283]
-transform = Transform3D(-0.07458377, -0.5624897, -0.17628404, -0.0038936033, -0.17721556, 0.5671094, -0.58945364, 0.072342604, 0.01855927, -106.604965, 4.845316, 5.295851)
+transform = Transform3D(0.07692073, -0.5817349, -0.09328029, -0.019960003, -0.09659103, 0.5859227, -0.5888279, -0.07271999, -0.032047063, -106.55081, 5.001805, 5.0411143)
 
 [node name="HeadJiggle" parent="Player/CharacterBody3D/Player_Character/root/Skeleton3D" index="3" unique_id=152199067]
-transform = Transform3D(-0.061751656, 0.1204438, 0.5785442, 0.00017315573, 0.581698, -0.12108189, -0.5909486, -0.012415429, -0.06049093, -105.14174, 5.4556746, 5.1475534)
+transform = Transform3D(-0.061803237, 0.12165218, 0.5782858, -7.4900956e-05, 0.58143824, -0.12232335, -0.5909433, -0.012796572, -0.06046397, -105.138695, 5.4384384, 5.1455817)
 
 [node name="LArmJiggle" parent="Player/CharacterBody3D/Player_Character/root/Skeleton3D" index="4" unique_id=1014996254]
-transform = Transform3D(0.5909338, -0.06188297, -0.0010716398, 0.001144699, 0.00064157206, 0.59416467, -0.061881658, -0.5909346, 0.0007573026, -105.44444, 4.3726687, 4.114078)
+transform = Transform3D(0.59095436, -0.061683074, -0.0011977107, 0.0011446261, -0.00057060807, 0.5941647, -0.061684053, -0.5909555, -0.0004487558, -105.44161, 4.3540487, 4.112235)
 
 [node name="LArmJiggle2" parent="Player/CharacterBody3D/Player_Character/root/Skeleton3D" index="5" unique_id=1078964516]
-transform = Transform3D(0.5180038, 0.13614509, 0.25723538, -0.02692763, -0.5004774, 0.31910908, 0.28979394, -0.2898625, -0.4301543, -105.091125, 3.3850892, 4.360196)
+transform = Transform3D(0.5071007, 0.14252904, 0.27489585, 0.0021981748, -0.5291247, 0.27028772, 0.30964094, -0.22966442, -0.45211747, -105.07607, 3.3121006, 4.475485)
 
 [node name="RArmJiggle" parent="Player/CharacterBody3D/Player_Character/root/Skeleton3D" index="6" unique_id=2141569191]
-transform = Transform3D(-0.59095293, 0.061697613, -0.0012051604, -0.0011446791, 0.00064238795, 0.59416467, 0.061698712, 0.59095395, -0.0005200478, -105.2241, 4.3726697, 6.2212048)
+transform = Transform3D(-0.5909339, 0.061881967, -0.0010788778, -0.001144646, -0.0005724167, 0.59416485, 0.06188082, 0.5909347, 0.00068848126, -105.221306, 4.3540487, 6.219366)
 
 [node name="RArmJiggle2" parent="Player/CharacterBody3D/Player_Character/root/Skeleton3D" index="7" unique_id=2001702917]
-transform = Transform3D(-0.44709063, 0.19316119, 0.34034103, 0.026655601, -0.5005097, 0.3190813, 0.39042637, 0.25536686, 0.36795163, -104.929375, 3.3850255, 5.907209)
+transform = Transform3D(-0.43355724, 0.18689066, 0.3607399, 0.00039362398, -0.5273756, 0.27369353, 0.4062773, 0.1999506, 0.3846972, -104.93892, 3.3155477, 5.7976446)
 
 [node name="LookBit" parent="Player/CharacterBody3D" parent_id_path=PackedInt32Array(623680313, 844716186) index="4" unique_id=570069494 node_paths=PackedStringArray("tos")]
 tos = {
@@ -861,6 +863,15 @@ terrain_node = NodePath("ManualNode")
 script = ExtResource("26_s66fw")
 response = NodePath("../../../../World/Terrain3D")
 metadata/_custom_type_script = "uid://b1o48vkwquyxs"
+
+[node name="Property" parent="Player/CameraPivot/Camera3D/UpdateFOV/FOV" parent_id_path=PackedInt32Array(623680313, 910029139) index="0" unique_id=1680296512 node_paths=PackedStringArray("from")]
+from = NodePath("Slider")
+
+[node name="Slider" parent="Player/CameraPivot/Camera3D/UpdateFOV/FOV/Property" index="0" unique_id=897413671 node_paths=PackedStringArray("response")]
+response = NodePath("../../../../../../../UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/FOVControl/FOVSlider")
+
+[node name="Slider" parent="Player/CameraPivot/UpdateSensitivity/Sensitivity/Property" parent_id_path=PackedInt32Array(623680313, 1084533878) index="0" unique_id=725583294 node_paths=PackedStringArray("response")]
+response = NodePath("../../../../../../UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/SensControl/SensSlider")
 
 [node name="Stamina" parent="Player/StaminaBar/ProgressBar" parent_id_path=PackedInt32Array(623680313, 319243587) index="0" unique_id=203110726 node_paths=PackedStringArray("up_conditions", "down_conditions")]
 up_conditions = {
@@ -1182,7 +1193,7 @@ offset_right = 121.0
 offset_bottom = 94.0
 
 [node name="TextureRect" parent="UI/CollectableCounter/HBoxContainer" parent_id_path=PackedInt32Array(857772092, 2129117372) index="0" unique_id=715427261]
-texture = SubResource("ViewportTexture_g20pa")
+texture = SubResource("ViewportTexture_7r63o")
 
 [node name="Node3D" parent="UI/CollectableCounter" index="1" unique_id=1883165440]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.372763, 0)
@@ -1263,6 +1274,7 @@ theme_override_constants/separation = 10
 
 [node name="Label" type="Label" parent="UI/OptionsMenu/MarginContainer/VBoxContainer" unique_id=548277570]
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("13_vjfe1")
 theme_override_font_sizes/font_size = 30
 text = "PAUSED"
@@ -1276,14 +1288,16 @@ theme_override_styles/separator = SubResource("StyleBoxLine_nq5sn")
 [node name="ScrollContainer" type="ScrollContainer" parent="UI/OptionsMenu/MarginContainer/VBoxContainer" unique_id=1154128581]
 layout_mode = 2
 size_flags_vertical = 3
+scroll_vertical = 46
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer" unique_id=1773046731]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=228273398]
+[node name="AUDIO" type="Label" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=228273398]
 layout_mode = 2
+theme_override_font_sizes/font_size = 27
 text = "AUDIO"
 horizontal_alignment = 1
 
@@ -1299,9 +1313,16 @@ bus_name = &"Music"
 layout_mode = 2
 bus_name = &"SFX"
 
-[node name="Label2" type="Label" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1412984002]
+[node name="CONTROLS" type="Label" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1412984002]
 layout_mode = 2
+theme_override_font_sizes/font_size = 27
 text = "CONTROLS"
+horizontal_alignment = 1
+
+[node name="KEYBINDS" type="Label" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=725583594]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "KEYBINDS"
 horizontal_alignment = 1
 
 [node name="InputEntry" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=2685080 instance=ExtResource("12_ec7uc")]
@@ -1323,6 +1344,107 @@ display_name = &"Grab"
 layout_mode = 2
 event_name = &"Pause"
 display_name = &"Pause"
+
+[node name="InputEntry10" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=413685196 instance=ExtResource("12_ec7uc")]
+layout_mode = 2
+event_name = &"Forwards"
+display_name = &"Forwards"
+
+[node name="InputEntry11" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1695295335 instance=ExtResource("12_ec7uc")]
+layout_mode = 2
+event_name = &"Backwards"
+display_name = &"Backwards"
+
+[node name="InputEntry12" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=2105712884 instance=ExtResource("12_ec7uc")]
+layout_mode = 2
+event_name = &"Left"
+display_name = &"Left"
+
+[node name="InputEntry13" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=187309138 instance=ExtResource("12_ec7uc")]
+layout_mode = 2
+event_name = &"Right"
+display_name = &"Right"
+
+[node name="LOOKING" type="Label" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1510593980]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "LOOKING"
+horizontal_alignment = 1
+
+[node name="FOVControl" type="HBoxContainer" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1476251080]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/FOVControl" unique_id=1867539701]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "FOV:"
+
+[node name="Label2" type="Label" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/FOVControl" unique_id=424404734]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "75.0"
+horizontal_alignment = 2
+
+[node name="PropertyModifier" type="Node" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/FOVControl/Label2" unique_id=1887914516 node_paths=PackedStringArray("target", "value")]
+script = ExtResource("19_xainh")
+target = NodePath("ManualNode")
+property = "text"
+value = NodePath("FOV")
+metadata/_custom_type_script = "uid://bc87fqj83okns"
+
+[node name="ManualNode" type="Node" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/FOVControl/Label2/PropertyModifier" unique_id=2138765575 node_paths=PackedStringArray("response")]
+script = ExtResource("26_s66fw")
+response = NodePath("../..")
+metadata/_custom_type_script = "uid://b1o48vkwquyxs"
+
+[node name="FOV" type="Node" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/FOVControl/Label2/PropertyModifier" unique_id=666513663 node_paths=PackedStringArray("input")]
+script = ExtResource("20_7r63o")
+input = NodePath("../../../../../../../../../../Player/CameraPivot/Camera3D/UpdateFOV/FOV")
+
+[node name="FOVSlider" type="HSlider" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/FOVControl" unique_id=1360852150]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 30.0
+max_value = 160.0
+value = 75.0
+
+[node name="SensControl" type="HBoxContainer" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=326357940]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/SensControl" unique_id=2072475451]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Sensitivity:"
+
+[node name="Label2" type="Label" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/SensControl" unique_id=457854209]
+custom_minimum_size = Vector2(88, 0)
+layout_mode = 2
+text = "4.0"
+horizontal_alignment = 2
+
+[node name="PropertyModifier" type="Node" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/SensControl/Label2" unique_id=1940995537 node_paths=PackedStringArray("target", "value")]
+script = ExtResource("19_xainh")
+target = NodePath("ManualNode")
+property = "text"
+value = NodePath("Sens")
+metadata/_custom_type_script = "uid://bc87fqj83okns"
+
+[node name="ManualNode" type="Node" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/SensControl/Label2/PropertyModifier" unique_id=1463774340 node_paths=PackedStringArray("response")]
+script = ExtResource("26_s66fw")
+response = NodePath("../..")
+metadata/_custom_type_script = "uid://b1o48vkwquyxs"
+
+[node name="Sens" type="Node" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/SensControl/Label2/PropertyModifier" unique_id=1010880692 node_paths=PackedStringArray("input")]
+script = ExtResource("20_7r63o")
+input = NodePath("../../../../../../../../../../Player/CameraPivot/UpdateSensitivity/Sensitivity")
+
+[node name="SensSlider" type="HSlider" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/SensControl" unique_id=2032338829]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 0.01
+max_value = 12.0
+step = 0.01
+value = 4.0
 
 [node name="Button" type="Button" parent="UI/OptionsMenu" unique_id=1996459486]
 layout_mode = 0
@@ -1562,6 +1684,10 @@ metadata/_custom_type_script = "uid://dd8or5oo0cmw2"
 [node name="Node3D" parent="Doors" unique_id=1378238659 instance=ExtResource("8_flqn6")]
 transform = Transform3D(-1.6651676, 0, -0.521768, 0, 1.745, 0, 0.521768, 0, -1.6651676, 24.370075, -0.061691284, 43.29313)
 
+[connection signal="value_changed" from="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/FOVControl/FOVSlider" to="Player/CameraPivot/Camera3D/UpdateFOV" method="arg_update"]
+[connection signal="value_changed" from="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/FOVControl/FOVSlider" to="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/FOVControl/Label2/PropertyModifier" method="arg_update"]
+[connection signal="value_changed" from="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/SensControl/SensSlider" to="Player/CameraPivot/UpdateSensitivity" method="arg_update"]
+[connection signal="value_changed" from="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/SensControl/SensSlider" to="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/SensControl/Label2/PropertyModifier" method="arg_update"]
 [connection signal="pressed" from="UI/OptionsMenu/Button" to="UI/OptionsMenu/Button/PlayerAnimatorBit" method="animate"]
 [connection signal="pressed" from="UI/StartScreen/Button" to="UI/StartScreen/Button/PlayerAnimatorBit2" method="animate"]
 [connection signal="pressed" from="UI/StartScreen/Button2" to="UI/StartScreen/Button2/PlayerAnimatorBit" method="animate"]
