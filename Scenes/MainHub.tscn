@@ -22,11 +22,16 @@
 [ext_resource type="Script" uid="uid://dekpk8relyucb" path="res://Scripts/Bits/Input.gd" id="15_xainh"]
 [ext_resource type="Script" uid="uid://cox1ysk6bulx2" path="res://Scripts/Values/Bool/Manual.gd" id="16_7r63o"]
 [ext_resource type="PackedScene" uid="uid://cj3ygyynwwo0q" path="res://Assests/3D/Player Character/player_character.tscn" id="17_fjq41"]
+[ext_resource type="Script" uid="uid://bc87fqj83okns" path="res://Scripts/Bits/PropertyModifier.gd" id="19_xainh"]
+[ext_resource type="Script" uid="uid://b72nqapr3age1" path="res://Scripts/Values/String/CastString.gd" id="20_7r63o"]
 [ext_resource type="PackedScene" uid="uid://cw5v3k3rnk5jn" path="res://Scenes/Signpost.tscn" id="20_q8hrf"]
 [ext_resource type="PackedScene" uid="uid://cejs1f6tv8mel" path="res://Assests/UI/collectable_counter.tscn" id="21_qp3sb"]
 [ext_resource type="PackedScene" uid="uid://60r10u5tfh4y" path="res://Scenes/TeleporterEntrance.tscn" id="21_vrlp0"]
+[ext_resource type="Texture2D" uid="uid://b85wgvm1de6ip" path="res://Assests/UI/Wildling.png" id="23_rylc2"]
+[ext_resource type="Texture2D" uid="uid://dre6qxb37opqx" path="res://Assests/UI/Journey.png" id="24_nq5sn"]
 [ext_resource type="Texture2D" uid="uid://s0cvutj7v0nd" path="res://Assests/2D/Logo.png" id="24_xainh"]
 [ext_resource type="PackedScene" uid="uid://bv0nkuimkjuah" path="res://Assests/3D/Objects/Collectable.tscn" id="25_5jmxx"]
+[ext_resource type="Texture2D" uid="uid://bxok4hsejy464" path="res://Assests/UI/ControllerLayout.png" id="25_nq5sn"]
 [ext_resource type="Script" uid="uid://b1o48vkwquyxs" path="res://Scripts/Values/Node/ManualNode.gd" id="26_s66fw"]
 [ext_resource type="PackedScene" uid="uid://8qji4fnu7bcx" path="res://Assests/3D/Objects/shrine_indicator/shrine_indicator.tscn" id="29_g20pa"]
 
@@ -63,7 +68,7 @@ height = 1.5
 [sub_resource type="SphereShape3D" id="SphereShape3D_evfw7"]
 radius = 7.05
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_g20pa"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_7r63o"]
 viewport_path = NodePath("Node3D/SubViewport")
 
 [sub_resource type="Gradient" id="Gradient_7r63o"]
@@ -138,8 +143,142 @@ grow_begin = -150.0
 grow_end = -150.0
 thickness = 5
 
+[sub_resource type="GDScript" id="GDScript_d7bk7"]
+script/source = "extends OptionButton
+
+var mode:Dictionary[int, DisplayServer.WindowMode] = {
+	0: DisplayServer.WINDOW_MODE_WINDOWED,
+	1: DisplayServer.WINDOW_MODE_MINIMIZED,
+	2: DisplayServer.WINDOW_MODE_MAXIMIZED,
+	3: DisplayServer.WINDOW_MODE_FULLSCREEN,
+	4: DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN,
+}
+
+var disp:Dictionary[int, String] = {
+	0: \"Windowed\",
+	1: \"Minimized\",
+	2: \"Maximized\",
+	3: \"Fullscreen\",
+	4: \"Exclusive Fullscreen\"
+}
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	
+	for option in disp.values():
+		add_item(option)
+	selected = DisplayServer.window_get_mode()
+	
+	item_selected.connect(_item_selected)
+
+func _item_selected(index:int):
+	DisplayServer.window_set_mode(mode[index])
+"
+
+[sub_resource type="GDScript" id="GDScript_7r63o"]
+script/source = "extends Button
+
+
+func _pressed() -> void:
+	get_tree().quit()
+"
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_os7vs"]
 bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_7r63o"]
+Label/fonts/font = ExtResource("13_vjfe1")
+
+[sub_resource type="FontFile" id="FontFile_nq5sn"]
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/23/0/ascent = 0.0
+cache/0/23/0/descent = 0.0
+cache/0/23/0/underline_position = 0.0
+cache/0/23/0/underline_thickness = 0.0
+cache/0/23/0/scale = 1.0
+cache/0/28/0/ascent = 0.0
+cache/0/28/0/descent = 0.0
+cache/0/28/0/underline_position = 0.0
+cache/0/28/0/underline_thickness = 0.0
+cache/0/28/0/scale = 1.0
+cache/0/29/0/ascent = 0.0
+cache/0/29/0/descent = 0.0
+cache/0/29/0/underline_position = 0.0
+cache/0/29/0/underline_thickness = 0.0
+cache/0/29/0/scale = 1.0
+cache/0/26/0/ascent = 0.0
+cache/0/26/0/descent = 0.0
+cache/0/26/0/underline_position = 0.0
+cache/0/26/0/underline_thickness = 0.0
+cache/0/26/0/scale = 1.0
+cache/0/25/0/ascent = 0.0
+cache/0/25/0/descent = 0.0
+cache/0/25/0/underline_position = 0.0
+cache/0/25/0/underline_thickness = 0.0
+cache/0/25/0/scale = 1.0
+cache/0/352/0/ascent = 0.0
+cache/0/352/0/descent = 0.0
+cache/0/352/0/underline_position = 0.0
+cache/0/352/0/underline_thickness = 0.0
+cache/0/352/0/scale = 1.0
+cache/0/354/0/ascent = 0.0
+cache/0/354/0/descent = 0.0
+cache/0/354/0/underline_position = 0.0
+cache/0/354/0/underline_thickness = 0.0
+cache/0/354/0/scale = 1.0
+cache/0/357/0/ascent = 0.0
+cache/0/357/0/descent = 0.0
+cache/0/357/0/underline_position = 0.0
+cache/0/357/0/underline_thickness = 0.0
+cache/0/357/0/scale = 1.0
+cache/0/358/0/ascent = 0.0
+cache/0/358/0/descent = 0.0
+cache/0/358/0/underline_position = 0.0
+cache/0/358/0/underline_thickness = 0.0
+cache/0/358/0/scale = 1.0
+cache/0/32/0/ascent = 0.0
+cache/0/32/0/descent = 0.0
+cache/0/32/0/underline_position = 0.0
+cache/0/32/0/underline_thickness = 0.0
+cache/0/32/0/scale = 1.0
+cache/0/33/0/ascent = 0.0
+cache/0/33/0/descent = 0.0
+cache/0/33/0/underline_position = 0.0
+cache/0/33/0/underline_thickness = 0.0
+cache/0/33/0/scale = 1.0
+cache/0/35/0/ascent = 0.0
+cache/0/35/0/descent = 0.0
+cache/0/35/0/underline_position = 0.0
+cache/0/35/0/underline_thickness = 0.0
+cache/0/35/0/scale = 1.0
+cache/0/34/0/ascent = 0.0
+cache/0/34/0/descent = 0.0
+cache/0/34/0/underline_position = 0.0
+cache/0/34/0/underline_thickness = 0.0
+cache/0/34/0/scale = 1.0
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+cache/0/27/0/ascent = 0.0
+cache/0/27/0/descent = 0.0
+cache/0/27/0/underline_position = 0.0
+cache/0/27/0/underline_thickness = 0.0
+cache/0/27/0/scale = 1.0
 
 [sub_resource type="Animation" id="Animation_0sclb"]
 resource_name = "Options->Start"
@@ -475,6 +614,226 @@ tracks/16/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Splash/MadeFor:modulate")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Splash/TextureRect:modulate")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("Splash/TextureRect2:modulate")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("Splash:modulate")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("Splash:visible")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("Splash/TextureRect3:modulate")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("Splash/Label3:modulate")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("Splash/Label:modulate")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("Splash/Label2:modulate")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_7r63o"]
+resource_name = "Splash"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Splash/MadeFor:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 3, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Splash/TextureRect:modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 3, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Splash/TextureRect2:modulate")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 3, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Splash:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 13, 15),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Splash:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Splash/TextureRect3:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 4, 4.5, 10.766666, 11.266666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Splash/Label3:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 4, 4.5, 10.766666, 11.266666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Splash/Label:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 4, 4.5, 10.766666, 11.266666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Splash/Label2:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 4, 4.5, 10.766666, 11.266666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_346fj"]
 resource_name = "Start->Game"
@@ -733,6 +1092,7 @@ _data = {
 &"Options->Start": SubResource("Animation_0sclb"),
 &"Pause": SubResource("Animation_v1gob"),
 &"RESET": SubResource("Animation_jw32o"),
+&"Splash": SubResource("Animation_7r63o"),
 &"Start->Game": SubResource("Animation_346fj"),
 &"Start->Options": SubResource("Animation_sxkr1"),
 &"Unpause": SubResource("Animation_50glp")
@@ -861,6 +1221,15 @@ terrain_node = NodePath("ManualNode")
 script = ExtResource("26_s66fw")
 response = NodePath("../../../../World/Terrain3D")
 metadata/_custom_type_script = "uid://b1o48vkwquyxs"
+
+[node name="Property" parent="Player/CameraPivot/Camera3D/UpdateFOV/FOV" parent_id_path=PackedInt32Array(623680313, 910029139) index="0" unique_id=1680296512 node_paths=PackedStringArray("from")]
+from = NodePath("Slider")
+
+[node name="Slider" parent="Player/CameraPivot/Camera3D/UpdateFOV/FOV/Property" index="0" unique_id=897413671 node_paths=PackedStringArray("response")]
+response = NodePath("../../../../../../../UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/FOVControl/FOVSlider")
+
+[node name="Slider" parent="Player/CameraPivot/UpdateSensitivity/Sensitivity/Property" parent_id_path=PackedInt32Array(623680313, 1084533878) index="0" unique_id=725583294 node_paths=PackedStringArray("response")]
+response = NodePath("../../../../../../UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/SensControl/SensSlider")
 
 [node name="Stamina" parent="Player/StaminaBar/ProgressBar" parent_id_path=PackedInt32Array(623680313, 319243587) index="0" unique_id=203110726 node_paths=PackedStringArray("up_conditions", "down_conditions")]
 up_conditions = {
@@ -1182,7 +1551,7 @@ offset_right = 121.0
 offset_bottom = 94.0
 
 [node name="TextureRect" parent="UI/CollectableCounter/HBoxContainer" parent_id_path=PackedInt32Array(857772092, 2129117372) index="0" unique_id=715427261]
-texture = SubResource("ViewportTexture_g20pa")
+texture = SubResource("ViewportTexture_7r63o")
 
 [node name="Node3D" parent="UI/CollectableCounter" index="1" unique_id=1883165440]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.372763, 0)
@@ -1263,6 +1632,7 @@ theme_override_constants/separation = 10
 
 [node name="Label" type="Label" parent="UI/OptionsMenu/MarginContainer/VBoxContainer" unique_id=548277570]
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("13_vjfe1")
 theme_override_font_sizes/font_size = 30
 text = "PAUSED"
@@ -1276,14 +1646,16 @@ theme_override_styles/separator = SubResource("StyleBoxLine_nq5sn")
 [node name="ScrollContainer" type="ScrollContainer" parent="UI/OptionsMenu/MarginContainer/VBoxContainer" unique_id=1154128581]
 layout_mode = 2
 size_flags_vertical = 3
+scroll_vertical = 109
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer" unique_id=1773046731]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=228273398]
+[node name="AUDIO" type="Label" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=228273398]
 layout_mode = 2
+theme_override_font_sizes/font_size = 27
 text = "AUDIO"
 horizontal_alignment = 1
 
@@ -1299,9 +1671,16 @@ bus_name = &"Music"
 layout_mode = 2
 bus_name = &"SFX"
 
-[node name="Label2" type="Label" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1412984002]
+[node name="CONTROLS" type="Label" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1412984002]
 layout_mode = 2
+theme_override_font_sizes/font_size = 27
 text = "CONTROLS"
+horizontal_alignment = 1
+
+[node name="KEYBINDS" type="Label" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=725583594]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "KEYBINDS"
 horizontal_alignment = 1
 
 [node name="InputEntry" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=2685080 instance=ExtResource("12_ec7uc")]
@@ -1324,6 +1703,129 @@ layout_mode = 2
 event_name = &"Pause"
 display_name = &"Pause"
 
+[node name="InputEntry10" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=413685196 instance=ExtResource("12_ec7uc")]
+layout_mode = 2
+event_name = &"Forwards"
+display_name = &"Forwards"
+
+[node name="InputEntry11" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1695295335 instance=ExtResource("12_ec7uc")]
+layout_mode = 2
+event_name = &"Backwards"
+display_name = &"Backwards"
+
+[node name="InputEntry12" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=2105712884 instance=ExtResource("12_ec7uc")]
+layout_mode = 2
+event_name = &"Left"
+display_name = &"Left"
+
+[node name="InputEntry13" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=187309138 instance=ExtResource("12_ec7uc")]
+layout_mode = 2
+event_name = &"Right"
+display_name = &"Right"
+
+[node name="LOOKING" type="Label" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1510593980]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "LOOKING"
+horizontal_alignment = 1
+
+[node name="FOVControl" type="HBoxContainer" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1476251080]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/FOVControl" unique_id=1867539701]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "FOV:"
+
+[node name="Label2" type="Label" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/FOVControl" unique_id=424404734]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "75.0"
+horizontal_alignment = 2
+
+[node name="PropertyModifier" type="Node" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/FOVControl/Label2" unique_id=1887914516 node_paths=PackedStringArray("target", "value")]
+script = ExtResource("19_xainh")
+target = NodePath("ManualNode")
+property = "text"
+value = NodePath("FOV")
+metadata/_custom_type_script = "uid://bc87fqj83okns"
+
+[node name="ManualNode" type="Node" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/FOVControl/Label2/PropertyModifier" unique_id=2138765575 node_paths=PackedStringArray("response")]
+script = ExtResource("26_s66fw")
+response = NodePath("../..")
+metadata/_custom_type_script = "uid://b1o48vkwquyxs"
+
+[node name="FOV" type="Node" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/FOVControl/Label2/PropertyModifier" unique_id=666513663 node_paths=PackedStringArray("input")]
+script = ExtResource("20_7r63o")
+input = NodePath("../../../../../../../../../../Player/CameraPivot/Camera3D/UpdateFOV/FOV")
+
+[node name="FOVSlider" type="HSlider" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/FOVControl" unique_id=1360852150]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 30.0
+max_value = 160.0
+value = 75.0
+
+[node name="SensControl" type="HBoxContainer" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=326357940]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/SensControl" unique_id=2072475451]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Sensitivity:"
+
+[node name="Label2" type="Label" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/SensControl" unique_id=457854209]
+custom_minimum_size = Vector2(88, 0)
+layout_mode = 2
+text = "4.0"
+horizontal_alignment = 2
+
+[node name="PropertyModifier" type="Node" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/SensControl/Label2" unique_id=1940995537 node_paths=PackedStringArray("target", "value")]
+script = ExtResource("19_xainh")
+target = NodePath("ManualNode")
+property = "text"
+value = NodePath("Sens")
+metadata/_custom_type_script = "uid://bc87fqj83okns"
+
+[node name="ManualNode" type="Node" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/SensControl/Label2/PropertyModifier" unique_id=1463774340 node_paths=PackedStringArray("response")]
+script = ExtResource("26_s66fw")
+response = NodePath("../..")
+metadata/_custom_type_script = "uid://b1o48vkwquyxs"
+
+[node name="Sens" type="Node" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/SensControl/Label2/PropertyModifier" unique_id=1010880692 node_paths=PackedStringArray("input")]
+script = ExtResource("20_7r63o")
+input = NodePath("../../../../../../../../../../Player/CameraPivot/UpdateSensitivity/Sensitivity")
+
+[node name="SensSlider" type="HSlider" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/SensControl" unique_id=2032338829]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 0.01
+max_value = 12.0
+step = 0.01
+value = 4.0
+
+[node name="WINDOW" type="Label" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=963787961]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "WINDOW"
+horizontal_alignment = 1
+
+[node name="WindowControl" type="HBoxContainer" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=767870634]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/WindowControl" unique_id=485498347]
+custom_minimum_size = Vector2(205.13, 0)
+layout_mode = 2
+text = "Window mode: "
+
+[node name="WindowSelector" type="OptionButton" parent="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/WindowControl" unique_id=964523904]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+alignment = 2
+script = SubResource("GDScript_d7bk7")
+
 [node name="Button" type="Button" parent="UI/OptionsMenu" unique_id=1996459486]
 layout_mode = 0
 offset_left = 30.0
@@ -1340,6 +1842,18 @@ flat = true
 script = ExtResource("13_fjq41")
 animation = "Options->Start"
 metadata/_custom_type_script = "uid://dw7w6pry2g435"
+
+[node name="Button2" type="Button" parent="UI/OptionsMenu" unique_id=240105880]
+layout_mode = 0
+offset_left = 957.0
+offset_top = 30.0
+offset_right = 1127.0
+offset_bottom = 73.0
+focus_mode = 0
+theme_override_font_sizes/font_size = 25
+text = "Quit"
+flat = true
+script = SubResource("GDScript_7r63o")
 
 [node name="StartScreen" type="Control" parent="UI" unique_id=1401595588]
 layout_mode = 3
@@ -1410,6 +1924,142 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_os7vs")
 
+[node name="Splash" type="Panel" parent="UI" unique_id=1557290198]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_7r63o")
+theme_override_styles/panel = SubResource("StyleBoxFlat_os7vs")
+
+[node name="MadeFor" type="Label" parent="UI/Splash" unique_id=880493142]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 24.0
+offset_bottom = -469.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "Made for 
+the godot wild jam #90"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI/Splash" unique_id=1556001278]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(1000, 400)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -209.0
+offset_right = 500.0
+offset_bottom = 191.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("23_rylc2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="UI/Splash" unique_id=1286724973]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(400, 150)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.5
+offset_top = 111.0
+offset_right = 400.5
+offset_bottom = 261.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("24_nq5sn")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect3" type="TextureRect" parent="UI/Splash" unique_id=1509267540]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -457.61194
+offset_top = -109.0
+offset_right = 457.61194
+offset_bottom = 280.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("25_nq5sn")
+expand_mode = 1
+
+[node name="Label3" type="Label" parent="UI/Splash" unique_id=1938207423]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -138.0
+offset_top = 35.0
+offset_right = 138.0
+offset_bottom = 103.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "CONTROLS"
+
+[node name="Label" type="Label" parent="UI/Splash" unique_id=1976082289]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -262.0
+offset_top = -193.0
+offset_right = -81.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("FontFile_nq5sn")
+theme_override_font_sizes/font_size = 27
+text = "MOVE: W/A/S/D
+LOOK: Mouse
+Grab Crate: E
+Enter Shrine: E"
+
+[node name="Label2" type="Label" parent="UI/Splash" unique_id=2042226072]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 98.0
+offset_top = -193.0
+offset_right = 273.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("FontFile_nq5sn")
+theme_override_font_sizes/font_size = 27
+text = "Sprint: Left Shift
+Jump: Space
+Pause: P"
+
 [node name="InputCatcher" type="Control" parent="UI" unique_id=386935065]
 visible = false
 layout_mode = 3
@@ -1421,6 +2071,7 @@ grow_vertical = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="UI" unique_id=712609406]
 libraries/ = SubResource("AnimationLibrary_oyyor")
+autoplay = &"Splash"
 
 [node name="Pause" type="Node" parent="UI/AnimationPlayer" unique_id=1022383511 node_paths=PackedStringArray("condition")]
 script = ExtResource("13_fjq41")
@@ -1562,6 +2213,10 @@ metadata/_custom_type_script = "uid://dd8or5oo0cmw2"
 [node name="Node3D" parent="Doors" unique_id=1378238659 instance=ExtResource("8_flqn6")]
 transform = Transform3D(-1.6651676, 0, -0.521768, 0, 1.745, 0, 0.521768, 0, -1.6651676, 24.370075, -0.061691284, 43.29313)
 
+[connection signal="value_changed" from="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/FOVControl/FOVSlider" to="Player/CameraPivot/Camera3D/UpdateFOV" method="arg_update"]
+[connection signal="value_changed" from="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/FOVControl/FOVSlider" to="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/FOVControl/Label2/PropertyModifier" method="arg_update"]
+[connection signal="value_changed" from="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/SensControl/SensSlider" to="Player/CameraPivot/UpdateSensitivity" method="arg_update"]
+[connection signal="value_changed" from="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/SensControl/SensSlider" to="UI/OptionsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/SensControl/Label2/PropertyModifier" method="arg_update"]
 [connection signal="pressed" from="UI/OptionsMenu/Button" to="UI/OptionsMenu/Button/PlayerAnimatorBit" method="animate"]
 [connection signal="pressed" from="UI/StartScreen/Button" to="UI/StartScreen/Button/PlayerAnimatorBit2" method="animate"]
 [connection signal="pressed" from="UI/StartScreen/Button2" to="UI/StartScreen/Button2/PlayerAnimatorBit" method="animate"]

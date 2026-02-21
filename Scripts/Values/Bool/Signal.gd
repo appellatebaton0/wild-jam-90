@@ -9,4 +9,7 @@ func value() -> bool:
 	else: return false
 
 func activate() -> void:
+	print("ACTIVATED", self)
 	response = true
+
+func arg_activate(_arg): activate()
