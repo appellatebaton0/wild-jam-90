@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://ck8hbul3r6e4q"]
+
+[ext_resource type="Script" uid="uid://dw7w6pry2g435" path="res://Scripts/Bits/PlayerAnimator.gd" id="1_obxcs"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hp8t1"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_vwbfi"]
+material = SubResource("StandardMaterial3D_hp8t1")
+size = Vector3(8.5, 13.055, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kv4sb"]
+size = Vector3(8.5, 13, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_obxcs"]
+bg_color = Color(0.06053035, 0.06053035, 0.060530342, 1)
+
+[sub_resource type="Animation" id="Animation_hp8t1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Panel:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_kv4sb"]
+resource_name = "roll_credits"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Panel:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fx656"]
+_data = {
+&"RESET": SubResource("Animation_hp8t1"),
+&"roll_credits": SubResource("Animation_kv4sb")
+}
+
+[node name="CreditsArea" type="Area3D" unique_id=40906957]
+transform = Transform3D(0.32675633, 0, 1.5662792, 0, 1.6, 0, -1.5662792, 0, 0.32675633, 0, 0, 0)
+collision_layer = 0
+collision_mask = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1926133332]
+mesh = SubResource("BoxMesh_vwbfi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1346523190]
+shape = SubResource("BoxShape3D_kv4sb")
+
+[node name="PlayerAnimatorBit" type="Node" parent="." unique_id=1627041599]
+script = ExtResource("1_obxcs")
+animation = "roll_credits"
+metadata/_custom_type_script = "uid://dw7w6pry2g435"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=726816479]
+layer = 6
+
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=1556342758]
+visible = false
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_obxcs")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2052751963]
+libraries/ = SubResource("AnimationLibrary_fx656")
+
+[connection signal="body_entered" from="." to="PlayerAnimatorBit" method="arg_animate"]

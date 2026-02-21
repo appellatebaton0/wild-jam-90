@@ -21,7 +21,6 @@
 [ext_resource type="PackedScene" uid="uid://bu28itoih1xog" path="res://Assests/3D/Objects/Brazier.tscn" id="19_pa8kd"]
 [ext_resource type="PackedScene" uid="uid://bin58wweuwgip" path="res://Assests/3D/Tunnels/Tunnel_Straight.tscn" id="22_trh55"]
 [ext_resource type="AudioStream" uid="uid://7jvmcxks5q72" path="res://Assests/SFX Ambience/Forest Ambience loop.wav" id="23_cvje1"]
-[ext_resource type="AudioStream" uid="uid://cyovps747ebhi" path="res://Assests/Music/Baton try this I think I got it.ogg" id="23_in7gc"]
 [ext_resource type="PackedScene" uid="uid://blws17kr82g77" path="res://Assests/3D/Rocks/Rocks/Rock4.tscn" id="25_1nlqs"]
 [ext_resource type="PackedScene" uid="uid://dkhpghpfg7uab" path="res://Scenes/CameraGrab.tscn" id="25_jg0jb"]
 [ext_resource type="PackedScene" uid="uid://bx6bxd2ar331n" path="res://Assests/3D/Tunnels/Room.tscn" id="25_og4n6"]
@@ -392,7 +391,7 @@ transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -56.38894, 19.470182, -11.060
 transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -69.074486, 44.544567, -19.552599)
 
 [node name="Stag17" parent="Terrain3D/Terrain3DObjects" unique_id=1114394827 instance=ExtResource("16_11yo2")]
-transform = Transform3D(-0.72075003, 0, 7.9674664, 0, 8, 0, -7.9674664, 0, -0.72075003, -26.498493, 19.507122, -24.812632)
+transform = Transform3D(-0.72075003, 0, 7.9674664, 0, 8, 0, -7.9674664, 0, -0.72075003, -22.649714, 20.095428, -30.675062)
 
 [node name="Stag38" parent="Terrain3D/Terrain3DObjects" unique_id=721325157 instance=ExtResource("16_11yo2")]
 transform = Transform3D(-0.72075003, 0, 7.9674664, 0, 8, 0, -7.9674664, 0, -0.72075003, -43.134613, 33.85279, -88.06999)
@@ -628,12 +627,6 @@ shadow_enabled = true
 stream = ExtResource("23_cvje1")
 autoplay = true
 bus = &"SFX"
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1399098472]
-stream = ExtResource("23_in7gc")
-volume_db = -9.992
-autoplay = true
-bus = &"Music"
 
 [node name="Rooms" type="Node3D" parent="." unique_id=1684595207]
 
