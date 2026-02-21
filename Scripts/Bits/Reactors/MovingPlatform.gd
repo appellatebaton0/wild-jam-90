@@ -9,6 +9,8 @@ const POINT_SCENE := preload("res://Scenes/MovingPlatformPoint.tscn")
 
 @export_tool_button("Reset") var reset := _reset
 
+## Set scale here rather than directly on the node to prevent horrible horrible things.
+@export var platform_scale := Vector3(1.0, 1.0, 1.0)
 @export var move_in_editor := true ## Whether or not to animate in-editor
 @export var muted := false
 
@@ -58,7 +60,8 @@ func _physics_process(delta: float) -> void: if len(points) > 0:
 		
 		if timer > 0.0:
 			var ease_alpha: float = ease((current_point.time - timer) / current_point.time, current_point.easing)
-			node.global_transform = lerp(current_point.node.global_transform, next_point.node.global_transform, ease_alpha)
+			var lerped_transform: Transform3D = lerp(current_point.node.global_transform, next_point.node.global_transform, ease_alpha)
+			node.global_transform = lerped_transform.scaled_local(platform_scale)
 			timer = move_toward(timer, 0.0, delta)
 		
 		moving = timer != 0.0
@@ -73,7 +76,8 @@ func _physics_process(delta: float) -> void: if len(points) > 0:
 			
 			pause = current_point.after_wait
 	else:
-		node.global_transform = current_point.node.global_transform
+		var point_transform: Transform3D = current_point.node.global_transform.scaled_local(platform_scale)
+		node.global_transform = point_transform
 		pause = move_toward(pause, 0, delta)
 		
 
@@ -131,7 +135,8 @@ func create_new_point() -> PlatformPoint:
 	
 	points.append(new)
 	
-	new.global_transform = node.global_transform
+	var point_transform = Transform3D(node.global_basis, node.global_position)
+	new.global_transform = point_transform
 	new.name = name + "'s " + str(len(points))
 	
 	return new
@@ -188,10 +193,11 @@ func _reset():
 	# I don't know why this exact sequence of numbers works
 	# but I'm not going to question it for another eternity
 	
-	current_index = len(points) - 1
+	current_index = 0
 	if len(points) > 2:
 		current_index = len(points) - 2
 	next_point = null
 	cycle_points()
 	if next_point and next_point.node:
-		node.global_transform = next_point.node.global_transform
+		var point_transform = next_point.node.global_transform
+		node.global_transform = point_transform.scaled_local(platform_scale)

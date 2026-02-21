@@ -20,7 +20,35 @@ func phys_active(delta:float) -> void:
 	
 	## Rotate the direction to face the direction the player is facing (into the wall, because of VelocityLook).
 	
-	var real_direction = Vector3(direction.x, direction.y, 0).rotated(Vector3.UP, master.mover.global_rotation.y)
+	var wall_normal = master.mover.get_wall_normal()
+	var flat_wall_normal = (wall_normal * Vector3(1, 0, 1)).normalized()
+	var wall_tangent = flat_wall_normal.cross(Vector3.UP)
+	var wall_up_relative = wall_tangent.cross(wall_normal)
+	
+	var wall_basis = Basis(wall_tangent, wall_up_relative, wall_normal)
+	var relative_view: Vector3 = master.mover.global_position - master.rotator.value().global_position
+	relative_view = relative_view.normalized()
+	
+	# how far your camera is looking up
+	var up_input = (relative_view.dot(wall_up_relative))
+	# offset it so you need to be looking way down to go down
+	up_input = clamp(up_input + 0.5, -1, 1)
+	
+	# how far your camera is looking to the right
+	var right_input = (relative_view.dot(wall_tangent))
+	
+	# ngl I don't know enough about trig to understand this
+	# but it gives a value in radians and takes quadrants into account
+	var turn_amount = atan2(right_input, up_input)
+	
+	wall_basis = wall_basis.rotated(wall_basis.z, turn_amount)
+	
+	var real_direction = (wall_basis.y * direction.y) + (wall_basis.x * -direction.x)
+	real_direction = real_direction.normalized()
+	var stick_factor = -wall_normal * 3
+	real_direction += stick_factor
+	
+	#var real_direction = Vector3(direction.x, direction.y, 0).rotated(Vector3.UP, master.mover.global_rotation.y)
 	
 	master.mover.velocity = real_direction * climb_speed * delta
 	
@@ -31,6 +59,9 @@ func phys_active(delta:float) -> void:
 		master.mover.velocity.x = vel.x
 		master.mover.velocity.z = vel.z
 	
+func normal_sign(x: float) -> float:
+	return x >= 0 and 1 or -1
+
 func absmax(a:Vector3, b:Vector3) -> Vector3:
 	if abs(a.x) > abs(b.x): b.x = a.x
 	if abs(a.y) > abs(b.y): b.y = a.y

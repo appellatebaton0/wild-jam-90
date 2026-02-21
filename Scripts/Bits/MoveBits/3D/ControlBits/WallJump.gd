@@ -34,14 +34,16 @@ func phys_active(delta:float) -> void:
 	if master.mover.is_on_wall_only():
 		coyote_timer = coyote_time
 		last_wall_normal = master.mover.get_wall_normal()
-	
+		
 		# Jump Buffering
 		if Input.is_action_just_pressed(inputs[inp.up]):
 			jump_buffer = jump_buffering
 	
 	# If can wall jump, and trying to, do so.
 	if coyote_timer > 0.0 and jump_buffer > 0.0 and cooldown_timer <= 0.0:
-		master.mover.velocity += last_wall_normal * horizontal_velocity
+		last_wall_normal = (last_wall_normal * Vector3(1, 0, 1)).normalized()
+		var inverse_stick_factor = last_wall_normal * 3
+		master.mover.velocity += ((last_wall_normal + inverse_stick_factor) * horizontal_velocity)
 		master.mover.velocity.y = max(master.mover.velocity.y, vertical_velocity)
 		
 		# Reset the variables.

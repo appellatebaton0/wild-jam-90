@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://cejs1f6tv8mel"]
 
-[ext_resource type="Texture2D" uid="uid://cmkqst4ck6y8q" path="res://Assests/2D/collectable_icon.png" id="1_a4dxk"]
 [ext_resource type="Script" uid="uid://c7wd66qrd7rxv" path="res://Scripts/UI/collectable_counter.gd" id="1_j3fjx"]
 [ext_resource type="FontFile" uid="uid://c0ncglrrkwb6a" path="res://Assests/Cinzel-VariableFont_wght.ttf" id="2_j3fjx"]
+[ext_resource type="PackedScene" uid="uid://bv0nkuimkjuah" path="res://Assests/3D/Objects/Collectable.tscn" id="3_j3fjx"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_gj16r"]
+viewport_path = NodePath("Node3D/SubViewport")
 
 [node name="CollectableCounter" type="MarginContainer" unique_id=857772092 node_paths=PackedStringArray("amount_label")]
 theme_override_constants/margin_left = 15
@@ -21,7 +24,7 @@ custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("1_a4dxk")
+texture = SubResource("ViewportTexture_gj16r")
 expand_mode = 1
 stretch_mode = 5
 
@@ -30,3 +33,14 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("2_j3fjx")
 theme_override_font_sizes/font_size = 32
 text = "0"
+
+[node name="Node3D" type="Node3D" parent="." unique_id=1883165440]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.1721907, 0)
+
+[node name="SubViewport" type="SubViewport" parent="Node3D" unique_id=769510985]
+transparent_bg = true
+
+[node name="Camera3D" type="Camera3D" parent="Node3D/SubViewport" unique_id=439698676]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.088329315, 1.0468737, 1.0960577)
+
+[node name="Collectable" parent="Node3D/SubViewport" unique_id=2046027389 instance=ExtResource("3_j3fjx")]
