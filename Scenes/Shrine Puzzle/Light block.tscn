@@ -153,9 +153,6 @@ shape = SubResource("SphereShape3D_mlcbi")
 [node name="Platform" parent="Platforms" unique_id=230968152 instance=ExtResource("19_mlcbi")]
 transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 2.5275111, -0.64057636, -29.635197)
 
-[node name="Pillar_Round_05" parent="Platforms/Platform" index="0" unique_id=255035119]
-visible = false
-
 [node name="Platform2" parent="Platforms" unique_id=1761764284 instance=ExtResource("19_mlcbi")]
 transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 2.5275111, -0.64057636, -25.24192)
 
@@ -193,99 +190,12 @@ transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 15.786055, -0.640
 visible = false
 
 [node name="Platform9" parent="Platforms" unique_id=475881293 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 15.391542, -0.64057636, -20.843977)
+transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 15.391542, -0.64057636, -11.53112)
 
-[node name="Pillar_Round_05" parent="Platforms/Platform9" index="0" unique_id=255035119]
-visible = false
-
-[node name="Platform10" parent="Platforms" unique_id=1773065016 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 19.810225, -0.64057636, -20.843977)
+[node name="Platform10" parent="Platforms" unique_id=357972187 instance=ExtResource("19_mlcbi")]
+transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 15.391542, -0.64057636, -7.095882)
 
 [node name="Pillar_Round_05" parent="Platforms/Platform10" index="0" unique_id=255035119]
-visible = false
-
-[node name="Platform11" parent="Platforms" unique_id=1386701357 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 19.810225, -0.64057636, -25.127304)
-
-[node name="Pillar_Round_05" parent="Platforms/Platform11" index="0" unique_id=255035119]
-visible = false
-
-[node name="Platform12" parent="Platforms" unique_id=94624252 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 24.012245, -0.64057636, -25.127304)
-
-[node name="Pillar_Round_05" parent="Platforms/Platform12" index="0" unique_id=255035119]
-visible = false
-
-[node name="Platform13" parent="Platforms" unique_id=339736893 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 28.344683, -0.64057636, -25.127304)
-
-[node name="Pillar_Round_05" parent="Platforms/Platform13" index="0" unique_id=255035119]
-visible = false
-
-[node name="Platform14" parent="Platforms" unique_id=10219121 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 28.344683, -0.64057636, -20.789976)
-
-[node name="Pillar_Round_05" parent="Platforms/Platform14" index="0" unique_id=255035119]
-visible = false
-
-[node name="Platform15" parent="Platforms" unique_id=594228610 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 28.344683, -0.64057636, -16.564543)
-
-[node name="Pillar_Round_05" parent="Platforms/Platform15" index="0" unique_id=255035119]
-visible = false
-
-[node name="Platform16" parent="Platforms" unique_id=1237422485 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 28.344683, -0.64057636, -12.136386)
-
-[node name="Pillar_Round_05" parent="Platforms/Platform16" index="0" unique_id=255035119]
-visible = false
-
-[node name="Platform17" parent="Platforms" unique_id=1935559381 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 28.344683, -0.64057636, -7.4532127)
-
-[node name="Pillar_Round_05" parent="Platforms/Platform17" index="0" unique_id=255035119]
-visible = false
-
-[node name="Platform18" parent="Platforms" unique_id=2118376316 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 23.86877, -0.64057636, -7.4532127)
-
-[node name="Pillar_Round_05" parent="Platforms/Platform18" index="0" unique_id=255035119]
-visible = false
-
-[node name="Platform19" parent="Platforms" unique_id=308278288 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 19.361963, -0.64057636, -7.4532127)
-
-[node name="Pillar_Round_05" parent="Platforms/Platform19" index="0" unique_id=255035119]
-visible = false
-
-[node name="Platform20" parent="Platforms" unique_id=984890882 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 19.361963, -0.64057636, -3.1011643)
-
-[node name="Pillar_Round_05" parent="Platforms/Platform20" index="0" unique_id=255035119]
-visible = false
-
-[node name="Platform21" parent="Platforms" unique_id=1177163657 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 19.361963, -0.64057636, 1.342349)
-
-[node name="Pillar_Round_05" parent="Platforms/Platform21" index="0" unique_id=255035119]
-visible = false
-
-[node name="Platform22" parent="Platforms" unique_id=2098959592 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 15.007122, -0.64057636, 1.342349)
-
-[node name="Pillar_Round_05" parent="Platforms/Platform22" index="0" unique_id=255035119]
-visible = false
-
-[node name="Platform23" parent="Platforms" unique_id=763301599 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 10.904375, -0.64057636, 1.342349)
-
-[node name="Pillar_Round_05" parent="Platforms/Platform23" index="0" unique_id=255035119]
-visible = false
-
-[node name="Platform24" parent="Platforms" unique_id=1454560385 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 10.904375, -0.64057636, -3.004857)
-
-[node name="Pillar_Round_05" parent="Platforms/Platform24" index="0" unique_id=255035119]
 visible = false
 
 [node name="Platform25" parent="Platforms" unique_id=282013005 instance=ExtResource("19_mlcbi")]
@@ -346,6 +256,7 @@ visible = false
 
 [node name="WaterMesh" parent="." unique_id=1210634507 instance=ExtResource("20_rcyd6")]
 transform = Transform3D(2.34, 0, 0, 0, -1.02284645e-07, 2.34, 0, -2.34, -1.02284645e-07, -2.4650097, -17.930187, -12.272627)
+visible = false
 
 [node name="TeleporterExit" parent="." unique_id=234579865 instance=ExtResource("21_fjeop")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8201637, 2.0533314, 23.198256)
@@ -386,6 +297,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.091325, 0.15658951, 5.6700
 transform = Transform3D(-0.009442113, 0, 0.9999554, 0, 1, 0, -0.9999554, 0, -0.009442113, -4.3882565, 2.7845278, -42.164234)
 text = "Stand here to reset cube"
 
+[node name="Signpost2" parent="." unique_id=1120720938 instance=ExtResource("16_2odla")]
+transform = Transform3D(-0.4287144, 0, 0.90344006, 0, 1, 0, -0.90344006, 0, -0.4287144, -1.9656434, 2.7845278, -34.14142)
+text = "Find the hidden path with the cube"
+
 [connection signal="area_entered" from="Kill Node" to="Kill Node" method="_on_area_entered"]
 
 [editable path="Crate"]
@@ -408,34 +323,6 @@ text = "Stand here to reset cube"
 [editable path="Platforms/Platform9/Pillar_Round_05"]
 [editable path="Platforms/Platform10"]
 [editable path="Platforms/Platform10/Pillar_Round_05"]
-[editable path="Platforms/Platform11"]
-[editable path="Platforms/Platform11/Pillar_Round_05"]
-[editable path="Platforms/Platform12"]
-[editable path="Platforms/Platform12/Pillar_Round_05"]
-[editable path="Platforms/Platform13"]
-[editable path="Platforms/Platform13/Pillar_Round_05"]
-[editable path="Platforms/Platform14"]
-[editable path="Platforms/Platform14/Pillar_Round_05"]
-[editable path="Platforms/Platform15"]
-[editable path="Platforms/Platform15/Pillar_Round_05"]
-[editable path="Platforms/Platform16"]
-[editable path="Platforms/Platform16/Pillar_Round_05"]
-[editable path="Platforms/Platform17"]
-[editable path="Platforms/Platform17/Pillar_Round_05"]
-[editable path="Platforms/Platform18"]
-[editable path="Platforms/Platform18/Pillar_Round_05"]
-[editable path="Platforms/Platform19"]
-[editable path="Platforms/Platform19/Pillar_Round_05"]
-[editable path="Platforms/Platform20"]
-[editable path="Platforms/Platform20/Pillar_Round_05"]
-[editable path="Platforms/Platform21"]
-[editable path="Platforms/Platform21/Pillar_Round_05"]
-[editable path="Platforms/Platform22"]
-[editable path="Platforms/Platform22/Pillar_Round_05"]
-[editable path="Platforms/Platform23"]
-[editable path="Platforms/Platform23/Pillar_Round_05"]
-[editable path="Platforms/Platform24"]
-[editable path="Platforms/Platform24/Pillar_Round_05"]
 [editable path="Platforms/Platform25"]
 [editable path="Platforms/Platform25/Pillar_Round_05"]
 [editable path="Platforms/Platform26"]

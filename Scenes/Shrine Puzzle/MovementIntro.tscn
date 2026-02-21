@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://wguoowilhb3p"]
 
 [ext_resource type="MeshLibrary" uid="uid://dxo8thlnlijfg" path="res://Assests/Ruins_Libary_Final.meshlib" id="2_d6fsk"]
+[ext_resource type="PackedScene" uid="uid://bv0nkuimkjuah" path="res://Assests/3D/Objects/Collectable.tscn" id="3_1f0kv"]
 [ext_resource type="PackedScene" uid="uid://esg4ciusc8a1" path="res://Scenes/TeleporterExit.tscn" id="3_7aaky"]
 
 [node name="MovementIntroduction" type="Node3D" unique_id=941058485]
@@ -54,3 +55,26 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 18.0
 
 [node name="TeleporterExit" parent="." unique_id=234579865 instance=ExtResource("3_7aaky")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.0622268, 18.0055, -22.268625)
+
+[node name="Node3D" type="Node3D" parent="." unique_id=1092945895]
+
+[node name="Collectable" parent="Node3D" unique_id=2046027389 instance=ExtResource("3_1f0kv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.719392, -23.27015)
+
+[node name="Collectable2" parent="Node3D" unique_id=1549936654 instance=ExtResource("3_1f0kv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.061062, 6.181722, -22.40543)
+
+[node name="Collectable3" parent="Node3D" unique_id=1989782990 instance=ExtResource("3_1f0kv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.061062, 9.0725155, -22.40543)
+
+[node name="Collectable4" parent="Node3D" unique_id=1303128824 instance=ExtResource("3_1f0kv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.061062, 12.300289, -22.40543)
+
+[node name="Collectable5" parent="Node3D" unique_id=555799648 instance=ExtResource("3_1f0kv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.061062, 16.656832, -22.40543)
+
+[node name="Collectable6" parent="Node3D" unique_id=1356336422 instance=ExtResource("3_1f0kv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.873992, 16.656832, -22.40543)
+
+[node name="Collectable7" parent="Node3D" unique_id=1981485050 instance=ExtResource("3_1f0kv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.861881, 18.744368, -22.40543)
