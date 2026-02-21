@@ -31,10 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://btfxborye2xtt" path="res://Assests/3D/Objects/Single Crystal.tscn" id="27_y3gbf"]
 [ext_resource type="PackedScene" uid="uid://cfbp0t4fa8tid" path="res://Assests/3D/Rocks/Rocks/Rock6.tscn" id="31_cvje1"]
 [ext_resource type="PackedScene" uid="uid://ifm36ilym63i" path="res://Assests/3D/Objects/Shrine.tscn" id="32_nif8e"]
-[ext_resource type="PackedScene" uid="uid://bvv3sij1qe3xe" path="res://Assests/3D/Objects/Door_Wall.tscn" id="33_1nlqs"]
 [ext_resource type="PackedScene" uid="uid://b6mm1wjjwcmeh" path="res://Scenes/PressurePlate.tscn" id="33_efgxu"]
-[ext_resource type="PackedScene" uid="uid://c3obafcdtdwal" path="res://Scenes/Door.tscn" id="34_efgxu"]
-[ext_resource type="Script" uid="uid://cox1ysk6bulx2" path="res://Scripts/Values/Bool/Manual.gd" id="35_efgxu"]
 [ext_resource type="PackedScene" uid="uid://d2ub6lwhrem6w" path="res://Assests/3D/Objects/Sokaban box.tscn" id="36_8c2l8"]
 [ext_resource type="PackedScene" uid="uid://cu2ts6k7xijvk" path="res://Assests/3D/Staglitite/Stag2.tscn" id="37_8c2l8"]
 [ext_resource type="PackedScene" uid="uid://qye2g1ban7rg" path="res://Assests/3D/Rocks/Terrain_Rocks/terrain_rock_1.tscn" id="38_lmxn3"]
@@ -1055,19 +1052,6 @@ transform = Transform3D(23.626862, 0, 8.171373, 0, 24.999996, 0, -8.171373, 0, 2
 [node name="Node3D3" parent="." unique_id=1562982156 instance=ExtResource("31_cvje1")]
 transform = Transform3D(-14.142136, 0, -14.142136, 0, 20, 0, 14.142136, 0, -14.142136, 46.246445, 1.9847755, 17.192137)
 
-[node name="Doorway" parent="." unique_id=1378238659 instance=ExtResource("33_1nlqs")]
-transform = Transform3D(0.30633405, 0, 1.4683865, 0, 1.5, 0, -1.4683865, 0, 0.30633405, 70.6409, -1.7057571, -24.465414)
-
-[node name="Door" parent="." unique_id=697453936 node_paths=PackedStringArray("condition") instance=ExtResource("34_efgxu")]
-transform = Transform3D(0.32675633, 0, 1.5662792, 0, 1.6, 0, -1.5662792, 0, 0.32675633, 70.2936, 5.794243, -22.800652)
-open_extent = Vector3(0, -13, 0)
-condition = NodePath("AllShrinesComplete")
-
-[node name="AllShrinesComplete" type="Node" parent="Door" unique_id=653498369]
-script = ExtResource("35_efgxu")
-response = false
-metadata/_custom_type_script = "uid://cox1ysk6bulx2"
-
 [node name="Ambient_Lights" type="Node3D" parent="." unique_id=646601189]
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Ambient_Lights" unique_id=1342122456]
@@ -1298,7 +1282,7 @@ transform = Transform3D(3.0760977, 19.753695, -0.57377285, -4.9999967, 1.339745,
 transform = Transform3D(-10.365127, -9.930685, 4.3526525, 1.8724663e-08, 6.0215454, 13.738303, -10.842698, 9.493284, -4.1609387, -64.10914, 33.774975, -113.240204)
 
 [node name="PotentialShrineSpot" parent="LooseRocks" unique_id=1749918471 instance=ExtResource("32_nif8e")]
-transform = Transform3D(1.7902658, 0, 1.1724104, 0, 2.1399999, 0, -1.1724104, 0, 1.7902658, -104.38178, 60.93058, -43.65058)
+transform = Transform3D(1.7902658, 0, 1.1724104, 0, 2.1399999, 0, -1.1724104, 0, 1.7902658, -75.56141, 48.082718, -44.208645)
 
 [node name="Rock16" parent="LooseRocks" unique_id=1678317153 instance=ExtResource("43_2thtx")]
 transform = Transform3D(4.578742, 6.0458226, 4.845942, -6.068217, -0.7019565, 6.609387, 4.8178687, -6.6298785, 3.7192545, -66.62767, 21.178787, 54.650574)

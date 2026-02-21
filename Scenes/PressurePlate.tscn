@@ -172,6 +172,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18485108, 0)
 shape = SubResource("BoxShape3D_grg3l")
 
 [node name="PlateCollider" type="AnimatableBody3D" parent="." unique_id=2063588881]
+sync_to_physics = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlateCollider" unique_id=869491764]
 shape = SubResource("ConcavePolygonShape3D_j52f2")
@@ -182,6 +183,7 @@ mesh = SubResource("ArrayMesh_gwnrm")
 skeleton = NodePath("")
 
 [node name="ButtonCollider" type="AnimatableBody3D" parent="." unique_id=1030836035]
+sync_to_physics = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ButtonCollider" unique_id=993009250]
 shape = SubResource("ConcavePolygonShape3D_hpfql")
