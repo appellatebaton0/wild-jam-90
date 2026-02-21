@@ -176,6 +176,7 @@ radius = 2.5893555
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_b0nsn")
+teleport_on_enter = false
 use_input = &"UseTeleporter"
 spawn_position = Vector3(0, 150, 0)
 animator = NodePath("AnimationPlayer")
@@ -249,5 +250,11 @@ metadata/_custom_type_script = "uid://cj85aq1o3xpfw"
 
 [node name="Marker3D" type="Marker3D" parent="." unique_id=2082720916]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1911099, 6.6747513)
+
+[node name="Label3D" type="Label3D" parent="." unique_id=103132607]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4565415, 0)
+billboard = 1
+text = "Enter Shrine [E]"
+font_size = 70
 
 [connection signal="returned_from_exit" from="." to="ShrineVisual" method="_on_shrine_returned"]

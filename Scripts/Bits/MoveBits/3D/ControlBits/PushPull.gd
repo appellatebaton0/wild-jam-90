@@ -58,7 +58,8 @@ func can_hold() -> bool:
 	
 	
 	return true
-	
+
+func hold_prompt() -> bool: return cast.is_colliding() and not holding
 
 func mag(vec3:Vector3): return sqrt(pow(vec3.x, 2) + pow(vec3.y, 2) + pow(vec3.z, 2))
 
