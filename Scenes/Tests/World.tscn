@@ -29,8 +29,16 @@
 [ext_resource type="PackedScene" uid="uid://dcpl8c5rhcdcg" path="res://Assests/3D/Rocks/Rocks/Rock5.tscn" id="26_efgxu"]
 [ext_resource type="PackedScene" uid="uid://b4soergejolc8" path="res://Scenes/Water.tscn" id="27_cvje1"]
 [ext_resource type="PackedScene" uid="uid://btfxborye2xtt" path="res://Assests/3D/Objects/Single Crystal.tscn" id="27_y3gbf"]
+[ext_resource type="Material" uid="uid://or8blx8y5xq7" path="res://Assests/3D/Materials/water.res" id="28_lx36x"]
+[ext_resource type="Script" uid="uid://bmbnethi8oyh3" path="res://Scripts/Bits/AreaMaster3D.gd" id="29_2wggt"]
+[ext_resource type="Script" uid="uid://bekt6vd73jjuq" path="res://Scripts/Bits/Kill.gd" id="30_xaua8"]
+[ext_resource type="Script" uid="uid://bu0n6wodebobi" path="res://Scripts/Bits/TransferCondition.gd" id="31_1opfj"]
 [ext_resource type="PackedScene" uid="uid://cfbp0t4fa8tid" path="res://Assests/3D/Rocks/Rocks/Rock6.tscn" id="31_cvje1"]
+[ext_resource type="Script" uid="uid://dmeoycdcis1sp" path="res://Scripts/Values/Node/CastNode.gd" id="32_l8ecs"]
 [ext_resource type="PackedScene" uid="uid://ifm36ilym63i" path="res://Assests/3D/Objects/Shrine.tscn" id="32_nif8e"]
+[ext_resource type="Script" uid="uid://d7n7ctdl2nsg" path="res://Scripts/Values/Property.gd" id="33_c8db5"]
+[ext_resource type="Script" uid="uid://b1o48vkwquyxs" path="res://Scripts/Values/Node/ManualNode.gd" id="34_y510l"]
+[ext_resource type="Script" uid="uid://cox1ysk6bulx2" path="res://Scripts/Values/Bool/Manual.gd" id="35_cth48"]
 [ext_resource type="PackedScene" uid="uid://cu2ts6k7xijvk" path="res://Assests/3D/Staglitite/Stag2.tscn" id="37_8c2l8"]
 [ext_resource type="PackedScene" uid="uid://qye2g1ban7rg" path="res://Assests/3D/Rocks/Terrain_Rocks/terrain_rock_1.tscn" id="38_lmxn3"]
 [ext_resource type="PackedScene" uid="uid://bjprn305ao6ox" path="res://Assests/3D/Rocks/Terrain_Rocks/terrain_rock_7.tscn" id="39_reol1"]
@@ -276,6 +284,12 @@ scale_min = 0.0
 scale_max = 0.099999994
 turbulence_enabled = true
 
+[sub_resource type="QuadMesh" id="QuadMesh_0xcp5"]
+size = Vector2(75, 75)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_56rrp"]
+size = Vector3(75, 75, 12)
+
 [sub_resource type="QuadMesh" id="QuadMesh_cvje1"]
 size = Vector2(75, 150)
 
@@ -506,14 +520,8 @@ transform = Transform3D(-18.351324, -1.5249784, 0.1241231, -1.3317176, 15.184653
 [node name="Node3D22" parent="Terrain3D/Terrain3DObjects" unique_id=1022267578 instance=ExtResource("13_wgs1d")]
 transform = Transform3D(-11.17868, 1.4391665, 14.562895, 0.9120283, 18.35862, -1.1141914, -14.60539, 0.04488584, -11.2157345, 8.460761, -2.577176, -43.04205)
 
-[node name="Node3D10" parent="Terrain3D/Terrain3DObjects" unique_id=290904243 instance=ExtResource("13_wgs1d")]
-transform = Transform3D(18.415, 0, 0, 0, 18.415, 0, 0, 0, 18.415, 54.502365, -2.5897484, 107.468254)
-
-[node name="Node3D11" parent="Terrain3D/Terrain3DObjects" unique_id=341648674 instance=ExtResource("13_wgs1d")]
-transform = Transform3D(18.415, 0, 0, 0, 18.415, 0, 0, 0, 18.415, 50.722813, -1.3975741, 85.905106)
-
 [node name="Node3D12" parent="Terrain3D/Terrain3DObjects" unique_id=615965433 instance=ExtResource("13_wgs1d")]
-transform = Transform3D(18.415, 0, 0, 0, 18.415, 0, 0, 0, 18.415, 46.75234, 10.479572, 111.70799)
+transform = Transform3D(18.415, 0, 0, 0, 18.415, 0, 0, 0, 18.415, 46.75234, -35.242542, 111.70799)
 
 [node name="Node3D9" parent="Terrain3D/Terrain3DObjects" unique_id=507917904 instance=ExtResource("13_wgs1d")]
 transform = Transform3D(16.875723, 0, 7.370365, 0, 18.415, 0, -7.370365, 0, 16.875723, 29.693176, -1.8361769, 30.777416)
@@ -538,6 +546,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.39498, -0.020976225, -32.1
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=4435112]
 transform = Transform3D(0.9575326, 0.19872044, 0.20890562, -0.27533388, 0.41517845, 0.8670745, 0.08557232, -0.88777083, 0.45226136, 15.084887, 72.26715, 37.813114)
+light_energy = 27.39
+light_volumetric_fog_energy = 6.437
+spot_range = 88.100494
+spot_attenuation = 0.5
+spot_angle = 7.769617
+
+[node name="SpotLight3D8" type="SpotLight3D" parent="." unique_id=1847070199]
+transform = Transform3D(0.9575326, 0.19872044, 0.20890561, -0.27533388, 0.41517845, 0.8670745, 0.08557232, -0.88777083, 0.45226136, 50.53069, 72.26715, 180.08871)
 light_energy = 27.39
 light_volumetric_fog_energy = 6.437
 spot_range = 88.100494
@@ -639,11 +655,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -94.86196, 0.89063025, 3.5324
 [node name="Crystal Large" parent="Rooms/Crystals" unique_id=636933028 instance=ExtResource("26_56pty")]
 transform = Transform3D(8.07, 0, 0, 0, 7.9362745, -1.4630231, 0, 1.4630231, 7.9362745, -57.74354, 0.40414715, -0.58888626)
 
-[node name="Crystal Large20" parent="Rooms/Crystals" unique_id=711293763 instance=ExtResource("26_56pty")]
-transform = Transform3D(8.07, 0, 0, 0, 7.9362745, -1.4630231, 0, 1.4630231, 7.9362745, 19.137497, -0.8339884, 87.81621)
-
 [node name="Crystal Large21" parent="Rooms/Crystals" unique_id=1347932471 instance=ExtResource("26_56pty")]
-transform = Transform3D(22.955, 0, 0, 0, 22.574621, -4.161549, 0, 4.161549, 22.574621, 42.566395, -3.6365967, 75.6317)
+transform = Transform3D(22.955, 0, 0, 0, 22.574621, -4.161549, 0, 4.161549, 22.574621, 54.903008, -3.6365986, 88.45069)
 
 [node name="Crystal Large22" parent="Rooms/Crystals" unique_id=470096153 instance=ExtResource("26_56pty")]
 transform = Transform3D(22.955, 0, 0, 0, 19.955494, 11.345054, 0, -11.345054, 19.955494, -103.64739, 11.527498, 97.423965)
@@ -659,9 +672,6 @@ transform = Transform3D(6.3627925, 12.727013, -23.975664, -3.011403, 24.8045, 12
 
 [node name="Crystal Large27" parent="Rooms/Crystals" unique_id=487057625 instance=ExtResource("26_56pty")]
 transform = Transform3D(6.362793, 5.81713, -26.513588, -3.011403, 27.215431, 5.2484336, 26.976667, 1.6660116, 6.8394504, -145.70744, 13.852535, -13.166515)
-
-[node name="Crystal Large23" parent="Rooms/Crystals" unique_id=1430576588 instance=ExtResource("26_56pty")]
-transform = Transform3D(22.955, 0, 0, 0, 22.778732, 2.8392587, 0, -2.8392587, 22.778732, 42.566395, -5.5876637, 108.88403)
 
 [node name="Crystal Large4" parent="Rooms/Crystals" unique_id=820467126 instance=ExtResource("26_56pty")]
 transform = Transform3D(7.52339, 2.7783391, 0.89686584, -2.8154826, 7.5603642, 0.19703668, -0.772392, -0.49659124, 8.017589, -73.63239, 0.40414715, 9.348791)
@@ -842,6 +852,52 @@ draw_pass_1 = SubResource("SphereMesh_6a4nl")
 [node name="WaterMesh1" parent="Water" unique_id=1210634507 instance=ExtResource("27_cvje1")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.14, -0.25, -0.15)
 
+[node name="WaterMesh5" type="MeshInstance3D" parent="Water" unique_id=1850689923]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 36.424458, 7.7544556, 167.51707)
+cast_shadow = 0
+mesh = SubResource("QuadMesh_0xcp5")
+surface_material_override/0 = ExtResource("28_lx36x")
+
+[node name="Area3D" type="Area3D" parent="Water/WaterMesh5" unique_id=713232997]
+collision_layer = 128
+collision_mask = 6
+script = ExtResource("29_2wggt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Water/WaterMesh5/Area3D" unique_id=497991898]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+shape = SubResource("BoxShape3D_56rrp")
+debug_color = Color(0, 0.14509805, 0.69803923, 1)
+
+[node name="KillBit" type="Node" parent="Water/WaterMesh5/Area3D" unique_id=928272478]
+script = ExtResource("30_xaua8")
+metadata/_custom_type_script = "uid://bekt6vd73jjuq"
+
+[node name="PlayWaterSFX" type="Node" parent="Water/WaterMesh5" unique_id=564251930 node_paths=PackedStringArray("target", "sets_to")]
+script = ExtResource("31_1opfj")
+target = NodePath("Target")
+target_name = &"IsInWater"
+target_property = &"response"
+sets_to = NodePath("IsInWater")
+constant = false
+
+[node name="Target" type="Node" parent="Water/WaterMesh5/PlayWaterSFX" unique_id=1092236384]
+script = ExtResource("32_l8ecs")
+metadata/_custom_type_script = "uid://dmeoycdcis1sp"
+
+[node name="Property" type="Node" parent="Water/WaterMesh5/PlayWaterSFX/Target" unique_id=59488854]
+script = ExtResource("33_c8db5")
+property = "target"
+metadata/_custom_type_script = "uid://d7n7ctdl2nsg"
+
+[node name="ManualNode" type="Node" parent="Water/WaterMesh5/PlayWaterSFX/Target/Property" unique_id=742268485 node_paths=PackedStringArray("response")]
+script = ExtResource("34_y510l")
+response = NodePath("../../../../Area3D/KillBit")
+metadata/_custom_type_script = "uid://b1o48vkwquyxs"
+
+[node name="IsInWater" type="Node" parent="Water/WaterMesh5/PlayWaterSFX" unique_id=1103222056]
+script = ExtResource("35_cth48")
+metadata/_custom_type_script = "uid://cox1ysk6bulx2"
+
 [node name="WaterMesh2" parent="Water" unique_id=2025855633 instance=ExtResource("27_cvje1")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 89.9, 20.5, -72.8)
 
@@ -979,6 +1035,27 @@ omni_range = 30.0
 omni_attenuation = 0.5
 
 [node name="Ceiling" type="Node3D" parent="." unique_id=1045228486]
+
+[node name="Stalagmite11" parent="Ceiling" unique_id=772959555 instance=ExtResource("37_8c2l8")]
+transform = Transform3D(-0.45327455, 0.48775345, 9.251294, -0.7148276, -6.778359, 0.6342823, 10.045013, -0.46035492, 0.46259567, -139.87656, 61.517242, 71.488144)
+
+[node name="Stalagmite12" parent="Ceiling" unique_id=1837145508 instance=ExtResource("37_8c2l8")]
+transform = Transform3D(11.083334, 0.48829934, 5.8617277, 0.3703416, -6.785945, 1.1277838, 6.289985, -0.4608701, -10.39512, -133.66704, 59.45141, 71.268074)
+
+[node name="TerrainRock14" parent="Ceiling" unique_id=225592219 instance=ExtResource("48_in7gc")]
+transform = Transform3D(-12.927071, 8.807917, -57.92504, -58.590862, -1.9433151, 12.780167, 2.8681012e-07, 59.318153, 9.019749, 7.899729, 56.324593, -146.54384)
+
+[node name="TerrainRock15" parent="Ceiling" unique_id=1665500877 instance=ExtResource("48_in7gc")]
+transform = Transform3D(-25.806747, 10.402969, -116.72956, -117.18176, -3.886629, 25.560347, -1.5648415, 119.48505, 10.994495, 44.11643, 72.81558, -141.23274)
+
+[node name="TerrainRock24" parent="Ceiling" unique_id=275234422 instance=ExtResource("48_in7gc")]
+transform = Transform3D(17.215012, 146.77179, 134.76529, 181.93729, -66.73903, 49.444126, 81.25555, 118.33828, -139.26088, 80.131134, 112.08557, -94.58911)
+
+[node name="TerrainRock26" parent="Ceiling" unique_id=897495275 instance=ExtResource("48_in7gc")]
+transform = Transform3D(17.215012, 146.77179, 134.76529, 192.71777, -46.635437, 26.172365, 50.63104, 127.60556, -145.4418, 44.506943, 112.08557, 50.381958)
+
+[node name="TerrainRock25" parent="Ceiling" unique_id=1098960917 instance=ExtResource("41_usptv")]
+transform = Transform3D(-7.7094154, 57.837543, -13.9779415, -21.77516, -15.859401, -53.612694, -55.37514, -1.8158445, 23.028145, -55.226402, 55.392673, -102.705055)
 
 [node name="Stag52" parent="Ceiling" unique_id=382360442 instance=ExtResource("16_11yo2")]
 transform = Transform3D(-1.0811249, 1.044807e-06, -11.951199, 0, -12, -1.0490734e-06, -11.951196, -9.4514945e-08, 1.0811251, -63.41374, 57.383255, -95.212234)
@@ -1444,12 +1521,6 @@ transform = Transform3D(12.6949215, -0.2789275, -6.5515924, 0.54227245, 3.876278
 [node name="Stalagmite9" parent="LooseRocks" unique_id=1967333721 instance=ExtResource("37_8c2l8")]
 transform = Transform3D(-0.4532747, -0.48775405, -9.251294, -0.7148278, 6.7783585, -0.63428307, 10.045015, 0.46035492, -0.4625956, -132.38684, 48.465256, 74.94639)
 
-[node name="Stalagmite11" parent="LooseRocks" unique_id=772959555 instance=ExtResource("37_8c2l8")]
-transform = Transform3D(-0.45327455, 0.48775345, 9.251294, -0.7148276, -6.778359, 0.6342823, 10.045013, -0.46035492, 0.46259567, -139.87656, 61.517242, 71.488144)
-
-[node name="Stalagmite12" parent="LooseRocks" unique_id=1837145508 instance=ExtResource("37_8c2l8")]
-transform = Transform3D(11.083334, 0.48829934, 5.8617277, 0.3703416, -6.785945, 1.1277838, 6.289985, -0.4608701, -10.39512, -133.66704, 59.45141, 71.268074)
-
 [node name="Stalagmite10" parent="LooseRocks" unique_id=1570222637 instance=ExtResource("37_8c2l8")]
 transform = Transform3D(0.49548128, -0.013794494, -9.704736, 0.19469509, 6.4386377, -0.012561694, 10.638698, -0.117188774, 0.452214, -140.37836, 47.71857, 62.3136)
 
@@ -1473,6 +1544,10 @@ transform = Transform3D(0.8071759, 9.658773e-07, -8.922847, -7.832453e-07, 10.17
 
 [node name="ClimbDistanceReference2" type="MeshInstance3D" parent="." unique_id=618395079]
 transform = Transform3D(0.7957484, 0, -0.60562736, 0, 9.992968, 0, 0.60562736, 0, 0.7957484, -89.52317, 51.01426, -39.324116)
+mesh = SubResource("BoxMesh_in7gc")
+
+[node name="ClimbDistanceReference3" type="MeshInstance3D" parent="." unique_id=1858849690]
+transform = Transform3D(0.7957484, 0, -0.60562736, 0, 9.992968, 0, 0.60562736, 0, 0.7957484, 33.260696, 5.803459, 104.47495)
 mesh = SubResource("BoxMesh_in7gc")
 
 [node name="Rock6" parent="." unique_id=260944572 instance=ExtResource("31_cvje1")]
@@ -1526,20 +1601,8 @@ transform = Transform3D(-21.379686, 18.79763, -9.463507, 20.574867, 15.832594, -
 [node name="TerrainRock3" parent="." unique_id=1073589378 instance=ExtResource("47_xvg63")]
 transform = Transform3D(14.686042, 47.5134, -5.1766005, -43.404938, 10.991678, -22.252968, -20.008293, 11.029961, 44.474804, -40.223885, 36.480736, -34.42398)
 
-[node name="TerrainRock5" parent="." unique_id=225592219 instance=ExtResource("48_in7gc")]
-transform = Transform3D(-12.927071, 8.807917, -57.92504, -58.590862, -1.9433151, 12.780167, 2.8681012e-07, 59.318153, 9.019749, 7.899729, 56.324593, -146.54384)
-
-[node name="TerrainRock14" parent="." unique_id=1665500877 instance=ExtResource("48_in7gc")]
-transform = Transform3D(-25.806747, 10.402969, -116.72956, -117.18176, -3.886629, 25.560347, -1.5648415, 119.48505, 10.994495, 44.11643, 72.81558, -141.23274)
-
-[node name="TerrainRock19" parent="." unique_id=275234422 instance=ExtResource("48_in7gc")]
-transform = Transform3D(17.215012, 146.77179, 134.76529, 181.93729, -66.73903, 49.444126, 81.25555, 118.33828, -139.26088, 80.131134, 112.08557, -94.58911)
-
 [node name="TerrainRock4" parent="." unique_id=1325438912 instance=ExtResource("40_2thtx")]
 transform = Transform3D(-59.99999, -5.722046e-06, 0, 5.722046e-06, -59.99999, 0, 0, 0, 59.99999, -73.56697, 63.143074, -111.43207)
-
-[node name="TerrainRock15" parent="." unique_id=1098960917 instance=ExtResource("41_usptv")]
-transform = Transform3D(-7.7094154, 57.837543, -13.9779415, -21.77516, -15.859401, -53.612694, -55.37514, -1.8158445, 23.028145, -55.226402, 55.392673, -102.705055)
 
 [node name="Rock3" parent="." unique_id=853522572 instance=ExtResource("43_2thtx")]
 transform = Transform3D(1.7993141, 14.829853, 1.3556842, -9.026387, -5.662911e-07, 11.980163, 11.844272, -2.2528677, 8.924003, -35.37284, 36.244446, -107.09814)
@@ -1552,6 +1615,8 @@ transform = Transform3D(39.79424, 2.351612, -3.2997608, -1.3571088, -22.957882, 
 
 [node name="TerrainRock22" parent="." unique_id=133369040 instance=ExtResource("42_mwprs")]
 transform = Transform3D(-29.963953, -4.595375e-06, 1.4702015, 4.529874e-06, -30, -1.447632e-06, 1.4702015, -1.2238983e-06, 29.963953, 79.07703, 62.97769, -83.84941)
+
+[connection signal="killing" from="Water/WaterMesh5/Area3D/KillBit" to="Water/WaterMesh5/PlayWaterSFX" method="transfer"]
 
 [editable path="Water/WaterMesh3"]
 [editable path="Water/WaterMesh4"]
