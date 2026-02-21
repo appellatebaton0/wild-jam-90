@@ -7,12 +7,20 @@ const STAMINA_NODE_NAME := &"GotStamina"
 @export var is_stamina_item := false:
 	set(to):
 		is_stamina_item = to
+		
+		var a = get_area()
+		if to: if a.is_connected("area_entered", area_ent):
+			a.area_entered.disconnect(area_ent)
+		else: if not a.is_connected("area_entered", area_ent):
+			a.area_entered.connect(area_ent)
 		call("add_to_group" if to else "remove_from_group", "Respawnable")
 		#suck_range.active = not to
 
 @export var collectable_value := 1
 
-func _on_area_entered(ar: Area3D) -> void:
+func _ready() -> void: is_stamina_item = is_stamina_item
+
+func area_ent(ar: Area3D = null) -> void:
 	
 	var a = ar
 	if a is Bit: a = a.bot
@@ -22,7 +30,6 @@ func _on_area_entered(ar: Area3D) -> void:
 	queue_free()
 	
 	if is_stamina_item: transfer(a)
-
 
 func recur_children(with:Node) -> Array[Node]:
 	
