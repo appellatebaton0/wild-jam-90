@@ -38,10 +38,10 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 [application]
 
-config/name="wild-jam-90"
+config/name="EmberLight"
 run/main_scene="uid://hgdnv1u63uc5"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://h24r8mxrvp60"
 
 [audio]
 
