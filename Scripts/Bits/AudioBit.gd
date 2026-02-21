@@ -38,6 +38,8 @@ func play_stream(play:bool): if target:
 	
 	last_value = play
 	
-	if not target.playing and play: target.play()
-	elif   target.playing and not play: target.stop()
+	if not target.playing and play: 
+		target.play()
+	elif   target.playing and not play and not on_true: 
+		target.stop()
 	
