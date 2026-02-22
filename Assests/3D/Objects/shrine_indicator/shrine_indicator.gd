@@ -21,7 +21,6 @@ func _make_material_unique():
 	indicator.set_surface_override_material(0, my_material)
 
 func _setup_shrine():
-	print(shrine)
 	if !shrine or !is_instance_valid(shrine): return
 	if shrine == checking_shrine: return
 	if checking_shrine and is_instance_valid(checking_shrine):
@@ -34,7 +33,6 @@ func _on_shrine_returned(_from_exit):
 	set_active(true)
 
 func set_active(active := false):
-	print("aaaaa!")
 	if !my_material: return
 	if my_material is StandardMaterial3D:
 		my_material.emission_energy_multiplier = 15.0 if active else 0.0

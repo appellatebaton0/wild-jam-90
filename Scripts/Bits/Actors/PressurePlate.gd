@@ -10,6 +10,7 @@ var weight_timer := 0.0
 @export var press_anim_name := "Press"
 @export var release_anim_name := "Release"
 
+var press_lock := false
 var was_active := false
 
 var area:Area3D
@@ -29,8 +30,10 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	var is_pressed = area.has_overlapping_bodies()
-	var is_active = is_pressed
+	if is_pressed and stay_pressed:
+		press_lock = true
 	
+	var is_active = is_pressed or press_lock
 	if !stay_pressed:
 		if is_pressed:
 			weight_timer = weight_time

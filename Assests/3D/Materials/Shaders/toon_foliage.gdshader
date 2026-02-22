@@ -5,6 +5,8 @@ uniform sampler2D albedo_texture : source_color, hint_default_white;
 uniform vec3 tint_color : source_color = vec3(1.0, 1.0, 1.0);
 uniform float alpha_scissor_threshold = 0.5;
 
+uniform float cull_range = 3.0;
+
 uniform float displacement_amount = 0.25;
 uniform float displacement_height = 1.0;
 uniform float displacement_range = 2.0;
@@ -44,11 +46,18 @@ void vertex() {
 }
 
 void fragment() {
+	//float cam = length(VERTEX.z);
+	
+	float v_x = (abs(VERTEX.x) / cull_range);
+	float v_z = (1.0 - VERTEX.z) / cull_range;
+	float cull = step(1.0, max(v_z, v_x));
+	
 	vec4 albedo = texture(albedo_texture, UV);
 	ALBEDO = albedo.rgb * tint_color; // * COLOR.rgb
 	ALPHA_SCISSOR_THRESHOLD = alpha_scissor_threshold;
-	ALPHA = albedo.a;
+	ALPHA = albedo.a * cull;
 }
+
 void light() {
 	float light_product = dot(NORMAL, LIGHT);
 	float surface = step(0, abs(light_product));

@@ -39,7 +39,7 @@ func recur_children(with:Node) -> Array[Node]:
 	
 	var response:Array[Node]
 	
-	print(with)
+	#print(with)
 	for child in with.get_children():
 		response.append(child)
 		response.append_array(recur_children(child))

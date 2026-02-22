@@ -11,7 +11,7 @@ var held_by:Node
 var previous_owner:Node
 var camera:Camera3D
 
-var pivot:CameraFloat
+var pivot:CameraModifier
 
 var grab_node:Node3D
 
@@ -42,12 +42,14 @@ func on_body_entered(body:Node) -> void:
 		camera = search_for_camera(body)
 		
 		## Find a camera pivot if one exists.
-		pivot = body.scan_bot("CameraFloat")[0]
+		var pivotscan = body.scan_bot(CameraModifier)
+		if len(pivotscan) > 0:
+			pivot = pivotscan[0]
 		
 		if camera:
 			held_by = body
 			
-			if pivot: pivot.active = false
+			if pivot: pivot.set_active(false)
 			previous_owner = camera.get_parent()
 			
 			camera.reparent(self)
@@ -63,7 +65,7 @@ func on_body_exited(body:Node) -> void:
 	if body == held_by: ## Left to pick its camera back up
 		camera.reparent(previous_owner)
 		
-		if pivot: pivot.active = true
+		if pivot: pivot.set_active(true)
 		
 		camera = null
 		pivot = null

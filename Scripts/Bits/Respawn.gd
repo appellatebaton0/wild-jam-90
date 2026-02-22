@@ -25,7 +25,7 @@ func respawn(group := global_kill) -> void:
 	if group != &"":
 		for node in get_tree().get_nodes_in_group(global_kill):
 			if node is Bot:
-				var scan:Array[Bit] = node.scan_bot("RespawnBit3D")
+				var scan:Array[Bit] = node.scan_bot(RespawnBit3D)
 				
 				if len(scan) > 0: scan[0].respawn("")
 	

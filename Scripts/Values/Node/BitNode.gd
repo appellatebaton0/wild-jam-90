@@ -2,7 +2,7 @@ class_name BitNode extends NodeValue
 ## Returns a bit from a given node.
 
 ## The class_name of the bit to get.
-@export var bit_id:String 
+@export var bit_id:Variant 
 @export var from:NodeValue
 
 func _ready() -> void:
@@ -17,6 +17,6 @@ func value() -> Node:
 		var from_node = from.value()
 		
 		for child in from_node.get_children():
-			if child.get_script().get_global_name() == bit_id:
+			if is_instance_of(child, bit_id):
 				return child
 	return null

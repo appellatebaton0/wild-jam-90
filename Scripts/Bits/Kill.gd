@@ -69,6 +69,6 @@ func find_respawner():
 	if target:
 		if target is Bit: target = target.bot
 		
-		var scan = target.scan_bot("RespawnBit3D")
+		var scan = target.scan_bot(RespawnBit3D)
 		
 		if len(scan) > 0: respawner = scan[0]

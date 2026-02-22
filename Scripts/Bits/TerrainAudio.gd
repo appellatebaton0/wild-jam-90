@@ -41,7 +41,7 @@ func _process(delta: float) -> void:
 				if transition_score > transition_threshold:
 					last_index = new_index
 			else: transition_score = 0.0
-		print(transition_speed, " - ", transition_score, " - ", last_index)
+		#print(transition_speed, " - ", transition_score, " - ", last_index)
 		transition_speed = 8.0
 		for i in range(aud_stream.stream_count):
 			
