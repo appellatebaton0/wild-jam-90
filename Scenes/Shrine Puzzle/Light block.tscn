@@ -150,104 +150,143 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.46973348, 0)
 [node name="Platform" parent="Platforms" unique_id=230968152 instance=ExtResource("19_mlcbi")]
 transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 2.5275111, -0.64057636, -29.635197)
 
-[node name="Platform2" parent="Platforms" unique_id=1761764284 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 2.5275111, -0.35482216, -25.24192)
+[node name="CollisionShape3D" parent="Platforms/Platform/Pillar_Round_05/Plane_015/StaticBody3D" parent_id_path=PackedInt32Array(230968152, 1929010230) index="0" unique_id=1041668521]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, -0.033864517, 0)
+
+[node name="Platform2" parent="Platforms" unique_id=433352873 instance=ExtResource("19_mlcbi")]
+transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 2.5275111, -0.64057636, -23.488768)
 
 [node name="Pillar_Round_05" parent="Platforms/Platform2" index="0" unique_id=255035119]
 visible = false
 
-[node name="Platform3" parent="Platforms" unique_id=1819117608 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 2.5275111, -0.35482216, -20.853052)
+[node name="CollisionShape3D" parent="Platforms/Platform2/Pillar_Round_05/Plane_015/StaticBody3D" parent_id_path=PackedInt32Array(433352873, 1929010230) index="0" unique_id=1041668521]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, -0.033864517, 0)
+
+[node name="Platform3" parent="Platforms" unique_id=1151188127 instance=ExtResource("19_mlcbi")]
+transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 7.7536683, -0.64057636, -23.488768)
 
 [node name="Pillar_Round_05" parent="Platforms/Platform3" index="0" unique_id=255035119]
 visible = false
 
-[node name="Platform4" parent="Platforms" unique_id=1666266864 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 2.5275111, -0.35482216, -16.470821)
+[node name="CollisionShape3D" parent="Platforms/Platform3/Pillar_Round_05/Plane_015/StaticBody3D" parent_id_path=PackedInt32Array(1151188127, 1929010230) index="0" unique_id=1041668521]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, -0.033864517, 0)
+
+[node name="Platform4" parent="Platforms" unique_id=90818841 instance=ExtResource("19_mlcbi")]
+transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 12.812931, -0.64057636, -23.488768)
 
 [node name="Pillar_Round_05" parent="Platforms/Platform4" index="0" unique_id=255035119]
 visible = false
 
-[node name="Platform5" parent="Platforms" unique_id=1771215007 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 6.955704, -0.35482216, -16.470821)
+[node name="CollisionShape3D" parent="Platforms/Platform4/Pillar_Round_05/Plane_015/StaticBody3D" parent_id_path=PackedInt32Array(90818841, 1929010230) index="0" unique_id=1041668521]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, -0.033864517, 0)
+
+[node name="Platform5" parent="Platforms" unique_id=457631456 instance=ExtResource("19_mlcbi")]
+transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 18.19176, -0.64057636, -23.488768)
 
 [node name="Pillar_Round_05" parent="Platforms/Platform5" index="0" unique_id=255035119]
 visible = false
 
-[node name="Platform7" parent="Platforms" unique_id=1563921889 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 11.387783, -0.35482216, -16.470821)
+[node name="CollisionShape3D" parent="Platforms/Platform5/Pillar_Round_05/Plane_015/StaticBody3D" parent_id_path=PackedInt32Array(457631456, 1929010230) index="0" unique_id=1041668521]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, -0.033864517, 0)
+
+[node name="Platform6" parent="Platforms" unique_id=685205935 instance=ExtResource("19_mlcbi")]
+transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 18.19176, -0.64057636, -18.226252)
+
+[node name="Pillar_Round_05" parent="Platforms/Platform6" index="0" unique_id=255035119]
+visible = false
+
+[node name="CollisionShape3D" parent="Platforms/Platform6/Pillar_Round_05/Plane_015/StaticBody3D" parent_id_path=PackedInt32Array(685205935, 1929010230) index="0" unique_id=1041668521]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, -0.033864517, 0)
+
+[node name="Platform7" parent="Platforms" unique_id=456982179 instance=ExtResource("19_mlcbi")]
+transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 18.19176, -0.64057636, -13.040618)
 
 [node name="Pillar_Round_05" parent="Platforms/Platform7" index="0" unique_id=255035119]
 visible = false
 
-[node name="Platform8" parent="Platforms" unique_id=1619306028 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 15.786055, -0.35482216, -16.470821)
+[node name="CollisionShape3D" parent="Platforms/Platform7/Pillar_Round_05/Plane_015/StaticBody3D" parent_id_path=PackedInt32Array(456982179, 1929010230) index="0" unique_id=1041668521]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, -0.033864517, 0)
+
+[node name="Platform8" parent="Platforms" unique_id=1623219418 instance=ExtResource("19_mlcbi")]
+transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 18.19176, -0.64057636, -7.7618046)
 
 [node name="Pillar_Round_05" parent="Platforms/Platform8" index="0" unique_id=255035119]
 visible = false
 
-[node name="Platform9" parent="Platforms" unique_id=475881293 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 15.391542, -0.97816753, -11.53112)
+[node name="CollisionShape3D" parent="Platforms/Platform8/Pillar_Round_05/Plane_015/StaticBody3D" parent_id_path=PackedInt32Array(1623219418, 1929010230) index="0" unique_id=1041668521]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, -0.033864517, 0)
 
-[node name="Platform10" parent="Platforms" unique_id=357972187 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 15.391542, -0.35482216, -7.095882)
+[node name="Platform9" parent="Platforms" unique_id=1809736081 instance=ExtResource("19_mlcbi")]
+transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 13.268197, -0.64057636, -7.7618046)
+
+[node name="Pillar_Round_05" parent="Platforms/Platform9" index="0" unique_id=255035119]
+visible = false
+
+[node name="CollisionShape3D" parent="Platforms/Platform9/Pillar_Round_05/Plane_015/StaticBody3D" parent_id_path=PackedInt32Array(1809736081, 1929010230) index="0" unique_id=1041668521]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, -0.033864517, 0)
+
+[node name="Platform10" parent="Platforms" unique_id=400408860 instance=ExtResource("19_mlcbi")]
+transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 7.882762, -0.64057636, -7.7618046)
 
 [node name="Pillar_Round_05" parent="Platforms/Platform10" index="0" unique_id=255035119]
 visible = false
 
-[node name="Platform25" parent="Platforms" unique_id=282013005 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 10.904375, -0.35482216, -7.5368614)
+[node name="CollisionShape3D" parent="Platforms/Platform10/Pillar_Round_05/Plane_015/StaticBody3D" parent_id_path=PackedInt32Array(400408860, 1929010230) index="0" unique_id=1041668521]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, -0.033864517, 0)
 
-[node name="Pillar_Round_05" parent="Platforms/Platform25" index="0" unique_id=255035119]
+[node name="Platform11" parent="Platforms" unique_id=36381193 instance=ExtResource("19_mlcbi")]
+transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 7.882762, -0.64057636, -2.5237083)
+
+[node name="Pillar_Round_05" parent="Platforms/Platform11" index="0" unique_id=255035119]
 visible = false
 
-[node name="Platform26" parent="Platforms" unique_id=41261239 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 6.5211096, -0.35482216, -7.5368614)
+[node name="CollisionShape3D" parent="Platforms/Platform11/Pillar_Round_05/Plane_015/StaticBody3D" parent_id_path=PackedInt32Array(36381193, 1929010230) index="0" unique_id=1041668521]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, -0.033864517, 0)
 
-[node name="Pillar_Round_05" parent="Platforms/Platform26" index="0" unique_id=255035119]
+[node name="Platform12" parent="Platforms" unique_id=444620256 instance=ExtResource("19_mlcbi")]
+transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 2.6319876, -0.64057636, -2.5237083)
+
+[node name="Pillar_Round_05" parent="Platforms/Platform12" index="0" unique_id=255035119]
 visible = false
 
-[node name="Platform27" parent="Platforms" unique_id=1029089442 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 2.3745632, -0.35482216, -7.5368614)
+[node name="CollisionShape3D" parent="Platforms/Platform12/Pillar_Round_05/Plane_015/StaticBody3D" parent_id_path=PackedInt32Array(444620256, 1929010230) index="0" unique_id=1041668521]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, -0.033864517, 0)
 
-[node name="Pillar_Round_05" parent="Platforms/Platform27" index="0" unique_id=255035119]
+[node name="Platform13" parent="Platforms" unique_id=511996804 instance=ExtResource("19_mlcbi")]
+transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 2.6319876, -0.64057636, 2.6694288)
+
+[node name="Pillar_Round_05" parent="Platforms/Platform13" index="0" unique_id=255035119]
 visible = false
 
-[node name="Platform28" parent="Platforms" unique_id=27115305 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, -1.8375769, -0.35482216, -7.5368614)
+[node name="CollisionShape3D" parent="Platforms/Platform13/Pillar_Round_05/Plane_015/StaticBody3D" parent_id_path=PackedInt32Array(511996804, 1929010230) index="0" unique_id=1041668521]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, -0.033864517, 0)
 
-[node name="Pillar_Round_05" parent="Platforms/Platform28" index="0" unique_id=255035119]
+[node name="Platform14" parent="Platforms" unique_id=94429076 instance=ExtResource("19_mlcbi")]
+transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, -2.537755, -0.64057636, 2.6694288)
+
+[node name="Pillar_Round_05" parent="Platforms/Platform14" index="0" unique_id=255035119]
 visible = false
 
-[node name="Platform29" parent="Platforms" unique_id=2060149305 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, -1.8375769, -0.35482216, -2.824623)
+[node name="CollisionShape3D" parent="Platforms/Platform14/Pillar_Round_05/Plane_015/StaticBody3D" parent_id_path=PackedInt32Array(94429076, 1929010230) index="0" unique_id=1041668521]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, -0.033864517, 0)
 
-[node name="Pillar_Round_05" parent="Platforms/Platform29" index="0" unique_id=255035119]
+[node name="Platform15" parent="Platforms" unique_id=645916975 instance=ExtResource("19_mlcbi")]
+transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, -7.732599, -0.64057636, 2.6694288)
+
+[node name="Pillar_Round_05" parent="Platforms/Platform15" index="0" unique_id=255035119]
 visible = false
 
-[node name="Platform30" parent="Platforms" unique_id=1606653110 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, -1.8375769, -0.35482216, 1.3093491)
+[node name="CollisionShape3D" parent="Platforms/Platform15/Pillar_Round_05/Plane_015/StaticBody3D" parent_id_path=PackedInt32Array(645916975, 1929010230) index="0" unique_id=1041668521]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, -0.033864517, 0)
 
-[node name="Pillar_Round_05" parent="Platforms/Platform30" index="0" unique_id=255035119]
+[node name="Platform16" parent="Platforms" unique_id=1787155243 instance=ExtResource("19_mlcbi")]
+transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, -7.732599, -0.64057636, 7.902389)
+
+[node name="Pillar_Round_05" parent="Platforms/Platform16" index="0" unique_id=255035119]
 visible = false
 
-[node name="Platform31" parent="Platforms" unique_id=145873374 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, -6.3016505, -0.35482216, 1.3093491)
-
-[node name="Pillar_Round_05" parent="Platforms/Platform31" index="0" unique_id=255035119]
-visible = false
-
-[node name="Platform32" parent="Platforms" unique_id=669387960 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, -6.3016505, -0.35482216, 5.6337433)
-
-[node name="Pillar_Round_05" parent="Platforms/Platform32" index="0" unique_id=255035119]
-visible = false
-
-[node name="Platform33" parent="Platforms" unique_id=860596533 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, -6.3016505, -0.35482216, 10.252031)
-
-[node name="Pillar_Round_05" parent="Platforms/Platform33" index="0" unique_id=255035119]
-visible = false
+[node name="CollisionShape3D" parent="Platforms/Platform16/Pillar_Round_05/Plane_015/StaticBody3D" parent_id_path=PackedInt32Array(1787155243, 1929010230) index="0" unique_id=1041668521]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, -0.033864517, 0)
 
 [node name="Node3D" type="Node3D" parent="." unique_id=1783494434]
 
@@ -255,12 +294,13 @@ visible = false
 transform = Transform3D(2.34, 0, 0, 0, -1.02284645e-07, 2.34, 0, -2.34, -1.02284645e-07, -2.4650097, 0.11436844, -12.272627)
 
 [node name="TeleporterExit" parent="." unique_id=234579865 instance=ExtResource("21_fjeop")]
-transform = Transform3D(-0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, -0.70710677, 7.8201637, 2.0533314, 23.198256)
+transform = Transform3D(-0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, -0.70710677, 7.8201637, 1.3651295, 23.198256)
 
 [node name="Marker3D" type="Marker3D" parent="." unique_id=633359632]
 transform = Transform3D(0.123757385, 0, -0.9923125, 0, 1, 0, 0.9923125, 0, 0.123757385, 5.945554, 2.199442, -40.709167)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=374671251]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.035805702, 0.01750946, 0.063964844)
 mesh = SubResource("BoxMesh_uwgsj")
 
 [node name="Brazier" parent="." unique_id=841687113 instance=ExtResource("13_uwgsj")]
@@ -298,7 +338,7 @@ transform = Transform3D(-0.4287144, 0, 0.90344006, 0, 1, 0, -0.90344006, 0, -0.4
 text = "Find the hidden path with the cube"
 
 [node name="Collectable" parent="." unique_id=2046027389 instance=ExtResource("17_s374n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.092008, 1.850358, -11.687982)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.993454, 1.850358, -12.993559)
 
 [connection signal="area_entered" from="Kill Node" to="Kill Node" method="_on_area_entered"]
 
@@ -314,6 +354,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.092008, 1.850358, -11.6879
 [editable path="Platforms/Platform4/Pillar_Round_05"]
 [editable path="Platforms/Platform5"]
 [editable path="Platforms/Platform5/Pillar_Round_05"]
+[editable path="Platforms/Platform6"]
+[editable path="Platforms/Platform6/Pillar_Round_05"]
 [editable path="Platforms/Platform7"]
 [editable path="Platforms/Platform7/Pillar_Round_05"]
 [editable path="Platforms/Platform8"]
@@ -322,21 +364,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.092008, 1.850358, -11.6879
 [editable path="Platforms/Platform9/Pillar_Round_05"]
 [editable path="Platforms/Platform10"]
 [editable path="Platforms/Platform10/Pillar_Round_05"]
-[editable path="Platforms/Platform25"]
-[editable path="Platforms/Platform25/Pillar_Round_05"]
-[editable path="Platforms/Platform26"]
-[editable path="Platforms/Platform26/Pillar_Round_05"]
-[editable path="Platforms/Platform27"]
-[editable path="Platforms/Platform27/Pillar_Round_05"]
-[editable path="Platforms/Platform28"]
-[editable path="Platforms/Platform28/Pillar_Round_05"]
-[editable path="Platforms/Platform29"]
-[editable path="Platforms/Platform29/Pillar_Round_05"]
-[editable path="Platforms/Platform30"]
-[editable path="Platforms/Platform30/Pillar_Round_05"]
-[editable path="Platforms/Platform31"]
-[editable path="Platforms/Platform31/Pillar_Round_05"]
-[editable path="Platforms/Platform32"]
-[editable path="Platforms/Platform32/Pillar_Round_05"]
-[editable path="Platforms/Platform33"]
-[editable path="Platforms/Platform33/Pillar_Round_05"]
+[editable path="Platforms/Platform11"]
+[editable path="Platforms/Platform11/Pillar_Round_05"]
+[editable path="Platforms/Platform12"]
+[editable path="Platforms/Platform12/Pillar_Round_05"]
+[editable path="Platforms/Platform13"]
+[editable path="Platforms/Platform13/Pillar_Round_05"]
+[editable path="Platforms/Platform14"]
+[editable path="Platforms/Platform14/Pillar_Round_05"]
+[editable path="Platforms/Platform15"]
+[editable path="Platforms/Platform15/Pillar_Round_05"]
+[editable path="Platforms/Platform16"]
+[editable path="Platforms/Platform16/Pillar_Round_05"]

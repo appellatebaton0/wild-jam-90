@@ -10,6 +10,8 @@
 [ext_resource type="Script" uid="uid://dd8or5oo0cmw2" path="res://Scripts/Values/Bool/Actor.gd" id="7_tpt7j"]
 [ext_resource type="PackedScene" uid="uid://cw5v3k3rnk5jn" path="res://Scenes/Signpost.tscn" id="9_fvr8k"]
 [ext_resource type="PackedScene" uid="uid://bu28itoih1xog" path="res://Assests/3D/Objects/Brazier.tscn" id="9_jwprh"]
+[ext_resource type="Script" uid="uid://1n1biyfmvu7a" path="res://Scripts/Bits/Reactors/MovingPlatformPoint.gd" id="9_r8cab"]
+[ext_resource type="Script" uid="uid://tuer4h8o7pic" path="res://Scenes/Shrine Puzzle/CommonAssets/area_3d.gd" id="11_kmall"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_kuqf3"]
 size = Vector2(2000, 2000)
@@ -30,6 +32,9 @@ height = 1.5
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_2hqvg"]
 height = 25.0
 radius = 1.5
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r8cab"]
+size = Vector3(35.03419, 14.381842, 2.1314135)
 
 [node name="Platforming" type="Node3D" unique_id=941058485]
 
@@ -79,7 +84,7 @@ stay_pressed = true
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 32.75, 3.1098242, -82.86298)
 stay_pressed = true
 
-[node name="Node" type="Node" parent="." unique_id=931061431]
+[node name="Node" type="Node3D" parent="." unique_id=821608211]
 
 [node name="OrBool" type="Node" parent="Node" unique_id=1640134076 node_paths=PackedStringArray("inputs")]
 script = ExtResource("5_fvr8k")
@@ -97,34 +102,39 @@ actor = NodePath("../../PressurePlate2")
 metadata/_custom_type_script = "uid://dd8or5oo0cmw2"
 
 [node name="MovingPlatform9" parent="Node" unique_id=967985878 node_paths=PackedStringArray("points", "condition") instance=ExtResource("5_kmall")]
-transform = Transform3D(1.03, 0, 0, 0, 1.03, 0, 0, 0, 1.03, -1.3347464, -8.438996, -117.60793)
+transform = Transform3D(1.03, 0, 0, 0, 1.03, 0, 0, 0, 1.03, -1.3347464, 65.479034, -117.60793)
 move_in_editor = false
 disabled_mode = "Return"
-points = [NodePath("../MovingPlatform9\'s 2"), NodePath("../MovingPlatform9\'s 3"), NodePath("../MovingPlatform9\'s 4")]
+points = [NodePath("../MovingPlatform9\'s 1"), NodePath("../MovingPlatform9\'s 2"), NodePath("../MovingPlatform9\'s 3")]
 condition = NodePath("../OrBool")
 
 [node name="TeleporterExit" parent="Node/MovingPlatform9" unique_id=699490835 instance=ExtResource("2_2hqvg")]
 transform = Transform3D(-0.6865114, 0, -0.6865114, 0, 0.97087383, 0, 0.6865114, 0, -0.6865114, 1.2002065, 0.425745, 0.08950806)
 
-[node name="MovingPlatform9\'s 2" parent="Node" unique_id=1766241102 instance=ExtResource("6_r8cab")]
+[node name="ActorBool" type="Node" parent="Node/MovingPlatform9" unique_id=2023983423 node_paths=PackedStringArray("actor")]
+script = ExtResource("7_tpt7j")
+actor = NodePath("../../../PressurePlate")
+metadata/_custom_type_script = "uid://dd8or5oo0cmw2"
+
+[node name="MovingPlatform9\'s 1" type="MeshInstance3D" parent="Node" unique_id=1766241102 instance=ExtResource("6_r8cab")]
 transform = Transform3D(1.03, 0, 0, 0, 1.03, 0, 0, 0, 1.03, -1.3347464, -8.438996, -117.60793)
 mesh = SubResource("CylinderMesh_i8wk6")
-easing = 0.5
+script = ExtResource("9_r8cab")
 
-[node name="MovingPlatform9\'s 3" parent="Node" unique_id=1632052557 instance=ExtResource("6_r8cab")]
-transform = Transform3D(1.03, 0, 0, 0, 1.03, 0, 0, 0, 1.03, -1.3347464, 2.891003, -117.60793)
+[node name="MovingPlatform9\'s 2" type="MeshInstance3D" parent="Node" unique_id=541276147 instance=ExtResource("6_r8cab")]
+transform = Transform3D(1.03, 0, 0, 0, 1.03, 0, 0, 0, 1.03, -1.3347464, -8.438996, -117.60793)
 mesh = SubResource("CylinderMesh_i8wk6")
-easing = 0.5
+script = ExtResource("9_r8cab")
 time = 20.0
 
-[node name="MovingPlatform9\'s 4" parent="Node" unique_id=155046876 instance=ExtResource("6_r8cab")]
-transform = Transform3D(1.03, 0, 0, 0, 1.03, 0, 0, 0, 1.03, -1.3347464, 65.721, -117.60793)
+[node name="MovingPlatform9\'s 3" type="MeshInstance3D" parent="Node" unique_id=1502447609 instance=ExtResource("6_r8cab")]
+transform = Transform3D(1.03, 0, 0, 0, 1.03, 0, 0, 0, 1.03, -1.3347464, 65.479034, -117.60793)
 mesh = SubResource("CylinderMesh_i8wk6")
-easing = 0.5
+script = ExtResource("9_r8cab")
 time = 20.0
 
 [node name="Marker3D2" type="Marker3D" parent="." unique_id=1138168636]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.243622, 10.786623)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7629489, 4.9881783, 6.835867)
 
 [node name="Brazier" parent="." unique_id=841687113 instance=ExtResource("9_jwprh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.113917, 9.021558, -38.634136)
@@ -183,5 +193,20 @@ transform = Transform3D(-0.25881904, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, -0.25
 text = "Wimp's Shortcut
 
 (this level's long - we won't judge you.)"
+
+[node name="Kill Node" type="Area3D" parent="." unique_id=2077636189 node_paths=PackedStringArray("reset", "positionmark")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.034237, 2.9492416, -41.308464)
+script = ExtResource("11_kmall")
+reset = NodePath("../Node/MovingPlatform9")
+positionmark = NodePath("Position marker")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Kill Node" unique_id=1446584396]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.029721, 5.7270155, 2.8360596)
+shape = SubResource("BoxShape3D_r8cab")
+
+[node name="Position marker" type="Marker3D" parent="Kill Node" unique_id=1455152237]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.131385, -9.784371, -76.4859)
+
+[connection signal="area_entered" from="Kill Node" to="Kill Node" method="_on_area_entered"]
 
 [editable path="WaterMesh"]

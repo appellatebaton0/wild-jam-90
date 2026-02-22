@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://bbb0fdcwvffmb" path="res://Scripts/dissapearing platforms.gd" id="2_pvsur"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_jmk87"]
-height = 0.25021908
-radius = 0.22916669
+height = 0.27876127
+radius = 0.26513672
 
 [node name="Platform" type="Node3D" unique_id=230968152]
 
