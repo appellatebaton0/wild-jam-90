@@ -12,7 +12,7 @@
 [ext_resource type="Script" uid="uid://dk0hts3twf6t" path="res://Scripts/Bits/MouseCapture.gd" id="10_dbwgi"]
 [ext_resource type="Script" uid="uid://dekpk8relyucb" path="res://Scripts/Bits/Input.gd" id="11_t52ua"]
 [ext_resource type="Script" uid="uid://cox1ysk6bulx2" path="res://Scripts/Values/Bool/Manual.gd" id="12_amu0c"]
-[ext_resource type="PackedScene" uid="uid://c2bv1af7j2i2e" path="res://Scenes/Shrine Puzzle/water_bal.tscn" id="13_shluu"]
+[ext_resource type="PackedScene" uid="uid://c2bv1af7j2i2e" path="res://Scenes/Shrine Puzzle/CommonAssets/water_bal.tscn" id="13_shluu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q8hrf"]
 bg_color = Color(0.33599997, 0.84, 0.43679997, 1)

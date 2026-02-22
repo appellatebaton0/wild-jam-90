@@ -52,11 +52,6 @@ data = {
 mesh_library = ExtResource("2_w5eku")
 cell_size = Vector3(4, 0.035, 4)
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Puzzle Template" unique_id=31022264]
-transform = Transform3D(1, 0, 0, 0, 0.7290101, 0.6845029, 0, -0.6845029, 0.7290101, 0, 0, 0)
-light_color = Color(0.51820797, 0.38676512, 0.31963575, 1)
-shadow_enabled = true
-
 [node name="Door" parent="Puzzle Template" unique_id=697453936 instance=ExtResource("13_olyam")]
 transform = Transform3D(1.39, 0, 0, 0, 1.39, 0, 0, 0, 1.39, 7.8056793, 6.3339195, 32.534157)
 

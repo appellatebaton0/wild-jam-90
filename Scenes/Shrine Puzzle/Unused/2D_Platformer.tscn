@@ -2,7 +2,7 @@
 
 [ext_resource type="Environment" uid="uid://8ivgd0ijm8ix" path="res://Assests/3D/World_Env.tres" id="1_t1rno"]
 [ext_resource type="MeshLibrary" uid="uid://dxo8thlnlijfg" path="res://Assests/Ruins_Libary_Final.meshlib" id="2_ni6b4"]
-[ext_resource type="Material" uid="uid://c0go46hl7gvfp" path="res://Scenes/Shrine Puzzle/boxMesh.tres" id="10_0mum6"]
+[ext_resource type="Material" uid="uid://c0go46hl7gvfp" path="res://Scenes/Shrine Puzzle/CommonAssets/boxMesh.tres" id="10_0mum6"]
 [ext_resource type="PackedScene" uid="uid://b5rf7frqulgd5" path="res://Assests/3D/Objects/crystal_large.tscn" id="10_qb67l"]
 [ext_resource type="PackedScene" uid="uid://bv0nkuimkjuah" path="res://Assests/3D/Objects/Collectable.tscn" id="11_ndlj7"]
 [ext_resource type="PackedScene" uid="uid://esg4ciusc8a1" path="res://Scenes/TeleporterExit.tscn" id="12_t1rno"]
@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://d2cwefjigkop1" path="res://Scenes/MovingPlatformPoint.tscn" id="15_v4don"]
 [ext_resource type="PackedScene" uid="uid://byxk2xjmk3qvt" path="res://Scenes/Checkpoint.tscn" id="17_v4don"]
 [ext_resource type="PackedScene" uid="uid://b4soergejolc8" path="res://Scenes/Water.tscn" id="18_63vu1"]
-[ext_resource type="PackedScene" uid="uid://c2bv1af7j2i2e" path="res://Scenes/Shrine Puzzle/water_bal.tscn" id="19_6eh5j"]
+[ext_resource type="PackedScene" uid="uid://c2bv1af7j2i2e" path="res://Scenes/Shrine Puzzle/CommonAssets/water_bal.tscn" id="19_6eh5j"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t1rno"]
 size = Vector3(28.726013, 48.540833, 56.58815)

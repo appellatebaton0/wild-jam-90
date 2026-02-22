@@ -10,11 +10,11 @@
 [ext_resource type="Script" uid="uid://dd8or5oo0cmw2" path="res://Scripts/Values/Bool/Actor.gd" id="15_yxqsi"]
 [ext_resource type="PackedScene" uid="uid://bu28itoih1xog" path="res://Assests/3D/Objects/Brazier.tscn" id="16_3cm5i"]
 [ext_resource type="Script" uid="uid://cwmi2fpsn8by2" path="res://Scripts/Bits/Respawn.gd" id="16_xo2s0"]
-[ext_resource type="PackedScene" uid="uid://c2bv1af7j2i2e" path="res://Scenes/Shrine Puzzle/water_bal.tscn" id="18_yxqsi"]
+[ext_resource type="PackedScene" uid="uid://c2bv1af7j2i2e" path="res://Scenes/Shrine Puzzle/CommonAssets/water_bal.tscn" id="18_yxqsi"]
 [ext_resource type="PackedScene" uid="uid://byxk2xjmk3qvt" path="res://Scenes/Checkpoint.tscn" id="19_l7k8u"]
 [ext_resource type="PackedScene" uid="uid://b4soergejolc8" path="res://Scenes/Water.tscn" id="20_neiuo"]
 [ext_resource type="Shader" uid="uid://cadebvj3hwg3y" path="res://Assests/3D/Materials/Shaders/toon_water.gdshader" id="21_j0v12"]
-[ext_resource type="Script" uid="uid://tuer4h8o7pic" path="res://Scenes/Shrine Puzzle/area_3d.gd" id="22_j0v12"]
+[ext_resource type="Script" uid="uid://tuer4h8o7pic" path="res://Scenes/Shrine Puzzle/CommonAssets/area_3d.gd" id="22_j0v12"]
 [ext_resource type="PackedScene" uid="uid://bv0nkuimkjuah" path="res://Assests/3D/Objects/Collectable.tscn" id="23_ytjta"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_yxqsi"]

@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://cox1ysk6bulx2" path="res://Scripts/Values/Bool/Manual.gd" id="13_cayvv"]
 [ext_resource type="PackedScene" uid="uid://e6ymwhgiai4b" path="res://Assests/3D/Objects/Wandering Light.tscn" id="13_ukuf6"]
 [ext_resource type="Material" uid="uid://or8blx8y5xq7" path="res://Assests/3D/Materials/water.res" id="14_5bv4p"]
+[ext_resource type="PackedScene" uid="uid://bu28itoih1xog" path="res://Assests/3D/Objects/Brazier.tscn" id="14_7wqm0"]
 [ext_resource type="PackedScene" uid="uid://bv0nkuimkjuah" path="res://Assests/3D/Objects/Collectable.tscn" id="15_7wqm0"]
 
 [sub_resource type="Gradient" id="Gradient_qwnw3"]
@@ -381,13 +382,6 @@ shadow_enabled = false
 libraries/ = SubResource("AnimationLibrary_yenf1")
 autoplay = &"new_animation"
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=170657001]
-transform = Transform3D(0.76122487, -0.648488, -6.3429595e-11, 0.6087526, 0.71458155, 0.34466475, -0.22351101, -0.26236743, 0.9387258, 0, 0, 0)
-light_color = Color(0.18384543, 0.26526892, 0.30841652, 1)
-light_energy = 0.0
-light_volumetric_fog_energy = 1.545
-shadow_enabled = true
-
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=672586090]
 mesh = SubResource("BoxMesh_5bv4p")
 
@@ -409,10 +403,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.891144, 1.923253, 19.76557
 transform = Transform3D(0.15348977, 0, -0.98815036, 0, 1, 0, 0.98815036, 0, 0.15348977, 3.222518, 7.7448444, -45.627575)
 
 [node name="TeleporterExit" parent="." unique_id=234579865 instance=ExtResource("6_8nr60")]
-transform = Transform3D(0.8610342, 0, -0.50854707, 0, 1, 0, 0.50854707, 0, 0.8610342, 0, 1.4360485, 62.477974)
+transform = Transform3D(-0.7000736, 0, 0.7140708, 0, 1, 0, -0.7140708, 0, -0.7000736, 0, 1.4360485, 62.477974)
 
 [node name="WaterMesh" type="MeshInstance3D" parent="." unique_id=1210634507]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 2.5749893, -2.4216385, 2.1618748)
+visible = false
 cast_shadow = 0
 mesh = SubResource("QuadMesh_si35b")
 surface_material_override/0 = ExtResource("14_5bv4p")
@@ -457,6 +452,24 @@ metadata/_custom_type_script = "uid://b1o48vkwquyxs"
 script = ExtResource("13_cayvv")
 metadata/_custom_type_script = "uid://cox1ysk6bulx2"
 
+[node name="Brazier5" parent="." unique_id=1842822938 instance=ExtResource("14_7wqm0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.029727, 1.5510535, 64.17694)
+
+[node name="OmniLight3D" parent="Brazier5" index="1" unique_id=1236392117]
+omni_range = 30.0
+
+[node name="Brazier6" parent="." unique_id=841687113 instance=ExtResource("14_7wqm0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.970273, 1.5510535, 64.17694)
+
+[node name="OmniLight3D" parent="Brazier6" index="1" unique_id=1236392117]
+omni_range = 30.0
+
+[node name="Brazier3" parent="." unique_id=1757307778 instance=ExtResource("14_7wqm0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.760712, 1.5510535, -34.109715)
+
+[node name="Brazier4" parent="." unique_id=1376359256 instance=ExtResource("14_7wqm0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.239288, 1.5510535, -34.109715)
+
 [connection signal="killing" from="WaterMesh/Area3D/KillBit" to="WaterMesh/PlayWaterSFX" method="transfer"]
 
 [editable path="Puzzle Template/Platforms/Platform"]
@@ -489,3 +502,5 @@ metadata/_custom_type_script = "uid://cox1ysk6bulx2"
 [editable path="Puzzle Template/Lights/Wandering Orb2"]
 [editable path="Puzzle Template/Lights/Wandering Orb3"]
 [editable path="Puzzle Template/Lights/Wandering Orb4"]
+[editable path="Brazier5"]
+[editable path="Brazier6"]
