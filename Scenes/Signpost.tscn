@@ -27,8 +27,11 @@ billboard = 2
 [node name="Label3D" type="Label3D" parent="." unique_id=1033396250]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55509067, 0)
 billboard = 2
-text = "asdasd"
+render_priority = 6
+outline_render_priority = 5
+text = "Default Text"
 font_size = 64
+outline_size = 32
 vertical_alignment = 2
 autowrap_mode = 2
 width = 750.0

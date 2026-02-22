@@ -15,7 +15,7 @@ var used := false
 ## The path to the scene that the activator will be teleported to.
 @export_file("*.tscn") var scene_path:String
 @onready var scene := load(scene_path)
-var instance:Node3D ## The currently created scene, if one exists.
+static var instance:Node3D ## The currently created scene, if one exists.
 var last_user:Node3D ## The last node to "use" this teleporter
 
 ## The action name for using the teleporter

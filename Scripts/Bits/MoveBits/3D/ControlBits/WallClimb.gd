@@ -4,6 +4,10 @@ class_name WallClimb extends ControlBit3D
 @export var input:InputValue ## The input that activates the dash.
 @export var climb_speed := 200.0 ## The upwards velocity applied.
 
+## Switches from Camera_Up to Wall_Up if true
+@export var alt_climb_mode := false
+#@export_enum("Camera_Up", "Wall_Up") var climb_mode: String = "Camera_Up"
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
@@ -29,22 +33,25 @@ func phys_active(delta:float) -> void:
 	var relative_view: Vector3 = master.mover.global_position - master.rotator.value().global_position
 	relative_view = relative_view.normalized()
 	
-	# how far your camera is looking up
-	var up_input = (relative_view.dot(wall_up_relative))
-	# offset it so you need to be looking way down to go down
-	up_input = clamp(up_input + 0.5, -1, 1)
+	var real_direction := Vector3.ZERO
+	if !alt_climb_mode:
+		var up_input = (relative_view.dot(Vector3.UP))
+		up_input = clamp(up_input + 0.5, -1, 1)
+		var right_input = (relative_view.dot(wall_tangent))
+		
+		var turn_amount = atan2(right_input, up_input)
+		wall_basis = wall_basis.rotated(wall_basis.z, turn_amount)
+		real_direction = (wall_basis.y * direction.y) + (wall_basis.x * -direction.x)
+		real_direction = real_direction.normalized()
+	else:
+		var looking_forward = relative_view.dot(flat_wall_normal)
+		
+		var right_motion = wall_basis.x * direction.x
+		var forward_up_motion = wall_basis.y * -direction.y
+		
+		real_direction = (forward_up_motion + right_motion)
+		real_direction = real_direction.normalized() * normal_sign(looking_forward)
 	
-	# how far your camera is looking to the right
-	var right_input = (relative_view.dot(wall_tangent))
-	
-	# ngl I don't know enough about trig to understand this
-	# but it gives a value in radians and takes quadrants into account
-	var turn_amount = atan2(right_input, up_input)
-	
-	wall_basis = wall_basis.rotated(wall_basis.z, turn_amount)
-	
-	var real_direction = (wall_basis.y * direction.y) + (wall_basis.x * -direction.x)
-	real_direction = real_direction.normalized()
 	var stick_factor = -wall_normal * 3
 	real_direction += stick_factor
 	
@@ -60,7 +67,7 @@ func phys_active(delta:float) -> void:
 		master.mover.velocity.z = vel.z
 	
 func normal_sign(x: float) -> float:
-	return x >= 0 and 1 or -1
+	return 1.0 if x >= 0.0 else -1.0
 
 func absmax(a:Vector3, b:Vector3) -> Vector3:
 	if abs(a.x) > abs(b.x): b.x = a.x
@@ -68,3 +75,6 @@ func absmax(a:Vector3, b:Vector3) -> Vector3:
 	if abs(a.z) > abs(b.z): b.z = a.z
 	
 	return b
+
+func _set_climb_mode(alt := false):
+	alt_climb_mode = alt

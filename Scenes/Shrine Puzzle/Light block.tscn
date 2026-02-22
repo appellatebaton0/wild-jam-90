@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cw5v3k3rnk5jn" path="res://Scenes/Signpost.tscn" id="16_2odla"]
 [ext_resource type="Texture2D" uid="uid://cdrv0vdehcew6" path="res://Assests/3D/Objects/Moveable_Block01_Material.png" id="16_rjjx6"]
 [ext_resource type="Texture2D" uid="uid://b7xygeqspfmgv" path="res://Assests/3D/Objects/Moveable_Block01_Material_1.png" id="17_8eotc"]
+[ext_resource type="PackedScene" uid="uid://bv0nkuimkjuah" path="res://Assests/3D/Objects/Collectable.tscn" id="17_s374n"]
 [ext_resource type="PackedScene" uid="uid://ctfsvlimtkb46" path="res://Assests/3D/Objects/Vanishing platform.tscn" id="19_mlcbi"]
 [ext_resource type="PackedScene" uid="uid://b4soergejolc8" path="res://Scenes/Water.tscn" id="20_rcyd6"]
 [ext_resource type="PackedScene" uid="uid://esg4ciusc8a1" path="res://Scenes/TeleporterExit.tscn" id="21_fjeop"]
@@ -148,6 +149,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1694398, 0, 0.047584534)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21748424, 0.5823729, -0.1086998)
 shape = SubResource("SphereShape3D_mlcbi")
 
+[node name="OmniLight3D" parent="Crate/Wandering Orb/Wandering Light" parent_id_path=PackedInt32Array(1657823546, 145085831) index="1" unique_id=1020334922]
+shadow_enabled = false
+
 [node name="Platforms" type="Node3D" parent="." unique_id=1680022136]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.46973348, 0)
 
@@ -256,11 +260,10 @@ visible = false
 [node name="Node3D" type="Node3D" parent="." unique_id=1783494434]
 
 [node name="WaterMesh" parent="." unique_id=1210634507 instance=ExtResource("20_rcyd6")]
-transform = Transform3D(2.34, 0, 0, 0, -1.02284645e-07, 2.34, 0, -2.34, -1.02284645e-07, -2.4650097, -17.930187, -12.272627)
-visible = false
+transform = Transform3D(2.34, 0, 0, 0, -1.02284645e-07, 2.34, 0, -2.34, -1.02284645e-07, -2.4650097, 0.11436844, -12.272627)
 
 [node name="TeleporterExit" parent="." unique_id=234579865 instance=ExtResource("21_fjeop")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8201637, 2.0533314, 23.198256)
+transform = Transform3D(-0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, -0.70710677, 7.8201637, 2.0533314, 23.198256)
 
 [node name="Marker3D" type="Marker3D" parent="." unique_id=633359632]
 transform = Transform3D(0.123757385, 0, -0.9923125, 0, 1, 0, 0.9923125, 0, 0.123757385, 5.945554, 2.199442, -40.709167)
@@ -275,10 +278,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.760712, 1.444417, 16.8902
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.28038, 1.444417, 16.890285)
 
 [node name="Brazier3" parent="." unique_id=778011603 instance=ExtResource("13_uwgsj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.137973, 1.4675484, -33.78443)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.137974, 1.4675484, -33.78443)
+
+[node name="Brazier4" parent="." unique_id=572953375 instance=ExtResource("13_uwgsj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.862026, 1.4675484, -33.78443)
 
 [node name="Checkpoint" parent="." unique_id=464787710 instance=ExtResource("14_fvduj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9805374, 2.275475, -36.0493)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.980537, 2.275475, -38.0493)
 
 [node name="Kill Node" type="Area3D" parent="." unique_id=904381268 node_paths=PackedStringArray("reset", "positionmark")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.034237, 2.9492416, -41.308464)
@@ -296,11 +302,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.091325, 0.15658951, 5.6700
 
 [node name="Signpost" parent="." unique_id=1251328576 instance=ExtResource("16_2odla")]
 transform = Transform3D(-0.009442113, 0, 0.9999554, 0, 1, 0, -0.9999554, 0, -0.009442113, -4.3882565, 2.7845278, -42.164234)
-text = "Stand here to reset cube"
+text = "Stand here to reset the cube"
 
 [node name="Signpost2" parent="." unique_id=1120720938 instance=ExtResource("16_2odla")]
 transform = Transform3D(-0.4287144, 0, 0.90344006, 0, 1, 0, -0.90344006, 0, -0.4287144, -1.9656434, 2.7845278, -34.14142)
 text = "Find the hidden path with the cube"
+
+[node name="Collectable" parent="." unique_id=2046027389 instance=ExtResource("17_s374n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.092008, 1.850358, -11.687982)
 
 [connection signal="area_entered" from="Kill Node" to="Kill Node" method="_on_area_entered"]
 
