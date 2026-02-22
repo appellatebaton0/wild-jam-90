@@ -20,6 +20,8 @@ func set_active(to:bool):
 		or_pos = targ.position
 		or_rot = targ.global_rotation
 
+@export var magnitude_mult := 0.85
+
 @export var ray:RayCast3D
 @export var target:ManualNode
 
@@ -31,7 +33,7 @@ func _ready() -> void:
 func _process(delta: float) -> void: if active:
 	var targ:Node3D = target.value()
 	
-	var goal_pos:Vector3 = ray.to_local(ray.get_collision_point()) * 0.9 if ray.is_colliding() else lerp(targ.position, ray.target_position, 0.1)
+	var goal_pos:Vector3 = ray.to_local(ray.get_collision_point()) * magnitude_mult if ray.is_colliding() else lerp(targ.position, ray.target_position, 0.1)
 	
 	# Set the target position to the point the ray hits if there is one, otherwise as far out as it goes.
 	targ.position = lerp(goal_pos, or_pos, ease(timer/time, easing))
