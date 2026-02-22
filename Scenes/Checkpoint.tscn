@@ -57,18 +57,14 @@ shape = SubResource("SphereShape3D_xtsfu")
 
 [node name="Node3D" parent="." unique_id=1733423825 instance=ExtResource("3_14q6d")]
 
-[node name="Cylinder" parent="Node3D/ImportedMesh" parent_id_path=PackedInt32Array(1733423825, 670445628) index="0" unique_id=885149276]
+[node name="Cylinder" parent="Node3D/ImportedMesh" parent_id_path=PackedInt32Array(1733423825, 670445628) index="0" unique_id=432205514]
 material_overlay = ExtResource("7_xtsfu")
 
 [node name="OmniLight3D" parent="Node3D/ImportedMesh" parent_id_path=PackedInt32Array(1733423825, 670445628) index="1" unique_id=680418275]
 visible = false
 light_energy = 0.0
 
-[node name="Light" parent="Node3D/ImportedMesh" parent_id_path=PackedInt32Array(1733423825, 670445628) index="2" unique_id=1019182618]
-visible = true
-emitting = false
-
-[node name="fire_sphere" parent="Node3D/ImportedMesh" parent_id_path=PackedInt32Array(1733423825, 670445628) index="3" unique_id=1409154347]
+[node name="fire_sphere" parent="Node3D/ImportedMesh" parent_id_path=PackedInt32Array(1733423825, 670445628) index="2" unique_id=1409154347]
 burning = false
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1084146038]

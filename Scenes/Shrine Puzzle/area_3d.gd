@@ -4,7 +4,7 @@ extends Area3D
 @export var positionmark:Marker3D
 
 
-func _on_area_entered(area: Detector) -> void:
+func _on_area_entered(_area: Detector) -> void:
 	var copy = reset.duplicate()
 	
 	reset.queue_free()

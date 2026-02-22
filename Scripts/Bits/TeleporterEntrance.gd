@@ -2,11 +2,12 @@ class_name TeleporterEntranceBit extends AreaMasterBit3D # The master can handle
 ## Creates a scene at a certain point, and teleports the activator to that scene.
 
 signal returned_from_exit(from: Node3D)
+var used := false
 
 @onready var parent := get_tree().get_first_node_in_group("TeleporterParent")
 
 ## If true, teleports a body immediately after entering rather than on input.
-@export var teleport_on_enter := true
+@export var teleport_on_enter := false
 
 ## Whether all exits will point back to this once it's used.
 @export var is_return_point := true
@@ -42,6 +43,8 @@ func _ready() -> void:
 		animator.animation_finished.connect(_on_animation_finished)
 
 func _process(_delta: float) -> void: if InputMap.has_action(use_input):
+	$Label3D.visible = area.has_overlapping_bodies() and not teleport_on_enter
+	
 	if teleport_on_enter:
 		return
 	
@@ -119,6 +122,7 @@ func notify_teleporters():
 
 func returned(from_exit: TeleporterExitBit):
 	returned_from_exit.emit(from_exit)
+	used = true
 
 func _do_warp(user: Node3D):
 	warping = true
