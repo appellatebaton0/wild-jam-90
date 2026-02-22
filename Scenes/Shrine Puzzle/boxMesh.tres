@@ -1,9 +1,0 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://c0go46hl7gvfp"]
-
-[ext_resource type="Texture2D" uid="uid://soequa38as1q" path="res://Assests/2D/Wall_Texture.png" id="1_cabtl"]
-
-[resource]
-cull_mode = 1
-albedo_color = Color(0.44291076, 0.44291076, 0.44291073, 1)
-albedo_texture = ExtResource("1_cabtl")
-uv1_scale = Vector3(11.36, 11.36, 11.36)

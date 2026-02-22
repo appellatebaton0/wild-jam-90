@@ -5,11 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://4o5xn6oss336" path="res://Assests/2D/Dirt_specular.png" id="12_j4a03"]
 [ext_resource type="PackedScene" uid="uid://b1unhe5jr1qe3" path="res://Assests/3D/Objects/Moveable_Crate.tscn" id="13_k00be"]
 [ext_resource type="PackedScene" uid="uid://bu28itoih1xog" path="res://Assests/3D/Objects/Brazier.tscn" id="13_uwgsj"]
-[ext_resource type="PackedScene" uid="uid://byxk2xjmk3qvt" path="res://Scenes/Checkpoint.tscn" id="14_fvduj"]
 [ext_resource type="PackedScene" uid="uid://e6ymwhgiai4b" path="res://Assests/3D/Objects/Wandering Light.tscn" id="14_gfp5y"]
 [ext_resource type="Shader" uid="uid://c2apipb7i7gda" path="res://Assests/3D/Materials/Shaders/magic_dissolve.gdshader" id="14_wah4c"]
 [ext_resource type="Texture2D" uid="uid://ctf6sc1dt8mym" path="res://Assests/2D/dissolve_noise_texture.tres" id="15_2fsdf"]
-[ext_resource type="Script" uid="uid://tuer4h8o7pic" path="res://Scenes/Shrine Puzzle/area_3d.gd" id="15_fvduj"]
+[ext_resource type="Script" uid="uid://tuer4h8o7pic" path="res://Scenes/Shrine Puzzle/CommonAssets/area_3d.gd" id="15_fvduj"]
 [ext_resource type="PackedScene" uid="uid://cw5v3k3rnk5jn" path="res://Scenes/Signpost.tscn" id="16_2odla"]
 [ext_resource type="Texture2D" uid="uid://cdrv0vdehcew6" path="res://Assests/3D/Objects/Moveable_Block01_Material.png" id="16_rjjx6"]
 [ext_resource type="Texture2D" uid="uid://b7xygeqspfmgv" path="res://Assests/3D/Objects/Moveable_Block01_Material_1.png" id="17_8eotc"]
@@ -127,13 +126,6 @@ cell_size = Vector3(4, 0.035, 4)
 [node name="2nd level decor" type="GridMap" parent="Puzzle Template" unique_id=1077468656]
 mesh_library = ExtResource("2_gfp5y")
 cell_size = Vector3(4, 0.035, 4)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Puzzle Template" unique_id=31022264]
-transform = Transform3D(1, 0, 0, 0, 0.7290101, 0.6845029, 0, -0.6845029, 0.7290101, 0, 0, 0)
-visible = false
-light_color = Color(0, 0, 0, 1)
-light_energy = 0.732
-shadow_enabled = true
 
 [node name="Crate" parent="." unique_id=946948200 instance=ExtResource("13_k00be")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.567564, 2.1713724, -35.213253)
@@ -272,19 +264,16 @@ transform = Transform3D(0.123757385, 0, -0.9923125, 0, 1, 0, 0.9923125, 0, 0.123
 mesh = SubResource("BoxMesh_uwgsj")
 
 [node name="Brazier" parent="." unique_id=841687113 instance=ExtResource("13_uwgsj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.760712, 1.444417, 16.890285)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.060711, 1.444417, 13.8902855)
 
 [node name="Brazier2" parent="." unique_id=591092194 instance=ExtResource("13_uwgsj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.28038, 1.444417, 16.890285)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.88038, 1.444417, 13.8902855)
 
 [node name="Brazier3" parent="." unique_id=778011603 instance=ExtResource("13_uwgsj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.137974, 1.4675484, -33.78443)
 
 [node name="Brazier4" parent="." unique_id=572953375 instance=ExtResource("13_uwgsj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.862026, 1.4675484, -33.78443)
-
-[node name="Checkpoint" parent="." unique_id=464787710 instance=ExtResource("14_fvduj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.980537, 2.275475, -38.0493)
 
 [node name="Kill Node" type="Area3D" parent="." unique_id=904381268 node_paths=PackedStringArray("reset", "positionmark")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.034237, 2.9492416, -41.308464)
