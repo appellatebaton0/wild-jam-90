@@ -10,9 +10,9 @@ radius = 0.22916669
 [node name="Platform" type="Node3D" unique_id=230968152]
 
 [node name="Pillar_Round_05" parent="." unique_id=255035119 instance=ExtResource("1_n5c24")]
-transform = Transform3D(1.835, 0, 0, 0, 1.835, 0, 0, 0, 1.835, -0.5081711, 0, -0.48493004)
+transform = Transform3D(2.26, 0, 0, 0, 2.26, 0, 0, 0, 2.26, -0.5081711, 0, -0.48493004)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Pillar_Round_05/Plane_015" parent_id_path=PackedInt32Array(255035119, 1366122687) index="0" unique_id=1929010230]
+[node name="StaticBody3D" type="StaticBody3D" parent="Pillar_Round_05/Plane_015" parent_id_path=PackedInt32Array(255035119, 768915635) index="0" unique_id=1929010230]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.12887372, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Pillar_Round_05/Plane_015/StaticBody3D" unique_id=1041668521]

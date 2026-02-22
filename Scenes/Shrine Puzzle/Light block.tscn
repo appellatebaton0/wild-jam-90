@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://e6ymwhgiai4b" path="res://Assests/3D/Objects/Wandering Light.tscn" id="14_gfp5y"]
 [ext_resource type="Shader" uid="uid://c2apipb7i7gda" path="res://Assests/3D/Materials/Shaders/magic_dissolve.gdshader" id="14_wah4c"]
 [ext_resource type="Texture2D" uid="uid://ctf6sc1dt8mym" path="res://Assests/2D/dissolve_noise_texture.tres" id="15_2fsdf"]
+[ext_resource type="Script" uid="uid://tuer4h8o7pic" path="res://Scenes/Shrine Puzzle/area_3d.gd" id="15_fvduj"]
+[ext_resource type="PackedScene" uid="uid://cw5v3k3rnk5jn" path="res://Scenes/Signpost.tscn" id="16_2odla"]
 [ext_resource type="Texture2D" uid="uid://cdrv0vdehcew6" path="res://Assests/3D/Objects/Moveable_Block01_Material.png" id="16_rjjx6"]
 [ext_resource type="Texture2D" uid="uid://b7xygeqspfmgv" path="res://Assests/3D/Objects/Moveable_Block01_Material_1.png" id="17_8eotc"]
 [ext_resource type="PackedScene" uid="uid://ctfsvlimtkb46" path="res://Assests/3D/Objects/Vanishing platform.tscn" id="19_mlcbi"]
@@ -100,6 +102,9 @@ uv1_scale = Vector3(8.13, 8.13, 8.13)
 material = SubResource("StandardMaterial3D_fnqpn")
 size = Vector3(150, 150, 150)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_s374n"]
+size = Vector3(3.3754883, 2.6356812, 3.5340157)
+
 [node name="Node3D" type="Node3D" unique_id=1931630357]
 
 [node name="Puzzle Template" type="Node3D" parent="." unique_id=957129827]
@@ -111,7 +116,7 @@ environment = ExtResource("1_s374n")
 mesh_library = ExtResource("2_gfp5y")
 cell_size = Vector3(4, 0.035, 4)
 data = {
-"cells": PackedInt32Array(0, 65525, 1179658, 0, 65526, 1179658, 0, 65527, 1179658, 1, 65525, 1179658, 1, 65526, 1179658, 1, 65527, 1179658, 2, 65525, 1179658, 2, 65526, 1179658, 2, 65527, 1179658, 3, 65525, 1179658, 3, 65526, 1179658, 3, 65527, 1179658, 65533, 3, 1179658, 65533, 4, 1179658, 65533, 5, 1179658, 65533, 6, 1179658, 65533, 7, 1179658, 65534, 3, 1179658, 65534, 4, 1179658, 65534, 5, 1179658, 65534, 6, 1179658, 65534, 7, 1179658, 65535, 3, 1179658, 65535, 4, 1179658, 65535, 5, 1179658, 65535, 6, 1179658, 65535, 7, 1179658, 0, 3, 1179658, 0, 4, 1179658, 0, 5, 1179658, 0, 6, 1179658, 0, 7, 1179658, 1, 3, 1179658, 1, 4, 1179658, 1, 5, 1179658, 1, 6, 1179658, 1, 7, 1179658, 2, 3, 1179658, 2, 4, 1179658, 2, 5, 1179658, 2, 6, 1179658, 2, 7, 1179658, 3, 3, 1179658, 3, 4, 1179658, 3, 5, 1179658, 3, 6, 1179658, 3, 7, 1179658, 4, 3, 1179658, 4, 4, 1179658, 4, 5, 1179658, 4, 6, 1179658, 4, 7, 1179658, 5, 3, 1179658, 5, 4, 1179658, 5, 5, 1179658, 5, 6, 1179658, 5, 7, 1179658, 6, 3, 1179658, 6, 4, 1179658, 6, 5, 1179658, 6, 6, 1179658, 6, 7, 1179658)
+"cells": PackedInt32Array(0, 65525, 655370, 0, 65526, 1179658, 0, 65527, 1179658, 1, 65525, 655370, 1, 65526, 1179658, 1, 65527, 1179658, 2, 65525, 655370, 2, 65526, 1179658, 2, 65527, 1179658, 3, 65525, 655370, 3, 65526, 1179658, 3, 65527, 1179658, 65533, 3, 1179658, 65533, 4, 1179658, 65533, 5, 1179658, 65533, 6, 1179658, 65533, 7, 1179658, 65534, 3, 1179658, 65534, 4, 1179658, 65534, 5, 1179658, 65534, 6, 1179658, 65534, 7, 1179658, 65535, 3, 1179658, 65535, 4, 1179658, 65535, 5, 1179658, 65535, 6, 1179658, 65535, 7, 1179658, 0, 3, 1179658, 0, 4, 1179658, 0, 5, 1179658, 0, 6, 1179658, 0, 7, 1179658, 1, 3, 1179658, 1, 4, 1179658, 1, 5, 1179658, 1, 6, 1179658, 1, 7, 1179658, 2, 3, 1179658, 2, 4, 1179658, 2, 5, 1179658, 2, 6, 1179658, 2, 7, 1179658, 3, 3, 1179658, 3, 4, 1179658, 3, 5, 1179658, 3, 6, 1179658, 3, 7, 1179658, 4, 3, 1179658, 4, 4, 1179658, 4, 5, 1179658, 4, 6, 1179658, 4, 7, 1179658, 5, 3, 1179658, 5, 4, 1179658, 5, 5, 1179658, 5, 6, 1179658, 5, 7, 1179658, 6, 3, 1179658, 6, 4, 1179658, 6, 5, 1179658, 6, 6, 1179658, 6, 7, 1179658, 4, 65525, 655370, 3, 65524, 655370, 2, 65524, 655370, 1, 65524, 655370, 0, 65524, 655370, 65535, 65524, 655370, 65535, 65525, 655362, 65534, 65525, 655370, 65535, 65526, 655370, 65535, 65527, 655370, 65534, 65527, 655370, 65533, 65527, 655370, 65533, 65526, 655370, 65533, 65525, 655370, 65533, 65524, 655370, 65534, 65524, 655370, 65534, 65526, 655370, 65532, 65527, 655370, 65532, 65526, 655370, 65532, 65525, 655370, 65532, 65524, 655370, 65532, 65523, 655370, 65533, 65523, 655370, 65534, 65523, 655370, 65535, 65523, 655370, 0, 65523, 655370, 0, 65522, 655370, 1, 65522, 655370, 2, 65522, 655370, 1, 65523, 655370, 2, 65523, 655370, 3, 65523, 655370, 4, 65524, 655370, 5, 65525, 655370, 5, 65526, 655370, 4, 65526, 655370, 4, 65527, 655370, 5, 65527, 655370, 5, 65524, 655370, 4, 65523, 655370, 65535, 65522, 655370, 65534, 65522, 655370, 65533, 65522, 655370, 65532, 65522, 655370, 65533, 65521, 655370, 65534, 65521, 655370, 65535, 65521, 655370, 0, 65521, 655370, 1, 65521, 655370, 2, 65521, 655370, 3, 65521, 655370, 3, 65522, 655370, 4, 65522, 655370)
 }
 
 [node name="1st level decor" type="GridMap" parent="Puzzle Template" unique_id=553498337]
@@ -144,195 +149,106 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21748424, 0.5823729, -0.10
 shape = SubResource("SphereShape3D_mlcbi")
 
 [node name="Platforms" type="Node3D" parent="." unique_id=1680022136]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.46973348, 0)
 
 [node name="Platform" parent="Platforms" unique_id=230968152 instance=ExtResource("19_mlcbi")]
 transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 2.5275111, -0.64057636, -29.635197)
 
-[node name="Pillar_Round_05" parent="Platforms/Platform" index="0" unique_id=255035119]
-visible = false
-
 [node name="Platform2" parent="Platforms" unique_id=1761764284 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 2.5275111, -0.64057636, -25.24192)
+transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 2.5275111, -0.35482216, -25.24192)
 
 [node name="Pillar_Round_05" parent="Platforms/Platform2" index="0" unique_id=255035119]
 visible = false
 
 [node name="Platform3" parent="Platforms" unique_id=1819117608 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 2.5275111, -0.64057636, -20.853052)
+transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 2.5275111, -0.35482216, -20.853052)
 
 [node name="Pillar_Round_05" parent="Platforms/Platform3" index="0" unique_id=255035119]
 visible = false
 
 [node name="Platform4" parent="Platforms" unique_id=1666266864 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 2.5275111, -0.64057636, -16.470821)
+transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 2.5275111, -0.35482216, -16.470821)
 
 [node name="Pillar_Round_05" parent="Platforms/Platform4" index="0" unique_id=255035119]
 visible = false
 
 [node name="Platform5" parent="Platforms" unique_id=1771215007 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 6.955704, -0.64057636, -16.470821)
+transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 6.955704, -0.35482216, -16.470821)
 
 [node name="Pillar_Round_05" parent="Platforms/Platform5" index="0" unique_id=255035119]
 visible = false
 
 [node name="Platform7" parent="Platforms" unique_id=1563921889 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 11.387783, -0.64057636, -16.470821)
+transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 11.387783, -0.35482216, -16.470821)
 
 [node name="Pillar_Round_05" parent="Platforms/Platform7" index="0" unique_id=255035119]
 visible = false
 
 [node name="Platform8" parent="Platforms" unique_id=1619306028 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 15.786055, -0.64057636, -16.470821)
+transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 15.786055, -0.35482216, -16.470821)
 
 [node name="Pillar_Round_05" parent="Platforms/Platform8" index="0" unique_id=255035119]
 visible = false
 
 [node name="Platform9" parent="Platforms" unique_id=475881293 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 15.391542, -0.64057636, -20.843977)
+transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 15.391542, -0.97816753, -11.53112)
 
-[node name="Pillar_Round_05" parent="Platforms/Platform9" index="0" unique_id=255035119]
-visible = false
-
-[node name="Platform10" parent="Platforms" unique_id=1773065016 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 19.810225, -0.64057636, -20.843977)
+[node name="Platform10" parent="Platforms" unique_id=357972187 instance=ExtResource("19_mlcbi")]
+transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 15.391542, -0.35482216, -7.095882)
 
 [node name="Pillar_Round_05" parent="Platforms/Platform10" index="0" unique_id=255035119]
 visible = false
 
-[node name="Platform11" parent="Platforms" unique_id=1386701357 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 19.810225, -0.64057636, -25.127304)
-
-[node name="Pillar_Round_05" parent="Platforms/Platform11" index="0" unique_id=255035119]
-visible = false
-
-[node name="Platform12" parent="Platforms" unique_id=94624252 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 24.012245, -0.64057636, -25.127304)
-
-[node name="Pillar_Round_05" parent="Platforms/Platform12" index="0" unique_id=255035119]
-visible = false
-
-[node name="Platform13" parent="Platforms" unique_id=339736893 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 28.344683, -0.64057636, -25.127304)
-
-[node name="Pillar_Round_05" parent="Platforms/Platform13" index="0" unique_id=255035119]
-visible = false
-
-[node name="Platform14" parent="Platforms" unique_id=10219121 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 28.344683, -0.64057636, -20.789976)
-
-[node name="Pillar_Round_05" parent="Platforms/Platform14" index="0" unique_id=255035119]
-visible = false
-
-[node name="Platform15" parent="Platforms" unique_id=594228610 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 28.344683, -0.64057636, -16.564543)
-
-[node name="Pillar_Round_05" parent="Platforms/Platform15" index="0" unique_id=255035119]
-visible = false
-
-[node name="Platform16" parent="Platforms" unique_id=1237422485 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 28.344683, -0.64057636, -12.136386)
-
-[node name="Pillar_Round_05" parent="Platforms/Platform16" index="0" unique_id=255035119]
-visible = false
-
-[node name="Platform17" parent="Platforms" unique_id=1935559381 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 28.344683, -0.64057636, -7.4532127)
-
-[node name="Pillar_Round_05" parent="Platforms/Platform17" index="0" unique_id=255035119]
-visible = false
-
-[node name="Platform18" parent="Platforms" unique_id=2118376316 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 23.86877, -0.64057636, -7.4532127)
-
-[node name="Pillar_Round_05" parent="Platforms/Platform18" index="0" unique_id=255035119]
-visible = false
-
-[node name="Platform19" parent="Platforms" unique_id=308278288 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 19.361963, -0.64057636, -7.4532127)
-
-[node name="Pillar_Round_05" parent="Platforms/Platform19" index="0" unique_id=255035119]
-visible = false
-
-[node name="Platform20" parent="Platforms" unique_id=984890882 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 19.361963, -0.64057636, -3.1011643)
-
-[node name="Pillar_Round_05" parent="Platforms/Platform20" index="0" unique_id=255035119]
-visible = false
-
-[node name="Platform21" parent="Platforms" unique_id=1177163657 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 19.361963, -0.64057636, 1.342349)
-
-[node name="Pillar_Round_05" parent="Platforms/Platform21" index="0" unique_id=255035119]
-visible = false
-
-[node name="Platform22" parent="Platforms" unique_id=2098959592 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 15.007122, -0.64057636, 1.342349)
-
-[node name="Pillar_Round_05" parent="Platforms/Platform22" index="0" unique_id=255035119]
-visible = false
-
-[node name="Platform23" parent="Platforms" unique_id=763301599 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 10.904375, -0.64057636, 1.342349)
-
-[node name="Pillar_Round_05" parent="Platforms/Platform23" index="0" unique_id=255035119]
-visible = false
-
-[node name="Platform24" parent="Platforms" unique_id=1454560385 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 10.904375, -0.64057636, -3.004857)
-
-[node name="Pillar_Round_05" parent="Platforms/Platform24" index="0" unique_id=255035119]
-visible = false
-
 [node name="Platform25" parent="Platforms" unique_id=282013005 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 10.904375, -0.64057636, -7.5368614)
+transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 10.904375, -0.35482216, -7.5368614)
 
 [node name="Pillar_Round_05" parent="Platforms/Platform25" index="0" unique_id=255035119]
 visible = false
 
 [node name="Platform26" parent="Platforms" unique_id=41261239 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 6.5211096, -0.64057636, -7.5368614)
+transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 6.5211096, -0.35482216, -7.5368614)
 
 [node name="Pillar_Round_05" parent="Platforms/Platform26" index="0" unique_id=255035119]
 visible = false
 
 [node name="Platform27" parent="Platforms" unique_id=1029089442 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 2.3745632, -0.64057636, -7.5368614)
+transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 2.3745632, -0.35482216, -7.5368614)
 
 [node name="Pillar_Round_05" parent="Platforms/Platform27" index="0" unique_id=255035119]
 visible = false
 
 [node name="Platform28" parent="Platforms" unique_id=27115305 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, -1.8375769, -0.64057636, -7.5368614)
+transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, -1.8375769, -0.35482216, -7.5368614)
 
 [node name="Pillar_Round_05" parent="Platforms/Platform28" index="0" unique_id=255035119]
 visible = false
 
 [node name="Platform29" parent="Platforms" unique_id=2060149305 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, -1.8375769, -0.64057636, -2.824623)
+transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, -1.8375769, -0.35482216, -2.824623)
 
 [node name="Pillar_Round_05" parent="Platforms/Platform29" index="0" unique_id=255035119]
 visible = false
 
 [node name="Platform30" parent="Platforms" unique_id=1606653110 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, -1.8375769, -0.64057636, 1.3093491)
+transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, -1.8375769, -0.35482216, 1.3093491)
 
 [node name="Pillar_Round_05" parent="Platforms/Platform30" index="0" unique_id=255035119]
 visible = false
 
 [node name="Platform31" parent="Platforms" unique_id=145873374 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, -6.3016505, -0.64057636, 1.3093491)
+transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, -6.3016505, -0.35482216, 1.3093491)
 
 [node name="Pillar_Round_05" parent="Platforms/Platform31" index="0" unique_id=255035119]
 visible = false
 
 [node name="Platform32" parent="Platforms" unique_id=669387960 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, -6.3016505, -0.64057636, 5.6337433)
+transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, -6.3016505, -0.35482216, 5.6337433)
 
 [node name="Pillar_Round_05" parent="Platforms/Platform32" index="0" unique_id=255035119]
 visible = false
 
 [node name="Platform33" parent="Platforms" unique_id=860596533 instance=ExtResource("19_mlcbi")]
-transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, -6.3016505, -0.64057636, 10.252031)
+transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, -6.3016505, -0.35482216, 10.252031)
 
 [node name="Pillar_Round_05" parent="Platforms/Platform33" index="0" unique_id=255035119]
 visible = false
@@ -340,7 +256,7 @@ visible = false
 [node name="Node3D" type="Node3D" parent="." unique_id=1783494434]
 
 [node name="WaterMesh" parent="." unique_id=1210634507 instance=ExtResource("20_rcyd6")]
-transform = Transform3D(2.34, 0, 0, 0, -1.02284645e-07, 2.34, 0, -2.34, -1.02284645e-07, -2.467228, -17.93019, -12.287924)
+transform = Transform3D(2.34, 0, 0, 0, -1.02284645e-07, 2.34, 0, -2.34, -1.02284645e-07, -2.4650097, -17.930187, -12.272627)
 visible = false
 
 [node name="TeleporterExit" parent="." unique_id=234579865 instance=ExtResource("21_fjeop")]
@@ -364,6 +280,30 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.137973, 1.4675484, -33.784
 [node name="Checkpoint" parent="." unique_id=464787710 instance=ExtResource("14_fvduj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9805374, 2.275475, -36.0493)
 
+[node name="Kill Node" type="Area3D" parent="." unique_id=904381268 node_paths=PackedStringArray("reset", "positionmark")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.034237, 2.9492416, -41.308464)
+script = ExtResource("15_fvduj")
+reset = NodePath("../Crate")
+rememberPos = true
+positionmark = NodePath("Position marker")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Kill Node" unique_id=43176845]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.954765, -0.07577515, -0.57466125)
+shape = SubResource("BoxShape3D_s374n")
+
+[node name="Position marker" type="Marker3D" parent="Kill Node" unique_id=2051566365]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.091325, 0.15658951, 5.670021)
+
+[node name="Signpost" parent="." unique_id=1251328576 instance=ExtResource("16_2odla")]
+transform = Transform3D(-0.009442113, 0, 0.9999554, 0, 1, 0, -0.9999554, 0, -0.009442113, -4.3882565, 2.7845278, -42.164234)
+text = "Stand here to reset cube"
+
+[node name="Signpost2" parent="." unique_id=1120720938 instance=ExtResource("16_2odla")]
+transform = Transform3D(-0.4287144, 0, 0.90344006, 0, 1, 0, -0.90344006, 0, -0.4287144, -1.9656434, 2.7845278, -34.14142)
+text = "Find the hidden path with the cube"
+
+[connection signal="area_entered" from="Kill Node" to="Kill Node" method="_on_area_entered"]
+
 [editable path="Crate"]
 [editable path="Crate/Wandering Orb"]
 [editable path="Platforms/Platform"]
@@ -384,34 +324,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9805374, 2.275475, -36.0493
 [editable path="Platforms/Platform9/Pillar_Round_05"]
 [editable path="Platforms/Platform10"]
 [editable path="Platforms/Platform10/Pillar_Round_05"]
-[editable path="Platforms/Platform11"]
-[editable path="Platforms/Platform11/Pillar_Round_05"]
-[editable path="Platforms/Platform12"]
-[editable path="Platforms/Platform12/Pillar_Round_05"]
-[editable path="Platforms/Platform13"]
-[editable path="Platforms/Platform13/Pillar_Round_05"]
-[editable path="Platforms/Platform14"]
-[editable path="Platforms/Platform14/Pillar_Round_05"]
-[editable path="Platforms/Platform15"]
-[editable path="Platforms/Platform15/Pillar_Round_05"]
-[editable path="Platforms/Platform16"]
-[editable path="Platforms/Platform16/Pillar_Round_05"]
-[editable path="Platforms/Platform17"]
-[editable path="Platforms/Platform17/Pillar_Round_05"]
-[editable path="Platforms/Platform18"]
-[editable path="Platforms/Platform18/Pillar_Round_05"]
-[editable path="Platforms/Platform19"]
-[editable path="Platforms/Platform19/Pillar_Round_05"]
-[editable path="Platforms/Platform20"]
-[editable path="Platforms/Platform20/Pillar_Round_05"]
-[editable path="Platforms/Platform21"]
-[editable path="Platforms/Platform21/Pillar_Round_05"]
-[editable path="Platforms/Platform22"]
-[editable path="Platforms/Platform22/Pillar_Round_05"]
-[editable path="Platforms/Platform23"]
-[editable path="Platforms/Platform23/Pillar_Round_05"]
-[editable path="Platforms/Platform24"]
-[editable path="Platforms/Platform24/Pillar_Round_05"]
 [editable path="Platforms/Platform25"]
 [editable path="Platforms/Platform25/Pillar_Round_05"]
 [editable path="Platforms/Platform26"]

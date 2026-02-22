@@ -20,7 +20,9 @@ var last:Bot
 @export var collectable_value := 1
 
 func _ready() -> void: 
-	is_stamina_item = is_stamina_item
+	if is_in_group("Respawnable") and not is_stamina_item: remove_from_group("Respawnable")
+	elif not is_in_group("Respawnable") and is_stamina_item: add_to_group("Respawnable")
+
 	area.area_entered.connect(_on_area_entered)
 
 func _on_area_entered(area_in:Area3D):
