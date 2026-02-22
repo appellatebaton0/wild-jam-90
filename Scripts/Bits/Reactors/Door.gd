@@ -10,23 +10,27 @@ var close_extent := Vector3.ZERO
 
 var last:bool
 
-var body:CharacterBody3D
+var body:PhysicsBody3D
 var area:Area3D # An area to make sure the door doesn't close in the player's face.
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
 	var parent = get_parent()
-	if parent is CharacterBody3D: body = parent
+	if parent is PhysicsBody3D: body = parent
 	if parent is Area3D:          area = parent
 	
 	var me = self
-	if me is CharacterBody3D: body = me
+	if me is PhysicsBody3D: body = me
 	if me is Area3D:          area = me
 	
 	for child in get_children():
-		if child is CharacterBody3D and not body: body = child
+		if child is PhysicsBody3D and not body: body = child
 		if child is Area3D          and not area: area = child
+	
+	if body:
+		close_extent = body.position
+		open_extent = body.position + open_extent
 	
 	find_condition()
 	

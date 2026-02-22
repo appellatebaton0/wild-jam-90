@@ -36,7 +36,7 @@ func phys_active(delta:float) -> void:
 	var real_direction := Vector3.ZERO
 	if !alt_climb_mode:
 		var up_input = (relative_view.dot(Vector3.UP))
-		up_input = abs(up_input)#clamp(up_input + 0.5, -1, 1)
+		up_input = (up_input + 1.0) / 2.0 # clamp(up_input + 0.5, -1, 1))
 		var right_input = (relative_view.dot(wall_tangent))
 		
 		var turn_amount = atan2(right_input, up_input)
