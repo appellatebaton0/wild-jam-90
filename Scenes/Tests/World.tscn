@@ -2064,7 +2064,7 @@ transform = Transform3D(6.416489, 3.3527613e-06, -29.30578, -6.080501, -29.34714
 [node name="TowerRoomPlatform" type="Node3D" parent="." unique_id=482183905]
 
 [node name="PressurePlate" parent="TowerRoomPlatform" unique_id=157249335 instance=ExtResource("51_lx36x")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 34.470634, 25.071096, 182.45573)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 34.68009, 25.071096, 182.45573)
 stay_pressed = true
 
 [node name="PressurePlate2" parent="TowerRoomPlatform" unique_id=1798620291 instance=ExtResource("51_lx36x")]
@@ -2338,6 +2338,9 @@ transform = Transform3D(-36.45377, -44.987984, 15.722709, 13.87384, -28.956043, 
 
 [node name="TerrainRock40" parent="." unique_id=786120375 instance=ExtResource("47_xvg63")]
 transform = Transform3D(-34.718784, 1.0430813e-06, 3.5422957, -4.2769938, -9.058663, -26.828617, 1.1460147, -33.807404, 7.1887035, 30.08614, 24.889002, 99.2458)
+
+[node name="Rock34" parent="." unique_id=1083600091 instance=ExtResource("25_1nlqs")]
+transform = Transform3D(-7.5, 0, 12.99038, 0, 14.999999, 0, -12.99038, 0, -7.5, -118.395546, 47.421806, 160.17725)
 
 [connection signal="killing" from="Water/WaterMesh5/Area3D/KillBit" to="Water/WaterMesh5/PlayWaterSFX" method="transfer"]
 
