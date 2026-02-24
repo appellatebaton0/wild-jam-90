@@ -32,7 +32,7 @@ func _process(delta: float) -> void:
 	
 	if terrain_data and ray:
 		
-		if ray.is_colliding():
+		if ray.is_colliding() and last_index != -1:
 			var tex_data = terrain_data.get_texture_id(ray.get_collision_point())
 			var new_index = get_index_from_texture_data(tex_data, 0.7)
 			
@@ -67,3 +67,9 @@ func get_terrain_data():
 		
 		if terrain is Terrain3D:
 			terrain_data = terrain.data
+
+var stored_index := -1
+func hijack() -> void: 
+	stored_index = last_index
+	last_index = -1
+func reset() -> void: last_index = stored_index

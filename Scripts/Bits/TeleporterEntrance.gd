@@ -1,6 +1,8 @@
 class_name TeleporterEntranceBit extends AreaMasterBit3D # The master can handle all the Area3D stuff, for the most part
 ## Creates a scene at a certain point, and teleports the activator to that scene.
 
+signal entered(with:AudioStream)
+
 signal returned_from_exit(from: Node3D)
 var used := false
 
@@ -11,6 +13,9 @@ var used := false
 
 ## Whether all exits will point back to this once it's used.
 @export var is_return_point := true
+
+## The AudioStream to override the main music with upon entering.
+@export var stream:AudioStream
 
 ## The path to the scene that the activator will be teleported to.
 @export_file("*.tscn") var scene_path:String
@@ -79,6 +84,7 @@ func warp():
 		last_user.global_rotation = user_rotation
 	
 	warping = false
+	entered.emit(stream)
 	
 
 ## Spawn in a fresh instance of the scene, and return it.

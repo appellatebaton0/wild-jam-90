@@ -2,6 +2,9 @@ class_name TeleporterExitBit extends AreaMasterBit3D
 ## Teleports the activator back to the last-used TeleporterEntrance
 ## (that was set to be returnable to).
 
+@warning_ignore("unused_signal")
+signal exited
+
 ## If true, teleports a body immediately after entering rather than on input.
 @export var teleport_on_enter := true
 
