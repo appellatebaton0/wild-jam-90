@@ -22,8 +22,10 @@
 [ext_resource type="PackedScene" uid="uid://bseh5orb0njgn" path="res://Assests/UI/audio_slider.scn" id="15_iukv2"]
 [ext_resource type="Script" uid="uid://dekpk8relyucb" path="res://Scripts/Bits/Input.gd" id="15_xainh"]
 [ext_resource type="Script" uid="uid://cox1ysk6bulx2" path="res://Scripts/Values/Bool/Manual.gd" id="16_7r63o"]
-[ext_resource type="AudioStream" uid="uid://is3vpmyv5m5e" path="res://Assests/Music/placeholder.ogg" id="17_68cex"]
 [ext_resource type="PackedScene" uid="uid://cj3ygyynwwo0q" path="res://Assests/3D/Player Character/player_character.tscn" id="17_fjq41"]
+[ext_resource type="AudioStream" uid="uid://bjhmoxe82b5d4" path="res://Assests/Music/RockCave.ogg" id="17_yann1"]
+[ext_resource type="AudioStream" uid="uid://bwxf1hm7c4mgn" path="res://Assests/Music/CrystalCave.ogg" id="18_nqp84"]
+[ext_resource type="AudioStream" uid="uid://dpks740gvw8ia" path="res://Assests/Music/VegetationCave.ogg" id="19_4p21v"]
 [ext_resource type="Script" uid="uid://bc87fqj83okns" path="res://Scripts/Bits/PropertyModifier.gd" id="19_xainh"]
 [ext_resource type="PackedScene" uid="uid://ck8hbul3r6e4q" path="res://Scenes/CreditsArea.tscn" id="20_5p5h3"]
 [ext_resource type="Script" uid="uid://b72nqapr3age1" path="res://Scripts/Values/String/CastString.gd" id="20_7r63o"]
@@ -81,7 +83,7 @@ size = Vector3(75, 1, 58.202637)
 [sub_resource type="BoxShape3D" id="BoxShape3D_g20pa"]
 size = Vector3(400, 1, 400)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_68cex"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_o4mhd"]
 viewport_path = NodePath("Node3D/SubViewport")
 
 [sub_resource type="Gradient" id="Gradient_7r63o"]
@@ -1736,43 +1738,43 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.4765, 15.758118, -14.73657
 
 [node name="CentralRoomTeleporter" parent="Shrines" unique_id=695552005 instance=ExtResource("21_vrlp0")]
 transform = Transform3D(-0.48760068, 0, -0.8730668, 0, 1, 0, 0.8730668, 0, -0.48760068, 36.652176, 0.56723094, 10.199476)
-stream = ExtResource("17_68cex")
+stream = ExtResource("17_yann1")
 scene_path = "uid://ddbp4ran4xvdg"
 spawn_position = Vector3(0, 500, 0)
 
 [node name="CornerTeleport" parent="Shrines" unique_id=1367996436 instance=ExtResource("21_vrlp0")]
 transform = Transform3D(0.1967676, 0, -0.98045015, 0, 1, 0, 0.98045015, 0, 0.1967676, 123.721924, 45.252586, -60.748238)
-stream = ExtResource("17_68cex")
+stream = ExtResource("18_nqp84")
 scene_path = "uid://dk6gg16kgbr7"
 spawn_position = Vector3(300, 500, 0)
 
 [node name="AboveExitTeleporter2" parent="Shrines" unique_id=234579865 instance=ExtResource("21_vrlp0")]
 transform = Transform3D(-0.94644094, 0, 0.32287696, 0, 1, 0, -0.32287696, 0, -0.94644094, 75.4608, 21.343855, 54.975124)
-stream = ExtResource("17_68cex")
+stream = ExtResource("18_nqp84")
 scene_path = "uid://b6gqaec88lxdx"
 spawn_position = Vector3(300, 500, 0)
 
 [node name="Lake>RiverTransitionTeleport" parent="Shrines" unique_id=1418559686 instance=ExtResource("21_vrlp0")]
 transform = Transform3D(-0.2024628, 0, 0.97928995, 0, 1, 0, -0.97928995, 0, -0.2024628, -109.32846, 60.585976, -35.680115)
-stream = ExtResource("17_68cex")
+stream = ExtResource("17_yann1")
 scene_path = "uid://wguoowilhb3p"
 spawn_position = Vector3(300, 500, 0)
 
 [node name="LakeRoomTeleporter" parent="Shrines" unique_id=458076251 instance=ExtResource("21_vrlp0")]
 transform = Transform3D(-0.8607598, 0, 0.5090114, 0, 1, 0, -0.5090114, 0, -0.8607598, -66.705315, 30.333189, 79.71528)
-stream = ExtResource("17_68cex")
+stream = ExtResource("19_4p21v")
 scene_path = "uid://csvwrhr6ysarq"
 spawn_position = Vector3(0, 500, 0)
 
 [node name="BigDoorTeleport" parent="Shrines" unique_id=447918637 instance=ExtResource("21_vrlp0")]
 transform = Transform3D(0.67007697, 0, 0.7422917, 0, 1, 0, -0.7422917, 0, 0.67007697, 6.345279, 4.191002, 84.3726)
-stream = ExtResource("17_68cex")
+stream = ExtResource("19_4p21v")
 scene_path = "uid://b57fqeqgtdiak"
 spawn_position = Vector3(0, 500, 0)
 
 [node name="TowerTeleporter" parent="Shrines" unique_id=259161317 instance=ExtResource("21_vrlp0")]
 transform = Transform3D(-0.9380462, 0, -0.34651008, 0, 1, 0, 0.34651008, 0, -0.9380462, 36.252678, 30.525925, 156.9823)
-stream = ExtResource("17_68cex")
+stream = ExtResource("17_yann1")
 scene_path = "uid://bchdugt8gdqaw"
 spawn_position = Vector3(0, 500, 0)
 
@@ -1889,7 +1891,7 @@ offset_right = 121.0
 offset_bottom = 94.0
 
 [node name="TextureRect" parent="UI/CollectableCounter/HBoxContainer" parent_id_path=PackedInt32Array(857772092, 2129117372) index="0" unique_id=715427261]
-texture = SubResource("ViewportTexture_68cex")
+texture = SubResource("ViewportTexture_o4mhd")
 
 [node name="Node3D" parent="UI/CollectableCounter" index="1" unique_id=1883165440]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.372763, 0)
