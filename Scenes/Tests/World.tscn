@@ -1311,6 +1311,7 @@ omni_range = 30.0
 omni_attenuation = 0.5
 
 [node name="Ceiling" type="Node3D" parent="." unique_id=1045228486]
+visible = false
 
 [node name="Stalagmite11" parent="Ceiling" unique_id=772959555 instance=ExtResource("37_8c2l8")]
 transform = Transform3D(-0.45327455, 0.48775345, 9.251294, -0.7148276, -6.778359, 0.6342823, 10.045013, -0.46035492, 0.46259567, -139.87656, 61.517242, 71.488144)
