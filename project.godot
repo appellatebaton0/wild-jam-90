@@ -147,6 +147,7 @@ UseTeleporter={
 3d_physics/layer_6="Checkpoint"
 3d_physics/layer_7="Collectable"
 3d_physics/layer_8="Water"
+3d_physics/layer_9="Music Override"
 
 [physics]
 
