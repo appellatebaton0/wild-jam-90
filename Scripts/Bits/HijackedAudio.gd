@@ -5,101 +5,61 @@ class_name HijackedAudioBit extends Bit
 signal hijacked
 signal resetted
 
-@export var player:AudioStreamPlayer
-@export var aud_stream:AudioStreamSynchronized
+@export var players:Array[AudioStreamPlayer]
+@export var transition_speed := 4.0
 
-@export var transition_speed := 2.0
-
-var current_index := 0
+@export var current_index := 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
-	if not player:
-		var me = self
-		if me is AudioStreamPlayer:
-			player = me
-	
-	if player: 
-		print("AUD STREAM SET")
-		player.stream = aud_stream
-	
-	if player.autoplay: player.play()
-
-	
-	print(player.stream)
-	print(player.playing)
-	print(player.autoplay)
+	for child in get_children(): 
+		if child is AudioStreamPlayer and not players.has(child):
+			players.append(child)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
-	if not player.playing: player.play()
-	## Manage the transition.
-	for i in range(aud_stream.stream_count):
-		
-		var current_volume = aud_stream.get_sync_stream_volume(i)
-		#if randf() > 0.7:
-			#print(i, ": ", current_volume)
-		#print(i, ": ", aud_stream.get_sync_stream(i))
-		#print(player.playing)
-		
-		if i == current_index:
-			aud_stream.set_sync_stream_volume(i, move_toward(current_volume, 0.0, delta))
+	for player in players:
+		# Fade in the current track, and out everything else.
+		if players.find(player) == current_index:
+			player.volume_db = move_toward(player.volume_db,   0.0, delta * transition_speed)
 		else:
-			aud_stream.set_sync_stream_volume(i, move_toward(current_volume, -40.0, delta))
+			player.volume_db = move_toward(player.volume_db, -40.0, delta * transition_speed)
 
 ## Hijack the currently playing track with a new one.
-func hijack(with): 
+func hijack(with:AudioStream): 
 	
-	if with is Array: if with[0] is AudioStream: 
-		print("yep.")
-		with = with[0]
+	var player = find_open_player()
 	
+	player.stream = with
+	player.volume_db = -40.0
+	player.play()
 	
-	print("HIJACKED W/ ", with, " -> ", with as AudioStream)
-	var a:AudioStream = with
-	print(a, " -> ", a is AudioStream)
-	if not with is AudioStream: return
-	
-	print("!")
-	
-	var created := -1
-	
-	for i in range(aud_stream.stream_count):
-		if i == 0: continue # Don't replace the main track.
-		if i == current_index: continue # Don't replace the currently playing track.
-		if aud_stream.get_sync_stream_volume(i) > -40 and aud_stream.get_sync_stream(i): continue # Don't replace tracks that aren't faded out yet.
-		
-		## Replace the first open stream with this one.
-		print("replacing i ", i, " with ", with)
-		aud_stream.set_sync_stream(i, with)
-		aud_stream.set_sync_stream_volume(i, -40.0)
-		created = i
-		break
-	
-	print("!!")
-	
-	## If no open stream was found, we gotta make a new one.
-	if created == -1:
-		aud_stream.set_sync_stream(aud_stream.stream_count + 1, with)
-		aud_stream.set_sync_stream_volume(aud_stream.stream_count + 1, -40.0)
-		created = aud_stream.stream_count + 1
-	
-	print("Hijacked ", created)
-	
-	current_index = created
+	current_index = players.find(player)
 	
 	hijacked.emit()
-	
-	if not player.playing: player.play(player.get_playback_position())
 
 ## Reset the current stream target back to the main stream.
 func reset() -> void: 
-	
-	print("RESET")
-	
 	current_index = 0
 	
 	resetted.emit()
+
+func find_open_player() -> AudioStreamPlayer:
+	
+	## Look for players that either aren't playing, or are silent.
+	for player in players:
+		if players.find(player) == 0: continue # Skip the first one, the base track.
+		if not player.playing or player.volume_db == -40.0:
+			return player # Found one!
+	
+	# If one isn't found, we gotta make a new one.
+	var new = AudioStreamPlayer.new()
+	
+	add_child(new)
+	players.append(new)
+	
+	return new
+	

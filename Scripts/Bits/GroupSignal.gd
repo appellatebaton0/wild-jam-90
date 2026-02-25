@@ -1,6 +1,7 @@
 class_name GroupSignalBit extends Bit
 ## Funnels a signal from every node in a group into a single signal.
 
+@warning_ignore("unused_signal")
 signal emitted
 
 @export var group_name := &""
@@ -20,7 +21,6 @@ func _process(_delta: float) -> void: if group_name and signal_name:
 		
 		# Connect the signal.
 		if node.has_signal(signal_name):
-			print("connected ", node)
 			node.connect(signal_name, _on_signal)
 		
 		if node.is_connected(signal_name, _on_signal):
@@ -28,5 +28,6 @@ func _process(_delta: float) -> void: if group_name and signal_name:
 
 ## Pass the signal on.
 func _on_signal(...args): 
-	print("emitted w/ ", args)
-	emit_signal("emitted", args)
+	# Add the signal name to the arguments to pass into emit_signal
+	args.push_front("emitted") 
+	callv("emit_signal", args)

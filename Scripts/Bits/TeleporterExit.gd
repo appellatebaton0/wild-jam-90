@@ -2,7 +2,6 @@ class_name TeleporterExitBit extends AreaMasterBit3D
 ## Teleports the activator back to the last-used TeleporterEntrance
 ## (that was set to be returnable to).
 
-@warning_ignore("unused_signal")
 signal exited
 
 ## If true, teleports a body immediately after entering rather than on input.
@@ -57,6 +56,8 @@ func warp(): if last_user:
 	
 	last_user.global_position = target.global_position
 	last_user.global_rotation = target.global_rotation
+	
+	exited.emit()
 
 func _do_warp(user: Node3D):
 	warping = true
